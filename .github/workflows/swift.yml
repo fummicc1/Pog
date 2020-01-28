@@ -26,7 +26,7 @@ jobs:
       if: steps.cache-cocoapods.outputs.cache-hit != 'true'
       run: pod install
     - name: Build
-      run: xcodebuild -workspace $PRODUCT_NAME.xcworkspace -scheme $PRODUCT_NAME -sdk iphonesimulator -configuration Develop build 
+      run: xcodebuild -workspace $PRODUCT_NAME.xcworkspace -scheme $PRODUCT_NAME -sdk iphonesimulator -configuration Debug build 
     - name: Unit Test
-      run: xcodebuild test -workspace $PRODUCT_NAME.xcworkspace -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" -scheme $PRODUCT_NAME -configuration Develop
+      run: xcodebuild test -workspace $PRODUCT_NAME.xcworkspace -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" -scheme $PRODUCT_NAME -configuration Debug
 
