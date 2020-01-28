@@ -1,6 +1,14 @@
 name: Build And Test
 
-on: pull_request
+on: 
+  pull_request: 
+    branches:
+      - master
+      - develop
+  push: 
+    branches:
+      - master
+      - develop
 
 env:
     PRODUCT_NAME: PlaceDiary
