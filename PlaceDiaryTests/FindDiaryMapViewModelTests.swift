@@ -6,12 +6,18 @@
 //
 
 import XCTest
+import RxTest
+import RxSwift
+import RxCocoa
 @testable import PlaceDiary
 
 class FindDiaryMapViewModelTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+		var scheduler: TestScheduler!
+		let disposeBag = DisposeBag()
+		
+		
     }
 
     override func tearDown() {
