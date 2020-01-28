@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17DCD9C717D932326DDD0D1A /* Pods_PlaceDiary_PlaceDiaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F795BAE10CE6162C441BC546 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */; };
+		ADBE2869F1310923CF347E22 /* Pods_PlaceDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B307D7EFBE934D7A19BC2F4A /* Pods_PlaceDiary.framework */; };
+		BC6F629D1D81A88A3B57D030 /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE106106D08BB6EA776FA48B /* Pods_PlaceDiaryTests.framework */; };
 		D328794F23E07241008AF5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328794E23E07241008AF5EF /* AppDelegate.swift */; };
 		D328795123E07241008AF5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328795023E07241008AF5EF /* SceneDelegate.swift */; };
 		D328795323E07241008AF5EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328795223E07241008AF5EF /* ViewController.swift */; };
@@ -15,6 +18,9 @@
 		D328795B23E07242008AF5EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D328795923E07242008AF5EF /* LaunchScreen.storyboard */; };
 		D328796623E07242008AF5EF /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328796523E07242008AF5EF /* PlaceDiaryTests.swift */; };
 		D328797123E07242008AF5EF /* PlaceDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328797023E07242008AF5EF /* PlaceDiaryUITests.swift */; };
+		D328798023E07545008AF5EF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D328797F23E07545008AF5EF /* SwiftPackageProductDependency */; };
+		D328798223E07545008AF5EF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D328798123E07545008AF5EF /* SwiftPackageProductDependency */; };
+		D328798423E07545008AF5EF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D328798323E07545008AF5EF /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9239AD6DED3FB250EDB43F3B /* Pods-PlaceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		9F988D74FEEFEDBD00B1216D /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE106106D08BB6EA776FA48B /* Pods_PlaceDiaryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiaryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B307D7EFBE934D7A19BC2F4A /* Pods_PlaceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE6A9E624490537B200C5925 /* Pods-PlaceDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D328794B23E07241008AF5EF /* PlaceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D328794E23E07241008AF5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D328795023E07241008AF5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +60,10 @@
 		D328796C23E07242008AF5EF /* PlaceDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D328797023E07242008AF5EF /* PlaceDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDiaryUITests.swift; sourceTree = "<group>"; };
 		D328797223E07242008AF5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D444B60893C3C0C1C28C8765 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F1A2E5E60C92515B121D367D /* Pods-PlaceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.release.xcconfig"; sourceTree = "<group>"; };
+		F795BAE10CE6162C441BC546 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary_PlaceDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEB39928CFE281B9AF9E0BC1 /* Pods-PlaceDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D328798423E07545008AF5EF /* BuildFile in Frameworks */,
+				D328798223E07545008AF5EF /* BuildFile in Frameworks */,
+				D328798023E07545008AF5EF /* BuildFile in Frameworks */,
+				ADBE2869F1310923CF347E22 /* Pods_PlaceDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6F629D1D81A88A3B57D030 /* Pods_PlaceDiaryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +90,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17DCD9C717D932326DDD0D1A /* Pods_PlaceDiary_PlaceDiaryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F9D46FECE81D7F0A396A5D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9239AD6DED3FB250EDB43F3B /* Pods-PlaceDiary.debug.xcconfig */,
+				F1A2E5E60C92515B121D367D /* Pods-PlaceDiary.release.xcconfig */,
+				9F988D74FEEFEDBD00B1216D /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */,
+				D444B60893C3C0C1C28C8765 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */,
+				BE6A9E624490537B200C5925 /* Pods-PlaceDiaryTests.debug.xcconfig */,
+				FEB39928CFE281B9AF9E0BC1 /* Pods-PlaceDiaryTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		176C565304E58F109194939C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B307D7EFBE934D7A19BC2F4A /* Pods_PlaceDiary.framework */,
+				F795BAE10CE6162C441BC546 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */,
+				AE106106D08BB6EA776FA48B /* Pods_PlaceDiaryTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D328794223E07240008AF5EF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +128,8 @@
 				D328796423E07242008AF5EF /* PlaceDiaryTests */,
 				D328796F23E07242008AF5EF /* PlaceDiaryUITests */,
 				D328794C23E07241008AF5EF /* Products */,
+				0F9D46FECE81D7F0A396A5D6 /* Pods */,
+				176C565304E58F109194939C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +182,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D328797523E07242008AF5EF /* Build configuration list for PBXNativeTarget "PlaceDiary" */;
 			buildPhases = (
+				84CB0CD4077287003E1838FE /* [CP] Check Pods Manifest.lock */,
 				D328794723E07240008AF5EF /* Sources */,
 				D328794823E07240008AF5EF /* Frameworks */,
 				D328794923E07240008AF5EF /* Resources */,
@@ -144,6 +192,11 @@
 			dependencies = (
 			);
 			name = PlaceDiary;
+			packageProductDependencies = (
+				D328797F23E07545008AF5EF /* SwiftPackageProductDependency */,
+				D328798123E07545008AF5EF /* SwiftPackageProductDependency */,
+				D328798323E07545008AF5EF /* SwiftPackageProductDependency */,
+			);
 			productName = PlaceDiary;
 			productReference = D328794B23E07241008AF5EF /* PlaceDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D328797823E07242008AF5EF /* Build configuration list for PBXNativeTarget "PlaceDiaryTests" */;
 			buildPhases = (
+				A7322A2E29F5BA3D7BE1CC85 /* [CP] Check Pods Manifest.lock */,
 				D328795D23E07242008AF5EF /* Sources */,
 				D328795E23E07242008AF5EF /* Frameworks */,
 				D328795F23E07242008AF5EF /* Resources */,
@@ -170,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D328797B23E07242008AF5EF /* Build configuration list for PBXNativeTarget "PlaceDiaryUITests" */;
 			buildPhases = (
+				6CEA27DF93F46168623D94B1 /* [CP] Check Pods Manifest.lock */,
 				D328796823E07242008AF5EF /* Sources */,
 				D328796923E07242008AF5EF /* Frameworks */,
 				D328796A23E07242008AF5EF /* Resources */,
@@ -216,6 +271,9 @@
 				Base,
 			);
 			mainGroup = D328794223E07240008AF5EF;
+			packageReferences = (
+				D328797E23E07545008AF5EF /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = D328794C23E07241008AF5EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,6 +311,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CEA27DF93F46168623D94B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaceDiary-PlaceDiaryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84CB0CD4077287003E1838FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaceDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7322A2E29F5BA3D7BE1CC85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaceDiaryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D328794723E07240008AF5EF /* Sources */ = {
@@ -432,6 +559,7 @@
 		};
 		D328797623E07242008AF5EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9239AD6DED3FB250EDB43F3B /* Pods-PlaceDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +578,7 @@
 		};
 		D328797723E07242008AF5EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1A2E5E60C92515B121D367D /* Pods-PlaceDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +597,7 @@
 		};
 		D328797923E07242008AF5EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE6A9E624490537B200C5925 /* Pods-PlaceDiaryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +620,7 @@
 		};
 		D328797A23E07242008AF5EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEB39928CFE281B9AF9E0BC1 /* Pods-PlaceDiaryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +643,7 @@
 		};
 		D328797C23E07242008AF5EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F988D74FEEFEDBD00B1216D /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +664,7 @@
 		};
 		D328797D23E07242008AF5EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D444B60893C3C0C1C28C8765 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -590,6 +723,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D328797E23E07545008AF5EF /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D328797F23E07545008AF5EF /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D328797E23E07545008AF5EF /* RemoteSwiftPackageReference */;
+			productName = RxRelay;
+		};
+		D328798123E07545008AF5EF /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D328797E23E07545008AF5EF /* RemoteSwiftPackageReference */;
+			productName = RxSwift;
+		};
+		D328798323E07545008AF5EF /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D328797E23E07545008AF5EF /* RemoteSwiftPackageReference */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D328794323E07240008AF5EF /* Project object */;
 }
