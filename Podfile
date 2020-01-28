@@ -6,7 +6,12 @@ target 'PlaceDiary' do
   use_frameworks!
 
   # Pods for PlaceDiary
-
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Storage'
+	pod 'FirebaseFirestoreSwift'
+	
   target 'PlaceDiaryTests' do
     inherit! :search_paths
     # Pods for testing

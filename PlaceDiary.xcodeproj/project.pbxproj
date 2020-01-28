@@ -15,8 +15,16 @@
 		CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */; };
 		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
 		CFFE738123B988FBC4412EA9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BDA87D2F5CADA9672ACA53CD /* RxCocoa */; };
+		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
+		D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */; };
+		D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4323E08839003E0FF4 /* AuthClient.swift */; };
+		D333BD4A23E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4923E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift */; };
+		D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info.plist */; };
+		D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */; };
+		D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */; };
+		D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */; };
+		D3CF608523E0874700299CF4 /* FindDiaryMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
-		D73DCFA574A7423FFD6DBBB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5C43816FFBA7F49BE7030 /* ViewController.swift */; };
 		DB16023AA7DEDAB40B4DF984 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B3ED919502BA0ABDB86028F7 /* RxRelay */; };
 		EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51C6773E6DC5AFEEE53523 /* Image.xcassets */; };
 		F864DDDDA315F9A30435E5C7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E87B769C3B47CE7FAEEFCF79 /* RxSwift */; };
@@ -44,7 +52,6 @@
 		03BF99C7407BE48DCD5DF0B0 /* Pods_PlaceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		067DD71BAE286A3C1C6BEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2DE0A266899AE89545943119 /* Pods-PlaceDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
-		43A5C43816FFBA7F49BE7030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		524361A427CEAA09736F47AC /* PlaceDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiaryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +64,15 @@
 		B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDiaryTests.swift; sourceTree = "<group>"; };
 		B8110B08AA635C3453AFBAF0 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary_PlaceDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D333BD4123E08839003E0FF4 /* FirestoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
+		D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreCollcetionName.swift; sourceTree = "<group>"; };
+		D333BD4323E08839003E0FF4 /* AuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		D333BD4923E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModelTests.swift; sourceTree = "<group>"; };
+		D3CF607523E0844800299CF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
+		D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModel.swift; sourceTree = "<group>"; };
+		D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewController.swift; sourceTree = "<group>"; };
+		D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindDiaryMapViewController.xib; sourceTree = "<group>"; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6FECA2586FEAA3306335E44 /* PlaceDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +124,8 @@
 		0B213D30C16A8F4DB5D80660 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */,
+				D3CF607523E0844800299CF4 /* GoogleService-Info.plist */,
 				067DD71BAE286A3C1C6BEAB0 /* Info.plist */,
 			);
 			path = Plist;
@@ -140,6 +158,7 @@
 			children = (
 				83906A6140C45BA8D714DE59 /* Info.plist */,
 				B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */,
+				D333BD4923E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift */,
 			);
 			path = PlaceDiaryTests;
 			sourceTree = "<group>";
@@ -163,14 +182,91 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		D333BD4023E0880B003E0FF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D3CF607423E082C900299CF4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D333BD4023E0880B003E0FF4 /* Extensions */,
+				D3CF607D23E085B900299CF4 /* API */,
+				D3CF607F23E085CA00299CF4 /* Common */,
+				D3CF607E23E085BF00299CF4 /* Data */,
+				D3CF607C23E085B500299CF4 /* Model */,
+				D3CF607923E0859600299CF4 /* View */,
+				D3CF607A23E0859A00299CF4 /* ViewModel */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D3CF607923E0859600299CF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF608723E0875A00299CF4 /* Xib */,
+				D3CF608623E0874E00299CF4 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3CF607A23E0859A00299CF4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D3CF607C23E085B500299CF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3CF607D23E085B900299CF4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D333BD4323E08839003E0FF4 /* AuthClient.swift */,
+				D333BD4123E08839003E0FF4 /* FirestoreClient.swift */,
+				D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D3CF607E23E085BF00299CF4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D3CF607F23E085CA00299CF4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				701FB36B3E442BF31561393C /* AppDelegate.swift */,
 				BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */,
-				43A5C43816FFBA7F49BE7030 /* ViewController.swift */,
 			);
-			path = Source;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D3CF608623E0874E00299CF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3CF608723E0875A00299CF4 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		D6F9A714CFF0AEB0C6B944CB /* PlaceDiary */ = {
@@ -224,6 +320,7 @@
 				0DEDEC0C7D44A918BDD71BAB /* Sources */,
 				49DC9BECDE0365E8612EBD39 /* Resources */,
 				8AE1A7EDD9592DA382CBD72F /* Frameworks */,
+				BEA34D84C815ADE537071D12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +343,7 @@
 				C2FCC10FE91677E19360EFA6 /* [CP] Check Pods Manifest.lock */,
 				A1951621A26BBD5B5F1173C4 /* Sources */,
 				63D5169D862CA9C37AE69C85 /* Frameworks */,
+				DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +401,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CF608523E0874700299CF4 /* FindDiaryMapViewController.xib in Resources */,
+				D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */,
+				D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */,
 				EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */,
 				CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -355,6 +456,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BEA34D84C815ADE537071D12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C2FCC10FE91677E19360EFA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,6 +495,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,9 +519,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */,
+				D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */,
+				D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */,
 				596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */,
+				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */,
-				D73DCFA574A7423FFD6DBBB8 /* ViewController.swift in Sources */,
+				D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D333BD4A23E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift in Sources */,
 				D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -572,6 +713,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -590,6 +732,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2X6AD4W323;
 				INFOPLIST_FILE = PlaceDiary/Resource/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,12 +748,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FE93A26929519A085F3040E /* Pods-PlaceDiary.debug.xcconfig */;
 			buildSettings = {
-				APP_ID_SUFFIX = _debug;
+				APP_ID_SUFFIX = "-debug";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2X6AD4W323;
 				INFOPLIST_FILE = PlaceDiary/Resource/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
