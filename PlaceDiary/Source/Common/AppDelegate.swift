@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		#else
 		let options = FirebaseOptions(contentsOfFile: Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!)!
 		FirebaseApp.configure(options: options)
-		#endif
-		
+		#endif		
 		return true
 	}
 	

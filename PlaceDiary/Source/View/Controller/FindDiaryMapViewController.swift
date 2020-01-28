@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import MapKit
 
-class FindDiaryMapViewController: UIViewController {
+class FindDiaryMapViewController: BaseViewController {
+	
+	@IBOutlet private var mapView: MKMapView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
     }
