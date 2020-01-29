@@ -28,12 +28,10 @@
 		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
 		D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */; };
 		D3CB10CA23E1642900413844 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C923E1642900413844 /* XibView.swift */; };
-		D3CB10D023E166A300413844 /* BottomActionBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CB10CF23E166A300413844 /* BottomActionBarViewController.xib */; };
 		D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info.plist */; };
 		D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */; };
 		D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */; };
 		D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */; };
-		D3CF608523E0874700299CF4 /* FindDiaryMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */; };
 		D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */; };
 		D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
@@ -88,12 +86,10 @@
 		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDiaryMapModel.swift; sourceTree = "<group>"; };
 		D3CB10C923E1642900413844 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
-		D3CB10CF23E166A300413844 /* BottomActionBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomActionBarViewController.xib; sourceTree = "<group>"; };
 		D3CF607523E0844800299CF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
 		D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModel.swift; sourceTree = "<group>"; };
 		D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewController.swift; sourceTree = "<group>"; };
-		D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindDiaryMapViewController.xib; sourceTree = "<group>"; };
 		D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewController.swift; sourceTree = "<group>"; };
 		D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -236,8 +232,6 @@
 		D3CB10D123E166B000413844 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */,
-				D3CB10CF23E166A300413844 /* BottomActionBarViewController.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -430,8 +424,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CF608523E0874700299CF4 /* FindDiaryMapViewController.xib in Resources */,
-				D3CB10D023E166A300413844 /* BottomActionBarViewController.xib in Resources */,
 				D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */,
 				D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */,
 				EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */,
