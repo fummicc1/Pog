@@ -16,3 +16,7 @@ class FindDiaryMapViewController: BaseViewController {
         super.viewDidLoad()
     }
 }
+
+extension FindDiaryMapViewController: MKMapViewDelegate {
+    
+}

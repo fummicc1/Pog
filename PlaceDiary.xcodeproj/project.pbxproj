@@ -28,6 +28,10 @@
 		D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5B23E08C2E003E0FF4 /* Bool+Reverse.swift */; };
 		D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5C23E08C2E003E0FF4 /* UIImage+Resizable.swift */; };
 		D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */; };
+		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
+		D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */; };
+		D3CB10CA23E1642900413844 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C923E1642900413844 /* XibView.swift */; };
+		D3CB10D023E166A300413844 /* BottomActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CB10CF23E166A300413844 /* BottomActionBarView.xib */; };
 		D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info.plist */; };
 		D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */; };
 		D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */; };
@@ -82,6 +86,10 @@
 		D333BD5B23E08C2E003E0FF4 /* Bool+Reverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Reverse.swift"; sourceTree = "<group>"; };
 		D333BD5C23E08C2E003E0FF4 /* UIImage+Resizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizable.swift"; sourceTree = "<group>"; };
 		D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDiaryMapModel.swift; sourceTree = "<group>"; };
+		D3CB10C923E1642900413844 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		D3CB10CF23E166A300413844 /* BottomActionBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomActionBarView.xib; sourceTree = "<group>"; };
 		D3CF607523E0844800299CF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
 		D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModel.swift; sourceTree = "<group>"; };
@@ -209,12 +217,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D3CB10C423E1631E00413844 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB10C523E1632600413844 /* Entity.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D3CB10D123E166B000413844 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				D3CB10CF23E166A300413844 /* BottomActionBarView.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		D3CF607423E082C900299CF4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D3CF608623E0874E00299CF4 /* Controller */,
 				D3CF607D23E085B900299CF4 /* API */,
 				D3CF607F23E085CA00299CF4 /* Common */,
-				D3CF607E23E085BF00299CF4 /* Data */,
+				D3CB10C423E1631E00413844 /* Data */,
 				D333BD4023E0880B003E0FF4 /* Extensions */,
 				D3CF607C23E085B500299CF4 /* Model */,
 				D3CF607923E0859600299CF4 /* View */,
@@ -226,8 +251,7 @@
 		D3CF607923E0859600299CF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D3CF608723E0875A00299CF4 /* Xib */,
-				D3CF608623E0874E00299CF4 /* Controller */,
+				D3CB10D123E166B000413844 /* Xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,6 +267,7 @@
 		D3CF607C23E085B500299CF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,19 +282,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		D3CF607E23E085BF00299CF4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		D3CF607F23E085CA00299CF4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				701FB36B3E442BF31561393C /* AppDelegate.swift */,
 				D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */,
 				BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */,
+				D3CB10C923E1642900413844 /* XibView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -277,6 +296,7 @@
 		D3CF608623E0874E00299CF4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3CF608723E0875A00299CF4 /* Xib */,
 				D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */,
 			);
 			path = Controller;
@@ -322,6 +342,7 @@
 				2D0AC862F3CB629F16431053 /* [CP] Check Pods Manifest.lock */,
 				F5B7931887A7D4395DDF641F /* Sources */,
 				5A2D4A48071342F667429ED6 /* Frameworks */,
+				2FF5AA15FAE5FA8077CF295C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3CF608523E0874700299CF4 /* FindDiaryMapViewController.xib in Resources */,
+				D3CB10D023E166A300413844 /* BottomActionBarView.xib in Resources */,
 				D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */,
 				D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */,
 				EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */,
@@ -475,6 +497,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FF5AA15FAE5FA8077CF295C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BEA34D84C815ADE537071D12 /* [CP] Embed Pods Frameworks */ = {
@@ -545,12 +584,15 @@
 				D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */,
 				D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */,
 				596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */,
+				D3CB10CA23E1642900413844 /* XibView.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
 				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				D333BD6023E08C2E003E0FF4 /* Array+doesNotContain.swift in Sources */,
 				D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */,
 				78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */,
+				D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */,
+				D3CB10C623E1632600413844 /* Entity.swift in Sources */,
 				D333BD5F23E08C2E003E0FF4 /* String+isNotEmpty.swift in Sources */,
 				D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */,
 				D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */,
