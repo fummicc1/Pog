@@ -9,7 +9,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
 	override func loadView() {
-		guard let view = UINib(nibName: Self.className, bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else {
+		guard let view = R.nib.bottomActionBarView.firstView(owner: nil) else {
 			fatalError()
 		}
 		self.view = view
