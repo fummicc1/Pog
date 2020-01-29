@@ -14,6 +14,7 @@ target 'PlaceDiary' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxRelay'
+	pod 'R.swift'
   
 	
   target 'PlaceDiaryTests' do

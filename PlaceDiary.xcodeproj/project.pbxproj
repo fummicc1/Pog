@@ -34,6 +34,8 @@
 		D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */; };
 		D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */; };
 		D3CF608523E0874700299CF4 /* FindDiaryMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */; };
+		D3F2A89D23E1E0B3008CDA97 /* BottomActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89C23E1E0B3008CDA97 /* BottomActionBarView.swift */; };
+		D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
 		EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51C6773E6DC5AFEEE53523 /* Image.xcassets */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,8 @@
 		D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModel.swift; sourceTree = "<group>"; };
 		D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewController.swift; sourceTree = "<group>"; };
 		D3CF608323E0874700299CF4 /* FindDiaryMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindDiaryMapViewController.xib; sourceTree = "<group>"; };
+		D3F2A89C23E1E0B3008CDA97 /* BottomActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarView.swift; sourceTree = "<group>"; };
+		D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6FECA2586FEAA3306335E44 /* PlaceDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,9 +234,9 @@
 		D3CF607423E082C900299CF4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D3CF608623E0874E00299CF4 /* Controller */,
 				D3CF607D23E085B900299CF4 /* API */,
 				D3CF607F23E085CA00299CF4 /* Common */,
+				D3CF608623E0874E00299CF4 /* Controller */,
 				D3CB10C423E1631E00413844 /* Data */,
 				D333BD4023E0880B003E0FF4 /* Extensions */,
 				D3CF607C23E085B500299CF4 /* Model */,
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				D3CB10D123E166B000413844 /* Xib */,
+				D3F2A89C23E1E0B3008CDA97 /* BottomActionBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 		D3CF607F23E085CA00299CF4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */,
 				701FB36B3E442BF31561393C /* AppDelegate.swift */,
 				D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */,
 				BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */,
@@ -353,6 +359,7 @@
 			buildConfigurationList = F3F3B8AD7FD8C01F23780F67 /* Build configuration list for PBXNativeTarget "PlaceDiary" */;
 			buildPhases = (
 				0DAB40C197627A0A0A2702A2 /* [CP] Check Pods Manifest.lock */,
+				D3F2A89E23E1EB53008CDA97 /* R.swift */,
 				0DEDEC0C7D44A918BDD71BAB /* Sources */,
 				49DC9BECDE0365E8612EBD39 /* Resources */,
 				8AE1A7EDD9592DA382CBD72F /* Frameworks */,
@@ -543,6 +550,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3F2A89E23E1EB53008CDA97 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -572,6 +599,8 @@
 				D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */,
 				D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */,
 				596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */,
+				D3F2A89D23E1E0B3008CDA97 /* BottomActionBarView.swift in Sources */,
+				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
 				D3CB10CA23E1642900413844 /* XibView.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
