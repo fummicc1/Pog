@@ -19,6 +19,7 @@ protocol FirestoreEntity: Codable {
 }
 
 protocol FirestoreRepository {
+	func listenDiaries(onChanged: ((Result<[Entity.Diary], AppError>) -> ())?)
 }
 
 class FirestoreClient {
@@ -125,4 +126,10 @@ class FirestoreClient {
 }
 
 extension FirestoreClient: FirestoreRepository {
+	func listenDiaries(onChanged: ((Result<[Entity.Diary], AppError>) -> ())?) {
+		let ref = Firestore.firestore().collection(FirestoreCollcetionName.diaries.rawValue)
+		listenCollection(type: Entity.Diary.self, ref: ref) { (diaries, error) in
+			
+		}
+	}
 }

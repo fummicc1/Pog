@@ -11,6 +11,7 @@ import MapKit
 class FindDiaryMapViewController: BaseViewController {
 	
 	struct Input {
+		let locationManager: LocationManager
 	}
 	
 	private var mapView: MKMapView = {
@@ -22,7 +23,7 @@ class FindDiaryMapViewController: BaseViewController {
 	private let viewModel: FindDiaryMapViewModel
 	
 	init(input: Input) {
-		viewModel = FindDiaryMapViewModelImpl(input: input)
+		viewModel = FindDiaryMapViewModelImpl(input: FindDiaryMapViewModelImpl.Input(locationManager: input.locationManager))
 		super.init(nibName: nil, bundle: nil)
 	}
 	
