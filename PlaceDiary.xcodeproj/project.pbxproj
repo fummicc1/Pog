@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,6 @@
 		C163D0D60E900AD98B788622 /* PlaceDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358DEA95F3744C45BE84237 /* PlaceDiaryUITests.swift */; };
 		CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */; };
 		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
-		D303851223E08FA20016294B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D303851123E08FA20016294B /* RxCocoa */; };
-		D303851423E08FA20016294B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D303851323E08FA20016294B /* RxRelay */; };
-		D303851623E08FA20016294B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D303851523E08FA20016294B /* RxSwift */; };
 		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
 		D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */; };
 		D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4323E08839003E0FF4 /* AuthClient.swift */; };
@@ -123,9 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D303851423E08FA20016294B /* RxRelay in Frameworks */,
-				D303851223E08FA20016294B /* RxCocoa in Frameworks */,
-				D303851623E08FA20016294B /* RxSwift in Frameworks */,
 				B24B3D7D52459D4D8D5C4A6E /* Pods_PlaceDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,9 +364,6 @@
 			);
 			name = PlaceDiary;
 			packageProductDependencies = (
-				D303851123E08FA20016294B /* RxCocoa */,
-				D303851323E08FA20016294B /* RxRelay */,
-				D303851523E08FA20016294B /* RxSwift */,
 			);
 			productName = PlaceDiary;
 			productReference = EF93F60EF3AE975EBA00B916 /* PlaceDiary.app */;
@@ -423,9 +414,6 @@
 			);
 			mainGroup = 22BF559DE1FED298713890EB;
 			packageReferences = (
-				D8C99A5BCD98AB6F82896D8D /* XCRemoteSwiftPackageReference "RxSwift" */,
-				A983235851244D213B7CAFD8 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				A8F725A2FA9A75E231359014 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 0470ECAA1F449EA2D67E4D4E /* Products */;
 			projectDirPath = "";
@@ -913,51 +901,6 @@
 			defaultConfigurationName = "";
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A8F725A2FA9A75E231359014 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		A983235851244D213B7CAFD8 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		D8C99A5BCD98AB6F82896D8D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D303851123E08FA20016294B /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D8C99A5BCD98AB6F82896D8D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		D303851323E08FA20016294B /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D8C99A5BCD98AB6F82896D8D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		D303851523E08FA20016294B /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D8C99A5BCD98AB6F82896D8D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3C6EF8D99E668F403A3ABEEE /* Project object */;
 }

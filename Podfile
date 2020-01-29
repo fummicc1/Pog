@@ -10,7 +10,11 @@ target 'PlaceDiary' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Storage'
-	pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseFirestoreSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxRelay'
+  
 	
   target 'PlaceDiaryTests' do
     inherit! :search_paths
