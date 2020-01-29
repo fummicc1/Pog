@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+import RxSwift
+import RxCocoa
 
 
 protocol FindDiaryMapViewModel {
@@ -14,4 +15,8 @@ protocol FindDiaryMapViewModel {
 
 class FindDiaryMapViewModelImpl: FindDiaryMapViewModel {
 	
+	
+	
+	init(input: FindDiaryMapViewController.Input) {
+	}
 }

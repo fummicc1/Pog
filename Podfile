@@ -19,7 +19,9 @@ target 'PlaceDiary' do
 	
   target 'PlaceDiaryTests' do
     inherit! :search_paths
-    pod 'RxTest'
+		pod 'RxSwift'
+		pod 'RxCocoa'
+		pod 'RxTest'
     pod 'RxBlocking'
     # Pods for testing
   end

@@ -13,11 +13,12 @@ import RxCocoa
 
 class FindDiaryMapViewModelTests: XCTestCase {
 
-    override func setUp() {
-		var scheduler: TestScheduler!
-		let disposeBag = DisposeBag()
-		
-		
+	private var viewModel: FindDiaryMapViewModel?
+	
+    override func setUp() {		
+		let input: FindDiaryMapViewController.Input = .init()
+		let viewModel = FindDiaryMapViewModelImpl(input: input)
+		self.viewModel = viewModel
     }
 
     override func tearDown() {

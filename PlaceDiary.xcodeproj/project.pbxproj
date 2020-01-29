@@ -649,6 +649,7 @@
 			baseConfigurationReference = F37CC19713B2156FC9B90E4C /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEVELOPMENT_TEAM = 2X6AD4W323;
 				INFOPLIST_FILE = PlaceDiaryUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,6 +657,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PlaceDiaryUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PlaceDiary;
@@ -734,6 +736,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PlaceDiaryTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceDiary.app/PlaceDiary";
@@ -842,6 +845,7 @@
 			baseConfigurationReference = E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEVELOPMENT_TEAM = 2X6AD4W323;
 				INFOPLIST_FILE = PlaceDiaryUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -849,6 +853,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PlaceDiaryUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PlaceDiary;
@@ -867,6 +872,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PlaceDiaryTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceDiary.app/PlaceDiary";
