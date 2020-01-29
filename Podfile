@@ -6,9 +6,20 @@ target 'PlaceDiary' do
   use_frameworks!
 
   # Pods for PlaceDiary
-
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Storage'
+  pod 'FirebaseFirestoreSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxRelay'
+  
+	
   target 'PlaceDiaryTests' do
     inherit! :search_paths
+    pod 'RxTest'
+    pod 'RxBlocking'
     # Pods for testing
   end
 

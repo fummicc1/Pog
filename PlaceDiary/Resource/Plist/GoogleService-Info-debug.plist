@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1060737158070-qm593gujjga51bfodcaab0u5fmdde7nt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1060737158070-qm593gujjga51bfodcaab0u5fmdde7nt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDcFero_vTMsD_zKKy3Zc-1ln1am0t0SOI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1060737158070</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>dev.fummicc1.PlaceDiary-debug</string>
+	<key>PROJECT_ID</key>
+	<string>placediary-6ae44</string>
+	<key>STORAGE_BUCKET</key>
+	<string>placediary-6ae44.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1060737158070:ios:133ffcfd602c9e1ff1cf17</string>
+	<key>DATABASE_URL</key>
+	<string>https://placediary-6ae44.firebaseio.com</string>
+</dict>
+</plist>
