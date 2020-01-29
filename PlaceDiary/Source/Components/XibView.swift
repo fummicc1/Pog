@@ -24,14 +24,12 @@ class XibView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         UINib(nibName: type(of: self).nibName, bundle: nil)
             .instantiate(withOwner: self, options: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         UINib(nibName: type(of: self).nibName, bundle: nil)
             .instantiate(withOwner: self, options: nil)
     }

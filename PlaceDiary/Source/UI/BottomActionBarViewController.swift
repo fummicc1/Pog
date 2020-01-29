@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BottomActionBarView: XibView {
+class BottomActionBarViewController: BaseViewController {
 	
 	
 	

@@ -14,8 +14,8 @@ target 'PlaceDiary' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxRelay'
-	pod 'R.swift'
-  
+  pod 'R.swift'
+  pod 'SnapKit', '~> 5.0.0'
 	
   target 'PlaceDiaryTests' do
     inherit! :search_paths
