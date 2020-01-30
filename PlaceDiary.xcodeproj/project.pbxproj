@@ -16,6 +16,8 @@
 		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
 		D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ECE23E208EC00432D22 /* BaseViewModel.swift */; };
 		D3058ED223E2097200432D22 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ED123E2097200432D22 /* LocationManager.swift */; };
+		D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */; };
+		D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E12123E31EC5004151B6 /* HomeViewController.swift */; };
 		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
 		D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */; };
 		D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4323E08839003E0FF4 /* AuthClient.swift */; };
@@ -79,6 +81,8 @@
 		BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3058ECE23E208EC00432D22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D3058ED123E2097200432D22 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewModel.swift; sourceTree = "<group>"; };
+		D330E12123E31EC5004151B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D333BD4123E08839003E0FF4 /* FirestoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 		D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreCollcetionName.swift; sourceTree = "<group>"; };
 		D333BD4323E08839003E0FF4 /* AuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 			children = (
 				D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */,
 				D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */,
+				D330E12123E31EC5004151B6 /* HomeViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */,
+				D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -612,9 +618,11 @@
 				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
 				D3CB10CA23E1642900413844 /* XibView.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
+				D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
 				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				D333BD6023E08C2E003E0FF4 /* Array+doesNotContain.swift in Sources */,
+				D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */,
 				D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */,
 				78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */,
 				D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */,

@@ -14,7 +14,7 @@ import CoreLocation
 protocol FindDiaryMapViewModel {
 }
 
-class FindDiaryMapViewModelImpl: BaseViewModel, FindDiaryMapViewModel {
+final class FindDiaryMapViewModelImpl: BaseViewModel, FindDiaryMapViewModel {
 	
 	struct Input {
 		let locationManager: LocationManager

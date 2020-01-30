@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import SnapKit
 
 class FindDiaryMapViewController: BaseViewController {
 	
@@ -15,8 +16,7 @@ class FindDiaryMapViewController: BaseViewController {
 	}
 	
 	private var mapView: MKMapView = {
-		let mapView = MKMapView()
-		mapView.translatesAutoresizingMaskIntoConstraints = false
+		let mapView = MKMapView()		
 		return mapView
 	}()
 	
@@ -34,6 +34,9 @@ class FindDiaryMapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		view.addSubview(mapView)
+		mapView.snp.makeConstraints { maker in
+			maker.top.leading.trailing.bottom.equalTo(self.view)
+		}
     }
 }
 
