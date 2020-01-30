@@ -20,6 +20,7 @@ protocol FirestoreEntity: Codable {
 
 protocol FirestoreRepository {
 	func listenDiaries(onChanged: ((Result<[Entity.Diary], AppError>) -> ())?)
+	func fetchDiaries(completion: ((Result<[Entity.Diary], AppError>) -> ())?)
 }
 
 class FirestoreClient {
@@ -82,6 +83,23 @@ class FirestoreClient {
             completion(list, nil)
         }
     }
+	
+	private func getDocuments<T: FirestoreEntity>(type: T.Type, ref: CollectionReference, completion: @escaping ([T]?, Error?) -> ()) {
+        ref.getDocuments { (snapshot, error) in
+            guard let snapshot = snapshot, error == nil else {
+                return
+            }
+            var list: [T] = []
+            for document in snapshot.documents {
+                let data = document.data()
+                let decoder = Firestore.Decoder()
+                guard var value = try? decoder.decode(T.self, from: data) else { continue }
+                value.ref = document.reference
+                list.append(value)
+            }
+            completion(list, nil)
+        }
+    }
     
     private func persist<T: FirestoreEntity>(value: T, ref: DocumentReference, completion: @escaping (Error?) -> ()) {
         let encoder = Firestore.Encoder()
@@ -129,7 +147,32 @@ extension FirestoreClient: FirestoreRepository {
 	func listenDiaries(onChanged: ((Result<[Entity.Diary], AppError>) -> ())?) {
 		let ref = Firestore.firestore().collection(FirestoreCollcetionName.diaries.rawValue)
 		listenCollection(type: Entity.Diary.self, ref: ref) { (diaries, error) in
+			if let error = error {
+				onChanged?(.failure(AppError.someError(error)))
+				return
+			}
 			
+			guard let diaries = diaries, diaries.isNotEmpty else {
+				onChanged?(.failure(AppError.emptyResponseData))
+				return
+			}
+			onChanged?(.success(diaries))
+		}
+	}
+	
+	func fetchDiaries(completion: ((Result<[Entity.Diary], AppError>) -> ())?) {
+		let ref = Firestore.firestore().collection(FirestoreCollcetionName.diaries.rawValue)
+		getDocuments(type: Entity.Diary.self, ref: ref) { (diaries, error) in
+			if let error = error {
+				completion?(.failure(AppError.someError(error)))
+				return
+			}
+			
+			guard let diaries = diaries, diaries.isNotEmpty else {
+				completion?(.failure(AppError.emptyResponseData))
+				return
+			}
+			completion?(.success(diaries))
 		}
 	}
 }

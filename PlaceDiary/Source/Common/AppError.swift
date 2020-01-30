@@ -7,4 +7,7 @@
 
 import Foundation
 
-enum AppError: Error {}
+enum AppError: Error {
+	case emptyResponseData
+	case someError(Error)
+}
