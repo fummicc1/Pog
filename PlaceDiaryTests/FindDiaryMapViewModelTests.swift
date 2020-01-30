@@ -16,7 +16,7 @@ class FindDiaryMapViewModelTests: XCTestCase {
 	private var viewModel: FindDiaryMapViewModel?
 	
     override func setUp() {		
-		let input: FindDiaryMapViewController.Input = .init(locationManager: LocationManagerMock())
+		let input: FindDiaryMapViewModelImpl.Input = .init(locationManager: LocationManagerMock())
 		let viewModel = FindDiaryMapViewModelImpl(input: input)
 		self.viewModel = viewModel
     }
