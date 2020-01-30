@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
-class BaseViewModel: NSObject {}
+class BaseViewModel: NSObject {
+	let disposeBag = DisposeBag()
+}

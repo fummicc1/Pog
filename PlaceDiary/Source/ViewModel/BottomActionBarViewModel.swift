@@ -14,5 +14,4 @@ protocol BottomActionBarViewModel {
 }
 
 final class BottomActionBarViewModelImpl: BaseViewModel, BottomActionBarViewModel {
-	
 }
