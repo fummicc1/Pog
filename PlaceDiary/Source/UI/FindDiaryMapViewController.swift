@@ -11,19 +11,17 @@ import SnapKit
 
 class FindDiaryMapViewController: BaseViewController {
 	
-	struct Input {
-		let locationManager: LocationManager
-	}
-	
 	private var mapView: MKMapView = {
 		let mapView = MKMapView()		
+		mapView.showsBuildings = false
+		mapView.showsUserLocation = true
 		return mapView
 	}()
 	
 	private let viewModel: FindDiaryMapViewModel
 	
-	init(input: Input) {
-		viewModel = FindDiaryMapViewModelImpl(input: FindDiaryMapViewModelImpl.Input(locationManager: input.locationManager))
+	init(viewModel: FindDiaryMapViewModel) {
+		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
 	

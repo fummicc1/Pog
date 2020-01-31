@@ -14,6 +14,8 @@ target 'PlaceDiary' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxRelay'
+	pod 'RxCoreLocation', '~> 1.4'
+	pod "RxMKMapView"
   pod 'R.swift'
   pod 'SnapKit', '~> 5.0.0'
 	

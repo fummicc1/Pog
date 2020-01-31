@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
 	private var bottomActionBarViewController: BottomActionBarViewController = {
 		let viewModel = BottomActionBarViewModelImpl()
@@ -17,7 +17,8 @@ class HomeViewController: UIViewController {
 	}()
 	
 	private var findDiaryMapViewController: FindDiaryMapViewController = {
-		let viewController = FindDiaryMapViewController(input: FindDiaryMapViewController.Input(locationManager: CLLocationManager()))
+		let viewModel = FindDiaryMapViewModelImpl(input: FindDiaryMapViewModelImpl.Input(locationManager: CLLocationManager()))
+		let viewController = FindDiaryMapViewController(viewModel: viewModel)
 		return viewController
 	}()
 	

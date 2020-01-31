@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-protocol LocationManager {
+protocol LocationManager: AnyObject {
 	var delegate: CLLocationManagerDelegate? { get set }
 }
 

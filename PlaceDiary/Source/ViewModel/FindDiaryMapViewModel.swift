@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import CoreLocation
-
+import RxCoreLocation
 
 protocol FindDiaryMapViewModel {
 }
@@ -17,18 +17,24 @@ protocol FindDiaryMapViewModel {
 final class FindDiaryMapViewModelImpl: BaseViewModel, FindDiaryMapViewModel {
 	
 	struct Input {
-		let locationManager: LocationManager
+		let locationManager: CLLocationManager
 	}
 	
-	private var locationManager: LocationManager
+	private var locationManager: CLLocationManager
 	
 	init(input: Input) {
 		self.locationManager = input.locationManager
 		super.init()
-		self.locationManager.delegate = self
+		
+		input.locationManager.rx.status.subscribe (onNext:{ (status) in
+			switch status {
+			case .authorizedAlways, .authorizedWhenInUse:
+				input.locationManager.startUpdatingLocation()
+			case .notDetermined:
+				input.locationManager.requestWhenInUseAuthorization()
+			default:
+				break
+			}
+		}).disposed(by: disposeBag)
 	}
-}
-
-extension FindDiaryMapViewModelImpl: CLLocationManagerDelegate {
-	
 }
