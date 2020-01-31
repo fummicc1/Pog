@@ -9,7 +9,7 @@ import UIKit
 
 class BottomActionBarViewController: BaseViewController {
 	
-	private weak var writeDiaryButton: UIButton? = {
+	private var writeDiaryButton: UIButton = {
 		let button = UIButton()
 		let config = UIImage.SymbolConfiguration(font: UIFont.boldSystemFont(ofSize: 32))
 		button.setImage(UIImage.init(systemName: "pencil.and.outline", withConfiguration: config), for: .normal)
@@ -17,14 +17,7 @@ class BottomActionBarViewController: BaseViewController {
 	}()
 	
 	private lazy var stackView: UIStackView = {
-		
-		var arrangedSubviews: [UIView] = []
-		
-		if let writeDiaryButton = writeDiaryButton {
-			arrangedSubviews.append(writeDiaryButton)
-		}
-		
-		let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+		let stackView = UIStackView(arrangedSubviews: [writeDiaryButton])
 		return stackView
 	}()
 	
@@ -47,7 +40,7 @@ class BottomActionBarViewController: BaseViewController {
 			maker.top.bottom.leading.trailing.equalTo(self.view)
 		}
 		
-		writeDiaryButton?.rx.tap.subscribe(onNext: { event in
+		writeDiaryButton.rx.tap.subscribe(onNext: { event in
 			let writeDiaryViewController = WriteDiaryViewController()
 			self.present(writeDiaryViewController, animated: true, completion: nil)
 		}).disposed(by: disposeBag)

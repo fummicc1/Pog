@@ -33,9 +33,9 @@
 		D37CE9CB23E20AED0037F5C3 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CA23E20AED0037F5C3 /* Diary.swift */; };
 		D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CC23E20CC20037F5C3 /* AppError.swift */; };
 		D3B3DB0923E3D11B0047E60B /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0723E3D11B0047E60B /* WriteDiaryViewController.swift */; };
+		D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */; };
 		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
 		D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */; };
-		D3CB10CA23E1642900413844 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C923E1642900413844 /* XibView.swift */; };
 		D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info.plist */; };
 		D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */; };
 		D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */; };
@@ -99,9 +99,9 @@
 		D37CE9CA23E20AED0037F5C3 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		D37CE9CC23E20CC20037F5C3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D3B3DB0723E3D11B0047E60B /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAnnotation.swift; sourceTree = "<group>"; };
 		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDiaryMapModel.swift; sourceTree = "<group>"; };
-		D3CB10C923E1642900413844 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		D3CF607523E0844800299CF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
 		D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModel.swift; sourceTree = "<group>"; };
@@ -207,7 +207,6 @@
 		C9DE21808958565AE8728756 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D3CB10D123E166B000413844 /* Xib */,
 				5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */,
 				6F51C6773E6DC5AFEEE53523 /* Image.xcassets */,
 				0B213D30C16A8F4DB5D80660 /* Plist */,
@@ -241,8 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */,
-				D3CB10C923E1642900413844 /* XibView.swift */,
 				D3058ECE23E208EC00432D22 /* BaseViewModel.swift */,
+				D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -256,22 +255,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		D3CB10D123E166B000413844 /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
 		D3CF607423E082C900299CF4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D3058ED023E2096400432D22 /* Mock */,
 				D3CF607D23E085B900299CF4 /* API */,
 				D3CF607F23E085CA00299CF4 /* Common */,
 				D3506A0823E1FD730003BCFD /* Components */,
 				D3CB10C423E1631E00413844 /* Data */,
 				D333BD4023E0880B003E0FF4 /* Extensions */,
+				D3058ED023E2096400432D22 /* Mock */,
 				D3CF607C23E085B500299CF4 /* Model */,
 				D3CF607923E0859600299CF4 /* UI */,
 				D3CF607A23E0859A00299CF4 /* ViewModel */,
@@ -619,7 +611,6 @@
 				596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */,
 				D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */,
 				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
-				D3CB10CA23E1642900413844 /* XibView.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
 				D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
@@ -634,6 +625,7 @@
 				D3B3DB0923E3D11B0047E60B /* WriteDiaryViewController.swift in Sources */,
 				D37CE9C923E20A880037F5C3 /* FindDiaryModelMock.swift in Sources */,
 				D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */,
+				D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */,
 				D333BD5F23E08C2E003E0FF4 /* String+isNotEmpty.swift in Sources */,
 				D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */,
 				D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */,
