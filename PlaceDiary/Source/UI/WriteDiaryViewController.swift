@@ -8,22 +8,22 @@
 import UIKit
 
 class WriteDiaryViewController: BaseViewController {
-
-	private var placeTextField: UITextField = {
-		let textField = UITextField()
-		textField.placeholder = "どんな場所か教えてください"
+    
+    private var placeTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "どんな場所か教えてください"
         textField.font = .boldSystemFont(ofSize: 20)
-		return textField
-	}()
-	
-	private var memoryTextView: UITextView = {
-		let textView = UITextView()
+        return textField
+    }()
+    
+    private var memoryTextView: UITextView = {
+        let textView = UITextView()
         textView.font = .systemFont(ofSize: 16)
         textView.layer.borderColor = UIColor.label.cgColor
         textView.layer.borderWidth = 1.0
         textView.layer.cornerRadius = 8
-		return textView
-	}()
+        return textView
+    }()
     
     private var emptyTextLabel: UILabel = {
         let label = UILabel()
@@ -43,37 +43,48 @@ class WriteDiaryViewController: BaseViewController {
         return button
     }()
     
+    private let viewModel: WriteDiaryViewModel
+    
+    init(viewModel: WriteDiaryViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-	
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBackground
         view.addSubview(selectHeadingImageButton)
-		view.addSubview(placeTextField)
-		view.addSubview(memoryTextView)
+        view.addSubview(placeTextField)
+        view.addSubview(memoryTextView)
         view.addSubview(emptyTextLabel)
-		
+        
         selectHeadingImageButton.snp.makeConstraints { maker in
             maker.top.equalTo(view).offset(40)
             maker.centerX.equalTo(view)
             maker.size.equalTo(96)
         }
         
-		placeTextField.snp.makeConstraints { maker in
+        placeTextField.snp.makeConstraints { maker in
             maker.top.equalTo(selectHeadingImageButton.snp.bottom).offset(64)
-			maker.leading.equalTo(view).offset(40)
-			maker.centerX.equalTo(view)
-		}
-		
-		memoryTextView.snp.makeConstraints { maker in
-			maker.top.equalTo(placeTextField.snp.bottom).offset(40)
-			maker.centerX.equalTo(view)
+            maker.leading.equalTo(view).offset(40)
+            maker.centerX.equalTo(view)
+        }
+        
+        memoryTextView.snp.makeConstraints { maker in
+            maker.top.equalTo(placeTextField.snp.bottom).offset(40)
+            maker.centerX.equalTo(view)
             maker.height.equalTo(160)
-			maker.leading.equalTo(view).offset(40)
-		}
+            maker.leading.equalTo(view).offset(40)
+        }
         
         emptyTextLabel.snp.makeConstraints { maker in
             maker.top.equalTo(memoryTextView).offset(8)
@@ -101,6 +112,9 @@ extension WriteDiaryViewController: UINavigationControllerDelegate, UIImagePicke
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             selectHeadingImageButton.setImage(image, for: .normal)
+        }
+        if let imageURL = info[.imageURL] as? URL {
+            
         }
         picker.dismiss(animated: true, completion: nil)
     }

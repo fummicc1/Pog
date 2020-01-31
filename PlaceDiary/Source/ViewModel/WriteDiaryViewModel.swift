@@ -10,8 +10,20 @@ import RxSwift
 import RxCocoa
 
 protocol WriteDiaryViewModel {
+    func pickerImageSelected(fileURL: URL)
 }
 
 final class WriteDiaryViewModelImpl: BaseViewModel, WriteDiaryViewModel {
     
+    struct Input {
+    }
+    
+    
+    
+    init(input: Input) {
+        super.init()
+    }
+    
+    func pickerImageSelected(fileURL: URL) {
+    }
 }

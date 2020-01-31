@@ -41,7 +41,10 @@ class BottomActionBarViewController: BaseViewController {
 		}
 		
 		writeDiaryButton.rx.tap.subscribe(onNext: { event in
-			let writeDiaryViewController = WriteDiaryViewController()
+            let writeDiaryViewController = WriteDiaryViewController(
+                viewModel: WriteDiaryViewModelImpl(
+                    input: WriteDiaryViewModelImpl.Input()
+            ))
 			self.present(writeDiaryViewController, animated: true, completion: nil)
 		}).disposed(by: disposeBag)
 	}
