@@ -9,6 +9,7 @@ import XCTest
 import RxTest
 import RxSwift
 import RxCocoa
+import CoreLocation
 @testable import PlaceDiary
 
 class FindDiaryMapViewModelTests: XCTestCase {
@@ -16,7 +17,7 @@ class FindDiaryMapViewModelTests: XCTestCase {
 	private var viewModel: FindDiaryMapViewModel?
 	
     override func setUp() {		
-		let input: FindDiaryMapViewModelImpl.Input = .init(locationManager: LocationManagerMock())
+		let input: FindDiaryMapViewModelImpl.Input = .init(locationManager: CLLocationManager(), model: FindDiaryMapModelImpl())
 		let viewModel = FindDiaryMapViewModelImpl(input: input)
 		self.viewModel = viewModel
     }

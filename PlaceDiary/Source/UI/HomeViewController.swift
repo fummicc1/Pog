@@ -17,7 +17,7 @@ class HomeViewController: BaseViewController {
 	}()
 	
 	private var findDiaryMapViewController: FindDiaryMapViewController = {
-		let viewModel = FindDiaryMapViewModelImpl(input: FindDiaryMapViewModelImpl.Input(locationManager: CLLocationManager()))
+		let viewModel = FindDiaryMapViewModelImpl(input: FindDiaryMapViewModelImpl.Input(locationManager: CLLocationManager(), model: FindDiaryMapModelImpl()))
 		let viewController = FindDiaryMapViewController(viewModel: viewModel)
 		return viewController
 	}()

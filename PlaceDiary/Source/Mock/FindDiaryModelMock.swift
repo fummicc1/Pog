@@ -18,4 +18,13 @@ class FindDiaryModelMock: FindDiaryMapModel {
 			return Disposables.create()
 		}
 	}
+	
+	func listenDiaries() -> Single<[Entity.Diary]> {
+		.create { (singleEvent) -> Disposable in
+			
+			
+			
+			return Disposables.create()
+		}
+	}
 }

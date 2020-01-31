@@ -11,6 +11,7 @@ import RxCocoa
 
 protocol FindDiaryMapModel {
 	func fetchDiaries() -> Single<[Entity.Diary]>
+	func listenDiaries() -> Single<[Entity.Diary]>
 }
 
 class FindDiaryMapModelImpl: FindDiaryMapModel {
@@ -18,17 +19,9 @@ class FindDiaryMapModelImpl: FindDiaryMapModel {
 	private let auth: AuthRepository
 	private let firestore: FirestoreRepository
 	
-	init(firestore: FirestoreRepository = FirestoreClient(), auth: AuthRepository = AuthClient(), diariesChanged: AnyObserver<[Entity.Diary]>) {
+	init(firestore: FirestoreRepository = FirestoreClient(), auth: AuthRepository = AuthClient()) {
 		self.auth = auth
 		self.firestore = firestore
-		firestore.listenDiaries { (result) in
-			switch result {
-			case .success(let diaries):
-				diariesChanged.onNext(diaries)
-			case .failure(let error):
-				diariesChanged.onError(error)
-			}
-		}
 	}
 	
 	func fetchDiaries() -> Single<[Entity.Diary]> {
@@ -40,6 +33,20 @@ class FindDiaryMapModelImpl: FindDiaryMapModel {
 					singleEvent(.success(diaries))
 				case .failure(let error):
 					singleEvent(.error(error))
+				}
+			}
+			return Disposables.create()
+		}
+	}
+	
+	func listenDiaries() -> Single<[Entity.Diary]> {
+		return .create { [unowned self] observer -> Disposable in
+			self.firestore.listenDiaries { (result) in
+				switch result {
+				case .success(let diaries):
+					observer(.success(diaries))
+				case .failure(let error):
+					observer(.error(error))
 				}
 			}
 			return Disposables.create()
