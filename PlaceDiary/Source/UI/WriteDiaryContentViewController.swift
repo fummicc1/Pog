@@ -1,18 +1,18 @@
 //
-//  WriteDiaryViewController.swift
+//  WriteDiaryContentViewController.swift
 //  PlaceDiary
 //
-//  Created by Fumiya Tanaka on 2020/01/31.
+//  Created by Fumiya Tanaka on 2020/02/01.
 //
 
 import UIKit
 
-class WriteDiaryViewController: BaseViewController {
-    
-    private var placeTextField: UITextField = {
+class WriteDiaryContentViewController: BaseViewController {
+
+    private var tagTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "どんな場所か教えてください"
-        textField.font = .boldSystemFont(ofSize: 20)
+        textField.placeholder = "タグを決めると作成後、検索時に調べやすくなります！"
+        textField.font = .boldSystemFont(ofSize: 12)
         return textField
     }()
     
@@ -43,44 +43,32 @@ class WriteDiaryViewController: BaseViewController {
         return button
     }()
     
-    private let viewModel: WriteDiaryViewModel
-    
-    init(viewModel: WriteDiaryViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.addSubview(tagTextField)
         view.addSubview(selectHeadingImageButton)
-        view.addSubview(placeTextField)
         view.addSubview(memoryTextView)
         view.addSubview(emptyTextLabel)
         
-        selectHeadingImageButton.snp.makeConstraints { maker in
+        tagTextField.snp.makeConstraints { maker in
             maker.top.equalTo(view).offset(40)
+            maker.centerX.equalTo(view)
+        }
+        
+        selectHeadingImageButton.snp.makeConstraints { maker in
+            maker.top.equalTo(tagTextField.snp.bottom).offset(40)
             maker.centerX.equalTo(view)
             maker.size.equalTo(96)
         }
         
-        placeTextField.snp.makeConstraints { maker in
-            maker.top.equalTo(selectHeadingImageButton.snp.bottom).offset(64)
-            maker.leading.equalTo(view).offset(40)
-            maker.centerX.equalTo(view)
-        }
-        
         memoryTextView.snp.makeConstraints { maker in
-            maker.top.equalTo(placeTextField.snp.bottom).offset(40)
+            maker.top.equalTo(selectHeadingImageButton.snp.bottom).offset(40)
             maker.centerX.equalTo(view)
             maker.height.equalTo(160)
             maker.leading.equalTo(view).offset(40)
@@ -102,13 +90,11 @@ class WriteDiaryViewController: BaseViewController {
             picker.sourceType = .photoLibrary
             self.present(picker, animated: true, completion: nil)
         }).disposed(by: disposeBag)
-        
-        
     }
 }
 
 
-extension WriteDiaryViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension WriteDiaryContentViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             selectHeadingImageButton.setImage(image, for: .normal)
@@ -119,3 +105,4 @@ extension WriteDiaryViewController: UINavigationControllerDelegate, UIImagePicke
         picker.dismiss(animated: true, completion: nil)
     }
 }
+

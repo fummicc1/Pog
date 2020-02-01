@@ -29,13 +29,15 @@
 		D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5B23E08C2E003E0FF4 /* Bool+Reverse.swift */; };
 		D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5C23E08C2E003E0FF4 /* UIImage+Resizable.swift */; };
 		D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */; };
-		D364CA5423E45712004E6D20 /* WriteDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5323E45712004E6D20 /* WriteDiaryModel.swift */; };
+		D33AA24823E51D12001AC8CC /* WriteDiaryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33AA24723E51D12001AC8CC /* WriteDiaryContentViewController.swift */; };
+		D33AA24A23E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */; };
+		D364CA5423E45712004E6D20 /* WriteDiaryContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */; };
 		D364CA5623E458E3004E6D20 /* CloudStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5523E458E3004E6D20 /* CloudStorageClient.swift */; };
-		D364CA5823E45CEE004E6D20 /* WriteDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5723E45CEE004E6D20 /* WriteDiaryViewModel.swift */; };
+		D364CA5823E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5723E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift */; };
 		D37CE9C923E20A880037F5C3 /* FindDiaryModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9C823E20A880037F5C3 /* FindDiaryModelMock.swift */; };
 		D37CE9CB23E20AED0037F5C3 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CA23E20AED0037F5C3 /* Diary.swift */; };
 		D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CC23E20CC20037F5C3 /* AppError.swift */; };
-		D3B3DB0923E3D11B0047E60B /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0723E3D11B0047E60B /* WriteDiaryViewController.swift */; };
+		D3B3DB0923E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0723E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift */; };
 		D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */; };
 		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
 		D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */; };
@@ -98,13 +100,15 @@
 		D333BD5B23E08C2E003E0FF4 /* Bool+Reverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Reverse.swift"; sourceTree = "<group>"; };
 		D333BD5C23E08C2E003E0FF4 /* UIImage+Resizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizable.swift"; sourceTree = "<group>"; };
 		D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		D364CA5323E45712004E6D20 /* WriteDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryModel.swift; sourceTree = "<group>"; };
+		D33AA24723E51D12001AC8CC /* WriteDiaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryContentViewController.swift; sourceTree = "<group>"; };
+		D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryChoosePlaceModel.swift; sourceTree = "<group>"; };
+		D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryContentModel.swift; sourceTree = "<group>"; };
 		D364CA5523E458E3004E6D20 /* CloudStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageClient.swift; sourceTree = "<group>"; };
-		D364CA5723E45CEE004E6D20 /* WriteDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewModel.swift; sourceTree = "<group>"; };
+		D364CA5723E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryChoosePlaceViewModel.swift; sourceTree = "<group>"; };
 		D37CE9C823E20A880037F5C3 /* FindDiaryModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryModelMock.swift; sourceTree = "<group>"; };
 		D37CE9CA23E20AED0037F5C3 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		D37CE9CC23E20CC20037F5C3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		D3B3DB0723E3D11B0047E60B /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		D3B3DB0723E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryChoosePlaceViewController.swift; sourceTree = "<group>"; };
 		D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAnnotation.swift; sourceTree = "<group>"; };
 		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDiaryMapModel.swift; sourceTree = "<group>"; };
@@ -283,7 +287,8 @@
 				D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */,
 				D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */,
 				D330E12123E31EC5004151B6 /* HomeViewController.swift */,
-				D3B3DB0723E3D11B0047E60B /* WriteDiaryViewController.swift */,
+				D3B3DB0723E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift */,
+				D33AA24723E51D12001AC8CC /* WriteDiaryContentViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -293,7 +298,7 @@
 			children = (
 				D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */,
 				D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */,
-				D364CA5723E45CEE004E6D20 /* WriteDiaryViewModel.swift */,
+				D364CA5723E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,7 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */,
-				D364CA5323E45712004E6D20 /* WriteDiaryModel.swift */,
+				D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */,
+				D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
 				D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
+				D33AA24A23E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift in Sources */,
 				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				D333BD6023E08C2E003E0FF4 /* Array+doesNotContain.swift in Sources */,
 				D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */,
@@ -632,13 +639,14 @@
 				D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */,
 				D3CB10C623E1632600413844 /* Entity.swift in Sources */,
 				D3058ED223E2097200432D22 /* LocationManager.swift in Sources */,
-				D3B3DB0923E3D11B0047E60B /* WriteDiaryViewController.swift in Sources */,
-				D364CA5823E45CEE004E6D20 /* WriteDiaryViewModel.swift in Sources */,
-				D364CA5423E45712004E6D20 /* WriteDiaryModel.swift in Sources */,
+				D3B3DB0923E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift in Sources */,
+				D364CA5823E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift in Sources */,
+				D364CA5423E45712004E6D20 /* WriteDiaryContentModel.swift in Sources */,
 				D37CE9C923E20A880037F5C3 /* FindDiaryModelMock.swift in Sources */,
 				D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */,
 				D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */,
 				D333BD5F23E08C2E003E0FF4 /* String+isNotEmpty.swift in Sources */,
+				D33AA24823E51D12001AC8CC /* WriteDiaryContentViewController.swift in Sources */,
 				D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */,
 				D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */,
 			);

@@ -10,12 +10,13 @@ import FirebaseFirestore
 
 extension Entity {
 	struct Diary: FirestoreEntity {
-		
+        
 		let place: String
 		let memory: String
 		let latitude: Double
 		let longitude: Double
         let imagePath: String
+        let tags: [String]
         let sender: DocumentReference
 		
 		var createdAt: Timestamp?

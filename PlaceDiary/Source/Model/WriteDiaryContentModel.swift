@@ -9,11 +9,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol WriteDiaryModel {
+protocol WriteDiaryContentModel {
     func persistDiary(title: String, imageURL: URL, memory: String) -> Single<Entity.Diary>
 }
 
-class WriteDiaryModelImpl: WriteDiaryModel {
+class WriteDiaryContentModelImpl: WriteDiaryContentModel {
     
     private let firestore: FirestoreRepository = FirestoreClient()
     private let auth: AuthRepository = AuthClient()
