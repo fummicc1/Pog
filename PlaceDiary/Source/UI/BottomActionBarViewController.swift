@@ -42,6 +42,7 @@ class BottomActionBarViewController: BaseViewController {
 		
 		writeDiaryButton.rx.tap.subscribe(onNext: { event in
             let writeDiaryViewController = WriteDiaryChoosePlaceViewController(input: WriteDiaryChoosePlaceViewController.Input())
+            writeDiaryViewController.modalPresentationStyle = .fullScreen
 			self.present(writeDiaryViewController, animated: true, completion: nil)
 		}).disposed(by: disposeBag)
 	}

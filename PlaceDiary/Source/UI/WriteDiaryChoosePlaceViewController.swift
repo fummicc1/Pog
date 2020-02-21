@@ -13,7 +13,13 @@ class WriteDiaryChoosePlaceViewController: BaseViewController {
     struct Input {
     }
     
-    
+    private var backButton: UIButton = {
+        let button = UIButton()
+        let config = UIImage.SymbolConfiguration(font: UIFont.boldSystemFont(ofSize: 24))
+        let image = UIImage(systemName: "xmark", withConfiguration: config)
+        button.setImage(image, for: .normal)
+        return button
+    }()
     
     private var placeSearchTextField: UITextField  = {
         let texxtField = UITextField()
@@ -47,9 +53,14 @@ class WriteDiaryChoosePlaceViewController: BaseViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(placeMapView)
         view.addSubview(placeSearchTextField)
+        view.addSubview(backButton)
         
         placeMapView.snp.makeConstraints { maker in
             maker.top.leading.trailing.bottom.equalTo(self.view)
+        }
+        backButton.snp.makeConstraints { maker in
+            maker.top.leading.equalTo(self.view).offset(48)
+            maker.height.width.equalTo(64)
         }
         
         placeSearchTextField.snp.makeConstraints { maker in
