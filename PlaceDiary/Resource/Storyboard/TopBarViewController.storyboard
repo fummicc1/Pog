@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1Q-Ee-H2y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top Bar View Controller-->
+        <scene sceneID="qLf-d0-Rct">
+            <objects>
+                <viewController id="i1Q-Ee-H2y" customClass="TopBarViewController" customModule="PlaceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lAh-4f-7W8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-Yh-4w2">
+                                <rect key="frame" x="107" y="12" width="200" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NDC-Nf-f7I"/>
+                                    <constraint firstAttribute="width" constant="200" id="rGn-Kq-uAl"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="List"/>
+                                </segments>
+                                <color key="tintColor" name="Tint"/>
+                                <color key="selectedSegmentTintColor" name="Tint"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kLr-Yh-4w2" firstAttribute="centerX" secondItem="lAh-4f-7W8" secondAttribute="centerX" id="QQ9-do-gmS"/>
+                            <constraint firstItem="kLr-Yh-4w2" firstAttribute="centerY" secondItem="lAh-4f-7W8" secondAttribute="centerY" id="nOb-Aj-8eq"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="64"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="kLr-Yh-4w2" id="t86-Pe-x81"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaN-Od-ghH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Tint">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

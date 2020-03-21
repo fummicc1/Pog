@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PlaceDiary-debug.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
+		</dict>
 		<key>PlaceDiary.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>37</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>421A9C8F7577DD1A30B9F22F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53925CE5FA0BFB00157A6B47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A82F5E6E57DC18DC03117500</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
