@@ -15,13 +15,11 @@
 		CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */; };
 		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
 		D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ECE23E208EC00432D22 /* BaseViewModel.swift */; };
-		D3058ED223E2097200432D22 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ED123E2097200432D22 /* LocationManager.swift */; };
 		D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */; };
 		D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E12123E31EC5004151B6 /* HomeViewController.swift */; };
 		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
 		D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */; };
 		D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4323E08839003E0FF4 /* AuthClient.swift */; };
-		D333BD4A23E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4923E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift */; };
 		D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5723E08C2E003E0FF4 /* ClassName+Extention.swift */; };
 		D333BD5E23E08C2E003E0FF4 /* Array+isNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5823E08C2E003E0FF4 /* Array+isNotEmpty.swift */; };
 		D333BD5F23E08C2E003E0FF4 /* String+isNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5923E08C2E003E0FF4 /* String+isNotEmpty.swift */; };
@@ -29,22 +27,27 @@
 		D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5B23E08C2E003E0FF4 /* Bool+Reverse.swift */; };
 		D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD5C23E08C2E003E0FF4 /* UIImage+Resizable.swift */; };
 		D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */; };
-		D33AA24823E51D12001AC8CC /* WriteDiaryContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33AA24723E51D12001AC8CC /* WriteDiaryContentViewController.swift */; };
 		D33AA24A23E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */; };
 		D364CA5423E45712004E6D20 /* WriteDiaryContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */; };
 		D364CA5623E458E3004E6D20 /* CloudStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5523E458E3004E6D20 /* CloudStorageClient.swift */; };
-		D364CA5823E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364CA5723E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift */; };
-		D37CE9C923E20A880037F5C3 /* FindDiaryModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9C823E20A880037F5C3 /* FindDiaryModelMock.swift */; };
 		D37CE9CB23E20AED0037F5C3 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CA23E20AED0037F5C3 /* Diary.swift */; };
 		D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CC23E20CC20037F5C3 /* AppError.swift */; };
-		D3B3DB0923E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0723E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift */; };
 		D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */; };
 		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
-		D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */; };
-		D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info.plist */; };
-		D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */; };
-		D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */; };
-		D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */; };
+		D3CB10C823E1634500413844 /* DiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* DiaryMapModel.swift */; };
+		D3CF607623E0844800299CF4 /* GoogleService-Info-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */; };
+		D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */; };
+		D3CF608123E086A500299CF4 /* DiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */; };
+		D3CF608423E0874700299CF4 /* DiaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608223E0874700299CF4 /* DiaryMapViewController.swift */; };
+		D3ECB41F2425DEBA00EF9A5B /* DiaryMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3ECB41E2425DEBA00EF9A5B /* DiaryMapViewController.storyboard */; };
+		D3EEB10A24262DC1009FC8FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB10924262DC1009FC8FB /* User.swift */; };
+		D3EEB10D24262EE5009FC8FB /* LocatiionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB10C24262EE5009FC8FB /* LocatiionManager.swift */; };
+		D3EEB10F24263032009FC8FB /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB10E24263032009FC8FB /* Color.xcassets */; };
+		D3EEB1112426314C009FC8FB /* DiaryListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB1102426314C009FC8FB /* DiaryListViewController.storyboard */; };
+		D3EEB1132426315C009FC8FB /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB1122426315C009FC8FB /* DiaryListViewController.swift */; };
+		D3EEB1152426327B009FC8FB /* TopBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB1142426327B009FC8FB /* TopBarViewController.swift */; };
+		D3EEB11724263294009FC8FB /* TopBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */; };
+		D3EEB1192426352A009FC8FB /* BottomActionBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */; };
 		D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */; };
 		D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
@@ -72,8 +75,11 @@
 		0358DEA95F3744C45BE84237 /* PlaceDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDiaryUITests.swift; sourceTree = "<group>"; };
 		03BF99C7407BE48DCD5DF0B0 /* Pods_PlaceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		067DD71BAE286A3C1C6BEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		22C52CBAB919F95B7F91A7EC /* Pods-PlaceDiary.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.develop.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.develop.xcconfig"; sourceTree = "<group>"; };
 		2DE0A266899AE89545943119 /* Pods-PlaceDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
+		317C14CA056BD3893AF360A4 /* Pods-PlaceDiaryTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.develop.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.develop.xcconfig"; sourceTree = "<group>"; };
 		47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A16A7F68EE7C31427F87B2A /* Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig"; sourceTree = "<group>"; };
 		524361A427CEAA09736F47AC /* PlaceDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiaryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE93A26929519A085F3040E /* Pods-PlaceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,17 +88,18 @@
 		7094190D10DF60F422A93301 /* Pods-PlaceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.release.xcconfig"; sourceTree = "<group>"; };
 		804B10657ADB5FAFC6C41ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83906A6140C45BA8D714DE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A18E9E548A14E145C4853DCC /* Pods-PlaceDiary.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.staging.xcconfig"; sourceTree = "<group>"; };
+		A3579551AA63A5DC1D34F2A7 /* Pods-PlaceDiaryTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.staging.xcconfig"; sourceTree = "<group>"; };
 		B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDiaryTests.swift; sourceTree = "<group>"; };
 		B8110B08AA635C3453AFBAF0 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary_PlaceDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1ECAD3E64CECB73CE304BA /* Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig"; sourceTree = "<group>"; };
 		BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3058ECE23E208EC00432D22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		D3058ED123E2097200432D22 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewModel.swift; sourceTree = "<group>"; };
 		D330E12123E31EC5004151B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D333BD4123E08839003E0FF4 /* FirestoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 		D333BD4223E08839003E0FF4 /* FirestoreCollcetionName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreCollcetionName.swift; sourceTree = "<group>"; };
 		D333BD4323E08839003E0FF4 /* AuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
-		D333BD4923E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModelTests.swift; sourceTree = "<group>"; };
 		D333BD5723E08C2E003E0FF4 /* ClassName+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClassName+Extention.swift"; sourceTree = "<group>"; };
 		D333BD5823E08C2E003E0FF4 /* Array+isNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+isNotEmpty.swift"; sourceTree = "<group>"; };
 		D333BD5923E08C2E003E0FF4 /* String+isNotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+isNotEmpty.swift"; sourceTree = "<group>"; };
@@ -100,22 +107,27 @@
 		D333BD5B23E08C2E003E0FF4 /* Bool+Reverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Reverse.swift"; sourceTree = "<group>"; };
 		D333BD5C23E08C2E003E0FF4 /* UIImage+Resizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizable.swift"; sourceTree = "<group>"; };
 		D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		D33AA24723E51D12001AC8CC /* WriteDiaryContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryContentViewController.swift; sourceTree = "<group>"; };
 		D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryChoosePlaceModel.swift; sourceTree = "<group>"; };
 		D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryContentModel.swift; sourceTree = "<group>"; };
 		D364CA5523E458E3004E6D20 /* CloudStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageClient.swift; sourceTree = "<group>"; };
-		D364CA5723E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryChoosePlaceViewModel.swift; sourceTree = "<group>"; };
-		D37CE9C823E20A880037F5C3 /* FindDiaryModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryModelMock.swift; sourceTree = "<group>"; };
 		D37CE9CA23E20AED0037F5C3 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		D37CE9CC23E20CC20037F5C3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		D3B3DB0723E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryChoosePlaceViewController.swift; sourceTree = "<group>"; };
 		D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAnnotation.swift; sourceTree = "<group>"; };
 		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDiaryMapModel.swift; sourceTree = "<group>"; };
-		D3CF607523E0844800299CF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
-		D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewModel.swift; sourceTree = "<group>"; };
-		D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDiaryMapViewController.swift; sourceTree = "<group>"; };
+		D3CB10C723E1634500413844 /* DiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryMapModel.swift; sourceTree = "<group>"; };
+		D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-release.plist"; sourceTree = "<group>"; };
+		D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-develop.plist"; sourceTree = "<group>"; };
+		D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMapViewModel.swift; sourceTree = "<group>"; };
+		D3CF608223E0874700299CF4 /* DiaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMapViewController.swift; sourceTree = "<group>"; };
+		D3ECB41E2425DEBA00EF9A5B /* DiaryMapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryMapViewController.storyboard; sourceTree = "<group>"; };
+		D3EEB10924262DC1009FC8FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D3EEB10C24262EE5009FC8FB /* LocatiionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatiionManager.swift; sourceTree = "<group>"; };
+		D3EEB10E24263032009FC8FB /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		D3EEB1102426314C009FC8FB /* DiaryListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryListViewController.storyboard; sourceTree = "<group>"; };
+		D3EEB1122426315C009FC8FB /* DiaryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewController.swift; sourceTree = "<group>"; };
+		D3EEB1142426327B009FC8FB /* TopBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarViewController.swift; sourceTree = "<group>"; };
+		D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopBarViewController.storyboard; sourceTree = "<group>"; };
+		D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomActionBarViewController.storyboard; sourceTree = "<group>"; };
 		D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewController.swift; sourceTree = "<group>"; };
 		D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -166,8 +178,8 @@
 		0B213D30C16A8F4DB5D80660 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */,
-				D3CF607523E0844800299CF4 /* GoogleService-Info.plist */,
+				D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */,
+				D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */,
 				067DD71BAE286A3C1C6BEAB0 /* Info.plist */,
 			);
 			path = Plist;
@@ -200,7 +212,6 @@
 			children = (
 				83906A6140C45BA8D714DE59 /* Info.plist */,
 				B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */,
-				D333BD4923E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift */,
 			);
 			path = PlaceDiaryTests;
 			sourceTree = "<group>";
@@ -217,20 +228,13 @@
 		C9DE21808958565AE8728756 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */,
+				D3EEB10E24263032009FC8FB /* Color.xcassets */,
 				6F51C6773E6DC5AFEEE53523 /* Image.xcassets */,
+				5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */,
 				0B213D30C16A8F4DB5D80660 /* Plist */,
+				D3ECB41D2425DE7C00EF9A5B /* Storyboard */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		D3058ED023E2096400432D22 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				D3058ED123E2097200432D22 /* LocationManager.swift */,
-				D37CE9C823E20A880037F5C3 /* FindDiaryModelMock.swift */,
-			);
-			path = Mock;
 			sourceTree = "<group>";
 		};
 		D333BD4023E0880B003E0FF4 /* Extensions */ = {
@@ -261,6 +265,7 @@
 			children = (
 				D3CB10C523E1632600413844 /* Entity.swift */,
 				D37CE9CA23E20AED0037F5C3 /* Diary.swift */,
+				D3EEB10924262DC1009FC8FB /* User.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -273,32 +278,31 @@
 				D3506A0823E1FD730003BCFD /* Components */,
 				D3CB10C423E1631E00413844 /* Data */,
 				D333BD4023E0880B003E0FF4 /* Extensions */,
-				D3058ED023E2096400432D22 /* Mock */,
+				D3EEB10B24262EA4009FC8FB /* Manager */,
 				D3CF607C23E085B500299CF4 /* Model */,
-				D3CF607923E0859600299CF4 /* UI */,
+				D3CF607923E0859600299CF4 /* ViewController */,
 				D3CF607A23E0859A00299CF4 /* ViewModel */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		D3CF607923E0859600299CF4 /* UI */ = {
+		D3CF607923E0859600299CF4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */,
-				D3CF608223E0874700299CF4 /* FindDiaryMapViewController.swift */,
+				D3CF608223E0874700299CF4 /* DiaryMapViewController.swift */,
 				D330E12123E31EC5004151B6 /* HomeViewController.swift */,
-				D3B3DB0723E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift */,
-				D33AA24723E51D12001AC8CC /* WriteDiaryContentViewController.swift */,
+				D3EEB1122426315C009FC8FB /* DiaryListViewController.swift */,
+				D3EEB1142426327B009FC8FB /* TopBarViewController.swift */,
 			);
-			path = UI;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		D3CF607A23E0859A00299CF4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D3CF608023E086A500299CF4 /* FindDiaryMapViewModel.swift */,
+				D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */,
 				D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */,
-				D364CA5723E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -306,7 +310,7 @@
 		D3CF607C23E085B500299CF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D3CB10C723E1634500413844 /* FindDiaryMapModel.swift */,
+				D3CB10C723E1634500413844 /* DiaryMapModel.swift */,
 				D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */,
 				D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */,
 			);
@@ -335,6 +339,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		D3ECB41D2425DE7C00EF9A5B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D3ECB41E2425DEBA00EF9A5B /* DiaryMapViewController.storyboard */,
+				D3EEB1102426314C009FC8FB /* DiaryListViewController.storyboard */,
+				D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */,
+				D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D3EEB10B24262EA4009FC8FB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D3EEB10C24262EE5009FC8FB /* LocatiionManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		D6F9A714CFF0AEB0C6B944CB /* PlaceDiary */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +376,12 @@
 				E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */,
 				47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */,
 				2DE0A266899AE89545943119 /* Pods-PlaceDiaryTests.release.xcconfig */,
+				22C52CBAB919F95B7F91A7EC /* Pods-PlaceDiary.develop.xcconfig */,
+				A18E9E548A14E145C4853DCC /* Pods-PlaceDiary.staging.xcconfig */,
+				4A16A7F68EE7C31427F87B2A /* Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig */,
+				BC1ECAD3E64CECB73CE304BA /* Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig */,
+				317C14CA056BD3893AF360A4 /* Pods-PlaceDiaryTests.develop.xcconfig */,
+				A3579551AA63A5DC1D34F2A7 /* Pods-PlaceDiaryTests.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -389,14 +418,13 @@
 				49DC9BECDE0365E8612EBD39 /* Resources */,
 				8AE1A7EDD9592DA382CBD72F /* Frameworks */,
 				BEA34D84C815ADE537071D12 /* [CP] Embed Pods Frameworks */,
+				D3ECB4182425DD7D00EF9A5B /* GoogleService-Info */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PlaceDiary;
-			packageProductDependencies = (
-			);
 			productName = PlaceDiary;
 			productReference = EF93F60EF3AE975EBA00B916 /* PlaceDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -445,8 +473,6 @@
 				Base,
 			);
 			mainGroup = 22BF559DE1FED298713890EB;
-			packageReferences = (
-			);
 			productRefGroup = 0470ECAA1F449EA2D67E4D4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -463,10 +489,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CF607623E0844800299CF4 /* GoogleService-Info.plist in Resources */,
-				D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */,
+				D3CF607623E0844800299CF4 /* GoogleService-Info-release.plist in Resources */,
+				D3EEB1112426314C009FC8FB /* DiaryListViewController.storyboard in Resources */,
+				D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */,
+				D3ECB41F2425DEBA00EF9A5B /* DiaryMapViewController.storyboard in Resources */,
+				D3EEB1192426352A009FC8FB /* BottomActionBarViewController.storyboard in Resources */,
 				EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */,
+				D3EEB11724263294009FC8FB /* TopBarViewController.storyboard in Resources */,
 				CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */,
+				D3EEB10F24263032009FC8FB /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +604,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3ECB4182425DD7D00EF9A5B /* GoogleService-Info */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "GoogleService-Info";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-develop.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
+		};
 		D3F2A89E23E1EB53008CDA97 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,13 +668,16 @@
 			files = (
 				D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */,
 				D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */,
+				D3EEB10D24262EE5009FC8FB /* LocatiionManager.swift in Sources */,
 				D333BD5E23E08C2E003E0FF4 /* Array+isNotEmpty.swift in Sources */,
 				D37CE9CB23E20AED0037F5C3 /* Diary.swift in Sources */,
 				D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */,
-				D3CF608423E0874700299CF4 /* FindDiaryMapViewController.swift in Sources */,
+				D3CF608423E0874700299CF4 /* DiaryMapViewController.swift in Sources */,
 				596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */,
 				D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */,
+				D3EEB10A24262DC1009FC8FB /* User.swift in Sources */,
 				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
+				D3EEB1152426327B009FC8FB /* TopBarViewController.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
 				D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
@@ -636,19 +688,15 @@
 				D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */,
 				D364CA5623E458E3004E6D20 /* CloudStorageClient.swift in Sources */,
 				78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */,
-				D3CB10C823E1634500413844 /* FindDiaryMapModel.swift in Sources */,
+				D3CB10C823E1634500413844 /* DiaryMapModel.swift in Sources */,
 				D3CB10C623E1632600413844 /* Entity.swift in Sources */,
-				D3058ED223E2097200432D22 /* LocationManager.swift in Sources */,
-				D3B3DB0923E3D11B0047E60B /* WriteDiaryChoosePlaceViewController.swift in Sources */,
-				D364CA5823E45CEE004E6D20 /* WriteDiaryChoosePlaceViewModel.swift in Sources */,
 				D364CA5423E45712004E6D20 /* WriteDiaryContentModel.swift in Sources */,
-				D37CE9C923E20A880037F5C3 /* FindDiaryModelMock.swift in Sources */,
 				D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */,
 				D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */,
 				D333BD5F23E08C2E003E0FF4 /* String+isNotEmpty.swift in Sources */,
-				D33AA24823E51D12001AC8CC /* WriteDiaryContentViewController.swift in Sources */,
 				D333BD6223E08C2E003E0FF4 /* UIImage+Resizable.swift in Sources */,
-				D3CF608123E086A500299CF4 /* FindDiaryMapViewModel.swift in Sources */,
+				D3EEB1132426315C009FC8FB /* DiaryListViewController.swift in Sources */,
+				D3CF608123E086A500299CF4 /* DiaryMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +712,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D333BD4A23E089E1003E0FF4 /* FindDiaryMapViewModelTests.swift in Sources */,
 				D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,9 +743,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1CDEDF9BCFB803DBACA9304A /* Debug */ = {
+		1CDEDF9BCFB803DBACA9304A /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F37CC19713B2156FC9B90E4C /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */;
+			baseConfigurationReference = 4A16A7F68EE7C31427F87B2A /* Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -714,9 +761,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PlaceDiary;
 			};
-			name = Debug;
+			name = Develop;
 		};
-		256D9FDA73744DB437B8012B /* Debug */ = {
+		256D9FDA73744DB437B8012B /* Develop */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -774,11 +821,11 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
-			name = Debug;
+			name = Develop;
 		};
-		58D838ABC623E8D7E2401DA5 /* Debug */ = {
+		58D838ABC623E8D7E2401DA5 /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */;
+			baseConfigurationReference = 317C14CA056BD3893AF360A4 /* Pods-PlaceDiaryTests.develop.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2X6AD4W323;
@@ -794,7 +841,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceDiary.app/PlaceDiary";
 				TEST_TARGET_NAME = PlaceDiary;
 			};
-			name = Debug;
+			name = Develop;
 		};
 		7F0E2D0B0EEE1DE701B85EEC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -870,9 +917,9 @@
 			};
 			name = Release;
 		};
-		BBF84FA4254F80DEBBC4FBB5 /* Debug */ = {
+		BBF84FA4254F80DEBBC4FBB5 /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FE93A26929519A085F3040E /* Pods-PlaceDiary.debug.xcconfig */;
+			baseConfigurationReference = 22C52CBAB919F95B7F91A7EC /* Pods-PlaceDiary.develop.xcconfig */;
 			buildSettings = {
 				APP_ID_SUFFIX = "-debug";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -890,7 +937,129 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Develop;
+		};
+		D3ECB4192425DE2D00EF9A5B /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Staging;
+		};
+		D3ECB41A2425DE2D00EF9A5B /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A18E9E548A14E145C4853DCC /* Pods-PlaceDiary.staging.xcconfig */;
+			buildSettings = {
+				APP_ID_SUFFIX = "-debug";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2X6AD4W323;
+				INFOPLIST_FILE = PlaceDiary/Resource/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.fummicc1.PlaceDiary$(APP_ID_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		D3ECB41B2425DE2D00EF9A5B /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3579551AA63A5DC1D34F2A7 /* Pods-PlaceDiaryTests.staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2X6AD4W323;
+				INFOPLIST_FILE = PlaceDiaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PlaceDiaryTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceDiary.app/PlaceDiary";
+				TEST_TARGET_NAME = PlaceDiary;
+			};
+			name = Staging;
+		};
+		D3ECB41C2425DE2D00EF9A5B /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC1ECAD3E64CECB73CE304BA /* Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 2X6AD4W323;
+				INFOPLIST_FILE = PlaceDiaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PlaceDiaryUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PlaceDiary;
+			};
+			name = Staging;
 		};
 		E5F358B0DF8107AB895DF6B3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -938,38 +1107,42 @@
 		562B1742B2C69707BA4DFDF7 /* Build configuration list for PBXNativeTarget "PlaceDiaryUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1CDEDF9BCFB803DBACA9304A /* Debug */,
+				1CDEDF9BCFB803DBACA9304A /* Develop */,
+				D3ECB41C2425DE2D00EF9A5B /* Staging */,
 				E5F358B0DF8107AB895DF6B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Release;
 		};
 		A72E73707F39A1C8B325912C /* Build configuration list for PBXProject "PlaceDiary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				256D9FDA73744DB437B8012B /* Debug */,
+				256D9FDA73744DB437B8012B /* Develop */,
+				D3ECB4192425DE2D00EF9A5B /* Staging */,
 				7F0E2D0B0EEE1DE701B85EEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		CD5B74065B086120ECB97EED /* Build configuration list for PBXNativeTarget "PlaceDiaryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58D838ABC623E8D7E2401DA5 /* Debug */,
+				58D838ABC623E8D7E2401DA5 /* Develop */,
+				D3ECB41B2425DE2D00EF9A5B /* Staging */,
 				F723CC5A0CC0443A24468FEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Release;
 		};
 		F3F3B8AD7FD8C01F23780F67 /* Build configuration list for PBXNativeTarget "PlaceDiary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBF84FA4254F80DEBBC4FBB5 /* Debug */,
+				BBF84FA4254F80DEBBC4FBB5 /* Develop */,
+				D3ECB41A2425DE2D00EF9A5B /* Staging */,
 				BBE5CC1037DF3FC98F66C3FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

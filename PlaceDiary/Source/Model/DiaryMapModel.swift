@@ -9,12 +9,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol FindDiaryMapModel {
+protocol DiaryMapModel {
 	func fetchDiaries() -> Single<[Entity.Diary]>
 	func listenDiaries() -> Single<[Entity.Diary]>
 }
 
-class FindDiaryMapModelImpl: FindDiaryMapModel {
+class DiaryMapModelImpl: DiaryMapModel {
 	
 	private let auth: AuthRepository
 	private let firestore: FirestoreRepository

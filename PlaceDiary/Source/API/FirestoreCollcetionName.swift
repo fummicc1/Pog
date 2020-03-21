@@ -10,7 +10,9 @@ import Foundation
 enum FirestoreCollcetionName: String {
 	#if DEBUG
 	case diaries = "diaries_debug"
+    case users = "users_debug"
 	#else
+    case users
 	case diaries
 	#endif
 }

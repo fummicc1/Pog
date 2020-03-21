@@ -1,5 +1,5 @@
 //
-//  FindDiaryMapViewController.swift
+//  DiaryMapViewController.swift
 //  PlaceDiary
 //
 //  Created by Fumiya Tanaka on 2020/01/29.
@@ -10,36 +10,29 @@ import MapKit
 import RxMKMapView
 import SnapKit
 
-class FindDiaryMapViewController: BaseViewController {
+class DiaryMapViewController: BaseViewController {
 	
-	private var mapView: MKMapView = {
-		let mapView = MKMapView()
-		mapView.showsBuildings = false
-		mapView.showsUserLocation = true
-		return mapView
-	}()
+	@IBOutlet private weak var mapView: MKMapView!
 	
-	private let viewModel: FindDiaryMapViewModel
-	
-	init(viewModel: FindDiaryMapViewModel) {
-		self.viewModel = viewModel
-		super.init(nibName: nil, bundle: nil)
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
+	private let viewModel: DiaryMapViewModel
+    
+    @available(iOS 13, *)
+    init?(viewModel: DiaryMapViewModel = DiaryMapViewModelImpl(), coder: NSCoder) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        viewModel = DiaryMapViewModelImpl()
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.addSubview(mapView)
-		mapView.snp.makeConstraints { maker in
-			maker.top.leading.trailing.bottom.equalTo(self.view)
-		}
 		setRxMap()
 		bindViewModel()
     }
-	
+    
 	private func setRxMap() {
 		mapView.rx.setDelegate(self).disposed(by: disposeBag)
 	}
@@ -52,7 +45,7 @@ class FindDiaryMapViewController: BaseViewController {
 	}
 }
 
-extension FindDiaryMapViewController: MKMapViewDelegate {
+extension DiaryMapViewController: MKMapViewDelegate {
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		if let annotation = annotation as? DiaryAnnotation {
 			let view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: DiaryAnnotation.className)
