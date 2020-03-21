@@ -90,7 +90,7 @@ class HomeViewController: BaseViewController {
         }
         
         diaryMapViewController.view.snp.makeConstraints { maker in
-            maker.trailing.equalTo(self.view)
+            maker.leading.equalTo(diaryListViewController.view.snp.trailing)
             maker.width.equalTo(self.view)
             maker.top.equalTo(topBarViewController.view.snp.bottom)
             maker.bottom.equalTo(bottomActionBarViewController.view.snp.top)
@@ -124,36 +124,26 @@ class HomeViewController: BaseViewController {
             .selectingViewControllerName
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] name in
+                guard let self = self else {
+                    assert(false)
+                    return
+                }
                 switch name {
                 case DiaryMapViewController.className:
-                    self?.diaryListViewController?.view.snp.updateConstraints({ maker in
-                        maker.width.equalTo(0)
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                        self.diaryListViewController?.view.snp.updateConstraints({ maker in
+                            maker.leading.equalTo(self.view).offset(-UIScreen.main.bounds.width)
+                        })
+                        self.view.layoutIfNeeded()
                     })
-                    self?.diaryMapViewController?.view.snp.updateConstraints({ maker in
-                        guard let self = self else {
-                            assert(false)
-                            return
-                        }
-                        maker.width.equalTo(self.view)
-                    })
-                    UIView.animate(withDuration: 0.3) { [weak self] in
-                        self?.view.layoutIfNeeded()
-                    }
                     
                 case DiaryListViewController.className:
-                    self?.diaryListViewController?.view.snp.updateConstraints({ maker in
-                        maker.width.equalTo(0)
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                        self.diaryListViewController?.view.snp.updateConstraints({ maker in
+                            maker.leading.equalTo(self.view)
+                        })
+                        self.view.layoutIfNeeded()
                     })
-                    self?.diaryListViewController?.view.snp.updateConstraints({ maker in
-                        guard let self = self else {
-                            assert(false)
-                            return
-                        }
-                        maker.width.equalTo(self.view)
-                    })
-                    UIView.animate(withDuration: 0.3) { [weak self] in
-                        self?.view.layoutIfNeeded()
-                    }
                     
                 case MyProfileViewController.className:
                     break
