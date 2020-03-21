@@ -3,4 +3,54 @@
    uuid = "A6E01C10-9C7D-4CAF-AB03-0A186A5F35D3"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0074229-8C97-4621-A5FA-CF8123599752"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SnapKit/Source/Constraint.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "activateIfNeeded(updatingExisting:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0074229-8C97-4621-A5FA-CF8123599752 - 37c074c72f689085"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SnapKit.Constraint.activateIfNeeded(updatingExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "SnapKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fumiyatanaka/SwiftDir/Mine/PlaceDiary/Pods/SnapKit/Source/Constraint.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "318"
+                  endingLineNumber = "318"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "D0074229-8C97-4621-A5FA-CF8123599752 - 37c074c72f689085"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SnapKit.Constraint.activateIfNeeded(updatingExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "SnapKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fumiyatanaka/SwiftDir/Mine/PlaceDiary/Pods/SnapKit/Source/Constraint.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "318"
+                  endingLineNumber = "318"
+                  offsetFromSymbolStart = "584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

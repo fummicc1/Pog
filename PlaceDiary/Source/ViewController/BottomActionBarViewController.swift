@@ -9,9 +9,11 @@ import UIKit
 
 class BottomActionBarViewController: BaseViewController {
 	
-	@IBOutlet private weak var stackView: UIStackView?
-	
-	private let viewModel: BottomActionBarViewModel
+	@IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var myProfileButton: UIButton!
+    
+    let viewModel: BottomActionBarViewModel
 	
 	init(viewModel: BottomActionBarViewModel = BottomActionBarViewModelImpl()) {
 		self.viewModel = viewModel
@@ -28,4 +30,20 @@ class BottomActionBarViewController: BaseViewController {
         viewModel = BottomActionBarViewModelImpl()
         super.init(coder: coder)
 	}
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
+        listenViewModel()
+    }
+    
+    override func listenViewModel() {
+    }
+    
+    override func bindViewModel() {
+        viewModel.configure(
+            searchButtonTapped: searchButton.rx.tap.asObservable(),
+            myProfileButtonTapped: myProfileButton.rx.tap.asObservable()
+        )
+    }
 }

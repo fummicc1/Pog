@@ -31,13 +31,17 @@ class DiaryMapViewController: BaseViewController {
         super.viewDidLoad()
 		setRxMap()
 		bindViewModel()
+        listenViewModel()
     }
     
 	private func setRxMap() {
 		mapView.rx.setDelegate(self).disposed(by: disposeBag)
 	}
 	
-	private func bindViewModel() {
+    override func listenViewModel() {
+    }
+    
+    override func bindViewModel() {
 		viewModel.diariesObservable.subscribe(onNext: { [unowned self] diaries in
 			let annotations = diaries.map { DiaryAnnotation(diary: $0) }
 			self.mapView.addAnnotations(annotations)

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,18 +13,17 @@
             <objects>
                 <viewController id="i1Q-Ee-H2y" customClass="TopBarViewController" customModule="PlaceDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lAh-4f-7W8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-Yh-4w2">
-                                <rect key="frame" x="107" y="12" width="200" height="41"/>
+                                <rect key="frame" x="107" y="8.5" width="200" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="NDC-Nf-f7I"/>
                                     <constraint firstAttribute="width" constant="200" id="rGn-Kq-uAl"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Map"/>
                                     <segment title="List"/>
+                                    <segment title="Map"/>
                                 </segments>
                                 <color key="tintColor" name="Tint"/>
                                 <color key="selectedSegmentTintColor" name="Tint"/>
@@ -34,8 +34,9 @@
                             <constraint firstItem="kLr-Yh-4w2" firstAttribute="centerX" secondItem="lAh-4f-7W8" secondAttribute="centerX" id="QQ9-do-gmS"/>
                             <constraint firstItem="kLr-Yh-4w2" firstAttribute="centerY" secondItem="lAh-4f-7W8" secondAttribute="centerY" id="nOb-Aj-8eq"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="tQW-a1-Cxp"/>
                     </view>
-                    <size key="freeformSize" width="414" height="64"/>
+                    <size key="freeformSize" width="414" height="48"/>
                     <connections>
                         <outlet property="segmentedControl" destination="kLr-Yh-4w2" id="t86-Pe-x81"/>
                     </connections>
