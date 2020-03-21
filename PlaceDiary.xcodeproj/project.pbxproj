@@ -48,6 +48,10 @@
 		D3EEB1152426327B009FC8FB /* TopBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB1142426327B009FC8FB /* TopBarViewController.swift */; };
 		D3EEB11724263294009FC8FB /* TopBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */; };
 		D3EEB1192426352A009FC8FB /* BottomActionBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */; };
+		D3EEB11B24263F53009FC8FB /* TopBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB11A24263F53009FC8FB /* TopBarViewModel.swift */; };
+		D3EEB11D24263F8D009FC8FB /* DiaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB11C24263F8D009FC8FB /* DiaryListViewModel.swift */; };
+		D3EEB11F24265188009FC8FB /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */; };
+		D3EEB1212426519A009FC8FB /* MyProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */; };
 		D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */; };
 		D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
@@ -128,6 +132,10 @@
 		D3EEB1142426327B009FC8FB /* TopBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarViewController.swift; sourceTree = "<group>"; };
 		D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopBarViewController.storyboard; sourceTree = "<group>"; };
 		D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomActionBarViewController.storyboard; sourceTree = "<group>"; };
+		D3EEB11A24263F53009FC8FB /* TopBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarViewModel.swift; sourceTree = "<group>"; };
+		D3EEB11C24263F8D009FC8FB /* DiaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewModel.swift; sourceTree = "<group>"; };
+		D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfileViewController.storyboard; sourceTree = "<group>"; };
 		D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewController.swift; sourceTree = "<group>"; };
 		D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -294,6 +302,7 @@
 				D330E12123E31EC5004151B6 /* HomeViewController.swift */,
 				D3EEB1122426315C009FC8FB /* DiaryListViewController.swift */,
 				D3EEB1142426327B009FC8FB /* TopBarViewController.swift */,
+				D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -303,6 +312,8 @@
 			children = (
 				D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */,
 				D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */,
+				D3EEB11A24263F53009FC8FB /* TopBarViewModel.swift */,
+				D3EEB11C24263F8D009FC8FB /* DiaryListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -346,6 +357,7 @@
 				D3EEB1102426314C009FC8FB /* DiaryListViewController.storyboard */,
 				D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */,
 				D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */,
+				D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -494,6 +506,7 @@
 				D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */,
 				D3ECB41F2425DEBA00EF9A5B /* DiaryMapViewController.storyboard in Resources */,
 				D3EEB1192426352A009FC8FB /* BottomActionBarViewController.storyboard in Resources */,
+				D3EEB1212426519A009FC8FB /* MyProfileViewController.storyboard in Resources */,
 				EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */,
 				D3EEB11724263294009FC8FB /* TopBarViewController.storyboard in Resources */,
 				CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */,
@@ -670,6 +683,7 @@
 				D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */,
 				D3EEB10D24262EE5009FC8FB /* LocatiionManager.swift in Sources */,
 				D333BD5E23E08C2E003E0FF4 /* Array+isNotEmpty.swift in Sources */,
+				D3EEB11B24263F53009FC8FB /* TopBarViewModel.swift in Sources */,
 				D37CE9CB23E20AED0037F5C3 /* Diary.swift in Sources */,
 				D333BD4523E0883A003E0FF4 /* FirestoreCollcetionName.swift in Sources */,
 				D3CF608423E0874700299CF4 /* DiaryMapViewController.swift in Sources */,
@@ -679,12 +693,14 @@
 				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
 				D3EEB1152426327B009FC8FB /* TopBarViewController.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
+				D3EEB11F24265188009FC8FB /* MyProfileViewController.swift in Sources */,
 				D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
 				D33AA24A23E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift in Sources */,
 				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				D333BD6023E08C2E003E0FF4 /* Array+doesNotContain.swift in Sources */,
 				D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */,
+				D3EEB11D24263F8D009FC8FB /* DiaryListViewModel.swift in Sources */,
 				D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */,
 				D364CA5623E458E3004E6D20 /* CloudStorageClient.swift in Sources */,
 				78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */,
