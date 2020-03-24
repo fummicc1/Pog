@@ -61,54 +61,54 @@ class HomeViewController: UIViewController, BaseViewController {
         })!
     }()
     
+    private weak var diaryContentsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //MARK: Setup View
-        view.backgroundColor = UIColor.systemBackground
-        guard
-            let diaryMapViewController = diaryMapViewController,
-            let bottomActionBarViewController = bottomActionBarViewController,
-            let topBarViewController = topBarViewController,
-            let diaryListViewController = diaryListViewController,
-            let myProfileViewController = myProfileViewController else {
-                return
-        }
+        let diaryContentsView = UIView()
+        diaryContentsView.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBackground
         addChild(diaryListViewController)
         addChild(diaryMapViewController)
         addChild(bottomActionBarViewController)
         addChild(topBarViewController)
         addChild(myProfileViewController)
-        view.addSubview(diaryListViewController.view)
-        view.addSubview(diaryMapViewController.view)
+        view.addSubview(diaryContentsView)
         view.addSubview(bottomActionBarViewController.view)
-        view.addSubview(topBarViewController.view)
         view.addSubview(myProfileViewController.view)
+        diaryContentsView.addSubview(diaryListViewController.view)
+        diaryContentsView.addSubview(diaryMapViewController.view)
+        diaryContentsView.addSubview(topBarViewController.view)
         diaryListViewController.didMove(toParent: self)
         diaryMapViewController.didMove(toParent: self)
         bottomActionBarViewController.didMove(toParent: self)
         topBarViewController.didMove(toParent: self)
         myProfileViewController.didMove(toParent: self)
+        self.diaryContentsView = diaryContentsView
         
         //MARK: Setup LayoutConstraints
+        diaryContentsView.snp.makeConstraints { maker in
+            maker.leading.trailing.equalTo(self.view)
+            maker.top.equalTo(self.view.safeAreaLayoutGuide)
+            maker.bottom.equalTo(self.bottomActionBarViewController.view.snp.top)
+        }
+        
         topBarViewController.view.snp.makeConstraints { maker in
-            maker.leading.trailing.equalToSuperview()
-            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            maker.top.leading.trailing.equalToSuperview()
             maker.height.equalTo(48)
         }
         
         diaryMapViewController.view.snp.makeConstraints { maker in
-            maker.leading.equalTo(diaryListViewController.view.snp.trailing)
-            maker.width.equalTo(self.view)
+            maker.leading.bottom.width.equalToSuperview()
             maker.top.equalTo(topBarViewController.view.snp.bottom)
-            maker.bottom.equalTo(bottomActionBarViewController.view.snp.top)
         }
         
         diaryListViewController.view.snp.makeConstraints { maker in
-            maker.leading.equalTo(self.view)
-            maker.width.equalTo(self.view)
+            maker.leading.width.equalToSuperview()
             maker.top.equalTo(topBarViewController.view.snp.bottom)
-            maker.bottom.equalTo(bottomActionBarViewController.view.snp.top)
+            maker.bottom.equalToSuperview()
         }
         
         bottomActionBarViewController.view.snp.makeConstraints { maker in
@@ -118,8 +118,8 @@ class HomeViewController: UIViewController, BaseViewController {
         }
         
         myProfileViewController.view.snp.makeConstraints { maker in
-            maker.top.bottom.leading.equalTo(self.view)
-            maker.width.equalTo(0)
+            maker.top.leading.trailing.equalToSuperview()
+            maker.bottom.equalTo(self.bottomActionBarViewController.view.snp.top)
         }
         
         //MARK: Call Configure Method
@@ -142,23 +142,15 @@ class HomeViewController: UIViewController, BaseViewController {
                 }
                 switch name {
                 case DiaryMapViewController.className:
-                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                        self.diaryListViewController?.view.snp.updateConstraints({ maker in
-                            maker.leading.equalTo(self.view).offset(-UIScreen.main.bounds.width)
-                        })
-                        self.view.layoutIfNeeded()
-                    })
+                    self.diaryContentsView.sendSubviewToBack(self.diaryListViewController.view)
+                    self.view.sendSubviewToBack(self.myProfileViewController.view)
                     
                 case DiaryListViewController.className:
-                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                        self.diaryListViewController?.view.snp.updateConstraints({ maker in
-                            maker.leading.equalTo(self.view)
-                        })
-                        self.view.layoutIfNeeded()
-                    })
+                    self.diaryContentsView.sendSubviewToBack(self.diaryMapViewController.view)
+                    self.view.sendSubviewToBack(self.myProfileViewController.view)
                     
                 case MyProfileViewController.className:
-                    break
+                    self.view.bringSubviewToFront(self.myProfileViewController.view)
                     
                 default:
                     break
