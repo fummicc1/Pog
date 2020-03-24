@@ -20,7 +20,7 @@ class DiaryMapViewController: UIViewController, BaseViewController {
     
 	@IBOutlet private weak var mapView: MKMapView!
 	
-	private let viewModel: DiaryMapViewModel
+	let viewModel: DiaryMapViewModel
     
     var disposeBag: DisposeBag = DisposeBag()
     

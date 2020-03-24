@@ -14,6 +14,7 @@ final class BottomActionBarViewModel: BaseViewModel {
     typealias Input = _Input
     
     struct _Input {
+        let currentSelectingViewControllerNameByTopBar: Observable<String>
         let searchButtonTapped: Observable<Void>
         let myProfileButtonTapped: Observable<Void>
     }
@@ -36,6 +37,12 @@ final class BottomActionBarViewModel: BaseViewModel {
         
         input.myProfileButtonTapped
             .map { _ in MyProfileViewController.className }
+            .bind(to: selectingViewControllerNameRelay)
+            .disposed(by: disposeBag)
+        
+        input
+            .currentSelectingViewControllerNameByTopBar
+            .distinctUntilChanged()
             .bind(to: selectingViewControllerNameRelay)
             .disposed(by: disposeBag)
     }

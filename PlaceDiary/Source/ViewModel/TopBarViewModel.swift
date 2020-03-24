@@ -18,9 +18,9 @@ class TopBarViewModel: BaseViewModel {
         let viewControllerNameChangedByTabBar: Observable<String>
     }
     
-    private let currentSelectingDiaryViewControllerNameRelay: PublishRelay<String> = .init()
-    var currentSelectingDiaryViewControllerName: Observable<String> {
-        currentSelectingDiaryViewControllerNameRelay.asObservable()
+    private let currentSelectingDiaryViewControllerNameByTopBarRelay: PublishRelay<String> = .init()
+    var currentSelectingDiaryViewControllerNameByTopBar: Observable<String> {
+        currentSelectingDiaryViewControllerNameByTopBarRelay.asObservable()
     }
     
     var disposeBag: DisposeBag = DisposeBag()
@@ -36,12 +36,12 @@ class TopBarViewModel: BaseViewModel {
                 }
                 fatalError()
             })
-            .bind(to: currentSelectingDiaryViewControllerNameRelay)
+            .bind(to: currentSelectingDiaryViewControllerNameByTopBarRelay)
             .disposed(by: disposeBag)
         
         input
             .viewControllerNameChangedByTabBar
-            .bind(to: currentSelectingDiaryViewControllerNameRelay)
+            .bind(to: currentSelectingDiaryViewControllerNameByTopBarRelay)
             .disposed(by: disposeBag)
     }
 }

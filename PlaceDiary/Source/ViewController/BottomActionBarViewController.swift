@@ -13,6 +13,7 @@ class BottomActionBarViewController: UIViewController, BaseViewController {
     typealias Input = _Input
     
     struct _Input {
+        let currentSelectingViewControllerNameByTopBar: Observable<String>
     }
     
 	@IBOutlet private weak var stackView: UIStackView!
@@ -45,6 +46,7 @@ class BottomActionBarViewController: UIViewController, BaseViewController {
     func configure(input: Input) {
         viewModel.configure(
             input: BottomActionBarViewModel.Input(
+                currentSelectingViewControllerNameByTopBar: input.currentSelectingViewControllerNameByTopBar,
                 searchButtonTapped: diariesButton.rx.tap.asObservable(),
                 myProfileButtonTapped: myProfileButton.rx.tap.asObservable()
             )
