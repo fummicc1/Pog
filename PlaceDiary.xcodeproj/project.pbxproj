@@ -649,7 +649,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -761,7 +761,7 @@
 /* Begin XCBuildConfiguration section */
 		1CDEDF9BCFB803DBACA9304A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A16A7F68EE7C31427F87B2A /* Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig */;
+			baseConfigurationReference = F37CC19713B2156FC9B90E4C /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -841,7 +841,7 @@
 		};
 		58D838ABC623E8D7E2401DA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 317C14CA056BD3893AF360A4 /* Pods-PlaceDiaryTests.develop.xcconfig */;
+			baseConfigurationReference = 47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2X6AD4W323;
@@ -935,7 +935,7 @@
 		};
 		BBF84FA4254F80DEBBC4FBB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22C52CBAB919F95B7F91A7EC /* Pods-PlaceDiary.develop.xcconfig */;
+			baseConfigurationReference = 5FE93A26929519A085F3040E /* Pods-PlaceDiary.debug.xcconfig */;
 			buildSettings = {
 				APP_ID_SUFFIX = "-debug";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

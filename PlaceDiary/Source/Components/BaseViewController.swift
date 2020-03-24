@@ -8,19 +8,10 @@
 import UIKit
 import RxSwift
 
-protocol ViewModelConfigure {
-    func listenViewModel()
-    func bindViewModel()
-}
-
-class BaseViewController: UIViewController, ViewModelConfigure {
-	let disposeBag = DisposeBag()
+protocol BaseViewController {
     
-    func listenViewModel() {
-        fatalError()
-    }
+    associatedtype Input
     
-    func bindViewModel() {
-        fatalError()
-    }
+    var disposeBag: DisposeBag { get }
+    func configure(input: Input)
 }
