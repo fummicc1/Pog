@@ -11,12 +11,13 @@ import RxCocoa
 import CoreLocation
 import RxCoreLocation
 
-protocol DiaryMapViewModel {
-	var diariesObservable: Observable<[Entity.Diary]> { get }
-}
-
-final class DiaryMapViewModelImpl: BaseViewModel, DiaryMapViewModel {
+final class DiaryMapViewModel: BaseViewModel {
 	
+    typealias Input = _Input
+    
+    struct _Input {
+    }
+    
 	private var locationManager: CLLocationManager?
 	private let model: DiaryMapModel
 	
@@ -25,7 +26,13 @@ final class DiaryMapViewModelImpl: BaseViewModel, DiaryMapViewModel {
 		diariesRelay.asObservable()
 	}
     
+    var disposeBag: DisposeBag = DisposeBag()
+    
     init(model: DiaryMapModel = DiaryMapModelImpl()) {
         self.model = model
+    }
+    
+    func configure(input: DiaryMapViewModel._Input) {
+        
     }
 }

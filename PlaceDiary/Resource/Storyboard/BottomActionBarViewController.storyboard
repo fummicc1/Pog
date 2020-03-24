@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="64"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="tintColor" name="Tint"/>
-                                        <state key="normal" title="Search" image="magnifyingglass" catalog="system">
+                                        <state key="normal" title="List" image="line.horizontal.3.decrease" catalog="system">
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -55,8 +55,8 @@
                     </view>
                     <size key="freeformSize" width="414" height="64"/>
                     <connections>
+                        <outlet property="diariesButton" destination="BI4-AB-Uzx" id="tfN-6p-1c5"/>
                         <outlet property="myProfileButton" destination="A4Q-zx-35a" id="LLM-kc-ndZ"/>
-                        <outlet property="searchButton" destination="BI4-AB-Uzx" id="tfN-6p-1c5"/>
                         <outlet property="stackView" destination="6KK-Wj-kTm" id="aAY-aY-1MX"/>
                     </connections>
                 </viewController>
@@ -66,7 +66,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="64" height="36"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <namedColor name="Tint">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

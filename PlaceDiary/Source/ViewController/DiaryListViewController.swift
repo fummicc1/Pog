@@ -6,26 +6,44 @@
 //
 
 import UIKit
+import RxSwift
 
-class DiaryListViewController: BaseViewController {
+class DiaryListViewController: UIViewController, BaseViewController {
 
+    typealias Input = _Input
+    
+    struct _Input {
+        
+    }
+    
     @IBOutlet private weak var tableView: UITableView!
+    
+    private let viewModel: DiaryListViewModel
     
     private weak var emptyStateView: UIView? = {
         let content = UIView()
         return content
     }()
     
+    var disposeBag: DisposeBag = DisposeBag()
+    
+    @available(iOS 13, *)
+    init?(viewModel: DiaryListViewModel = DiaryListViewModel(), coder: NSCoder) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        viewModel = DiaryListViewModel()
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
-        listenViewModel()
     }
     
-    override func listenViewModel() {
-    }
-    
-    override func bindViewModel() {
+    func configure(input: DiaryListViewController._Input) {
+        viewModel.configure(input: DiaryListViewModel._Input())
     }
 }
 

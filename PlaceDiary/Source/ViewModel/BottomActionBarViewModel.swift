@@ -9,23 +9,24 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol BottomActionBarViewModel {
-    var selectingViewControllerName: Observable<String> { get }
-    func configure(
-        searchButtonTapped: Observable<Void>,
-        myProfileButtonTapped: Observable<Void>
-    )
-}
-
-final class BottomActionBarViewModelImpl: BaseViewModel, BottomActionBarViewModel {
+final class BottomActionBarViewModel: BaseViewModel {
+    
+    typealias Input = _Input
+    
+    struct _Input {
+        let searchButtonTapped: Observable<Void>
+        let myProfileButtonTapped: Observable<Void>
+    }
     
     private let selectingViewControllerNameRelay: BehaviorRelay<String> = .init(value: "")
     var selectingViewControllerName: Observable<String> {
         selectingViewControllerNameRelay.asObservable()
     }
     
-    func configure(searchButtonTapped: Observable<Void>, myProfileButtonTapped: Observable<Void>) {
-        searchButtonTapped
+    var disposeBag: DisposeBag = DisposeBag()
+    
+    func configure(input: Input) {
+        input.searchButtonTapped
             .map ({ [weak self] _ in self?.selectingViewControllerNameRelay.value == DiaryMapViewController.className
                 ? DiaryListViewController.className
                 : DiaryMapViewController.className                
@@ -33,7 +34,7 @@ final class BottomActionBarViewModelImpl: BaseViewModel, BottomActionBarViewMode
             .bind(to: selectingViewControllerNameRelay)
             .disposed(by: disposeBag)
         
-        myProfileButtonTapped
+        input.myProfileButtonTapped
             .map { _ in MyProfileViewController.className }
             .bind(to: selectingViewControllerNameRelay)
             .disposed(by: disposeBag)

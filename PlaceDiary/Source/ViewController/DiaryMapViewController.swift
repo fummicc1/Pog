@@ -8,22 +8,30 @@
 import UIKit
 import MapKit
 import RxMKMapView
+import RxSwift
 import SnapKit
 
-class DiaryMapViewController: BaseViewController {
+class DiaryMapViewController: UIViewController, BaseViewController {
 	
+    typealias Input = _Input
+    
+    struct _Input {
+    }
+    
 	@IBOutlet private weak var mapView: MKMapView!
 	
 	private let viewModel: DiaryMapViewModel
     
+    var disposeBag: DisposeBag = DisposeBag()
+    
     @available(iOS 13, *)
-    init?(viewModel: DiaryMapViewModel = DiaryMapViewModelImpl(), coder: NSCoder) {
+    init?(viewModel: DiaryMapViewModel = DiaryMapViewModel(), coder: NSCoder) {
         self.viewModel = viewModel
         super.init(coder: coder)
     }
     
     required init?(coder: NSCoder) {
-        viewModel = DiaryMapViewModelImpl()
+        viewModel = DiaryMapViewModel()
         super.init(coder: coder)
     }
     
@@ -31,22 +39,24 @@ class DiaryMapViewController: BaseViewController {
         super.viewDidLoad()
 		setRxMap()
 		bindViewModel()
-        listenViewModel()
     }
     
 	private func setRxMap() {
 		mapView.rx.setDelegate(self).disposed(by: disposeBag)
 	}
-	
-    override func listenViewModel() {
-    }
     
-    override func bindViewModel() {
+    private func bindViewModel() {
 		viewModel.diariesObservable.subscribe(onNext: { [unowned self] diaries in
 			let annotations = diaries.map { DiaryAnnotation(diary: $0) }
 			self.mapView.addAnnotations(annotations)
 		}).disposed(by: disposeBag)
 	}
+    
+    func configure(input: DiaryMapViewController._Input) {
+        viewModel.configure(
+            input: DiaryMapViewModel.Input()
+        )
+    }
 }
 
 extension DiaryMapViewController: MKMapViewDelegate {

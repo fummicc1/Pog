@@ -9,8 +9,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: BaseViewController {
+class HomeViewController: UIViewController, BaseViewController {
 
+    typealias Input = _Input
+    
+    struct _Input {
+    }
+    
+    var disposeBag: DisposeBag = DisposeBag()
+    
 	private weak var bottomActionBarViewController: BottomActionBarViewController? = {
 		return UIStoryboard(name: BottomActionBarViewController.className, bundle: nil).instantiateInitialViewController(creator: { coder -> BottomActionBarViewController in
             guard let viewController = BottomActionBarViewController(coder: coder) else {
@@ -113,12 +120,9 @@ class HomeViewController: BaseViewController {
             maker.top.bottom.leading.equalTo(self.view)
             maker.width.equalTo(0)
         }
-        
-        bindViewModel()
-        listenViewModel()
     }
     
-    override func listenViewModel() {
+    func configure(input: HomeViewController._Input) {
         bottomActionBarViewController?
             .viewModel
             .selectingViewControllerName
@@ -152,8 +156,11 @@ class HomeViewController: BaseViewController {
                     break
                 }
             }).disposed(by: disposeBag)
-    }
-    
-    override func bindViewModel() {
+        
+        let bottomActionBarChangedInDiaryTab = bottomActionBarViewController?
+            .viewModel
+            .selectingViewControllerName
+            .distinctUntilChanged()
+            .filter { $0 != MyProfileViewController.className }
     }
 }

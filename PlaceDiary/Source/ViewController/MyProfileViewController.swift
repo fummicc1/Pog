@@ -6,18 +6,21 @@
 //
 
 import UIKit
+import RxSwift
 
-class MyProfileViewController: BaseViewController {
+class MyProfileViewController: UIViewController, BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        listenViewModel()
-        bindViewModel()
+    typealias Input = _Input
+    
+    struct _Input {
     }
     
-    override func listenViewModel() {
+    var disposeBag: DisposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-        
-    override func bindViewModel() {
+    
+    func configure(input: MyProfileViewController._Input) {
     }
 }
