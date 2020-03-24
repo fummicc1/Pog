@@ -18,7 +18,7 @@ class TopBarViewController: UIViewController, BaseViewController {
     
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
-    private let viewModel: TopBarViewModel
+    let viewModel: TopBarViewModel
     var disposeBag: DisposeBag = DisposeBag()
     
     @available(iOS 13, *)
@@ -44,5 +44,18 @@ class TopBarViewController: UIViewController, BaseViewController {
                 viewControllerNameChangedByTabBar: input.viewControllerNameChangedByTabBar
             )
         )
+        
+        viewModel
+            .currentSelectingDiaryViewControllerNameByTopBar
+            .flatMap ({ name -> Observable<Int> in
+                if name == DiaryListViewController.className {
+                    return .just(0)
+                } else if name == DiaryMapViewController.className {
+                    return .just(1)
+                }
+                return .empty()
+            })
+            .bind(to: segmentedControl.rx.selectedSegmentIndex)
+            .disposed(by: disposeBag)
     }
 }

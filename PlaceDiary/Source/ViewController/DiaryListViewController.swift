@@ -18,7 +18,7 @@ class DiaryListViewController: UIViewController, BaseViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private let viewModel: DiaryListViewModel
+    let viewModel: DiaryListViewModel
     
     private weak var emptyStateView: UIView? = {
         let content = UIView()
