@@ -46,7 +46,7 @@
 		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
 		D3CB10C823E1634500413844 /* DiariesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* DiariesModel.swift */; };
 		D3CF607623E0844800299CF4 /* GoogleService-Info-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */; };
-		D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */; };
+		D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */; };
 		D3CF608123E086A500299CF4 /* DiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */; };
 		D3CF608423E0874700299CF4 /* DiaryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608223E0874700299CF4 /* DiaryMapViewController.swift */; };
 		D3ECB41F2425DEBA00EF9A5B /* DiaryMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3ECB41E2425DEBA00EF9A5B /* DiaryMapViewController.storyboard */; };
@@ -139,7 +139,7 @@
 		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D3CB10C723E1634500413844 /* DiariesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiariesModel.swift; sourceTree = "<group>"; };
 		D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-release.plist"; sourceTree = "<group>"; };
-		D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-develop.plist"; sourceTree = "<group>"; };
+		D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
 		D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMapViewModel.swift; sourceTree = "<group>"; };
 		D3CF608223E0874700299CF4 /* DiaryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMapViewController.swift; sourceTree = "<group>"; };
 		D3ECB41E2425DEBA00EF9A5B /* DiaryMapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryMapViewController.storyboard; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 		0B213D30C16A8F4DB5D80660 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */,
+				D3CF607723E0849300299CF4 /* GoogleService-Info-debug.plist */,
 				D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */,
 				067DD71BAE286A3C1C6BEAB0 /* Info.plist */,
 			);
@@ -537,7 +537,7 @@
 			files = (
 				D3CF607623E0844800299CF4 /* GoogleService-Info-release.plist in Resources */,
 				D3EEB1112426314C009FC8FB /* DiaryListViewController.storyboard in Resources */,
-				D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */,
+				D3CF607823E0849300299CF4 /* GoogleService-Info-debug.plist in Resources */,
 				D31E97CA242CB29100482A6B /* WriteDiaryViewController.storyboard in Resources */,
 				D3ECB41F2425DEBA00EF9A5B /* DiaryMapViewController.storyboard in Resources */,
 				D3EEB1192426352A009FC8FB /* BottomActionBarViewController.storyboard in Resources */,
@@ -668,7 +668,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-develop.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-debug.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
 		};
 		DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

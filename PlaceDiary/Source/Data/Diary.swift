@@ -15,7 +15,7 @@ extension Entity {
 		let memory: String
 		let latitude: Double?
 		let longitude: Double?
-        let mainImagePath: String
+        let mainImagePath: String?
         let tags: [String]?
         let sender: DocumentReference
 		

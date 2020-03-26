@@ -53,15 +53,36 @@ class WriteDiaryViewController: UIViewController, BaseViewController {
             .tap
             .subscribe(onNext: { [weak self] in                
                 let imagePicker = YPImagePicker()
+                self?.present(imagePicker, animated: true, completion: nil)
+                imagePicker.didFinishPicking { (items, cancelled) in
+                    if cancelled {
+                        imagePicker.dismiss(animated: true, completion: nil)
+                        return
+                    }
+                    guard let imageData = items.singlePhoto?.image.jpegData(compressionQuality: 0.6) else {
+                        imagePicker.dismiss(animated: true, completion: nil)
+                        assert(false)
+                        return
+                    }
+                    self?.viewModel.didSelectImage(imageData)
+                    imagePicker.dismiss(animated: true, completion: nil)
+                }
             })
             .disposed(by: disposeBag)
         
         configure(input: Input(
             viewModelInput: WriteDiaryViewModel.Input(
                 memoryObservable: memoryTextView.rx.text.orEmpty.asObservable(),
-                placeObservable: placeTextField.rx.text.orEmpty.asObservable()
+                placeObservable: placeTextField.rx.text.orEmpty.asObservable(),
+                postButtonTapped: postButton.rx.tap.asObservable()
             )
         ))
+        
+        viewModel
+            .validationResult
+            .map { $0 == .success }
+            .bind(to: postButton.rx.isEnabled)
+            .disposed(by: disposeBag)        
     }
     
     func configure(input: _Input) {

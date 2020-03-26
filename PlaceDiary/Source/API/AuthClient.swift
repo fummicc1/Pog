@@ -14,6 +14,7 @@ import FirebaseAuth
 protocol AuthRepository {
     
     var currentUser: User? { get }
+    var myRef: DocumentReference? { get }
     
     func createUser(email: String, password: String)
     func deleteUser()
@@ -28,6 +29,12 @@ class AuthClient: AuthRepository {
     
     var currentUser: User? {
         Auth.auth().currentUser
+    }
+    var myRef: DocumentReference? {
+        if let currentUser = currentUser {
+            return Firestore.firestore().collection(FirestoreCollcetionName.users.rawValue).document(currentUser.uid)
+        }
+        return nil
     }
     
     func createUser(email: String, password: String) {

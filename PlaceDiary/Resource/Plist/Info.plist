@@ -51,6 +51,10 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>位置情報の許可を行うと、自身の位置情報が分かり、近くの日記が見つけやすくなります。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラを使用して、日記に付与する写真を撮影するにはこのアプリがカメラにアクセスすることを許可する必要があります。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アルバムを介して、日記に付与する写真を選択するにはこのアプリがアルバムにアクセスすることを許可する必要があります。</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
