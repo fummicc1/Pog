@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import YPImagePicker
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,6 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
+        var config = YPImagePickerConfiguration()
+        config.colors.tintColor = UIColor(named: "Tint")!
+        config.library.mediaType = .photo
+        config.showsPhotoFilters = false
+        config.screens = [.library, .photo]
+        YPImagePickerConfiguration.shared = config
 		window = UIWindow(windowScene: windowScene)
 		window?.rootViewController = HomeViewController()
 		window?.makeKeyAndVisible()

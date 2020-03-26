@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 class TopBarViewController: UIViewController, BaseViewController {
-
+    
     typealias Input = _Input
     
     struct _Input {
@@ -22,15 +22,15 @@ class TopBarViewController: UIViewController, BaseViewController {
     var disposeBag: DisposeBag = DisposeBag()
     
     @available(iOS 13, *)
-       init?(viewModel: TopBarViewModel = TopBarViewModel(), coder: NSCoder) {
-           self.viewModel = viewModel
-           super.init(coder: coder)
-       }
-       
-       required init?(coder: NSCoder) {
-           viewModel = TopBarViewModel()
-           super.init(coder: coder)
-       }
+    init?(viewModel: TopBarViewModel = TopBarViewModel(), coder: NSCoder) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        viewModel = TopBarViewModel()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

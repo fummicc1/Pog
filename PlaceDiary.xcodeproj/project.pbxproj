@@ -24,6 +24,7 @@
 		D31E97DA242CC64E00482A6B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D1242CC64E00482A6B /* Shadow.swift */; };
 		D31E97DC242CC64E00482A6B /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D3242CC64E00482A6B /* ShadowButton.swift */; };
 		D31E97DD242CC64E00482A6B /* RadiusImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D4242CC64E00482A6B /* RadiusImageView.swift */; };
+		D31E97E0242CD54000482A6B /* WriteDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97DF242CD54000482A6B /* WriteDiaryViewModel.swift */; };
 		D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */; };
 		D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E12123E31EC5004151B6 /* HomeViewController.swift */; };
 		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
@@ -62,7 +63,6 @@
 		D3EEB11F24265188009FC8FB /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */; };
 		D3EEB1212426519A009FC8FB /* MyProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */; };
 		D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */; };
-		D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
 		EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51C6773E6DC5AFEEE53523 /* Image.xcassets */; };
 /* End PBXBuildFile section */
@@ -117,6 +117,7 @@
 		D31E97D1242CC64E00482A6B /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		D31E97D3242CC64E00482A6B /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		D31E97D4242CC64E00482A6B /* RadiusImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusImageView.swift; sourceTree = "<group>"; };
+		D31E97DF242CD54000482A6B /* WriteDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewModel.swift; sourceTree = "<group>"; };
 		D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewModel.swift; sourceTree = "<group>"; };
 		D330E12123E31EC5004151B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D333BD4123E08839003E0FF4 /* FirestoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
@@ -155,7 +156,6 @@
 		D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfileViewController.storyboard; sourceTree = "<group>"; };
 		D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewController.swift; sourceTree = "<group>"; };
-		D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6FECA2586FEAA3306335E44 /* PlaceDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -348,6 +348,7 @@
 				D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */,
 				D3EEB11A24263F53009FC8FB /* TopBarViewModel.swift */,
 				D3EEB11C24263F8D009FC8FB /* DiaryListViewModel.swift */,
+				D31E97DF242CD54000482A6B /* WriteDiaryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -376,7 +377,6 @@
 		D3CF607F23E085CA00299CF4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D3F2A89F23E1ECCC008CDA97 /* R.generated.swift */,
 				701FB36B3E442BF31561393C /* AppDelegate.swift */,
 				BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */,
 				D37CE9CC23E20CC20037F5C3 /* AppError.swift */,
@@ -460,7 +460,6 @@
 			buildConfigurationList = F3F3B8AD7FD8C01F23780F67 /* Build configuration list for PBXNativeTarget "PlaceDiary" */;
 			buildPhases = (
 				0DAB40C197627A0A0A2702A2 /* [CP] Check Pods Manifest.lock */,
-				D3F2A89E23E1EB53008CDA97 /* R.swift */,
 				0DEDEC0C7D44A918BDD71BAB /* Sources */,
 				49DC9BECDE0365E8612EBD39 /* Resources */,
 				8AE1A7EDD9592DA382CBD72F /* Frameworks */,
@@ -671,26 +670,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-develop.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
 		};
-		D3F2A89E23E1EB53008CDA97 /* R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = R.swift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
 		DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -717,6 +696,7 @@
 			files = (
 				D31E97D7242CC64E00482A6B /* XibView.swift in Sources */,
 				D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */,
+				D31E97E0242CD54000482A6B /* WriteDiaryViewModel.swift in Sources */,
 				D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */,
 				D3EEB10D24262EE5009FC8FB /* LocatiionManager.swift in Sources */,
 				D333BD5E23E08C2E003E0FF4 /* Array+isNotEmpty.swift in Sources */,
@@ -727,7 +707,6 @@
 				596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */,
 				D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */,
 				D3EEB10A24262DC1009FC8FB /* User.swift in Sources */,
-				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
 				D31E97CC242CB2A400482A6B /* WriteDiaryViewController.swift in Sources */,
 				D3EEB1152426327B009FC8FB /* TopBarViewController.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,

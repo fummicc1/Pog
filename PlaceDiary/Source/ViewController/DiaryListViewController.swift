@@ -70,6 +70,10 @@ class DiaryListViewController: UIViewController, BaseViewController {
                 cell.diary = item
                 return cell
         })
+        viewModel
+            .diaries
+            .bind(to: tableView.rx.items(dataSource: dataSources))
+            .disposed(by: disposeBag)
     }
     
     func configure(input: DiaryListViewController._Input) {

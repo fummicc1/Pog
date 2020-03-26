@@ -21,7 +21,6 @@ target 'PlaceDiary' do
   pod 'RxDataSources', '~> 4.0'
 	pod 'RxCoreLocation', '~> 1.4'
 	pod "RxMKMapView"
-  pod 'R.swift'
   pod 'SnapKit', '~> 5.0.0'
 	pod 'YPImagePicker'
   

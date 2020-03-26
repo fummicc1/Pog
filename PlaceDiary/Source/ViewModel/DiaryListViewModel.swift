@@ -33,8 +33,8 @@ class DiaryListViewModel: BaseViewModel {
         
     }
     
-    var diaries: Observable<DiarySection> {
-        diariesRelay.map { DiarySection(items: $0) }
+    var diaries: Observable<[DiarySection]> {
+        diariesRelay.map { [DiarySection(items: $0)] }
     }
     private let diariesRelay: BehaviorRelay<[Entity.Diary]> = .init(value: [])
     
