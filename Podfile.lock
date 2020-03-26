@@ -326,6 +326,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
   - Protobuf (3.11.4)
+  - PryntTrimmerView (4.0.0)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
@@ -352,6 +353,10 @@ PODS:
   - RxTest (5.1.0):
     - RxSwift (~> 5)
   - SnapKit (5.0.1)
+  - SteviaLayout (4.7.3)
+  - YPImagePicker (4.2.0):
+    - PryntTrimmerView (~> 4.0.0)
+    - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
   - Crashlytics
@@ -373,6 +378,7 @@ DEPENDENCIES:
   - RxSwift
   - RxTest
   - SnapKit (~> 5.0.0)
+  - YPImagePicker
 
 SPEC REPOS:
   trunk:
@@ -409,6 +415,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - PryntTrimmerView
     - R.swift
     - R.swift.Library
     - RxBlocking
@@ -420,6 +427,8 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SnapKit
+    - SteviaLayout
+    - YPImagePicker
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -455,6 +464,7 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   RxBlocking: 5ef131267220f92ef68531dd6afeaf407cd6b41a
@@ -466,7 +476,9 @@ SPEC CHECKSUMS:
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   RxTest: d5e1c9c1880de2751041fa485d476ce006967b31
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  YPImagePicker: accf310f9526641a84372c0ecf943547d9b1e52c
 
-PODFILE CHECKSUM: ff43a2c73e6a88069a69a0c7fc7e72eb3497d9a4
+PODFILE CHECKSUM: 5837eafdc003fdf050deec674d6c52aebec72c40
 
 COCOAPODS: 1.9.1

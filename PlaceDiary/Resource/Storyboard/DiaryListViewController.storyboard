@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cnO-vh-sud">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cnO-vh-sud">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,31 +20,68 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" name="Tint"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiaryListTableViewCell" rowHeight="107" id="4K6-ee-gaM" customClass="DiaryListTableViewCell" customModule="PlaceDiary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="107"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4K6-ee-gaM" id="muI-lD-heL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="cnO-vh-sud" id="10n-g0-paO"/>
                                     <outlet property="delegate" destination="cnO-vh-sud" id="Jxj-eB-ufx"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGK-Ek-Kmf" customClass="ShadowRadiusButton" customModule="PlaceDiary" customModuleProvider="target">
+                                <rect key="frame" x="318" y="766" width="64" height="64"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="I9R-2y-cPw"/>
+                                    <constraint firstAttribute="height" constant="64" id="wdD-Oo-Jfd"/>
+                                </constraints>
+                                <color key="tintColor" name="Tint"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                                    </preferredSymbolConfiguration>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ae3-iX-hhb" firstAttribute="leading" secondItem="fTl-cN-yaC" secondAttribute="leading" id="F5X-fX-ucM"/>
                             <constraint firstAttribute="bottom" secondItem="ae3-iX-hhb" secondAttribute="bottom" id="GrR-et-DlI"/>
+                            <constraint firstItem="fTl-cN-yaC" firstAttribute="trailing" secondItem="cGK-Ek-Kmf" secondAttribute="trailing" constant="32" id="NPZ-yu-YVb"/>
                             <constraint firstItem="fTl-cN-yaC" firstAttribute="trailing" secondItem="ae3-iX-hhb" secondAttribute="trailing" id="Yp6-TS-kTz"/>
+                            <constraint firstItem="fTl-cN-yaC" firstAttribute="bottom" secondItem="cGK-Ek-Kmf" secondAttribute="bottom" constant="32" id="cEU-Zf-iD0"/>
                             <constraint firstItem="ae3-iX-hhb" firstAttribute="top" secondItem="fTl-cN-yaC" secondAttribute="top" id="nhY-b7-Jp2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fTl-cN-yaC"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ae3-iX-hhb" id="nUX-0N-0yS"/>
+                        <outlet property="writeDiaryButton" destination="cGK-Ek-Kmf" id="ZhA-xW-kiG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWN-8u-LNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="134"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="Tint">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -47,7 +47,7 @@ class DiaryMapViewController: UIViewController, BaseViewController {
     
     private func bindViewModel() {
 		viewModel.diariesObservable.subscribe(onNext: { [unowned self] diaries in
-			let annotations = diaries.map { DiaryAnnotation(diary: $0) }
+			let annotations = diaries.compactMap { DiaryAnnotation(diary: $0) }
 			self.mapView.addAnnotations(annotations)
 		}).disposed(by: disposeBag)
 	}

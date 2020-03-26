@@ -16,6 +16,14 @@
 		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
 		D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ECE23E208EC00432D22 /* BaseViewModel.swift */; };
 		D31E97C8242C9D3800482A6B /* DiaryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */; };
+		D31E97CA242CB29100482A6B /* WriteDiaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31E97C9242CB29100482A6B /* WriteDiaryViewController.storyboard */; };
+		D31E97CC242CB2A400482A6B /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97CB242CB2A400482A6B /* WriteDiaryViewController.swift */; };
+		D31E97D7242CC64E00482A6B /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97CE242CC64E00482A6B /* XibView.swift */; };
+		D31E97D8242CC64E00482A6B /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97CF242CC64E00482A6B /* RadiusButton.swift */; };
+		D31E97D9242CC64E00482A6B /* ShadowRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D0242CC64E00482A6B /* ShadowRadiusButton.swift */; };
+		D31E97DA242CC64E00482A6B /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D1242CC64E00482A6B /* Shadow.swift */; };
+		D31E97DC242CC64E00482A6B /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D3242CC64E00482A6B /* ShadowButton.swift */; };
+		D31E97DD242CC64E00482A6B /* RadiusImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97D4242CC64E00482A6B /* RadiusImageView.swift */; };
 		D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */; };
 		D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E12123E31EC5004151B6 /* HomeViewController.swift */; };
 		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
@@ -101,6 +109,14 @@
 		BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3058ECE23E208EC00432D22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTableViewCell.swift; sourceTree = "<group>"; };
+		D31E97C9242CB29100482A6B /* WriteDiaryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteDiaryViewController.storyboard; sourceTree = "<group>"; };
+		D31E97CB242CB2A400482A6B /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		D31E97CE242CC64E00482A6B /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		D31E97CF242CC64E00482A6B /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
+		D31E97D0242CC64E00482A6B /* ShadowRadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowRadiusButton.swift; sourceTree = "<group>"; };
+		D31E97D1242CC64E00482A6B /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		D31E97D3242CC64E00482A6B /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		D31E97D4242CC64E00482A6B /* RadiusImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusImageView.swift; sourceTree = "<group>"; };
 		D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewModel.swift; sourceTree = "<group>"; };
 		D330E12123E31EC5004151B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D333BD4123E08839003E0FF4 /* FirestoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
@@ -271,6 +287,12 @@
 		D3506A0823E1FD730003BCFD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D31E97CF242CC64E00482A6B /* RadiusButton.swift */,
+				D31E97D4242CC64E00482A6B /* RadiusImageView.swift */,
+				D31E97D1242CC64E00482A6B /* Shadow.swift */,
+				D31E97D3242CC64E00482A6B /* ShadowButton.swift */,
+				D31E97D0242CC64E00482A6B /* ShadowRadiusButton.swift */,
+				D31E97CE242CC64E00482A6B /* XibView.swift */,
 				D333BD6323E08C7F003E0FF4 /* BaseViewController.swift */,
 				D3058ECE23E208EC00432D22 /* BaseViewModel.swift */,
 				D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */,
@@ -314,6 +336,7 @@
 				D3EEB1122426315C009FC8FB /* DiaryListViewController.swift */,
 				D3EEB1142426327B009FC8FB /* TopBarViewController.swift */,
 				D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */,
+				D31E97CB242CB2A400482A6B /* WriteDiaryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -369,6 +392,7 @@
 				D3EEB11624263294009FC8FB /* TopBarViewController.storyboard */,
 				D3EEB1182426352A009FC8FB /* BottomActionBarViewController.storyboard */,
 				D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */,
+				D31E97C9242CB29100482A6B /* WriteDiaryViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -515,6 +539,7 @@
 				D3CF607623E0844800299CF4 /* GoogleService-Info-release.plist in Resources */,
 				D3EEB1112426314C009FC8FB /* DiaryListViewController.storyboard in Resources */,
 				D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */,
+				D31E97CA242CB29100482A6B /* WriteDiaryViewController.storyboard in Resources */,
 				D3ECB41F2425DEBA00EF9A5B /* DiaryMapViewController.storyboard in Resources */,
 				D3EEB1192426352A009FC8FB /* BottomActionBarViewController.storyboard in Resources */,
 				D3EEB1212426519A009FC8FB /* MyProfileViewController.storyboard in Resources */,
@@ -690,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31E97D7242CC64E00482A6B /* XibView.swift in Sources */,
 				D333BD4623E0883A003E0FF4 /* AuthClient.swift in Sources */,
 				D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */,
 				D3EEB10D24262EE5009FC8FB /* LocatiionManager.swift in Sources */,
@@ -702,6 +728,7 @@
 				D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */,
 				D3EEB10A24262DC1009FC8FB /* User.swift in Sources */,
 				D3F2A8A023E1ECCC008CDA97 /* R.generated.swift in Sources */,
+				D31E97CC242CB2A400482A6B /* WriteDiaryViewController.swift in Sources */,
 				D3EEB1152426327B009FC8FB /* TopBarViewController.swift in Sources */,
 				D333BD6423E08C7F003E0FF4 /* BaseViewController.swift in Sources */,
 				D3EEB11F24265188009FC8FB /* MyProfileViewController.swift in Sources */,
@@ -709,9 +736,13 @@
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
 				D33AA24A23E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift in Sources */,
 				D31E97C8242C9D3800482A6B /* DiaryListTableViewCell.swift in Sources */,
+				D31E97DD242CC64E00482A6B /* RadiusImageView.swift in Sources */,
+				D31E97D9242CC64E00482A6B /* ShadowRadiusButton.swift in Sources */,
 				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				D333BD6023E08C2E003E0FF4 /* Array+doesNotContain.swift in Sources */,
 				D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */,
+				D31E97DA242CC64E00482A6B /* Shadow.swift in Sources */,
+				D31E97DC242CC64E00482A6B /* ShadowButton.swift in Sources */,
 				D3EEB11D24263F8D009FC8FB /* DiaryListViewModel.swift in Sources */,
 				D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */,
 				D364CA5623E458E3004E6D20 /* CloudStorageClient.swift in Sources */,
@@ -719,6 +750,7 @@
 				D3CB10C823E1634500413844 /* DiariesModel.swift in Sources */,
 				D3CB10C623E1632600413844 /* Entity.swift in Sources */,
 				D364CA5423E45712004E6D20 /* WriteDiaryContentModel.swift in Sources */,
+				D31E97D8242CC64E00482A6B /* RadiusButton.swift in Sources */,
 				D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */,
 				D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */,
 				D333BD5F23E08C2E003E0FF4 /* String+isNotEmpty.swift in Sources */,

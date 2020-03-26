@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QA5-hc-Ylf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--日記を作成-->
+        <scene sceneID="m8J-rk-kyi">
+            <objects>
+                <viewController id="pHw-Db-eno" customClass="WriteDiaryViewController" customModule="PlaceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nWQ-m5-Fy8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oCx-et-UTE">
+                                <rect key="frame" x="40" y="165" width="334" height="434"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-qQ-8j7">
+                                <rect key="frame" x="32" y="647" width="350" height="95"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="記録する場所はどんな場所ですか？" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rED-rP-Wef">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlI-dg-wp0">
+                                        <rect key="frame" x="0.0" y="66" width="350" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <state key="normal" title="画像を追加" image="photo" catalog="system">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020/3/26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-mh-jUF">
+                                <rect key="frame" x="147" y="112" width="120.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oCx-et-UTE" firstAttribute="leading" secondItem="gPF-R1-Ww4" secondAttribute="leading" constant="40" id="BGY-di-Znn"/>
+                            <constraint firstItem="Jr1-mh-jUF" firstAttribute="top" secondItem="gPF-R1-Ww4" secondAttribute="top" constant="24" id="KNx-gL-zta"/>
+                            <constraint firstItem="gPF-R1-Ww4" firstAttribute="bottom" secondItem="ebU-qQ-8j7" secondAttribute="bottom" constant="120" id="OjG-fP-jWN"/>
+                            <constraint firstItem="ebU-qQ-8j7" firstAttribute="leading" secondItem="gPF-R1-Ww4" secondAttribute="leading" constant="32" id="SGk-rN-DU8"/>
+                            <constraint firstItem="Jr1-mh-jUF" firstAttribute="centerX" secondItem="nWQ-m5-Fy8" secondAttribute="centerX" id="WJV-3H-zhU"/>
+                            <constraint firstItem="ebU-qQ-8j7" firstAttribute="top" secondItem="oCx-et-UTE" secondAttribute="bottom" constant="48" id="Z0f-W7-AKm"/>
+                            <constraint firstItem="oCx-et-UTE" firstAttribute="top" secondItem="Jr1-mh-jUF" secondAttribute="bottom" constant="24" id="b8J-0h-cGO"/>
+                            <constraint firstItem="ebU-qQ-8j7" firstAttribute="centerX" secondItem="nWQ-m5-Fy8" secondAttribute="centerX" id="m32-V7-7z1"/>
+                            <constraint firstItem="oCx-et-UTE" firstAttribute="centerX" secondItem="nWQ-m5-Fy8" secondAttribute="centerX" id="yYE-E6-Odp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gPF-R1-Ww4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="日記を作成" id="Uio-gT-yOx">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="OFK-z1-HgP">
+                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="投稿する" id="KTT-i7-bXj">
+                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="Jr1-mh-jUF" id="q8q-Tb-a2M"/>
+                        <outlet property="dismissButton" destination="OFK-z1-HgP" id="vnm-SV-ebU"/>
+                        <outlet property="memoryTextView" destination="oCx-et-UTE" id="6DJ-60-vhQ"/>
+                        <outlet property="photoImageButton" destination="nlI-dg-wp0" id="EJX-qV-XMn"/>
+                        <outlet property="placeTextField" destination="rED-rP-Wef" id="Em8-Jq-ZJS"/>
+                        <outlet property="postButton" destination="KTT-i7-bXj" id="oWR-js-Dyd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YpO-ej-anV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="60.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tW7-nR-G72">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QA5-hc-Ylf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xhc-TV-eVT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Tint"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pHw-Db-eno" kind="relationship" relationship="rootViewController" id="C3Y-cV-1QV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKn-kr-T4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="60.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="Tint">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -23,7 +23,8 @@ target 'PlaceDiary' do
 	pod "RxMKMapView"
   pod 'R.swift'
   pod 'SnapKit', '~> 5.0.0'
-	
+	pod 'YPImagePicker'
+  
   target 'PlaceDiaryTests' do
     inherit! :search_paths
 		pod 'RxSwift'

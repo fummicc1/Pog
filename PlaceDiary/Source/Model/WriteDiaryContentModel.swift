@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol WriteDiaryContentModel {
-    func persistDiary(title: String, imageURL: URL, memory: String) -> Single<Entity.Diary>
+    func persistDiary(memory: String, title: String?, imageURLPath: String?) -> Single<Entity.Diary>
 }
 
 class WriteDiaryContentModelImpl: WriteDiaryContentModel {
@@ -19,14 +19,19 @@ class WriteDiaryContentModelImpl: WriteDiaryContentModel {
     private let auth: AuthRepository = AuthClient()
     private let storage: CloudStorageRepository = CloudStorageClient()
     
-    func persistDiary(title: String, imageURL: URL, memory: String) -> Single<Entity.Diary> {
+    func persistDiary(memory: String, title: String? = nil, imageURLPath: String? = nil) -> Single<Entity.Diary> {
         .create { [weak self] (observer) -> Disposable in
             guard let self = self else {
                 return Disposables.create()
             }
-            self.storage.persistImage(imageURL, path: "") { metadata, error in
-                
+            let group = DispatchGroup()
+            if let imageURLPath = imageURLPath, let imageURL = URL(string: imageURLPath) {
+                group.enter()
+                self.storage.persistImage(imageURL, path: CloudStoragePath.diaries.rawValue) { metadata, error in
+                    group.leave()
+                }
             }
+            
             return Disposables.create()
         }
     }

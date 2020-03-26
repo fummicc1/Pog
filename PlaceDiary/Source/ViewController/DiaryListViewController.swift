@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 
 class DiaryListViewController: UIViewController, BaseViewController {
-
+    
     typealias Input = _Input
     
     struct _Input {
@@ -19,6 +19,7 @@ class DiaryListViewController: UIViewController, BaseViewController {
     }
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var writeDiaryButton: UIButton!
     
     let viewModel: DiaryListViewModel
     
@@ -43,6 +44,21 @@ class DiaryListViewController: UIViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        
+        //MARK: Setup Rx
+        writeDiaryButton
+            .rx
+            .tap
+            .subscribe(onNext: { [weak self] in
+                guard let navigationController = UIStoryboard(name: WriteDiaryViewController.className, bundle: nil).instantiateInitialViewController() as? UINavigationController,
+                    let _ = navigationController.viewControllers.first as? WriteDiaryViewController else {
+                        assert(false)
+                        return
+                }
+                navigationController.modalPresentationStyle = .fullScreen
+                self?.present(navigationController, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindViewModel() {

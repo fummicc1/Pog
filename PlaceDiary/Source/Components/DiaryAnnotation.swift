@@ -11,8 +11,11 @@ import MapKit
 class DiaryAnnotation: NSObject, MKAnnotation {
 	var coordinate: CLLocationCoordinate2D
 	
-	init(diary: Entity.Diary) {
-		coordinate = .init(latitude: diary.latitude, longitude: diary.longitude)
+	init?(diary: Entity.Diary) {
+        guard let latitude = diary.latitude, let longitude = diary.longitude else {
+            return nil
+        }
+		coordinate = .init(latitude: latitude, longitude: longitude)
 		super.init()
 	}
 }

@@ -13,7 +13,7 @@ extension Entity {
     struct User: FirestoreEntity {
         
         let uid: String
-        let diaries: [Diary]
+        let diaries: [Diary]?
         
         var createdAt: Timestamp?
         var updatedAt: Timestamp?

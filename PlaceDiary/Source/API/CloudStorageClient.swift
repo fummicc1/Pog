@@ -10,6 +10,10 @@ import FirebaseStorage
 import RxSwift
 import RxCocoa
 
+enum CloudStoragePath: String {
+    case diaries
+}
+
 protocol CloudStorageRepository {
     func persistImage(_ imageFileURL: URL, path: String, completion: ((StorageMetadata?, Error?) -> ())?)
 }
