@@ -8,6 +8,10 @@ target 'PlaceDiary' do
   # Pods for PlaceDiary
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Performance'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.14.0'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Storage'
   pod 'FirebaseFirestoreSwift'
