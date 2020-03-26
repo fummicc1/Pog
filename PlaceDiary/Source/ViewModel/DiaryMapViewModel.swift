@@ -19,7 +19,7 @@ final class DiaryMapViewModel: BaseViewModel {
     }
     
 	private var locationManager: CLLocationManager?
-	private let model: DiaryMapModel
+	private let model: DiariesModel
 	
 	private let diariesRelay: BehaviorRelay<[Entity.Diary]> = .init(value: [])	
 	var diariesObservable: Observable<[Entity.Diary]> {
@@ -28,11 +28,10 @@ final class DiaryMapViewModel: BaseViewModel {
     
     var disposeBag: DisposeBag = DisposeBag()
     
-    init(model: DiaryMapModel = DiaryMapModelImpl()) {
+    init(model: DiariesModel = DiariesModelImpl()) {
         self.model = model
     }
     
-    func configure(input: DiaryMapViewModel._Input) {
-        
+    func configure(input: DiaryMapViewModel.Input) {
     }
 }

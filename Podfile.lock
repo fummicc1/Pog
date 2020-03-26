@@ -166,6 +166,7 @@ PODS:
   - BoringSSL-GRPC/Interface (0.0.3)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
+  - Differentiator (4.0.1)
   - Fabric (1.10.2)
   - Firebase/Analytics (6.20.0):
     - Firebase/Core
@@ -338,6 +339,10 @@ PODS:
   - RxCoreLocation/Core (1.4.1):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxMKMapView (5.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
@@ -349,8 +354,8 @@ PODS:
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - Crashlytics (~> 3.14.0)
-  - Fabric (~> 1.10.2)
+  - Crashlytics
+  - Fabric
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -362,6 +367,7 @@ DEPENDENCIES:
   - RxBlocking
   - RxCocoa
   - RxCoreLocation (~> 1.4)
+  - RxDataSources (~> 4.0)
   - RxMKMapView
   - RxRelay
   - RxSwift
@@ -373,6 +379,7 @@ SPEC REPOS:
     - abseil
     - BoringSSL-GRPC
     - Crashlytics
+    - Differentiator
     - Fabric
     - Firebase
     - FirebaseABTesting
@@ -407,6 +414,7 @@ SPEC REPOS:
     - RxBlocking
     - RxCocoa
     - RxCoreLocation
+    - RxDataSources
     - RxMKMapView
     - RxRelay
     - RxSwift
@@ -417,6 +425,7 @@ SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: fe7f74012742ab403451dd283e6909b8f1fb348a
   FirebaseABTesting: 821a3a3e4a145987e80fee3657c4de1cb9adf693
@@ -451,12 +460,13 @@ SPEC CHECKSUMS:
   RxBlocking: 5ef131267220f92ef68531dd6afeaf407cd6b41a
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxCoreLocation: 85e9a3310c22619404dcbf91258d29c44429eea8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxMKMapView: 7b19fc545887314851ea67b12193bc8c6004dcb5
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   RxTest: d5e1c9c1880de2751041fa485d476ce006967b31
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 6ef3102797a102ba62bc5f06bf20131fbf162fd9
+PODFILE CHECKSUM: ff43a2c73e6a88069a69a0c7fc7e72eb3497d9a4
 
 COCOAPODS: 1.9.1

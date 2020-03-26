@@ -15,6 +15,7 @@
 		CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */; };
 		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
 		D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ECE23E208EC00432D22 /* BaseViewModel.swift */; };
+		D31E97C8242C9D3800482A6B /* DiaryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */; };
 		D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */; };
 		D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330E12123E31EC5004151B6 /* HomeViewController.swift */; };
 		D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333BD4123E08839003E0FF4 /* FirestoreClient.swift */; };
@@ -34,7 +35,7 @@
 		D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37CE9CC23E20CC20037F5C3 /* AppError.swift */; };
 		D3B3DB0E23E3DD940047E60B /* DiaryAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */; };
 		D3CB10C623E1632600413844 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C523E1632600413844 /* Entity.swift */; };
-		D3CB10C823E1634500413844 /* DiaryMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* DiaryMapModel.swift */; };
+		D3CB10C823E1634500413844 /* DiariesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CB10C723E1634500413844 /* DiariesModel.swift */; };
 		D3CF607623E0844800299CF4 /* GoogleService-Info-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */; };
 		D3CF607823E0849300299CF4 /* GoogleService-Info-develop.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */; };
 		D3CF608123E086A500299CF4 /* DiaryMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */; };
@@ -99,6 +100,7 @@
 		BC1ECAD3E64CECB73CE304BA /* Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig"; sourceTree = "<group>"; };
 		BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3058ECE23E208EC00432D22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTableViewCell.swift; sourceTree = "<group>"; };
 		D330E11F23E31BC0004151B6 /* BottomActionBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewModel.swift; sourceTree = "<group>"; };
 		D330E12123E31EC5004151B6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D333BD4123E08839003E0FF4 /* FirestoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		D37CE9CC23E20CC20037F5C3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D3B3DB0D23E3DD940047E60B /* DiaryAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryAnnotation.swift; sourceTree = "<group>"; };
 		D3CB10C523E1632600413844 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		D3CB10C723E1634500413844 /* DiaryMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryMapModel.swift; sourceTree = "<group>"; };
+		D3CB10C723E1634500413844 /* DiariesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiariesModel.swift; sourceTree = "<group>"; };
 		D3CF607523E0844800299CF4 /* GoogleService-Info-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-release.plist"; sourceTree = "<group>"; };
 		D3CF607723E0849300299CF4 /* GoogleService-Info-develop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-develop.plist"; sourceTree = "<group>"; };
 		D3CF608023E086A500299CF4 /* DiaryMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMapViewModel.swift; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		D31E97C6242C9D1B00482A6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D333BD4023E0880B003E0FF4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +298,7 @@
 				D333BD4023E0880B003E0FF4 /* Extensions */,
 				D3EEB10B24262EA4009FC8FB /* Manager */,
 				D3CF607C23E085B500299CF4 /* Model */,
+				D31E97C6242C9D1B00482A6B /* View */,
 				D3CF607923E0859600299CF4 /* ViewController */,
 				D3CF607A23E0859A00299CF4 /* ViewModel */,
 			);
@@ -321,7 +332,7 @@
 		D3CF607C23E085B500299CF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D3CB10C723E1634500413844 /* DiaryMapModel.swift */,
+				D3CB10C723E1634500413844 /* DiariesModel.swift */,
 				D364CA5323E45712004E6D20 /* WriteDiaryContentModel.swift */,
 				D33AA24923E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift */,
 			);
@@ -697,6 +708,7 @@
 				D330E12223E31EC5004151B6 /* HomeViewController.swift in Sources */,
 				D333BD5D23E08C2E003E0FF4 /* ClassName+Extention.swift in Sources */,
 				D33AA24A23E520B6001AC8CC /* WriteDiaryChoosePlaceModel.swift in Sources */,
+				D31E97C8242C9D3800482A6B /* DiaryListTableViewCell.swift in Sources */,
 				D333BD4423E0883A003E0FF4 /* FirestoreClient.swift in Sources */,
 				D333BD6023E08C2E003E0FF4 /* Array+doesNotContain.swift in Sources */,
 				D330E12023E31BC0004151B6 /* BottomActionBarViewModel.swift in Sources */,
@@ -704,7 +716,7 @@
 				D333BD6123E08C2E003E0FF4 /* Bool+Reverse.swift in Sources */,
 				D364CA5623E458E3004E6D20 /* CloudStorageClient.swift in Sources */,
 				78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */,
-				D3CB10C823E1634500413844 /* DiaryMapModel.swift in Sources */,
+				D3CB10C823E1634500413844 /* DiariesModel.swift in Sources */,
 				D3CB10C623E1632600413844 /* Entity.swift in Sources */,
 				D364CA5423E45712004E6D20 /* WriteDiaryContentModel.swift in Sources */,
 				D37CE9CD23E20CC20037F5C3 /* AppError.swift in Sources */,

@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxDataSources
 
 class DiaryListViewController: UIViewController, BaseViewController {
 
@@ -40,6 +42,18 @@ class DiaryListViewController: UIViewController, BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let dataSources = RxTableViewSectionedReloadDataSource<DiaryListViewModel.DiarySection>(
+            configureCell: { [weak self] dataSource, tableView, indexPath, item in
+                guard let self = self, let cell = tableView.dequeueReusableCell(withIdentifier: DiaryListTableViewCell.className) as? DiaryListTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.diary = item
+                return cell
+        })
     }
     
     func configure(input: DiaryListViewController._Input) {

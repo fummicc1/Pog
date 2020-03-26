@@ -18,5 +18,13 @@ extension Entity {
         var createdAt: Timestamp?
         var updatedAt: Timestamp?
         var ref: DocumentReference?
+        
+        enum CodingKeys: String, CodingKey {
+            case uid
+            case diaries
+            case createdAt = "created_at"
+            case updatedAt = "updated_at"
+            case ref
+        }
     }
 }
