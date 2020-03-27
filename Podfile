@@ -15,26 +15,9 @@ target 'PlaceDiary' do
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Storage'
   pod 'FirebaseFirestoreSwift'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'RxRelay'
-  pod 'RxDataSources', '~> 4.0'
-	pod 'RxCoreLocation', '~> 1.4'
-	pod "RxMKMapView"
-  pod 'SnapKit', '~> 5.0.0'
-	pod 'YPImagePicker'
   
   target 'PlaceDiaryTests' do
     inherit! :search_paths
-		pod 'RxSwift'
-		pod 'RxCocoa'
-		pod 'RxTest'
-    pod 'RxBlocking'
-    # Pods for testing
-  end
-
-  target 'PlaceDiaryUITests' do
-    # Pods for testing
   end
 
 end

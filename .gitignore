@@ -1,3 +1,4 @@
 DerivedData/
 Pods/
+Carthage/
 *.generated.swift

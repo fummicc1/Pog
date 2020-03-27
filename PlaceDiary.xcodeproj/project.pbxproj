@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4FA3E88CEB9AF06D7E7A180E /* Pods_PlaceDiary_PlaceDiaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8110B08AA635C3453AFBAF0 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */; };
 		596D757EBBF8A1E529A1D85E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701FB36B3E442BF31561393C /* AppDelegate.swift */; };
+		6C9CCFBBE1628A09B3CC24F6 /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435E9F9943177248920E63A9 /* Pods_PlaceDiaryTests.framework */; };
 		78E27CA2F9E2606FCEDE2782 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */; };
 		B24B3D7D52459D4D8D5C4A6E /* Pods_PlaceDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BF99C7407BE48DCD5DF0B0 /* Pods_PlaceDiary.framework */; };
 		C163D0D60E900AD98B788622 /* PlaceDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358DEA95F3744C45BE84237 /* PlaceDiaryUITests.swift */; };
 		CBD1A7F351334E0DD0B4E241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C34559AFCD3E53686A2112A /* LaunchScreen.storyboard */; };
-		CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */; };
 		D3058ECF23E208EC00432D22 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3058ECE23E208EC00432D22 /* BaseViewModel.swift */; };
 		D31E97C8242C9D3800482A6B /* DiaryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */; };
 		D31E97CA242CB29100482A6B /* WriteDiaryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31E97C9242CB29100482A6B /* WriteDiaryViewController.storyboard */; };
@@ -63,6 +62,28 @@
 		D3EEB11F24265188009FC8FB /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */; };
 		D3EEB1212426519A009FC8FB /* MyProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */; };
 		D3F2A89D23E1E0B3008CDA97 /* BottomActionBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */; };
+		D3F9803C242D84A0005B54AE /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F9802F242D849F005B54AE /* RxRelay.framework */; };
+		D3F9803D242D84A0005B54AE /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F9802F242D849F005B54AE /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98040242D84A0005B54AE /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98031242D849F005B54AE /* SnapKit.framework */; };
+		D3F98041242D84A0005B54AE /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98031242D849F005B54AE /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98042242D84A0005B54AE /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98032242D849F005B54AE /* RxDataSources.framework */; };
+		D3F98043242D84A0005B54AE /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98032242D849F005B54AE /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98044242D84A0005B54AE /* PryntTrimmerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98033242D849F005B54AE /* PryntTrimmerView.framework */; };
+		D3F98045242D84A0005B54AE /* PryntTrimmerView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98033242D849F005B54AE /* PryntTrimmerView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98046242D84A0005B54AE /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98034242D849F005B54AE /* Differentiator.framework */; };
+		D3F98047242D84A0005B54AE /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98034242D849F005B54AE /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98048242D84A0005B54AE /* RxCoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98035242D849F005B54AE /* RxCoreLocation.framework */; };
+		D3F98049242D84A0005B54AE /* RxCoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98035242D849F005B54AE /* RxCoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F9804A242D84A0005B54AE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98036242D84A0005B54AE /* RxSwift.framework */; };
+		D3F9804B242D84A0005B54AE /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98036242D84A0005B54AE /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F9804C242D84A0005B54AE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98037242D84A0005B54AE /* RxCocoa.framework */; };
+		D3F9804D242D84A0005B54AE /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98037242D84A0005B54AE /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98050242D84A0005B54AE /* YPImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98039242D84A0005B54AE /* YPImagePicker.framework */; };
+		D3F98051242D84A0005B54AE /* YPImagePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F98039242D84A0005B54AE /* YPImagePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98052242D84A0005B54AE /* RxMKMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F9803A242D84A0005B54AE /* RxMKMapView.framework */; };
+		D3F98053242D84A0005B54AE /* RxMKMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F9803A242D84A0005B54AE /* RxMKMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3F98054242D84A0005B54AE /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F9803B242D84A0005B54AE /* Stevia.framework */; };
+		D3F98055242D84A0005B54AE /* Stevia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3F9803B242D84A0005B54AE /* Stevia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D695FABE41CC27335135611F /* PlaceDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */; };
 		EED9D4043860A00CAD8638A2 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51C6773E6DC5AFEEE53523 /* Image.xcassets */; };
 /* End PBXBuildFile section */
@@ -84,17 +105,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D3F98056242D84A0005B54AE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D3F98053242D84A0005B54AE /* RxMKMapView.framework in Embed Frameworks */,
+				D3F98051242D84A0005B54AE /* YPImagePicker.framework in Embed Frameworks */,
+				D3F9804D242D84A0005B54AE /* RxCocoa.framework in Embed Frameworks */,
+				D3F98047242D84A0005B54AE /* Differentiator.framework in Embed Frameworks */,
+				D3F98045242D84A0005B54AE /* PryntTrimmerView.framework in Embed Frameworks */,
+				D3F98055242D84A0005B54AE /* Stevia.framework in Embed Frameworks */,
+				D3F98041242D84A0005B54AE /* SnapKit.framework in Embed Frameworks */,
+				D3F9803D242D84A0005B54AE /* RxRelay.framework in Embed Frameworks */,
+				D3F9804B242D84A0005B54AE /* RxSwift.framework in Embed Frameworks */,
+				D3F98049242D84A0005B54AE /* RxCoreLocation.framework in Embed Frameworks */,
+				D3F98043242D84A0005B54AE /* RxDataSources.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0358DEA95F3744C45BE84237 /* PlaceDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDiaryUITests.swift; sourceTree = "<group>"; };
 		03BF99C7407BE48DCD5DF0B0 /* Pods_PlaceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		067DD71BAE286A3C1C6BEAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		22C52CBAB919F95B7F91A7EC /* Pods-PlaceDiary.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.develop.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.develop.xcconfig"; sourceTree = "<group>"; };
-		2DE0A266899AE89545943119 /* Pods-PlaceDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B901650C5BC89BAB0A0240F /* Pods-PlaceDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		317C14CA056BD3893AF360A4 /* Pods-PlaceDiaryTests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.develop.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.develop.xcconfig"; sourceTree = "<group>"; };
-		47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		435E9F9943177248920E63A9 /* Pods_PlaceDiaryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiaryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A16A7F68EE7C31427F87B2A /* Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig"; sourceTree = "<group>"; };
 		524361A427CEAA09736F47AC /* PlaceDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiaryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE93A26929519A085F3040E /* Pods-PlaceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		6F51C6773E6DC5AFEEE53523 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		701FB36B3E442BF31561393C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,9 +148,9 @@
 		A18E9E548A14E145C4853DCC /* Pods-PlaceDiary.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary.staging.xcconfig"; sourceTree = "<group>"; };
 		A3579551AA63A5DC1D34F2A7 /* Pods-PlaceDiaryTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.staging.xcconfig"; sourceTree = "<group>"; };
 		B07EDDD7C0E8819A4E03DC9C /* PlaceDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDiaryTests.swift; sourceTree = "<group>"; };
-		B8110B08AA635C3453AFBAF0 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceDiary_PlaceDiaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1ECAD3E64CECB73CE304BA /* Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig"; sourceTree = "<group>"; };
 		BC77BE5C5DFC8AE455D8A7B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BE2AF2B8C770E92E6DF1C07D /* Pods-PlaceDiaryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiaryTests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3058ECE23E208EC00432D22 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D31E97C7242C9D3800482A6B /* DiaryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTableViewCell.swift; sourceTree = "<group>"; };
 		D31E97C9242CB29100482A6B /* WriteDiaryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteDiaryViewController.storyboard; sourceTree = "<group>"; };
@@ -156,11 +200,22 @@
 		D3EEB11E24265188009FC8FB /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		D3EEB1202426519A009FC8FB /* MyProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfileViewController.storyboard; sourceTree = "<group>"; };
 		D3F2A89C23E1E0B3008CDA97 /* BottomActionBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBarViewController.swift; sourceTree = "<group>"; };
+		D3F9802F242D849F005B54AE /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		D3F98030242D849F005B54AE /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		D3F98031242D849F005B54AE /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		D3F98032242D849F005B54AE /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		D3F98033242D849F005B54AE /* PryntTrimmerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PryntTrimmerView.framework; path = Carthage/Build/iOS/PryntTrimmerView.framework; sourceTree = "<group>"; };
+		D3F98034242D849F005B54AE /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		D3F98035242D849F005B54AE /* RxCoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCoreLocation.framework; path = Carthage/Build/iOS/RxCoreLocation.framework; sourceTree = "<group>"; };
+		D3F98036242D84A0005B54AE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D3F98037242D84A0005B54AE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		D3F98038242D84A0005B54AE /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		D3F98039242D84A0005B54AE /* YPImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YPImagePicker.framework; path = Carthage/Build/iOS/YPImagePicker.framework; sourceTree = "<group>"; };
+		D3F9803A242D84A0005B54AE /* RxMKMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMKMapView.framework; path = Carthage/Build/iOS/RxMKMapView.framework; sourceTree = "<group>"; };
+		D3F9803B242D84A0005B54AE /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		D603657641ACEE9E888A8C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6FECA2586FEAA3306335E44 /* PlaceDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF93F60EF3AE975EBA00B916 /* PlaceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F37CC19713B2156FC9B90E4C /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8BD05AEF080D791E7911CF /* Pods_PlaceDiaryTests.framework in Frameworks */,
+				6C9CCFBBE1628A09B3CC24F6 /* Pods_PlaceDiaryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +231,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FA3E88CEB9AF06D7E7A180E /* Pods_PlaceDiary_PlaceDiaryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +238,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F98048242D84A0005B54AE /* RxCoreLocation.framework in Frameworks */,
+				D3F98046242D84A0005B54AE /* Differentiator.framework in Frameworks */,
+				D3F9804A242D84A0005B54AE /* RxSwift.framework in Frameworks */,
+				D3F98044242D84A0005B54AE /* PryntTrimmerView.framework in Frameworks */,
+				D3F9803C242D84A0005B54AE /* RxRelay.framework in Frameworks */,
 				B24B3D7D52459D4D8D5C4A6E /* Pods_PlaceDiary.framework in Frameworks */,
+				D3F98042242D84A0005B54AE /* RxDataSources.framework in Frameworks */,
+				D3F98052242D84A0005B54AE /* RxMKMapView.framework in Frameworks */,
+				D3F98050242D84A0005B54AE /* YPImagePicker.framework in Frameworks */,
+				D3F9804C242D84A0005B54AE /* RxCocoa.framework in Frameworks */,
+				D3F98054242D84A0005B54AE /* Stevia.framework in Frameworks */,
+				D3F98040242D84A0005B54AE /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,9 +291,21 @@
 		7403AF273B03CD6DCAF037AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3F98034242D849F005B54AE /* Differentiator.framework */,
+				D3F98033242D849F005B54AE /* PryntTrimmerView.framework */,
+				D3F98030242D849F005B54AE /* RxBlocking.framework */,
+				D3F98037242D84A0005B54AE /* RxCocoa.framework */,
+				D3F98035242D849F005B54AE /* RxCoreLocation.framework */,
+				D3F98032242D849F005B54AE /* RxDataSources.framework */,
+				D3F9803A242D84A0005B54AE /* RxMKMapView.framework */,
+				D3F9802F242D849F005B54AE /* RxRelay.framework */,
+				D3F98036242D84A0005B54AE /* RxSwift.framework */,
+				D3F98038242D84A0005B54AE /* RxTest.framework */,
+				D3F98031242D849F005B54AE /* SnapKit.framework */,
+				D3F9803B242D84A0005B54AE /* Stevia.framework */,
+				D3F98039242D84A0005B54AE /* YPImagePicker.framework */,
 				03BF99C7407BE48DCD5DF0B0 /* Pods_PlaceDiary.framework */,
-				B8110B08AA635C3453AFBAF0 /* Pods_PlaceDiary_PlaceDiaryUITests.framework */,
-				5A4560CCD873D23EA6A6F263 /* Pods_PlaceDiaryTests.framework */,
+				435E9F9943177248920E63A9 /* Pods_PlaceDiaryTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -419,16 +496,14 @@
 			children = (
 				5FE93A26929519A085F3040E /* Pods-PlaceDiary.debug.xcconfig */,
 				7094190D10DF60F422A93301 /* Pods-PlaceDiary.release.xcconfig */,
-				F37CC19713B2156FC9B90E4C /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */,
-				E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */,
-				47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */,
-				2DE0A266899AE89545943119 /* Pods-PlaceDiaryTests.release.xcconfig */,
 				22C52CBAB919F95B7F91A7EC /* Pods-PlaceDiary.develop.xcconfig */,
 				A18E9E548A14E145C4853DCC /* Pods-PlaceDiary.staging.xcconfig */,
 				4A16A7F68EE7C31427F87B2A /* Pods-PlaceDiary-PlaceDiaryUITests.develop.xcconfig */,
 				BC1ECAD3E64CECB73CE304BA /* Pods-PlaceDiary-PlaceDiaryUITests.staging.xcconfig */,
 				317C14CA056BD3893AF360A4 /* Pods-PlaceDiaryTests.develop.xcconfig */,
 				A3579551AA63A5DC1D34F2A7 /* Pods-PlaceDiaryTests.staging.xcconfig */,
+				2B901650C5BC89BAB0A0240F /* Pods-PlaceDiaryTests.debug.xcconfig */,
+				BE2AF2B8C770E92E6DF1C07D /* Pods-PlaceDiaryTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -440,10 +515,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD5B74065B086120ECB97EED /* Build configuration list for PBXNativeTarget "PlaceDiaryTests" */;
 			buildPhases = (
-				2D0AC862F3CB629F16431053 /* [CP] Check Pods Manifest.lock */,
+				27444D59C2A9F16230B236FC /* [CP] Check Pods Manifest.lock */,
 				F5B7931887A7D4395DDF641F /* Sources */,
 				5A2D4A48071342F667429ED6 /* Frameworks */,
-				2FF5AA15FAE5FA8077CF295C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,6 +539,8 @@
 				8AE1A7EDD9592DA382CBD72F /* Frameworks */,
 				BEA34D84C815ADE537071D12 /* [CP] Embed Pods Frameworks */,
 				D3ECB4182425DD7D00EF9A5B /* GoogleService-Info */,
+				D3F9802E242D7F86005B54AE /* Carthage */,
+				D3F98056242D84A0005B54AE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,10 +555,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 562B1742B2C69707BA4DFDF7 /* Build configuration list for PBXNativeTarget "PlaceDiaryUITests" */;
 			buildPhases = (
-				C2FCC10FE91677E19360EFA6 /* [CP] Check Pods Manifest.lock */,
 				A1951621A26BBD5B5F1173C4 /* Sources */,
 				63D5169D862CA9C37AE69C85 /* Frameworks */,
-				DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -574,7 +648,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D0AC862F3CB629F16431053 /* [CP] Check Pods Manifest.lock */ = {
+		27444D59C2A9F16230B236FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -596,23 +670,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2FF5AA15FAE5FA8077CF295C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceDiaryTests/Pods-PlaceDiaryTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BEA34D84C815ADE537071D12 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,28 +685,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary/Pods-PlaceDiary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C2FCC10FE91677E19360EFA6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PlaceDiary-PlaceDiaryUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3ECB4182425DD7D00EF9A5B /* GoogleService-Info */ = {
@@ -670,22 +705,34 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resource/Plist/GoogleService-Info-debug.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
 		};
-		DF6BFFCF6EA690C9255A4B53 /* [CP] Embed Pods Frameworks */ = {
+		D3F9802E242D7F86005B54AE /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PryntTrimmerView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCoreLocation.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMKMapView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YPImagePicker.framework",
+			);
+			name = Carthage;
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceDiary-PlaceDiaryUITests/Pods-PlaceDiary-PlaceDiaryUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -784,7 +831,6 @@
 /* Begin XCBuildConfiguration section */
 		1CDEDF9BCFB803DBACA9304A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F37CC19713B2156FC9B90E4C /* Pods-PlaceDiary-PlaceDiaryUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -864,7 +910,7 @@
 		};
 		58D838ABC623E8D7E2401DA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E8116E31FC0EBCAFCCA4A1 /* Pods-PlaceDiaryTests.debug.xcconfig */;
+			baseConfigurationReference = 2B901650C5BC89BAB0A0240F /* Pods-PlaceDiaryTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2X6AD4W323;
@@ -944,6 +990,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2X6AD4W323;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PlaceDiary/Resource/Plist/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -966,6 +1016,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2X6AD4W323;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PlaceDiary/Resource/Plist/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -981,7 +1035,6 @@
 		};
 		E5F358B0DF8107AB895DF6B3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C0E607DE5F7650C9DED400 /* Pods-PlaceDiary-PlaceDiaryUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -1001,7 +1054,7 @@
 		};
 		F723CC5A0CC0443A24468FEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE0A266899AE89545943119 /* Pods-PlaceDiaryTests.release.xcconfig */;
+			baseConfigurationReference = BE2AF2B8C770E92E6DF1C07D /* Pods-PlaceDiaryTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2X6AD4W323;

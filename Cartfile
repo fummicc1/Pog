@@ -1,0 +1,6 @@
+github "RxSwiftCommunity/RxDataSources" ~> 4.0
+github "ReactiveX/RxSwift" ~> 5.0
+github "SnapKit/SnapKit" ~> 5.0.0
+github "Yummypets/YPImagePicker"
+github "RxSwiftCommunity/RxCoreLocation" ~> 1.4
+github "RxSwiftCommunity/RxMKMapView"

@@ -1,0 +1,8 @@
+github "HHK1/PryntTrimmerView" "4.0.0"
+github "ReactiveX/RxSwift" "5.1.1"
+github "RxSwiftCommunity/RxCoreLocation" "1.4.1"
+github "RxSwiftCommunity/RxDataSources" "4.0.1"
+github "RxSwiftCommunity/RxMKMapView" "5.0.0"
+github "SnapKit/SnapKit" "5.0.1"
+github "Yummypets/YPImagePicker" "4.2.0"
+github "freshOS/Stevia" "4.7.3"
