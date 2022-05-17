@@ -26,6 +26,7 @@
 		D3BFA9832833A6D100606CD4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9822833A6D100606CD4 /* Store.swift */; };
 		D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */; };
 		D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9892833C48F00606CD4 /* Color+Ex.swift */; };
+		D3BFA98F2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA98E2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		D3BFA9822833A6D100606CD4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogPage.swift; sourceTree = "<group>"; };
 		D3BFA9892833C48F00606CD4 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
+		D3BFA98B2833C72600606CD4 /* Place 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place 2.xcdatamodel"; sourceTree = "<group>"; };
+		D3BFA98E2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = Place1ToPlace2.xcmappingmodel; path = Data/Place1ToPlace2.xcmappingmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 				D3BFA96028337BC100606CD4 /* Models */,
 				D3BFA95D28337B0700606CD4 /* Pages */,
 				D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */,
+				D3BFA98E2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
 				D3BFA97F2833A6C200606CD4 /* Store */,
 			);
@@ -362,6 +366,7 @@
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
+				D3BFA98F2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
 				D3BFA9832833A6D100606CD4 /* Store.swift in Sources */,
 				D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */,
@@ -738,9 +743,10 @@
 		D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D3BFA98B2833C72600606CD4 /* Place 2.xcdatamodel */,
 				D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */,
 			);
-			currentVersion = D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */;
+			currentVersion = D3BFA98B2833C72600606CD4 /* Place 2.xcdatamodel */;
 			path = Pog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

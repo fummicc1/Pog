@@ -9,12 +9,8 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    init(hexStr: String, alpha: Double = 1) {
-        guard let hex = UInt(hexStr) else {
-            assertionFailure()
-            self = Color.clear
-            return
-        }
+    init?(hexStr: String, alpha: Double = 1) {
+        let hex = UInt(String(hexStr.dropFirst(2)), radix: 16)!
         self.init(
             .sRGB,
             red: Double((hex >> 16) & 0xff) / 255,

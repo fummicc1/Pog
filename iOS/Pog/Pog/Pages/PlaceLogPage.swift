@@ -42,10 +42,12 @@ struct PlaceLogPage: View {
                             longitude: log.lng
                         )
                     ) {
-                        Circle()
+                        let color = Color(hexStr: log.color!)!
+                        Image(systemSymbol: .pawprintFill)
+                            .resizable()
                             .frame(width: 32, height: 32)
                             .foregroundColor(
-                                Color.accentColor.opacity(0.2)
+                                color.opacity(0.2)
                             )
                     }
                 }
