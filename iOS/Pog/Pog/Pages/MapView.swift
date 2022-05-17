@@ -7,11 +7,13 @@
 
 import SwiftUI
 import CoreLocationUI
+import SFSafeSymbols
 import MapKit
 
 struct MapView: View {
 
     @ObservedObject var model: MapModel
+    @Binding var items: [Place]
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
@@ -19,7 +21,24 @@ struct MapView: View {
                 coordinateRegion: $model.region,
                 interactionModes: .all,
                 showsUserLocation: true,
-                userTrackingMode: .constant(.none)
+                userTrackingMode: .constant(.none),
+                annotationItems: items,
+                annotationContent: { item in
+                    MapAnnotation(
+                        coordinate: CLLocationCoordinate2D(
+                            latitude: item.lat,
+                            longitude: item.long
+                        )
+                    ) {
+                        Image(systemSymbol: .magnifyingglass)
+                            .frame(width: 32, height: 32)
+                            .background(Color(uiColor: .systemBackground))
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                model.selectedPlace = item
+                            }
+                    }
+                }
             )
             .alert("Pogを快適に使用するために。",
                    isPresented: $model.needToAcceptAlwaysLocationAuthorization,
@@ -44,14 +63,15 @@ struct MapView: View {
                 -16
             }
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(
-            model: MapModel(locationManager: LocationManagerImpl.shared)
+            model: MapModel(locationManager: LocationManagerImpl.shared),
+            items: .constant([])
         )
     }
 }

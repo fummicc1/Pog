@@ -15,6 +15,8 @@ class MapModel: ObservableObject {
     private let locationManager: LocationManager
     private var cancellables: Set<AnyCancellable> = []
 
+    @Published var selectedPlace: Place?
+
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
         center: CLLocationCoordinate2D(
@@ -36,6 +38,14 @@ class MapModel: ObservableObject {
         locationManager.authorizationStatus
             .map({ $0 != CLAuthorizationStatus.authorizedAlways && $0 != CLAuthorizationStatus.authorizedWhenInUse })
             .assign(to: &$needToAcceptAlwaysLocationAuthorization)
+
+        locationManager
+            .coordinate
+            .first()
+            .sink { coordinate in
+                self.region.center = coordinate
+            }
+            .store(in: &cancellables)
     }
 
     func onTapMyCurrentLocationButton() {

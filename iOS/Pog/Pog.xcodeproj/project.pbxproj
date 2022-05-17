@@ -17,6 +17,9 @@
 		D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA95E28337BBB00606CD4 /* MapView.swift */; };
 		D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96128337BC900606CD4 /* MapModel.swift */; };
 		D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96428337C5700606CD4 /* LocationManager.swift */; };
+		D3BFA9702833965F00606CD4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96F2833965F00606CD4 /* Place.swift */; };
+		D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA972283397ED00606CD4 /* SFSafeSymbols */; };
+		D3BFA97628339A8900606CD4 /* SwiftUIMapView in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA97528339A8900606CD4 /* SwiftUIMapView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,7 @@
 		D3BFA96128337BC900606CD4 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		D3BFA96428337C5700606CD4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D3BFA9662833852B00606CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D3BFA96F2833965F00606CD4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BFA97628339A8900606CD4 /* SwiftUIMapView in Frameworks */,
+				D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +107,7 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFA96E2833965900606CD4 /* Data */,
 				D3BFA9662833852B00606CD4 /* Info.plist */,
 				D3BFA96328337C4D00606CD4 /* Manager */,
 				D3BFA96028337BC100606CD4 /* Models */,
@@ -140,6 +147,7 @@
 		D3BFA95D28337B0700606CD4 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFA96B2833931F00606CD4 /* Components */,
 				D3BFA9352833796D00606CD4 /* RootView.swift */,
 				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
 			);
@@ -162,6 +170,21 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		D3BFA96B2833931F00606CD4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D3BFA96E2833965900606CD4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFA96F2833965F00606CD4 /* Place.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,6 +201,10 @@
 			dependencies = (
 			);
 			name = Pog;
+			packageProductDependencies = (
+				D3BFA972283397ED00606CD4 /* SFSafeSymbols */,
+				D3BFA97528339A8900606CD4 /* SwiftUIMapView */,
+			);
 			productName = Pog;
 			productReference = D3BFA9302833796D00606CD4 /* Pog.app */;
 			productType = "com.apple.product-type.application";
@@ -250,6 +277,10 @@
 				Base,
 			);
 			mainGroup = D3BFA9272833796D00606CD4;
+			packageReferences = (
+				D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				D3BFA97428339A8900606CD4 /* XCRemoteSwiftPackageReference "swiftui-mapview" */,
+			);
 			productRefGroup = D3BFA9312833796D00606CD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +327,7 @@
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
+				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
 				D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +661,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.3.0;
+			};
+		};
+		D3BFA97428339A8900606CD4 /* XCRemoteSwiftPackageReference "swiftui-mapview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sgade/swiftui-mapview";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3BFA972283397ED00606CD4 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+		D3BFA97528339A8900606CD4 /* SwiftUIMapView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3BFA97428339A8900606CD4 /* XCRemoteSwiftPackageReference "swiftui-mapview" */;
+			productName = SwiftUIMapView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3BFA9282833796D00606CD4 /* Project object */;
 }
