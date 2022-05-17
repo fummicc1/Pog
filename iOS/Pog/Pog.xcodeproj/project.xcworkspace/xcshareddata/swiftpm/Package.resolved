@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "partialsheet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AndreaMiotto/PartialSheet",
+      "state" : {
+        "revision" : "318f18bfabd2b2ddf785babd2e53bd593c00a254",
+        "version" : "3.1.0"
+      }
+    },
+    {
+      "identity" : "sfsafesymbols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols",
+      "state" : {
+        "revision" : "c8c33d947d8a1c883aa19fd24e14fd738b06e369",
+        "version" : "3.3.2"
+      }
+    }
+  ],
+  "version" : 2
+}
