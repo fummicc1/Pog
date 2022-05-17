@@ -13,16 +13,18 @@ struct RootView: View {
     @State private var searchText: String = ""
     @State private var searchResults: [Place] = []
 
+    let locationManager: LocationManager
+
     var body: some View {
         NavigationView {
             MapView(
                 model: MapModel(
-                    locationManager: LocationManagerImpl.shared
+                    locationManager: locationManager
                 ),
                 items: $searchResults
             )
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("")
+            .navigationTitle("マップ")
         }.searchable(text: $searchText)
             .onSubmit(of: .search) {
                 let request = MKLocalSearch.Request()
@@ -55,6 +57,6 @@ struct RootView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView(locationManager: LocationManagerImpl.shared)
     }
 }

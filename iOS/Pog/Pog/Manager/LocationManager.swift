@@ -44,6 +44,8 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     public override init() {
         super.init()
         manager.allowsBackgroundLocationUpdates = true
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        manager.distanceFilter = 30
         manager.delegate = self
     }
 

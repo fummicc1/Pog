@@ -20,6 +20,10 @@
 		D3BFA9702833965F00606CD4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96F2833965F00606CD4 /* Place.swift */; };
 		D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA972283397ED00606CD4 /* SFSafeSymbols */; };
 		D3BFA97628339A8900606CD4 /* SwiftUIMapView in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA97528339A8900606CD4 /* SwiftUIMapView */; };
+		D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */; };
+		D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */; };
+		D3BFA97E2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */; };
+		D3BFA9832833A6D100606CD4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9822833A6D100606CD4 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		D3BFA96428337C5700606CD4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D3BFA9662833852B00606CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3BFA96F2833965F00606CD4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Place.xcdatamodel; sourceTree = "<group>"; };
+		D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3BFA9822833A6D100606CD4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +115,16 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
-				D3BFA96E2833965900606CD4 /* Data */,
 				D3BFA9662833852B00606CD4 /* Info.plist */,
+				D3BFA9332833796D00606CD4 /* PogApp.swift */,
+				D3BFA9372833796F00606CD4 /* Assets.xcassets */,
+				D3BFA96E2833965900606CD4 /* Data */,
 				D3BFA96328337C4D00606CD4 /* Manager */,
 				D3BFA96028337BC100606CD4 /* Models */,
 				D3BFA95D28337B0700606CD4 /* Pages */,
-				D3BFA9332833796D00606CD4 /* PogApp.swift */,
-				D3BFA9372833796F00606CD4 /* Assets.xcassets */,
+				D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
+				D3BFA97F2833A6C200606CD4 /* Store */,
 			);
 			path = Pog;
 			sourceTree = "<group>";
@@ -180,9 +190,19 @@
 		D3BFA96E2833965900606CD4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */,
+				D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */,
 				D3BFA96F2833965F00606CD4 /* Place.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		D3BFA97F2833A6C200606CD4 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFA9822833A6D100606CD4 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,8 +345,12 @@
 			files = (
 				D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
+				D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
+				D3BFA9832833A6D100606CD4 /* Store.swift in Sources */,
+				D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */,
+				D3BFA97E2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift in Sources */,
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
 				D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */,
 			);
@@ -693,6 +717,19 @@
 			productName = SwiftUIMapView;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */,
+			);
+			currentVersion = D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */;
+			path = Pog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D3BFA9282833796D00606CD4 /* Project object */;
 }
