@@ -9,13 +9,19 @@ import MapKit
 import Combine
 import Foundation
 import CoreLocation
+import SwiftUI
 
 class MapModel: ObservableObject {
 
     private let locationManager: LocationManager
     private var cancellables: Set<AnyCancellable> = []
 
+    @FetchRequest(sortDescriptors: [
+        NSSortDescriptor(key: "date", ascending: true)
+    ]) var logs: FetchedResults<PlaceLog>
     @Published var selectedPlace: Place?
+    @Published var searchResults: [Place] = []
+    @Published var searchText: String = ""
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -53,5 +59,32 @@ class MapModel: ObservableObject {
             return
         }
         region.center = coordinate
+    }
+
+    func submit() {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = searchText
+        let search = MKLocalSearch(request: request)
+        Task {
+            do {
+                let response = try await search.start()
+                await MainActor.run(body: {
+                    searchResults = response.mapItems
+                        .map(\.placemark)
+                        .compactMap({ placemark in
+                            guard let coordinate = placemark.location?.coordinate else {
+                                return nil
+                            }
+                            return Place(
+                                lat: coordinate.latitude,
+                                lng: coordinate.longitude,
+                                name: placemark.title ?? ""
+                            )
+                        })
+                })
+            } catch {
+                print(error)
+            }
+        }
     }
 }

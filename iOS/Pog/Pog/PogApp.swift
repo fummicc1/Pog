@@ -16,6 +16,7 @@ struct PogApp: App {
     var body: some Scene {
         WindowGroup {
             RootView(locationManager: appDelegate.locationManager)
+                .environment(\.managedObjectContext, appDelegate.store.context)
         }
     }
 }
@@ -34,6 +35,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 log.lat = coordinate.latitude
                 log.lng = coordinate.longitude
                 log.date = Date()
+                log.color = "0x007AFF"
                 try? self.store.save()
             }
         return true

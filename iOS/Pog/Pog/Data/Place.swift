@@ -10,11 +10,11 @@ import CoreLocation
 
 public struct Place: Identifiable, Hashable {
     public let lat: CLLocationDegrees
-    public let long: CLLocationDegrees
+    public let lng: CLLocationDegrees
 
     public let name: String
 
     public var id: String {
-        return "\(lat)/\(long)"
+        return "\(lat)/\(lng)"
     }
 }

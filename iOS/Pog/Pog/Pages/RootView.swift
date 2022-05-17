@@ -10,48 +10,29 @@ import MapKit
 
 struct RootView: View {
 
-    @State private var searchText: String = ""
-    @State private var searchResults: [Place] = []
-
     let locationManager: LocationManager
 
     var body: some View {
-        NavigationView {
+        TabView {
             MapView(
                 model: MapModel(
                     locationManager: locationManager
-                ),
-                items: $searchResults
+                )
             )
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("マップ")
-        }.searchable(text: $searchText)
-            .onSubmit(of: .search) {
-                let request = MKLocalSearch.Request()
-                request.naturalLanguageQuery = searchText
-                let search = MKLocalSearch(request: request)
-                Task {
-                    do {
-                        let response = try await search.start()
-                        await MainActor.run(body: {
-                            self.searchResults = response.mapItems
-                                .map(\.placemark)
-                                .compactMap({ placemark in
-                                    guard let coordinate = placemark.location?.coordinate else {
-                                        return nil
-                                    }
-                                    return Place(
-                                        lat: coordinate.latitude,
-                                        long: coordinate.longitude,
-                                        name: placemark.title ?? ""
-                                    )
-                                })
-                        })
-                    } catch {
-                        print(error)
-                    }
-                }
+            .tabItem {
+                Image(systemSymbol: .map)
+                Text("マップ")
             }
+            PlaceLogPage(
+                model: MapModel(
+                    locationManager: locationManager
+                )
+            )
+            .tabItem {
+                Image(systemSymbol: .listBulletCircle)
+                Text("ログ")
+            }
+        }
     }
 }
 
