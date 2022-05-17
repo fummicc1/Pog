@@ -19,10 +19,6 @@ public class StoreImpl {
     private let container = NSPersistentContainer(name: "Pog")
 
     public init() {
-        let description = NSPersistentStoreDescription()
-        description.shouldMigrateStoreAutomatically = true
-        description.shouldInferMappingModelAutomatically = true
-        container.persistentStoreDescriptions = [description]
         container.loadPersistentStores { _, error in
             if let error = error {
                 print(error)

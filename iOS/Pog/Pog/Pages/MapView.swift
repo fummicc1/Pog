@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PartialSheet
 import CoreLocationUI
 import SFSafeSymbols
 import MapKit
@@ -36,7 +37,7 @@ struct MapView: View {
                                 longitude: item.lng
                             )
                         ) {
-                            Image(systemSymbol: .magnifyingglass)
+                            Image(systemSymbol: .mappin)
                                 .frame(width: 32, height: 32)
                                 .background(Color(uiColor: .systemBackground))
                                 .clipShape(Circle())
@@ -71,6 +72,17 @@ struct MapView: View {
             }
         }
         .background(Color.clear)
+        .partialSheet(isPresented: Binding(get: {
+            model.selectedPlace != nil
+        }, set: { value, _ in
+            if !value {
+                model.selectedPlace = nil
+            }
+        })) {
+            if let place = model.selectedPlace {
+                SearchPlacePage(model: SearchPlaceModel(), place: place)
+            }
+        }
     }
 }
 

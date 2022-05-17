@@ -16,6 +16,7 @@ struct PogApp: App {
     var body: some Scene {
         WindowGroup {
             RootView(locationManager: appDelegate.locationManager)
+                .attachPartialSheetToRoot()
                 .environment(\.managedObjectContext, appDelegate.store.context)
         }
     }

@@ -43,7 +43,7 @@ struct PlaceLogPage: View {
                         )
                     ) {
                         let color = Color(hexStr: log.color!)!
-                        Image(systemSymbol: .pawprintFill)
+                        Image(systemSymbol: .pawprintCircle)
                             .resizable()
                             .frame(width: 32, height: 32)
                             .foregroundColor(

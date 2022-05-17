@@ -19,14 +19,17 @@
 		D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96428337C5700606CD4 /* LocationManager.swift */; };
 		D3BFA9702833965F00606CD4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96F2833965F00606CD4 /* Place.swift */; };
 		D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA972283397ED00606CD4 /* SFSafeSymbols */; };
-		D3BFA97628339A8900606CD4 /* SwiftUIMapView in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA97528339A8900606CD4 /* SwiftUIMapView */; };
 		D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */; };
 		D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */; };
 		D3BFA97E2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */; };
 		D3BFA9832833A6D100606CD4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9822833A6D100606CD4 /* Store.swift */; };
 		D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */; };
 		D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9892833C48F00606CD4 /* Color+Ex.swift */; };
-		D3BFA98F2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA98E2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel */; };
+		D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */; };
+		D3BFA9952833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9932833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift */; };
+		D3BFA9962833CDB400606CD4 /* InterestingPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9942833CDB400606CD4 /* InterestingPlace+CoreDataProperties.swift */; };
+		D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA9982833CEBF00606CD4 /* PartialSheet */; };
+		D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +72,11 @@
 		D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogPage.swift; sourceTree = "<group>"; };
 		D3BFA9892833C48F00606CD4 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
 		D3BFA98B2833C72600606CD4 /* Place 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place 2.xcdatamodel"; sourceTree = "<group>"; };
-		D3BFA98E2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = Place1ToPlace2.xcmappingmodel; path = Data/Place1ToPlace2.xcmappingmodel; sourceTree = "<group>"; };
+		D3BFA9902833CC6700606CD4 /* Pog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pog.entitlements; sourceTree = "<group>"; };
+		D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacePage.swift; sourceTree = "<group>"; };
+		D3BFA9932833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3BFA9942833CDB400606CD4 /* InterestingPlace+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BFA97628339A8900606CD4 /* SwiftUIMapView in Frameworks */,
+				D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */,
 				D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +129,7 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
 				D3BFA9662833852B00606CD4 /* Info.plist */,
 				D3BFA9332833796D00606CD4 /* PogApp.swift */,
@@ -131,7 +139,6 @@
 				D3BFA96028337BC100606CD4 /* Models */,
 				D3BFA95D28337B0700606CD4 /* Pages */,
 				D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */,
-				D3BFA98E2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
 				D3BFA97F2833A6C200606CD4 /* Store */,
 			);
@@ -170,6 +177,7 @@
 				D3BFA9352833796D00606CD4 /* RootView.swift */,
 				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
 				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
+				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				D3BFA96128337BC900606CD4 /* MapModel.swift */,
+				D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,9 +209,11 @@
 		D3BFA96E2833965900606CD4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFA9932833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift */,
+				D3BFA9942833CDB400606CD4 /* InterestingPlace+CoreDataProperties.swift */,
+				D3BFA96F2833965F00606CD4 /* Place.swift */,
 				D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */,
 				D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */,
-				D3BFA96F2833965F00606CD4 /* Place.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -241,7 +252,7 @@
 			name = Pog;
 			packageProductDependencies = (
 				D3BFA972283397ED00606CD4 /* SFSafeSymbols */,
-				D3BFA97528339A8900606CD4 /* SwiftUIMapView */,
+				D3BFA9982833CEBF00606CD4 /* PartialSheet */,
 			);
 			productName = Pog;
 			productReference = D3BFA9302833796D00606CD4 /* Pog.app */;
@@ -317,7 +328,7 @@
 			mainGroup = D3BFA9272833796D00606CD4;
 			packageReferences = (
 				D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
-				D3BFA97428339A8900606CD4 /* XCRemoteSwiftPackageReference "swiftui-mapview" */,
+				D3BFA9972833CEBF00606CD4 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = D3BFA9312833796D00606CD4 /* Products */;
 			projectDirPath = "";
@@ -361,18 +372,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BFA9962833CDB400606CD4 /* InterestingPlace+CoreDataProperties.swift in Sources */,
 				D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */,
+				D3BFA9952833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift in Sources */,
 				D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
-				D3BFA98F2833C7E300606CD4 /* Place1ToPlace2.xcmappingmodel in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
 				D3BFA9832833A6D100606CD4 /* Store.swift in Sources */,
 				D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */,
+				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
 				D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */,
 				D3BFA97E2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift in Sources */,
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
+				D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */,
 				D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
@@ -562,6 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
@@ -716,12 +732,12 @@
 				minimumVersion = 3.3.0;
 			};
 		};
-		D3BFA97428339A8900606CD4 /* XCRemoteSwiftPackageReference "swiftui-mapview" */ = {
+		D3BFA9972833CEBF00606CD4 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sgade/swiftui-mapview";
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 3.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -732,10 +748,10 @@
 			package = D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
 		};
-		D3BFA97528339A8900606CD4 /* SwiftUIMapView */ = {
+		D3BFA9982833CEBF00606CD4 /* PartialSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D3BFA97428339A8900606CD4 /* XCRemoteSwiftPackageReference "swiftui-mapview" */;
-			productName = SwiftUIMapView;
+			package = D3BFA9972833CEBF00606CD4 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 

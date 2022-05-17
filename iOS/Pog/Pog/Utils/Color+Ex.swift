@@ -10,7 +10,11 @@ import SwiftUI
 
 extension Color {
     init?(hexStr: String, alpha: Double = 1) {
-        let hex = UInt(String(hexStr.dropFirst(2)), radix: 16)!
+        var hexStr = hexStr
+        if hexStr.hasPrefix("0x") {
+            hexStr = String(hexStr.dropFirst(2))
+        }
+        let hex = UInt(hexStr, radix: 16)!
         self.init(
             .sRGB,
             red: Double((hex >> 16) & 0xff) / 255,
