@@ -16,7 +16,7 @@ struct PlaceLogPage: View {
     @State private var isMapMode: Bool = true
 
     @FetchRequest(sortDescriptors: [
-        NSSortDescriptor(key: "date", ascending: true)
+        NSSortDescriptor(key: "date", ascending: false)
     ]) var logs: FetchedResults<PlaceLog>
 
     var body: some View {

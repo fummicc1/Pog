@@ -43,6 +43,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
 
     public override init() {
         super.init()
+        manager.showsBackgroundLocationIndicator = true
         manager.allowsBackgroundLocationUpdates = true
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager.distanceFilter = 30
@@ -64,7 +65,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
         authorizationStatusRelay.send(manager.authorizationStatus)
 
         if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
-            manager.startUpdatingLocation()
+            manager.startMonitoringSignificantLocationChanges()
         }
     }
 
