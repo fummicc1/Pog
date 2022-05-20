@@ -16,7 +16,8 @@ struct RootView: View {
         TabView {
             MapView(
                 model: MapModel(
-                    locationManager: locationManager
+                    locationManager: locationManager,
+                    placeManager: PlaceManagerImpl()
                 )
             )
             .tabItem {
@@ -25,7 +26,8 @@ struct RootView: View {
             }
             PlaceLogPage(
                 model: MapModel(
-                    locationManager: locationManager
+                    locationManager: locationManager,
+                    placeManager: PlaceManagerImpl()
                 )
             )
             .tabItem {

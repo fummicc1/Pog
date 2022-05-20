@@ -36,7 +36,6 @@ struct SearchPlacePage: View {
                             model.storedInterestingPlace = nil
                         }
                         return
-                        
                     }
                     let interestingPlace = InterestingPlace(context: context)
                     interestingPlace.name = place.name
@@ -55,16 +54,13 @@ struct SearchPlacePage: View {
                         model.error = error.localizedDescription
                     }
                 }
-                .padding()
+                .padding([.horizontal], 12)
+                .padding([.vertical], 8)
                 .background(.background)
                 .cornerRadius(8)
             }
         }
         .padding()
-        .background(Color.accentColor)
-        .cornerRadius(12)
-        .padding()
-        .background(.background)
         .alert("エラーが発生しました", isPresented: Binding(get: {
             model.error != nil
         }, set: { v in
@@ -77,9 +73,14 @@ struct SearchPlacePage: View {
             }
         }
         .onAppear {
-            model.alreadyInteresting = interestingPlaces.contains(where: { place in
+            if let stored = interestingPlaces.first(where: { place in
                 place.lat == self.place.lat && place.lng == self.place.lng
-            })
+            }) {
+                model.storedInterestingPlace = stored
+                model.alreadyInteresting = true
+            } else {
+                model.alreadyInteresting = false
+            }
         }
     }
 }

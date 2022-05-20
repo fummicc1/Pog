@@ -14,6 +14,7 @@ import SwiftUI
 class MapModel: ObservableObject {
 
     private let locationManager: LocationManager
+    private let placeManager: PlaceManager
     private var cancellables: Set<AnyCancellable> = []
 
     @FetchRequest(sortDescriptors: [
@@ -30,14 +31,15 @@ class MapModel: ObservableObject {
             longitude: 139.839478
         ),
         span: .init(
-            latitudeDelta: 0.05,
-            longitudeDelta: 0.05
+            latitudeDelta: 0.03,
+            longitudeDelta: 0.03
         )
     )
     @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
 
-    init(locationManager: LocationManager) {
+    init(locationManager: LocationManager, placeManager: PlaceManager) {
         self.locationManager = locationManager
+        self.placeManager = placeManager
 
         locationManager.request()
 
@@ -52,6 +54,17 @@ class MapModel: ObservableObject {
                 self.region.center = coordinate
             }
             .store(in: &cancellables)
+
+        locationManager.coordinate
+            .sink { coordinate in
+                placeManager.searchNearby(at: coordinate)
+            }
+            .store(in: &cancellables)
+
+        placeManager.placesPublisher
+            .assign(to: &$searchResults)
+
+        placeManager.searchDescriptively(text: searchText)
     }
 
     func onTapMyCurrentLocationButton() {
@@ -61,30 +74,7 @@ class MapModel: ObservableObject {
         region.center = coordinate
     }
 
-    func submit() {
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = searchText
-        let search = MKLocalSearch(request: request)
-        Task {
-            do {
-                let response = try await search.start()
-                await MainActor.run(body: {
-                    searchResults = response.mapItems
-                        .map(\.placemark)
-                        .compactMap({ placemark in
-                            guard let coordinate = placemark.location?.coordinate else {
-                                return nil
-                            }
-                            return Place(
-                                lat: coordinate.latitude,
-                                lng: coordinate.longitude,
-                                name: placemark.title ?? ""
-                            )
-                        })
-                })
-            } catch {
-                print(error)
-            }
-        }
+    func onSubmitTextField() {
+        placeManager.searchDescriptively(text: searchText)
     }
 }

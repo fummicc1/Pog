@@ -13,16 +13,9 @@ import MapKit
 
 struct MapView: View {
 
-    @ObservedObject var model: MapModel
+    @StateObject var model: MapModel
 
     var body: some View {
-        VStack {
-            TextField("検索", text: $model.searchText)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-                .onSubmit(of: .text) {
-                    model.submit()
-                }
             ZStack(alignment: .bottomLeading) {
                 Map(
                     coordinateRegion: $model.region,
@@ -42,7 +35,16 @@ struct MapView: View {
                                 .background(Color(uiColor: .systemBackground))
                                 .clipShape(Circle())
                                 .onTapGesture {
-                                    model.selectedPlace = item
+                                    let delay: Double
+                                    if model.selectedPlace != nil {
+                                        model.selectedPlace = nil
+                                        delay = 0.5
+                                    } else {
+                                        delay = 0
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                                        model.selectedPlace = item
+                                    }
                                 }
                         }
                     }
@@ -56,29 +58,50 @@ struct MapView: View {
                 }) {
                     Text("Pogには位置情報のログを残す機能があります。\nこれらの機能を使用するために位置情報の許可をお願いします。")
                 }
-                LocationButton(.currentLocation) {
-                    model.onTapMyCurrentLocationButton()
+                HStack {
+                    LocationButton(.currentLocation) {
+                        model.onTapMyCurrentLocationButton()
+                    }
+                    .foregroundColor(Color(uiColor: .systemBackground))
+                    .cornerRadius(12)
+                    .labelStyle(.iconOnly)
+                    TextField("ここで検索", text: $model.searchText)
+                        .keyboardType(.webSearch)
+                        .onSubmit(of: .text) {
+                            model.onSubmitTextField()
+                        }
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 16)
+                        .background(Color(uiColor: .systemBackground))
+                        .cornerRadius(24)
                 }
-                .foregroundColor(Color(uiColor: .systemBackground))
-                .background(Color(uiColor: .label))
-                .cornerRadius(12)
-                .labelStyle(.iconOnly)
-                .alignmentGuide(.bottom) { _ in
-                    80
-                }
-                .alignmentGuide(.leading) { _ in
-                    -16
-                }
+                .padding(.vertical, 32)
+                .padding(.horizontal, 16)
             }
-        }
-        .background(Color.clear)
-        .partialSheet(isPresented: Binding(get: {
-            model.selectedPlace != nil
-        }, set: { value, _ in
-            if !value {
-                model.selectedPlace = nil
-            }
-        })) {
+
+        .ignoresSafeArea(.container, edges: [])
+        .partialSheet(
+            isPresented: Binding(get: {
+                $model.selectedPlace.wrappedValue != nil
+            }, set: { isPresented in
+                if !isPresented {
+                    $model.selectedPlace.wrappedValue = nil
+                }
+            }),
+            iPhoneStyle: PSIphoneStyle(
+                background: .solid(Color(uiColor: .secondarySystemBackground)),
+                handleBarStyle: .solid(.secondary),
+                cover: .disabled,
+                cornerRadius: 10
+            ),
+            iPadMacStyle: .init(
+                backgroundColor: Color(UIColor.secondarySystemBackground),
+                closeButtonStyle: .icon(
+                    image: Image(systemName: "xmark"),
+                    color: Color.secondary
+                )
+            )
+        ) {
             if let place = model.selectedPlace {
                 SearchPlacePage(model: SearchPlaceModel(), place: place)
             }
@@ -89,7 +112,10 @@ struct MapView: View {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(
-            model: MapModel(locationManager: LocationManagerImpl.shared)
+            model: MapModel(
+                locationManager: LocationManagerImpl.shared,
+                placeManager: PlaceManagerImpl()
+            )
         )
     }
 }

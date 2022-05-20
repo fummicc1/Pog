@@ -23,7 +23,7 @@ struct PogApp: App {
 }
 
 
-class AppDelegate: NSObject, UIApplicationDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var locationManager: LocationManager = LocationManagerImpl.shared
     var store: Store = StoreImpl()
@@ -39,6 +39,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 log.color = "0x007AFF"
                 try? self.store.save()
             }
+
+        UNUserNotificationCenter.current().delegate = self
         return true
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        return [.banner]
     }
 }

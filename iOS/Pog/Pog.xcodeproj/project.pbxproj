@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AB89228374A9C009AB9AC /* PlaceManager.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
 		D3BFA9362833796D00606CD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9352833796D00606CD4 /* RootView.swift */; };
 		D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BFA9372833796F00606CD4 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D31AB89228374A9C009AB9AC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BFA9332833796D00606CD4 /* PogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogApp.swift; sourceTree = "<group>"; };
 		D3BFA9352833796D00606CD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D3BFA96428337C5700606CD4 /* LocationManager.swift */,
+				D31AB89228374A9C009AB9AC /* PlaceManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */,
 				D3BFA9952833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift in Sources */,
 				D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */,
+				D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,

@@ -66,6 +66,11 @@ struct PlaceLogPage: View {
 
 struct PlaceLogListPage_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceLogPage(model: MapModel(locationManager: LocationManagerImpl.shared))
+        PlaceLogPage(
+            model: MapModel(
+                locationManager: LocationManagerImpl.shared,
+                placeManager: PlaceManagerImpl()
+            )
+        )
     }
 }

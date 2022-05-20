@@ -22,9 +22,17 @@ class SearchPlaceModel: ObservableObject {
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        alreadyInteresting = false
     }
 
     func didAddInterestingPlace() async {
+        guard let isAuthorized = try? await UNUserNotificationCenter.current().requestAuthorization(
+                options: [.alert, .badge, .sound]
+            ),
+              isAuthorized else {
+            return
+        }
+
         guard let storedInterestingPlace = storedInterestingPlace else {
             return
         }
