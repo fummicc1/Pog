@@ -65,6 +65,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
         authorizationStatusRelay.send(manager.authorizationStatus)
 
         if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
+            manager.startUpdatingLocation()
             manager.startMonitoringSignificantLocationChanges()
         }
     }

@@ -64,7 +64,7 @@ class MapModel: ObservableObject {
         placeManager.placesPublisher
             .assign(to: &$searchResults)
 
-        placeManager.searchDescriptively(text: searchText)
+        placeManager.search(text: searchText)
     }
 
     func onTapMyCurrentLocationButton() {
@@ -75,6 +75,6 @@ class MapModel: ObservableObject {
     }
 
     func onSubmitTextField() {
-        placeManager.searchDescriptively(text: searchText)
+        placeManager.search(text: searchText)
     }
 }

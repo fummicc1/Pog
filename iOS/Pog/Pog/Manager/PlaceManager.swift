@@ -14,7 +14,7 @@ public protocol PlaceManager {
     var places: [Place] { get }
 
     func searchNearby(at coordinate: CLLocationCoordinate2D)
-    func searchDescriptively(text: String)
+    func search(text: String)
 }
 
 public class PlaceManagerImpl: NSObject, PlaceManager {
@@ -48,7 +48,7 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         )
     }
 
-    public func searchDescriptively(text: String) {
+    public func search(text: String) {
         var text = text
         if text.isEmpty {
             text = "カフェ"

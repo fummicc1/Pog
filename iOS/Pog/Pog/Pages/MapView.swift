@@ -78,8 +78,7 @@ struct MapView: View {
                 .padding(.vertical, 32)
                 .padding(.horizontal, 16)
             }
-
-        .ignoresSafeArea(.container, edges: [])
+            .ignoresSafeArea(.container, edges: .top)
         .partialSheet(
             isPresented: Binding(get: {
                 $model.selectedPlace.wrappedValue != nil
