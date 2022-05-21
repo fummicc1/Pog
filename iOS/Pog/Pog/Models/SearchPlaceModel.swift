@@ -38,7 +38,7 @@ class SearchPlaceModel: ObservableObject {
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         let content = UNMutableNotificationContent()
-        content.title = "気になる場所が近くにあります"
+        content.title = "\(storedInterestingPlace.name ?? "")が近くにあります"
         content.body = "アプリを開いて確認しましょう"
         let trigger = UNLocationNotificationTrigger(
             region: CLCircularRegion(
