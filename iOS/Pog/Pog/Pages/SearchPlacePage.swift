@@ -43,6 +43,7 @@ struct SearchPlacePage: View {
                     interestingPlace.lng = place.lng
                     // TODO: Decide by user own.
                     interestingPlace.distanceMeter = 300
+                    interestingPlace.visitedAt = Date()
                     do {
                         try context.save()
                         model.alreadyInteresting = true

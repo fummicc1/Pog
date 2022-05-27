@@ -11,6 +11,7 @@ import MapKit
 struct RootView: View {
 
     let locationManager: LocationManager
+    let store: Store
 
     var body: some View {
         TabView {
@@ -25,9 +26,9 @@ struct RootView: View {
                 Text("マップ")
             }
             PlaceLogPage(
-                model: MapModel(
+                model: PlaceLogModel(
                     locationManager: locationManager,
-                    placeManager: PlaceManagerImpl()
+                    store: store
                 )
             )
             .tabItem {
@@ -35,11 +36,5 @@ struct RootView: View {
                 Text("ログ")
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView(locationManager: LocationManagerImpl.shared)
     }
 }

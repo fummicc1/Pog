@@ -77,4 +77,8 @@ class MapModel: ObservableObject {
     func onSubmitTextField() {
         placeManager.search(text: searchText)
     }
+
+    func checkPlaceIsInterseted(_ place: Place) -> Bool {
+        placeManager.places.contains(place)
+    }
 }

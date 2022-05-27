@@ -17,6 +17,15 @@
         "revision" : "c8c33d947d8a1c883aa19fd24e14fd738b06e369",
         "version" : "3.3.2"
       }
+    },
+    {
+      "identity" : "swiftui-mapview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sgade/swiftui-mapview",
+      "state" : {
+        "revision" : "6620434bae01602d76832d4180b0124db2343e3c",
+        "version" : "1.2.1"
+      }
     }
   ],
   "version" : 2

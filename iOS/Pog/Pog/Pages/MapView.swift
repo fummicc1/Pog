@@ -30,7 +30,7 @@ struct MapView: View {
                                 longitude: item.lng
                             )
                         ) {
-                            Image(systemSymbol: .mappin)
+                            Image(systemSymbol: model.checkPlaceIsInterseted(item) ? .mappin : .checkmark)
                                 .frame(width: 32, height: 32)
                                 .background(Color(uiColor: .systemBackground))
                                 .clipShape(Circle())
