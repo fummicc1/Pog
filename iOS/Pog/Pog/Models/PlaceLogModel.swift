@@ -30,7 +30,7 @@ class PlaceLogModel: ObservableObject {
 
     @Published var logs: [PlaceLog] = []
     @Published var dates: [Date] = []
-    @Published var polylines: [MKPolyline] = []
+    private var polylines: [Date: MKPolyline] = [:]
     @Published var selectedDate: Date?
     @Published var selectedPolyline: MKPolyline?
 
@@ -67,8 +67,9 @@ class PlaceLogModel: ObservableObject {
         let calendar = Calendar.current
         store.logs
             .assign(to: &$logs)
+        // TODO: diffable update
         store.logs
-            .map({ logs -> [[CLLocationCoordinate2D]] in
+            .map({ logs -> [Date: MKPolyline] in
                 var ret: [Date: [CLLocationCoordinate2D]] = [:]
                 for log in logs {
                     let coordinate = CLLocationCoordinate2D(
@@ -84,24 +85,20 @@ class PlaceLogModel: ObservableObject {
                         ret[date] = [coordinate]
                     }
                 }
-                self.dates = ret.keys.map({ $0 })
-                return ret.values.map({ $0 })
+                self.dates = ret.keys.sorted().reversed()
+                return ret
+                    .mapValues { coordinates in
+                        MKPolyline(coordinates: coordinates, count: coordinates.count)
+                    }
             })
-            .map({ values in
-                values.map { coordinates in
-                    MKPolyline(coordinates: coordinates, count: coordinates.count)
-                }
-            })
-            .assign(to: &$polylines)
+            .sink { values in
+                self.polylines = values
+            }
+            .store(in: &cancellables)
     }
 
     func onSelect(date: Date) {
-        if let index = dates.firstIndex(where: { $0 == date }) {
-            if polylines.count <= index {
-                return
-            }
-            selectedDate = dates[index]
-            selectedPolyline = polylines[index]
-        }
+        selectedDate = date
+        selectedPolyline = polylines[date]
     }
 }
