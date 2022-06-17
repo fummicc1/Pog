@@ -123,6 +123,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D31F91BC285CE86400B55DCE /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 		D3A9A37C283A4C74006F3CE6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +161,7 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
+				D31F91BC285CE86400B55DCE /* Secrets */,
 				D31F91B9285CE71300B55DCE /* GoogleService-Info.plist */,
 				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D3BFA9662833852B00606CD4 /* Info.plist */,
