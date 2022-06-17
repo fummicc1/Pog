@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import FirebaseCore
 
 @main
 struct PogApp: App {
@@ -33,6 +34,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     var cancellable: AnyCancellable?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
         cancellable = locationManager.coordinate
             .sink { coordinate in
                 let log = PlaceLog(context: self.store.context)
