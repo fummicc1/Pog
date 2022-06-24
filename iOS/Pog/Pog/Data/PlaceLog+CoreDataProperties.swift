@@ -2,7 +2,7 @@
 //  PlaceLog+CoreDataProperties.swift
 //  Pog
 //
-//  Created by Fumiya Tanaka on 2022/05/17.
+//  Created by Fumiya Tanaka on 2022/06/25.
 //
 //
 
@@ -16,10 +16,11 @@ extension PlaceLog {
         return NSFetchRequest<PlaceLog>(entityName: "PlaceLog")
     }
 
+    @NSManaged public var color: String?
     @NSManaged public var date: Date?
     @NSManaged public var lat: Double
     @NSManaged public var lng: Double
-    @NSManaged public var color: String?
+    @NSManaged public var memo: String?
 
 }
 

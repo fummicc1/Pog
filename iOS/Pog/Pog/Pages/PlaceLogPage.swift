@@ -32,7 +32,8 @@ struct PlaceLogPage: View {
             if isMapMode {
                 MapViewRepresentable(
                     region: $model.region,
-                    polyline: Binding(projectedValue: $model.selectedPolyline)
+                    polyline: Binding(projectedValue: $model.selectedPolyline),
+                    featuredLogs: $model.featuredLogs
                 )
             } else {
                 GeometryReader { proxy in

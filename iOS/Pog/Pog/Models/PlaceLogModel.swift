@@ -28,11 +28,14 @@ class PlaceLogModel: ObservableObject {
     )
     @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
 
+    @Published var featuredLogs: [PlaceLog] = []
     @Published var logs: [PlaceLog] = []
     @Published var dates: [Date] = []
     private var polylines: [Date: MKPolyline] = [:]
     @Published var selectedDate: Date?
     @Published var selectedPolyline: MKPolyline?
+
+    private let que = DispatchQueue(label: "dev.fummicc1.Pog.PlacelogModel.Que")
 
     init(
         locationManager: LocationManager,
@@ -68,7 +71,64 @@ class PlaceLogModel: ObservableObject {
         store.logs
             .assign(to: &$logs)
         // TODO: diffable update
+        store.logs.combineLatest($selectedDate)
+            .receive(on: que)
+            .map({ (places, selectedDate) -> [PlaceLog] in
+                guard let selectedDate = selectedDate else {
+                    return []
+                }
+                return places.filter({ place in
+                    guard let date = place.date else {
+                        return false
+                    }
+                    return calendar.isDate(selectedDate, inSameDayAs: date)
+                })
+            })
+            .map { l in
+                // sort by `Date`
+                let logs = l.sorted { head, tail in
+                    guard let h = head.date, let t = tail.date else {
+                        return false
+                    }
+                    return h.timeIntervalSince1970 < t.timeIntervalSince1970
+                }
+                var fars: [PlaceLog] = []
+                // find log which is a large distance from previous log.
+                var k = 0
+                for (i, log) in logs.enumerated() {
+                    if i == 0 {
+                        continue
+                    }
+                    let location = CLLocation(
+                        latitude: log.lat,
+                        longitude: log.lng
+                    )
+                    let beforeLocation = CLLocation(
+                        latitude: logs[k].lat,
+                        longitude: logs[k].lng
+                    )
+                    let distance = location.distance(from: beforeLocation)
+                    let thresholdDistance: Double = 500
+                    if distance < thresholdDistance {
+                        print(distance)
+                        continue
+                    }
+                    guard let now = log.date?.timeIntervalSince1970, let before = logs[k].date?.timeIntervalSince1970 else {
+                        continue
+                    }
+                    let thresholdTime: Double = 60 * 5
+                    if now - before >= thresholdTime {
+                        fars.append(log)
+                        k = i
+                    }
+                }
+                return fars
+            }
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$featuredLogs)
+
         store.logs
+            .receive(on: que)
             .map({ logs -> [Date: MKPolyline] in
                 var ret: [Date: [CLLocationCoordinate2D]] = [:]
                 for log in logs {
@@ -85,16 +145,23 @@ class PlaceLogModel: ObservableObject {
                         ret[date] = [coordinate]
                     }
                 }
-                self.dates = ret.keys.sorted().reversed()
+                DispatchQueue.main.async {
+                    self.dates = ret.keys.sorted().reversed()
+                }
                 return ret
                     .mapValues { coordinates in
                         MKPolyline(coordinates: coordinates, count: coordinates.count)
                     }
             })
+            .receive(on: DispatchQueue.main)
             .sink { values in
                 self.polylines = values
             }
             .store(in: &cancellables)
+
+        $featuredLogs.sink { logs in
+            print(logs)
+        }.store(in: &cancellables)
     }
 
     func onSelect(date: Date) {
