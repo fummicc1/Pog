@@ -1,5 +1,5 @@
 # Pog
-Pog can observe your location regardless of application state (foreground/background/not-running)
+Pog can track your location regardless of application state (foreground/background/not-running)
 
 
 ## Demo
@@ -12,6 +12,6 @@ Pog can observe your location regardless of application state (foreground/backgr
 
 ## Notation
 
-To observe location change while your app is killed (not running), you have to grant **Always-LocationAuthorization** from `Settings`.
+To track location change while your app is killed (not running), you have to grant **Always-LocationAuthorization** from `Settings`.
 
 <img src="https://user-images.githubusercontent.com/44002126/175754437-dcb2cc4a-f468-4715-9b67-d09a52330714.PNG" width=240px>
