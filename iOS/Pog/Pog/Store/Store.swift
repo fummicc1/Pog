@@ -10,12 +10,15 @@ public protocol Store {
 }
 
 public class StoreImpl {
+
+    public static let shared: Store = StoreImpl()
+
     private let container = NSPersistentContainer(name: "Pog")
 
     private let placeLogSubject: CurrentValueSubject<[PlaceLog], Never> = .init([])
     private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlace], Never> = .init([])
 
-    public init(notificationCenter: NotificationCenter = .default) {
+    private init(notificationCenter: NotificationCenter = .default) {
         container.loadPersistentStores { _, error in
             if let error = error {
                 print(error)

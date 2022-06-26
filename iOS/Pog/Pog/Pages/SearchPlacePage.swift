@@ -86,7 +86,7 @@ struct SearchPlacePage: View {
 struct SearchPlacePage_Previews: PreviewProvider {
     static var previews: some View {
         SearchPlacePage(
-            model: SearchPlaceModel(store: StoreImpl()),
+            model: SearchPlaceModel(store: StoreImpl.shared),
             place: .init(lat: 0, lng: 0, name: "")
         )
     }

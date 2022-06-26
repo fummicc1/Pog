@@ -15,11 +15,10 @@ class MapModel: ObservableObject {
 
     private let locationManager: LocationManager
     private let placeManager: PlaceManager
+    private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @FetchRequest(sortDescriptors: [
-        NSSortDescriptor(key: "date", ascending: true)
-    ]) var logs: FetchedResults<PlaceLog>
+    @Published var logs: [PlaceLog] = []
     @Published private(set) var selectedPlace: Place?
     @Published var searchResults: [Place] = []
     @Published var searchText: String = ""
@@ -38,9 +37,10 @@ class MapModel: ObservableObject {
     )
     @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
 
-    init(locationManager: LocationManager, placeManager: PlaceManager) {
+    init(locationManager: LocationManager, placeManager: PlaceManager, store: Store) {
         self.locationManager = locationManager
         self.placeManager = placeManager
+        self.store = store
 
         locationManager.request()
 
@@ -66,6 +66,14 @@ class MapModel: ObservableObject {
             .assign(to: &$searchResults)
 
         placeManager.search(text: searchText)
+
+        store.logs
+            .map { logs in
+                return logs.sorted { head, tail in
+                    (head.date?.timeIntervalSince1970 ?? 0) > (tail.date?.timeIntervalSince1970 ?? 0)
+                }
+            }
+            .assign(to: &$logs)
     }
 
     func onTapMyCurrentLocationButton() {

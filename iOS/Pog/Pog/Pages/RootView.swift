@@ -26,7 +26,8 @@ struct RootView: View {
                 MapView(
                     model: MapModel(
                         locationManager: locationManager,
-                        placeManager: placeManager
+                        placeManager: placeManager,
+                        store: store
                     )
                 )
                 .tabItem {

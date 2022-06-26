@@ -114,7 +114,8 @@ struct MapView_Previews: PreviewProvider {
         MapView(
             model: MapModel(
                 locationManager: LocationManagerImpl.shared,
-                placeManager: PlaceManagerImpl()
+                placeManager: PlaceManagerImpl(),
+                store: StoreImpl.shared
             )
         )
     }

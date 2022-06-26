@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StoreEnvironemtnKey: EnvironmentKey {
-    static var defaultValue: Store = StoreImpl()
+    static var defaultValue: Store = StoreImpl.shared
 }
 
 extension EnvironmentValues {
