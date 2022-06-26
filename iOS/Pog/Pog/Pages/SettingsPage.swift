@@ -12,27 +12,24 @@ import StoreKit
 struct SettingsPage: View {
 
     @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = false
-    @State private var showTotallyDeleteAlert: Bool = false
+    @State private var showTotallyDeleteLogsAlert: Bool = false
+    @State private var showTotallyDeleteNotificationAlert: Bool = false
+    @State private var stopTrackingLocationExceptForegroundMode = false
+
     @Environment(\.store) var store: Store
+    @Environment(\.locationManager) var locationManager: LocationManager
 
 
     var body: some View {
         Form {
-            Section("設定") {
+            Section("データ関連") {
                 Button {
-                    showTotallyDeleteAlert = true
+                    showTotallyDeleteLogsAlert = true
                 } label: {
                     Text("全てのログを消去する")
                 }
                 Button {
-                    let interests = NSFetchRequest<NSFetchRequestResult>(entityName: "InterestingPlace")
-                    let batch = NSBatchDeleteRequest(fetchRequest: interests)
-                    do {
-                        try store.context.execute(batch)
-                    } catch {
-                        print(error)
-                    }
-                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    showTotallyDeleteNotificationAlert = true
                 } label: {
                     Text("全ての通知を消去する")
                 }
@@ -43,9 +40,8 @@ struct SettingsPage: View {
                 } label: {
                     Text("Pogについて")
                 }
-
             }
-            Section("応援・フィードバック") {
+            Section("フィードバック") {
                 Button {
                     guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
                         return
@@ -56,9 +52,9 @@ struct SettingsPage: View {
                 }
             }
         }
-        .alert("完全にログを削除しますか？", isPresented: $showTotallyDeleteAlert) {
+        .alert("完全にログを消去しますか？", isPresented: $showTotallyDeleteLogsAlert) {
             Button(role: .destructive) {
-                let log = NSFetchRequest<NSFetchRequestResult>(entityName: "PlaceLog")
+                let log = PlaceLog.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
                 let batchRequest = NSBatchDeleteRequest(fetchRequest: log)
                 do {
                     try store.context.execute(batchRequest)
@@ -71,6 +67,21 @@ struct SettingsPage: View {
             Button(role: .cancel, action: { }) {
                 Text("キャンセル")
             }
+        }
+        .alert("完全に通知設定を消去しますか？", isPresented: $showTotallyDeleteNotificationAlert) {
+            Button(role: .destructive) {
+                let interests = InterestingPlace.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
+                let batch = NSBatchDeleteRequest(fetchRequest: interests)
+                do {
+                    try store.context.execute(batch)
+                } catch {
+                    print(error)
+                }
+                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            } label: {
+                Text("消去")
+            }
+
         }
     }
 }

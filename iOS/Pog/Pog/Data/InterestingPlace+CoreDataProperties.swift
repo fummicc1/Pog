@@ -2,7 +2,7 @@
 //  InterestingPlace+CoreDataProperties.swift
 //  Pog
 //
-//  Created by Fumiya Tanaka on 2022/05/22.
+//  Created by Fumiya Tanaka on 2022/06/26.
 //
 //
 

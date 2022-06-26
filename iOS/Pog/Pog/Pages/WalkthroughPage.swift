@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct WalkthroughPage: View {
 
     @State private var selectedIndex: Int = 0
 
     @Binding var shouldOnboarding: Bool
+
+    @Environment(\.locationManager) var locationManager: LocationManager
+
+    @State private var locationAuthorizeStatus: CLAuthorizationStatus = .notDetermined
 
     var body: some View {
         VStack {
@@ -35,6 +40,12 @@ struct WalkthroughPage: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
+        .onReceive(locationManager.authorizationStatus) { status in
+            locationAuthorizeStatus = status
+        }
+        .onAppear {
+            locationManager.request()
+        }
     }
 
     var page1: some View {
@@ -50,13 +61,18 @@ struct WalkthroughPage: View {
                 Image("page1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                Button {
-                    UIApplication.shared.open(
-                        URL(string: UIApplication.openSettingsURLString)!
-                    )
-                } label: {
-                    Text("位置情報を常に許可する")
-                        .bold()
+
+                if locationAuthorizeStatus != .authorizedAlways {
+                    Button {
+                        UIApplication.shared.open(
+                            URL(string: UIApplication.openSettingsURLString)!
+                        )
+                    } label: {
+                        Text("位置情報の取得を常に許可する")
+                            .bold()
+                    }
+                } else {
+                    Label("位置情報の取得が常に許可されています", systemSymbol: .checkmark)
                 }
             }
             .padding(.bottom, 12)
@@ -71,11 +87,10 @@ struct WalkthroughPage: View {
                 .bold()
                 .underline()
                 .padding()
-            HStack {
-                Image("page2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
+            Text("「マップ」画面から登録した場所が現在地から300メートル以内にいる場合、アプリから通知が届くことが出来ます。")
+            Image("page2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
         }
         .padding()
     }
@@ -113,6 +128,8 @@ struct WalkthroughPage: View {
 
 struct WalkthroughPage_Previews: PreviewProvider {
     static var previews: some View {
-        WalkthroughPage(shouldOnboarding: .constant(true))
+        WalkthroughPage(
+            shouldOnboarding: .constant(true)
+        )
     }
 }

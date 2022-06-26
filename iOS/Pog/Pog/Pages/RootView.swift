@@ -10,20 +10,23 @@ import MapKit
 
 struct RootView: View {
 
-    let locationManager: LocationManager
-    let store: Store
+    @Environment(\.locationManager) var locationManager: LocationManager
+    @Environment(\.store) var store: Store
+    @Environment(\.placeManager) var placeManager: PlaceManager
 
     @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = true
 
     var body: some View {
         if shouldOnboarding {
-            WalkthroughPage(shouldOnboarding: _shouldOnboarding.projectedValue)
+            WalkthroughPage(
+                shouldOnboarding: _shouldOnboarding.projectedValue
+            )
         } else {
             TabView {
                 MapView(
                     model: MapModel(
                         locationManager: locationManager,
-                        placeManager: PlaceManagerImpl()
+                        placeManager: placeManager
                     )
                 )
                 .tabItem {
@@ -43,7 +46,7 @@ struct RootView: View {
                 SettingsPage()
                     .tabItem {
                         Image(systemSymbol: .gear)
-                        Text("設定")
+                        Text("環境設定")
                     }
             }
         }

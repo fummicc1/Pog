@@ -16,11 +16,10 @@ struct PogApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView(
-                locationManager: appDelegate.locationManager,
-                store: appDelegate.store
-            )
+            RootView()
             .attachPartialSheetToRoot()
+            .environment(\.placeManager, PlaceManagerImpl())
+            .environment(\.locationManager, appDelegate.locationManager)
             .environment(\.managedObjectContext, appDelegate.store.context)
         }
     }

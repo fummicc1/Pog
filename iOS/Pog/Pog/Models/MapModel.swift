@@ -20,9 +20,10 @@ class MapModel: ObservableObject {
     @FetchRequest(sortDescriptors: [
         NSSortDescriptor(key: "date", ascending: true)
     ]) var logs: FetchedResults<PlaceLog>
-    @Published var selectedPlace: Place?
+    @Published private(set) var selectedPlace: Place?
     @Published var searchResults: [Place] = []
     @Published var searchText: String = ""
+    @Published var showPartialSheet: Bool = false
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -72,6 +73,11 @@ class MapModel: ObservableObject {
             return
         }
         region.center = coordinate
+    }
+
+    func selectPlace(_ place: Place?) {
+        selectedPlace = place
+        showPartialSheet = place != nil
     }
 
     func onSubmitTextField() {

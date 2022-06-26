@@ -15,6 +15,16 @@ class SearchPlaceModel: ObservableObject {
     @Published var alreadyInteresting: Bool = false
     @Published var storedInterestingPlace: InterestingPlace?
     @Published var error: String? = nil
+    @Published var interestingPlaces: [InterestingPlace] = []
+
+    let store: Store
+
+    init(store: Store) {
+        self.store = store
+
+        store.interestingPlaces
+            .assign(to: &$interestingPlaces)
+    }
 
     func willDeleteInterestingPlace() {
         guard let storedInterestingPlace = storedInterestingPlace else {
