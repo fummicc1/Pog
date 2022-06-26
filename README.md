@@ -2,12 +2,19 @@
 Pog can track your location regardless of application state (foreground/background/not-running)
 
 
-## Demo
+## Features
 
 - You can check your place-log even though you do not keep this app on foreground / background (suspended / not running state is Okay).
 
+|SearchPlace|Logging|Settings|
+|---|---|---|
+|<img src="https://user-images.githubusercontent.com/44002126/175821029-1c090772-fdb9-4a46-838f-8040030b212f.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821037-ce47e3d0-7c8d-4016-ad8f-eefc4da2e30b.PNG" width=320px>|
 
-![名称未設定2](https://user-images.githubusercontent.com/44002126/175608114-78f78970-2d02-4b94-b605-a39cc0b28213.gif)
+
+|How-to-use 1| How-to-use 2|How-to-use 3|
+|---|---|---|
+|<img src="https://user-images.githubusercontent.com/44002126/175821039-ecebfb41-523d-45d9-9dc1-1f7d58e173a0.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821125-df1ba00f-4381-47bb-91bb-7054db5b5a0f.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821132-3fd48600-fc99-43c0-bd0d-3316def02302.PNG" width=320px>|
+
 
 
 ## Notation
