@@ -227,13 +227,13 @@
 		D3BFA95D28337B0700606CD4 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
+				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
+				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
+				D3BFA9352833796D00606CD4 /* RootView.swift */,
+				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
 				D3CA087B28688C0C006147BB /* SettingsPage.swift */,
 				D3CA087C28688C0C006147BB /* WalkthroughPage.swift */,
-				D3BFA9352833796D00606CD4 /* RootView.swift */,
-				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
-				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
-				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
-				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";

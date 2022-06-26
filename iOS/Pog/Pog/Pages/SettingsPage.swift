@@ -58,6 +58,7 @@ struct SettingsPage: View {
                 let batchRequest = NSBatchDeleteRequest(fetchRequest: log)
                 do {
                     try store.context.execute(batchRequest)
+                    store.context.reset()
                 } catch {
                     print(error)
                 }
@@ -74,6 +75,8 @@ struct SettingsPage: View {
                 let batch = NSBatchDeleteRequest(fetchRequest: interests)
                 do {
                     try store.context.execute(batch)
+                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    store.context.reset()
                 } catch {
                     print(error)
                 }
