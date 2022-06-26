@@ -13,27 +13,38 @@ struct RootView: View {
     let locationManager: LocationManager
     let store: Store
 
+    @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = true
+
     var body: some View {
-        TabView {
-            MapView(
-                model: MapModel(
-                    locationManager: locationManager,
-                    placeManager: PlaceManagerImpl()
+        if shouldOnboarding {
+            WalkthroughPage(shouldOnboarding: _shouldOnboarding.projectedValue)
+        } else {
+            TabView {
+                MapView(
+                    model: MapModel(
+                        locationManager: locationManager,
+                        placeManager: PlaceManagerImpl()
+                    )
                 )
-            )
-            .tabItem {
-                Image(systemSymbol: .map)
-                Text("マップ")
-            }
-            PlaceLogPage(
-                model: PlaceLogModel(
-                    locationManager: locationManager,
-                    store: store
+                .tabItem {
+                    Image(systemSymbol: .map)
+                    Text("マップ")
+                }
+                PlaceLogPage(
+                    model: PlaceLogModel(
+                        locationManager: locationManager,
+                        store: store
+                    )
                 )
-            )
-            .tabItem {
-                Image(systemSymbol: .listBulletCircle)
-                Text("ログ")
+                .tabItem {
+                    Image(systemSymbol: .listBulletCircle)
+                    Text("ログ")
+                }
+                SettingsPage()
+                    .tabItem {
+                        Image(systemSymbol: .gear)
+                        Text("設定")
+                    }
             }
         }
     }
