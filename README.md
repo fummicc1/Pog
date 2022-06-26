@@ -11,7 +11,7 @@ Pog can track your location regardless of application state (foreground/backgrou
 
 |SearchPlace|Logging|Settings|
 |---|---|---|
-|<img src="https://user-images.githubusercontent.com/44002126/175821029-1c090772-fdb9-4a46-838f-8040030b212f.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821037-ce47e3d0-7c8d-4016-ad8f-eefc4da2e30b.PNG" width=320px>|
+|<img src="https://user-images.githubusercontent.com/44002126/175824021-9e90f457-1c18-42be-84ac-a6c4b43b0f01.jpeg" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px>|<img src="https://user-images.githubusercontent.com/44002126/175821037-ce47e3d0-7c8d-4016-ad8f-eefc4da2e30b.PNG" width=320px>|
 
 
 |How-to-use 1| How-to-use 2|How-to-use 3|
