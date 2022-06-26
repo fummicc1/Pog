@@ -11,9 +11,6 @@ import SwiftUI
 struct SearchPlacePage: View {
 
     @Environment(\.managedObjectContext) var context
-
-    @FetchRequest(sortDescriptors: []) var interestingPlaces: FetchedResults<InterestingPlace>
-
     @ObservedObject var model: SearchPlaceModel
 
     let place: Place
@@ -30,7 +27,7 @@ struct SearchPlacePage: View {
             HStack {
                 Button(model.alreadyInteresting ? "登録解除" : "登録") {
                     if model.alreadyInteresting {
-                        if let placeToDelete = interestingPlaces.first(where: { $0.lat == place.lat && $0.lng == place.lng }) {
+                        if let placeToDelete = model.interestingPlaces.first(where: { $0.lat == place.lat && $0.lng == place.lng }) {
                             model.willDeleteInterestingPlace()
                             context.delete(placeToDelete)
                             model.storedInterestingPlace = nil
@@ -74,7 +71,7 @@ struct SearchPlacePage: View {
             }
         }
         .onAppear {
-            if let stored = interestingPlaces.first(where: { place in
+            if let stored = model.interestingPlaces.first(where: { place in
                 place.lat == self.place.lat && place.lng == self.place.lng
             }) {
                 model.storedInterestingPlace = stored
@@ -89,7 +86,7 @@ struct SearchPlacePage: View {
 struct SearchPlacePage_Previews: PreviewProvider {
     static var previews: some View {
         SearchPlacePage(
-            model: SearchPlaceModel(),
+            model: SearchPlaceModel(store: StoreImpl.shared),
             place: .init(lat: 0, lng: 0, name: "")
         )
     }

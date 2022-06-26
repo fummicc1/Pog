@@ -10,30 +10,45 @@ import MapKit
 
 struct RootView: View {
 
-    let locationManager: LocationManager
-    let store: Store
+    @Environment(\.locationManager) var locationManager: LocationManager
+    @Environment(\.store) var store: Store
+    @Environment(\.placeManager) var placeManager: PlaceManager
+
+    @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = true
 
     var body: some View {
-        TabView {
-            MapView(
-                model: MapModel(
-                    locationManager: locationManager,
-                    placeManager: PlaceManagerImpl()
-                )
+        if shouldOnboarding {
+            WalkthroughPage(
+                shouldOnboarding: _shouldOnboarding.projectedValue
             )
-            .tabItem {
-                Image(systemSymbol: .map)
-                Text("マップ")
-            }
-            PlaceLogPage(
-                model: PlaceLogModel(
-                    locationManager: locationManager,
-                    store: store
+        } else {
+            TabView {
+                MapView(
+                    model: MapModel(
+                        locationManager: locationManager,
+                        placeManager: placeManager,
+                        store: store
+                    )
                 )
-            )
-            .tabItem {
-                Image(systemSymbol: .listBulletCircle)
-                Text("ログ")
+                .tabItem {
+                    Image(systemSymbol: .map)
+                    Text("マップ")
+                }
+                PlaceLogPage(
+                    model: PlaceLogModel(
+                        locationManager: locationManager,
+                        store: store
+                    )
+                )
+                .tabItem {
+                    Image(systemSymbol: .listBulletCircle)
+                    Text("ログ")
+                }
+                SettingsPage()
+                    .tabItem {
+                        Image(systemSymbol: .gear)
+                        Text("環境設定")
+                    }
             }
         }
     }

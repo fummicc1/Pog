@@ -16,11 +16,10 @@ struct PogApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView(
-                locationManager: appDelegate.locationManager,
-                store: appDelegate.store
-            )
+            RootView()
             .attachPartialSheetToRoot()
+            .environment(\.placeManager, PlaceManagerImpl())
+            .environment(\.locationManager, appDelegate.locationManager)
             .environment(\.managedObjectContext, appDelegate.store.context)
         }
     }
@@ -30,7 +29,7 @@ struct PogApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var locationManager: LocationManager = LocationManagerImpl.shared
-    var store: Store = StoreImpl()
+    var store: Store = StoreImpl.shared
     var cancellable: AnyCancellable?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

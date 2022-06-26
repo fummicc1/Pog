@@ -10,19 +10,22 @@ import Foundation
 import CoreLocation
 
 public protocol LocationManager {
+    var allowsBackgroundLocationUpdates: Bool { get }
     var currentCoordinate: CLLocationCoordinate2D? { get }
     var coordinate: AnyPublisher<CLLocationCoordinate2D, Never> { get }
+    var currentAuthorizationStatus: CLAuthorizationStatus { get }
     var authorizationStatus: AnyPublisher<CLAuthorizationStatus, Never> { get }
     var error: AnyPublisher<Error, Never> { get }
 
     func request()
+    func updateLocationManager<V>(keypath: ReferenceWritableKeyPath<CLLocationManager, V>, value: V)
 }
 
 public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationManager {
 
     private let coordinateRelay: CurrentValueSubject<CLLocationCoordinate2D?, Never> = .init(nil)
     private let errorRelay: PassthroughSubject<Error, Never> = .init()
-    private let authorizationStatusRelay: PassthroughSubject<CLAuthorizationStatus, Never> = .init()
+    private let authorizationStatusRelay: CurrentValueSubject<CLAuthorizationStatus, Never> = .init(.notDetermined)
     private var prepareForRequestAlways: Bool = false
     private let manager = CLLocationManager()
 
@@ -35,8 +38,14 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     public var error: AnyPublisher<Error, Never> {
         errorRelay.eraseToAnyPublisher()
     }
+    public var currentAuthorizationStatus: CLAuthorizationStatus {
+        authorizationStatusRelay.value
+    }
     public var authorizationStatus: AnyPublisher<CLAuthorizationStatus, Never> {
         authorizationStatusRelay.eraseToAnyPublisher()
+    }
+    public var allowsBackgroundLocationUpdates: Bool {
+        manager.allowsBackgroundLocationUpdates
     }
 
     public static let shared: LocationManagerImpl = .init()
@@ -50,8 +59,12 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
         manager.delegate = self
     }
 
+    public func updateLocationManager<V>(keypath: ReferenceWritableKeyPath<CLLocationManager, V>, value: V) {
+        manager[keyPath: keypath] = value
+    }
+
     public func request() {
-        manager.requestAlwaysAuthorization()
+        manager.requestWhenInUseAuthorization()
     }
 
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -59,9 +72,6 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     }
 
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if manager.authorizationStatus == .notDetermined {
-            return
-        }
         authorizationStatusRelay.send(manager.authorizationStatus)
 
         if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {

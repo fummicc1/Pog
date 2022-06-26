@@ -28,7 +28,6 @@
 		D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96428337C5700606CD4 /* LocationManager.swift */; };
 		D3BFA9702833965F00606CD4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96F2833965F00606CD4 /* Place.swift */; };
 		D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA972283397ED00606CD4 /* SFSafeSymbols */; };
-		D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */; };
 		D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */; };
 		D3BFA97E2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */; };
 		D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */; };
@@ -37,6 +36,11 @@
 		D3BFA9952833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9932833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift */; };
 		D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA9982833CEBF00606CD4 /* PartialSheet */; };
 		D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */; };
+		D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087B28688C0C006147BB /* SettingsPage.swift */; };
+		D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087C28688C0C006147BB /* WalkthroughPage.swift */; };
+		D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087F28688CA9006147BB /* LocationManager+Env.swift */; };
+		D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA088128688D56006147BB /* PlaceManager+Env.swift */; };
+		D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3CA088328689FD4006147BB /* Pog.xcdatamodeld */; };
 		D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */; };
 		D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */; };
 		D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */; };
@@ -67,9 +71,7 @@
 		D31F91BD285CE8CE00B55DCE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Release.plist"; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* FeatureLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLogAnnotation.swift; sourceTree = "<group>"; };
-		D37544E02866218E003008D9 /* Place 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place 4.xcdatamodel"; sourceTree = "<group>"; };
 		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		D3A9A37D283A4CC9006F3CE6 /* Place 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place 3.xcdatamodel"; sourceTree = "<group>"; };
 		D3A9A37E283A4FFA006F3CE6 /* InterestingPlace+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BFA9332833796D00606CD4 /* PogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogApp.swift; sourceTree = "<group>"; };
@@ -86,16 +88,22 @@
 		D3BFA96428337C5700606CD4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D3BFA9662833852B00606CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3BFA96F2833965F00606CD4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Place.xcdatamodel; sourceTree = "<group>"; };
 		D3BFA97B2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D3BFA97C2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogPage.swift; sourceTree = "<group>"; };
 		D3BFA9892833C48F00606CD4 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
-		D3BFA98B2833C72600606CD4 /* Place 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Place 2.xcdatamodel"; sourceTree = "<group>"; };
 		D3BFA9902833CC6700606CD4 /* Pog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pog.entitlements; sourceTree = "<group>"; };
 		D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacePage.swift; sourceTree = "<group>"; };
 		D3BFA9932833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceModel.swift; sourceTree = "<group>"; };
+		D3CA087B28688C0C006147BB /* SettingsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		D3CA087C28688C0C006147BB /* WalkthroughPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPage.swift; sourceTree = "<group>"; };
+		D3CA087F28688CA9006147BB /* LocationManager+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Env.swift"; sourceTree = "<group>"; };
+		D3CA088128688D56006147BB /* PlaceManager+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceManager+Env.swift"; sourceTree = "<group>"; };
+		D3CA088428689FD4006147BB /* Pog 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 3.xcdatamodel"; sourceTree = "<group>"; };
+		D3CA088528689FD4006147BB /* Pog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pog.xcdatamodel; sourceTree = "<group>"; };
+		D3CA088628689FD4006147BB /* Pog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 2.xcdatamodel"; sourceTree = "<group>"; };
+		D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 4.xcdatamodel"; sourceTree = "<group>"; };
 		D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogModel.swift; sourceTree = "<group>"; };
 		D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
@@ -171,20 +179,20 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
-				D3F794BD2865ED2000B84905 /* Env */,
-				D31F91BC285CE86400B55DCE /* Secrets */,
+				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */,
 				D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */,
-				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D3BFA9662833852B00606CD4 /* Info.plist */,
 				D3BFA9332833796D00606CD4 /* PogApp.swift */,
 				D3BFA9372833796F00606CD4 /* Assets.xcassets */,
 				D3BFA96E2833965900606CD4 /* Data */,
+				D3F794BD2865ED2000B84905 /* Env */,
 				D3BFA96328337C4D00606CD4 /* Manager */,
 				D3BFA96028337BC100606CD4 /* Models */,
 				D3BFA95D28337B0700606CD4 /* Pages */,
-				D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */,
+				D3CA088328689FD4006147BB /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
+				D31F91BC285CE86400B55DCE /* Secrets */,
 				D3A9A37C283A4C74006F3CE6 /* Store */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
 			);
@@ -219,11 +227,13 @@
 		D3BFA95D28337B0700606CD4 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				D3BFA9352833796D00606CD4 /* RootView.swift */,
 				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
-				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
-				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
 				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
+				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
+				D3BFA9352833796D00606CD4 /* RootView.swift */,
+				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
+				D3CA087B28688C0C006147BB /* SettingsPage.swift */,
+				D3CA087C28688C0C006147BB /* WalkthroughPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -274,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				D3F794BE2865ED2800B84905 /* Store+Env.swift */,
+				D3CA087F28688CA9006147BB /* LocationManager+Env.swift */,
+				D3CA088128688D56006147BB /* PlaceManager+Env.swift */,
 			);
 			path = Env;
 			sourceTree = "<group>";
@@ -467,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */,
+				D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */,
 				D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */,
 				D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */,
 				D3BFA9952833CDB400606CD4 /* InterestingPlace+CoreDataClass.swift in Sources */,
@@ -475,16 +488,19 @@
 				D37544DF286620EC003008D9 /* FeatureLogAnnotation.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3BFA97D2833A4A700606CD4 /* PlaceLog+CoreDataClass.swift in Sources */,
+				D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
 				D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
-				D3BFA97A2833A38E00606CD4 /* Pog.xcdatamodeld in Sources */,
 				D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */,
+				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3A9A37F283A4FFA006F3CE6 /* InterestingPlace+CoreDataProperties.swift in Sources */,
 				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */,
 				D31F91BE285CE8CE00B55DCE /* Secret.swift in Sources */,
+				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
+				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,
 				D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */,
 				D3BFA97E2833A4A700606CD4 /* PlaceLog+CoreDataProperties.swift in Sources */,
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
@@ -647,7 +663,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
@@ -681,7 +697,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
@@ -884,15 +900,15 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		D3BFA9782833A38D00606CD4 /* Pog.xcdatamodeld */ = {
+		D3CA088328689FD4006147BB /* Pog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D37544E02866218E003008D9 /* Place 4.xcdatamodel */,
-				D3A9A37D283A4CC9006F3CE6 /* Place 3.xcdatamodel */,
-				D3BFA98B2833C72600606CD4 /* Place 2.xcdatamodel */,
-				D3BFA9792833A38E00606CD4 /* Place.xcdatamodel */,
+				D3CA088428689FD4006147BB /* Pog 3.xcdatamodel */,
+				D3CA088528689FD4006147BB /* Pog.xcdatamodel */,
+				D3CA088628689FD4006147BB /* Pog 2.xcdatamodel */,
+				D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */,
 			);
-			currentVersion = D37544E02866218E003008D9 /* Place 4.xcdatamodel */;
+			currentVersion = D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */;
 			path = Pog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
