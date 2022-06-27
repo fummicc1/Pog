@@ -669,8 +669,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pog/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Pogの利用には、「Appの使用中は許可」を選択してください。";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Pogの利用には、「Appの使用中は許可」を選択してください。";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -703,8 +703,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pog/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Pogの利用には、「Appの使用中は許可」を選択してください。";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Pogの利用には、「Appの使用中は許可」を選択してください。";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
