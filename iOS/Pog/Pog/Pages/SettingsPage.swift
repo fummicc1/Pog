@@ -57,8 +57,7 @@ struct SettingsPage: View {
                 let log = PlaceLog.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
                 let batchRequest = NSBatchDeleteRequest(fetchRequest: log)
                 do {
-                    try store.context.execute(batchRequest)
-                    store.context.reset()
+                    try store.deleteWithBatch(batchRequest)
                 } catch {
                     print(error)
                 }
@@ -74,9 +73,8 @@ struct SettingsPage: View {
                 let interests = InterestingPlace.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
                 let batch = NSBatchDeleteRequest(fetchRequest: interests)
                 do {
-                    try store.context.execute(batch)
+                    try store.deleteWithBatch(batch)
                     UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-                    store.context.reset()
                 } catch {
                     print(error)
                 }

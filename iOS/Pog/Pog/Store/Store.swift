@@ -7,6 +7,8 @@ public protocol Store {
     var logs: AnyPublisher<[PlaceLog], Never> { get }
     var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { get }
     var context: NSManagedObjectContext { get }
+
+    func deleteWithBatch(_ request: NSBatchDeleteRequest) throws
 }
 
 public class StoreImpl {
@@ -102,5 +104,21 @@ extension StoreImpl: Store {
     public var context: NSManagedObjectContext {
         container.viewContext
 
+    }
+
+    public func deleteWithBatch(_ request: NSBatchDeleteRequest) throws {
+        request.resultType = .resultTypeObjectIDs
+        let batchResult = try context.execute(request) as? NSBatchDeleteResult
+        guard let deleteResult = batchResult?.result as? [NSManagedObjectID] else { return }
+
+        let deletedObjects: [AnyHashable: Any] = [
+            NSDeletedObjectsKey: deleteResult
+        ]
+
+        // Merge the delete changes into the managed object context
+        NSManagedObjectContext.mergeChanges(
+            fromRemoteContextSave: deletedObjects,
+            into: [context]
+        )
     }
 }
