@@ -2,7 +2,7 @@
 Pog can track your location regardless of application state (foreground/background/not-running)
 
 - [TestFlight](https://testflight.apple.com/join/l3cUMuOx)
-- App Store (not yet)
+- [App Store](https://apps.apple.com/us/app/pog/id1624689465)
 
 
 ## Features
