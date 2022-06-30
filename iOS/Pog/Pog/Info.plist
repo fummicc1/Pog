@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Privacy - Location Always In Use Usage Description</key>
-	<string>Pogの利用には、「常に許可」を選択してください。</string>
+	<string>Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
