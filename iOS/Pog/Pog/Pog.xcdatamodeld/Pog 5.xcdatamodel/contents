@@ -7,11 +7,11 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="visitedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="LocationSettings" representedClassName="LocationSettings" syncable="YES" codeGenerationType="class">
+    <entity name="LocationSettings" representedClassName="LocationSettings" syncable="YES">
         <attribute name="allowsBackgroundLocationUpdates" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="desiredAccuracy" attributeType="Double" defaultValueString="100" usesScalarValueType="YES"/>
         <attribute name="distanceFilter" attributeType="Double" defaultValueString="30" usesScalarValueType="YES"/>
         <attribute name="pausesLocationUpdatesAutomatically" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <relationship name="transportService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransportService"/>
     </entity>
     <entity name="PlaceLog" representedClassName="PlaceLog" syncable="YES">
         <attribute name="color" attributeType="String"/>
@@ -20,13 +20,9 @@
         <attribute name="lng" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="memo" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="TransportService" representedClassName="TransportService" syncable="YES" codeGenerationType="class">
-        <attribute name="rawValue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-    </entity>
     <elements>
         <element name="InterestingPlace" positionX="-45" positionY="27" width="128" height="104"/>
         <element name="LocationSettings" positionX="-54" positionY="45" width="128" height="89"/>
         <element name="PlaceLog" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="TransportService" positionX="-45" positionY="54" width="128" height="44"/>
     </elements>
 </model>

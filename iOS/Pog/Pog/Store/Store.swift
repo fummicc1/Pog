@@ -6,6 +6,7 @@ public protocol Store {
 
     var logs: AnyPublisher<[PlaceLog], Never> { get }
     var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { get }
+    var locationSettings: AnyPublisher<LocationSettings, Never> { get }
     var context: NSManagedObjectContext { get }
 
     func deleteWithBatch(_ request: NSBatchDeleteRequest) throws
@@ -19,6 +20,7 @@ public class StoreImpl {
 
     private let placeLogSubject: CurrentValueSubject<[PlaceLog], Never> = .init([])
     private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlace], Never> = .init([])
+    private let locationSettingsSubject: CurrentValueSubject<LocationSettings?, Never> = .init(nil)
 
     private init(notificationCenter: NotificationCenter = .default) {
         container.loadPersistentStores { _, error in
@@ -40,6 +42,7 @@ public class StoreImpl {
             if let added = notification.userInfo?[NSInsertedObjectsKey] as? Set<NSManagedObject> {
                 var addedLogs: [PlaceLog] = []
                 var addedPlaces: [InterestingPlace] = []
+                var addedLocationSettings: LocationSettings?
 
                 for obj in added {
                     if let log = obj as? PlaceLog {
@@ -47,6 +50,9 @@ public class StoreImpl {
                     }
                     if let place = obj as? InterestingPlace {
                         addedPlaces.append(place)
+                    }
+                    if let locationSettings = obj as? LocationSettings {
+                        addedLocationSettings = locationSettings
                     }
                 }
 
@@ -58,10 +64,14 @@ public class StoreImpl {
                     let all = self.interestingPlacesSubject.value + addedPlaces
                     self.interestingPlacesSubject.send(all)
                 }()
+                _ = {
+                    self.locationSettingsSubject.send(addedLocationSettings)
+                }()
             }
             if let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject> {
                 var deletedLogs: [PlaceLog] = []
                 var deletedPlaces: [InterestingPlace] = []
+                var isDeletedLocationSettings: Bool = false
 
                 for obj in deleted {
                     if let log = obj as? PlaceLog {
@@ -69,6 +79,9 @@ public class StoreImpl {
                     }
                     if let place = obj as? InterestingPlace {
                         deletedPlaces.append(place)
+                    }
+                    if obj is LocationSettings {
+                        isDeletedLocationSettings = true
                     }
                 }
 
@@ -86,6 +99,22 @@ public class StoreImpl {
                     })
                     self.placeLogSubject.send(current)
                 }()
+                _ = {
+                    if isDeletedLocationSettings {
+                        self.locationSettingsSubject.send(nil)
+                    }
+                }()
+            }
+            if let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject> {
+                var updatedLocationSettings: LocationSettings?
+                for obj in updated {
+                    if let locationSettings = obj as? LocationSettings {
+                        updatedLocationSettings = locationSettings
+                    }
+                }
+                if let updatedLocationSettings = updatedLocationSettings {
+                    self.locationSettingsSubject.send(updatedLocationSettings)
+                }
             }
         }
     }
@@ -101,9 +130,12 @@ extension StoreImpl: Store {
         placeLogSubject.eraseToAnyPublisher()
     }
 
+    public var locationSettings: AnyPublisher<LocationSettings, Never> {
+        locationSettingsSubject.compactMap({ $0 }).eraseToAnyPublisher()
+    }
+
     public var context: NSManagedObjectContext {
         container.viewContext
-
     }
 
     public func deleteWithBatch(_ request: NSBatchDeleteRequest) throws {

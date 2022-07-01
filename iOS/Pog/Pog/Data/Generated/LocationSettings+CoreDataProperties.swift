@@ -19,7 +19,7 @@ extension LocationSettings {
     @NSManaged public var allowsBackgroundLocationUpdates: Bool
     @NSManaged public var distanceFilter: Double
     @NSManaged public var pausesLocationUpdatesAutomatically: Bool
-    @NSManaged public var transportService: TransportService?
+    @NSManaged public var desiredAccuracy: Double
 
 }
 
