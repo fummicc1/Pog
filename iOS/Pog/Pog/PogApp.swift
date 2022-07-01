@@ -30,11 +30,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     var locationManager: LocationManager = LocationManagerImpl.shared
     var store: Store = StoreImpl.shared
-    var cancellable: AnyCancellable?
+    var cancellables: Set<AnyCancellable> = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
-        cancellable = locationManager.coordinate
+        locationManager.coordinate
             .sink { coordinate in
                 let log = PlaceLog(context: self.store.context)
                 log.lat = coordinate.latitude
@@ -43,8 +43,29 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 log.color = "0x007AFF"
                 try? self.store.context.save()
             }
+            .store(in: &cancellables)
         
         UNUserNotificationCenter.current().delegate = self
+
+        store.locationSettings
+            .sink { locationSettings in
+                guard let locationSettings = locationSettings else {
+                    return
+                }
+                self.locationManager.updateLocationManager(
+                    keypath: \.allowsBackgroundLocationUpdates,
+                    value: locationSettings.allowsBackgroundLocationUpdates
+                )
+                self.locationManager.updateLocationManager(
+                    keypath: \.distanceFilter,
+                    value: locationSettings.distanceFilter
+                )
+                self.locationManager.updateLocationManager(
+                    keypath: \.desiredAccuracy,
+                    value: locationSettings.desiredAccuracy
+                )
+            }
+            .store(in: &cancellables)
         return true
     }
     

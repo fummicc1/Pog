@@ -44,11 +44,16 @@ struct RootView: View {
                     Image(systemSymbol: .listBulletCircle)
                     Text("ログ")
                 }
-                SettingsPage()
-                    .tabItem {
-                        Image(systemSymbol: .gear)
-                        Text("環境設定")
-                    }
+                SettingsPage(
+                    model: SettingsModel(
+                        store: store,
+                        locationManager: locationManager
+                    )
+                )
+                .tabItem {
+                    Image(systemSymbol: .gear)
+                    Text("環境設定")
+                }
             }
         }
     }

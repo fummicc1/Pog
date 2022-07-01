@@ -13,6 +13,7 @@
 		D306F942286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F93F286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift */; };
 		D306F943286F188C006293E9 /* LocationSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F940286F188C006293E9 /* LocationSettings+CoreDataProperties.swift */; };
 		D306F944286F188C006293E9 /* PlaceLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F941286F188C006293E9 /* PlaceLog+CoreDataProperties.swift */; };
+		D306F946286F2022006293E9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F945286F2022006293E9 /* SettingsModel.swift */; };
 		D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AB89228374A9C009AB9AC /* PlaceManager.swift */; };
 		D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B4285CE54600B55DCE /* FirebaseAnalytics */; };
 		D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */; };
@@ -75,6 +76,7 @@
 		D306F93F286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D306F940286F188C006293E9 /* LocationSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D306F941286F188C006293E9 /* PlaceLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D306F945286F2022006293E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D31AB89228374A9C009AB9AC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
 		D31F91BD285CE8CE00B55DCE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */,
 				D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */,
 				D37544DE286620EC003008D9 /* FeatureLogAnnotation.swift */,
+				D306F945286F2022006293E9 /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				D306F933286EFC04006293E9 /* PlaceLog+CoreDataClass.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */,
+				D306F946286F2022006293E9 /* SettingsModel.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
 				D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
