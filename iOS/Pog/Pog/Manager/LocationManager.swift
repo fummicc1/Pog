@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 
 public protocol LocationManager {
+    var isAuthorizedForPreciseLocation: AnyPublisher<Bool, Never> { get }
     var allowsBackgroundLocationUpdates: Bool { get }
     var currentCoordinate: CLLocationCoordinate2D? { get }
     var coordinate: AnyPublisher<CLLocationCoordinate2D, Never> { get }
@@ -26,6 +27,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     private let coordinateRelay: CurrentValueSubject<CLLocationCoordinate2D?, Never> = .init(nil)
     private let errorRelay: PassthroughSubject<Error, Never> = .init()
     private let authorizationStatusRelay: CurrentValueSubject<CLAuthorizationStatus, Never> = .init(.notDetermined)
+    private let isAuthorizedForPreciseLocationRelay: CurrentValueSubject<Bool, Never> = .init(false)
     private var prepareForRequestAlways: Bool = false
     private let manager = CLLocationManager()
 
@@ -44,6 +46,9 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     public var authorizationStatus: AnyPublisher<CLAuthorizationStatus, Never> {
         authorizationStatusRelay.eraseToAnyPublisher()
     }
+    public var isAuthorizedForPreciseLocation: AnyPublisher<Bool, Never> {
+        isAuthorizedForPreciseLocationRelay.eraseToAnyPublisher()
+    }
     public var allowsBackgroundLocationUpdates: Bool {
         manager.allowsBackgroundLocationUpdates
     }
@@ -54,6 +59,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
         super.init()
         manager.showsBackgroundLocationIndicator = true
         manager.allowsBackgroundLocationUpdates = true
+        manager.pausesLocationUpdatesAutomatically = false
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager.distanceFilter = 30
         manager.delegate = self
@@ -73,6 +79,16 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
 
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         authorizationStatusRelay.send(manager.authorizationStatus)
+
+        switch manager.accuracyAuthorization {
+        case .fullAccuracy:
+            self.isAuthorizedForPreciseLocationRelay.send(true)
+        case .reducedAccuracy:
+            self.isAuthorizedForPreciseLocationRelay.send(false)
+        @unknown default:
+            assertionFailure()
+            break
+        }
 
         if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
             manager.startUpdatingLocation()
