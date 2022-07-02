@@ -2,7 +2,7 @@
 //  PlaceLog+CoreDataProperties.swift
 //  Pog
 //
-//  Created by Fumiya Tanaka on 2022/06/26.
+//  Created by Fumiya Tanaka on 2022/07/01.
 //
 //
 
