@@ -22,6 +22,10 @@ class SettingsModel: ObservableObject {
     private let locationManager: LocationManager
     private var cancellables: Set<AnyCancellable> = []
 
+    enum Const {
+        static let defaultDesiredAccuracy: Double = 100
+    }
+
     private var latestLocationSettings: LocationSettings? {
         @MainActor didSet {
             guard let settings = latestLocationSettings else {
@@ -86,7 +90,7 @@ class SettingsModel: ObservableObject {
 
     @MainActor
     func commitDesiredAccuracyChange() {
-        let desiredAccuracy = self.desiredAccuracy ?? 100
+        let desiredAccuracy = self.desiredAccuracy ?? Const.defaultDesiredAccuracy
         updateSettings(keypath: \.desiredAccuracy, value: desiredAccuracy)
     }
 
