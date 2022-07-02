@@ -1,0 +1,3 @@
+[submodule "iOS/Packages/Moya"]
+	path = iOS/Packages/Moya
+	url = https://github.com/Moya/Moya
