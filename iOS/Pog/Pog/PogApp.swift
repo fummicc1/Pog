@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import FirebaseCore
+import FirebaseAnalytics
 
 @main
 struct PogApp: App {
@@ -34,6 +35,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        Analytics.setAnalyticsCollectionEnabled(true)
         locationManager.coordinate
             .sink { coordinate in
                 let log = PlaceLog(context: self.store.context)
