@@ -11,6 +11,7 @@ import CoreLocation
 public struct Place: Identifiable, Hashable {
     public let lat: CLLocationDegrees
     public let lng: CLLocationDegrees
+    public var icon: String?
 
     public let name: String
 

@@ -18,14 +18,17 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @Published private var numberOfPlacesSearchRequestPerDay: Int = 0
-    @Published private var lastSearchedDate: Date?
     @MainActor @Published var logs: [PlaceLog] = []
-    @MainActor @Published private(set) var selectedPlace: Place?
-    @MainActor @Published var searchResults: [Place] = []
     @MainActor @Published var searchText: String = ""
     @MainActor @Published var showPartialSheet: Bool = false
+    @MainActor @Published private(set) var selectedPlace: Place?
     @MainActor @Published private(set) var searchedWords: [String] = []
+    @MainActor @Published var showPlaces: [Place] = []
+
+    @Published private var numberOfPlacesSearchRequestPerDay: Int = 0
+    @Published private var lastSearchedDate: Date?
+    @Published private var searchResults: [Place] = []
+    @Published private var interestingPlaces: [InterestingPlace] = []
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -82,6 +85,10 @@ class MapModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$logs)
 
+        store.interestingPlaces
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$interestingPlaces)
+
         store.searchConfiguration
             .map(\.searchedWords)
             .receive(on: DispatchQueue.main)
@@ -96,6 +103,21 @@ class MapModel: ObservableObject {
             .map(\.lastSearchedDate)
             .receive(on: DispatchQueue.main)
             .assign(to: &$lastSearchedDate)
+
+        $searchResults
+            .combineLatest($interestingPlaces)
+            .map { searchPlaces, interestingPlaces in
+                interestingPlaces.map {
+                    Place(
+                        lat: $0.lat,
+                        lng: $0.lng,
+                        icon: $0.icon,
+                        name: $0.name ?? "地名を取得できませんでした"
+                    )
+                } + searchPlaces
+            }
+            .assign(to: &$showPlaces)
+
     }
 
     func onTapMyCurrentLocationButton() {
@@ -136,6 +158,10 @@ class MapModel: ObservableObject {
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {
-        placeManager.places.contains(place)
+        interestingPlaces.contains(where: { interestingPlace in
+            let diffLat = abs(interestingPlace.lat - place.lat)
+            let diffLng = abs(interestingPlace.lng - place.lng)
+            return diffLat < 0.0001 && diffLng < 0.0001
+        })
     }
 }

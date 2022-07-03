@@ -67,6 +67,7 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
                         Place(
                             lat: result.geometry.location.lat,
                             lng: result.geometry.location.lng,
+                            icon: result.icon,
                             name: result.name
                         )
                     }
@@ -99,6 +100,7 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                         return Place(
                             lat: coordinate.latitude,
                             lng: coordinate.longitude,
+                            icon: nil,
                             name: placemark.name ?? ""
                         )
                     })
