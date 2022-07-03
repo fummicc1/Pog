@@ -83,7 +83,9 @@ struct MapView: View {
             }
         )
         .onSubmit(of: .search) {
-            model.onSubmitTextField()
+            Task {
+                await model.onSubmitTextField()
+            }
         }
         .partialSheet(
             isPresented: $model.showPartialSheet,

@@ -18,12 +18,12 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @Published var logs: [PlaceLog] = []
-    @Published private(set) var selectedPlace: Place?
-    @Published var searchResults: [Place] = []
-    @Published var searchText: String = ""
-    @Published var showPartialSheet: Bool = false
-    @Published private(set) var searchedWords: [String] = []
+    @MainActor @Published var logs: [PlaceLog] = []
+    @MainActor @Published private(set) var selectedPlace: Place?
+    @MainActor @Published var searchResults: [Place] = []
+    @MainActor @Published var searchText: String = ""
+    @MainActor @Published var showPartialSheet: Bool = false
+    @MainActor @Published private(set) var searchedWords: [String] = []
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -38,6 +38,7 @@ class MapModel: ObservableObject {
     )
     @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
 
+    @MainActor
     init(locationManager: LocationManager, placeManager: PlaceManager, store: Store) {
         self.locationManager = locationManager
         self.placeManager = placeManager
@@ -70,7 +71,10 @@ class MapModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$searchResults)
 
-        placeManager.search(text: searchText)
+        placeManager.search(
+            text: searchText,
+            useGooglePlaces: true
+        )
 
         store.logs
             .map { logs in
@@ -94,14 +98,22 @@ class MapModel: ObservableObject {
     }
 
     func selectPlace(_ place: Place?) {
-        selectedPlace = place
-        showPartialSheet = place != nil
+        Task { @MainActor in
+            selectedPlace = place
+            showPartialSheet = place != nil
+        }
     }
 
-    func onSubmitTextField() {
-        placeManager.search(text: searchText)
-        let new = searchedWords + [searchText]
-        store.userDefaults.set(new, forKey: Const.UserDefaults.searchedWords)
+    func onSubmitTextField() async {
+        placeManager.search(
+            text: await searchText,
+            useGooglePlaces: true
+        )
+        let new = await searchedWords + [ await searchText ]
+        store.userDefaults.set(
+            new,
+            forKey: Const.UserDefaults.searchedWords
+        )
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {

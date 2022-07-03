@@ -15,7 +15,7 @@ public protocol PlaceManager {
     var error: AnyPublisher<Error, Never> { get }
 
     func searchNearby(at coordinate: CLLocationCoordinate2D)
-    func search(text: String)
+    func search(text: String, useGooglePlaces: Bool)
 }
 
 public class PlaceManagerImpl: NSObject, PlaceManager {
@@ -55,13 +55,30 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         )
     }
 
-    public func search(text: String) {
-        var text = text
+    public func search(text: String, useGooglePlaces: Bool) {
         if text.isEmpty {
-            text = "カフェ"
+            return
         }
-        searchCompleter.queryFragment = text
-        placesSubject.send([])
+        if useGooglePlaces {
+            Task {
+                do {1
+                    let response: PlaceSearchResponse = try await apiClient.request(with: .search(text: text))
+                    let places = response.results.map{ result in
+                        Place(
+                            lat: result.geometry.location.lat,
+                            lng: result.geometry.location.lng,
+                            name: result.name
+                        )
+                    }
+                    self.placesSubject.send(places)
+                } catch {
+                    print(error)
+                }
+            }
+        } else {
+            searchCompleter.queryFragment = text
+            placesSubject.send([])
+        }
     }
 }
 

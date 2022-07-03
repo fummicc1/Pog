@@ -43,6 +43,7 @@
 		D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */; };
 		D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA9982833CEBF00606CD4 /* PartialSheet */; };
 		D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */; };
+		D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */; };
 		D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087B28688C0C006147BB /* SettingsPage.swift */; };
 		D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087C28688C0C006147BB /* WalkthroughPage.swift */; };
 		D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087F28688CA9006147BB /* LocationManager+Env.swift */; };
@@ -110,6 +111,7 @@
 		D3BFA9902833CC6700606CD4 /* Pog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pog.entitlements; sourceTree = "<group>"; };
 		D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacePage.swift; sourceTree = "<group>"; };
 		D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceModel.swift; sourceTree = "<group>"; };
+		D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchResponse.swift; sourceTree = "<group>"; };
 		D3CA087B28688C0C006147BB /* SettingsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		D3CA087C28688C0C006147BB /* WalkthroughPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPage.swift; sourceTree = "<group>"; };
 		D3CA087F28688CA9006147BB /* LocationManager+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Env.swift"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		D33BFEDC287025B8007C7CA9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D3C4627D2871A0F50005C1B4 /* Reposnses */,
 				D33BFEDD287025CE007C7CA9 /* APIClient.swift */,
 				D33BFEE228702945007C7CA9 /* PlacesTarget.swift */,
 			);
@@ -324,6 +327,14 @@
 				D3E0AACF2840B3B200597C1A /* Date+Ex.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D3C4627D2871A0F50005C1B4 /* Reposnses */ = {
+			isa = PBXGroup;
+			children = (
+				D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */,
+			);
+			path = Reposnses;
 			sourceTree = "<group>";
 		};
 		D3F794BD2865ED2000B84905 /* Env */ = {
@@ -557,6 +568,7 @@
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
 				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,
+				D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */,
 				D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */,
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
 				D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */,
