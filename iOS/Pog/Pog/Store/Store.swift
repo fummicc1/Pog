@@ -63,7 +63,7 @@ public class StoreImpl {
             self.keyObservers[Const.UserDefaults.numberOfSearchPerDay]?.invalidate()
             self.keyObservers[Const.UserDefaults.numberOfSearchPerDay] = numberOfSearchPerDayObservation
 
-            let searchedWordsObservation = self.userDefaults.observe(\.lastSearchedDate, options: [.initial, .new]) { _, change in
+            let lastSearchedDateObservation = self.userDefaults.observe(\.lastSearchedDate, options: [.initial, .new]) { _, change in
                 if let new = change.newValue {
                     var config = self.searchConfigurationSubject.value
                     if new == 0 {
@@ -75,7 +75,7 @@ public class StoreImpl {
                 }
             }
             self.keyObservers[Const.UserDefaults.lastSearchedDate]?.invalidate()
-            self.keyObservers[Const.UserDefaults.lastSearchedDate] = searchedWordsObservation
+            self.keyObservers[Const.UserDefaults.lastSearchedDate] = lastSearchedDateObservation
 
             self.container.loadPersistentStores { _, error in
                 if let error = error {
