@@ -15,7 +15,7 @@ public protocol PlaceManager {
     var error: AnyPublisher<Error, Never> { get }
 
     func searchNearby(at coordinate: CLLocationCoordinate2D)
-    func search(text: String, useGooglePlaces: Bool)
+    func search(text: String, useGooglePlaces: Bool) async
 }
 
 public class PlaceManagerImpl: NSObject, PlaceManager {
@@ -55,30 +55,30 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         )
     }
 
-    public func search(text: String, useGooglePlaces: Bool) {
+    public func search(text: String, useGooglePlaces: Bool) async {
         if text.isEmpty {
             return
         }
         if useGooglePlaces {
-            Task {
-                do {
-                    let response: PlaceSearchResponse = try await apiClient.request(with: .search(text: text))
-                    let places = response.results.map{ result in
-                        Place(
-                            lat: result.geometry.location.lat,
-                            lng: result.geometry.location.lng,
-                            icon: result.icon,
-                            name: result.name
-                        )
-                    }
-                    self.placesSubject.send(places)
-                } catch {
-                    print(error)
+            do {
+                let response: PlaceSearchResponse = try await apiClient.request(with: .search(text: text))
+                let places = response.results.map{ result in
+                    Place(
+                        lat: result.geometry.location.lat,
+                        lng: result.geometry.location.lng,
+                        icon: result.icon,
+                        name: result.name
+                    )
                 }
+                self.placesSubject.send(places)
+            } catch {
+                print(error)
             }
         } else {
+            if searchCompleter.isSearching {
+                searchCompleter.cancel()
+            }
             searchCompleter.queryFragment = text
-            placesSubject.send([])
         }
     }
 }
@@ -89,9 +89,6 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
         for result in results {
             let request = MKLocalSearch.Request(completion: result)
             Task {
-                if let localSearch = self.localSearch, localSearch.isSearching {
-                    localSearch.cancel()
-                }
                 self.localSearch = MKLocalSearch(request: request)
                 do {
                     let response = try await self.localSearch!.start()
@@ -113,5 +110,9 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                 }
             }
         }
+    }
+
+    public func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        print(error)
     }
 }

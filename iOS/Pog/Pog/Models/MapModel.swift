@@ -134,14 +134,15 @@ class MapModel: ObservableObject {
         }
     }
 
+    @MainActor
     func onSubmitTextField() async {
-        placeManager.search(
-            text: await searchText,
-            useGooglePlaces: numberOfPlacesSearchRequestPerDay <= 30
+        await placeManager.search(
+            text: searchText,
+            useGooglePlaces: numberOfPlacesSearchRequestPerDay <= Const.numberOfPlacesApiCallPerDay
         )
-        var new = await searchedWords
-        if !new.contains(await searchText) {
-            new.append(await searchText)
+        var new = searchedWords
+        if !new.contains(searchText) {
+            new.append(searchText)
         }
         let now = Date()
         let calendar: Calendar = .current

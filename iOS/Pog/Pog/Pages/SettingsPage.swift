@@ -54,11 +54,11 @@ struct SettingsPage: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("精度（単位: メートル）")
-                            Text("精度よく記録するには\(Int(SettingsModel.Const.defaultDesiredAccuracy))以下がおすすめです")
+                            Text("精度よく記録するには\(Int(Const.defaultDesiredAccuracy))以下がおすすめです")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
-                        TextField("デフォルト: \(Int(SettingsModel.Const.defaultDesiredAccuracy))", text: Binding(get: {
+                        TextField("デフォルト: \(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
                             guard let desiredAccuracy = model.desiredAccuracy else {
                                 return ""
                             }
