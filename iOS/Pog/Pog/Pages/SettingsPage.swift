@@ -159,15 +159,3 @@ struct SettingsPage: View {
         }
     }
 }
-
-struct SettingsPage_Previews: PreviewProvider {
-    static var previews: some View {
-        // TODO: Prepare mock
-        SettingsPage(
-            model: SettingsModel(
-                store: StoreImpl.shared,
-                locationManager: LocationManagerImpl()
-            )
-        )
-    }
-}

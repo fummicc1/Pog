@@ -18,8 +18,12 @@
 		D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B4285CE54600B55DCE /* FirebaseAnalytics */; };
 		D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */; };
 		D31F91BA285CE71300B55DCE /* GoogleService-Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */; };
-		D31F91BE285CE8CE00B55DCE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F91BD285CE8CE00B55DCE /* Secret.swift */; };
+		D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F91BD285CE8CE00B55DCE /* Const.swift */; };
 		D31F91C1285CEA8300B55DCE /* GoogleService-Info-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */; };
+		D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEDD287025CE007C7CA9 /* APIClient.swift */; };
+		D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEE228702945007C7CA9 /* PlacesTarget.swift */; };
+		D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE528702B5B007C7CA9 /* CombineMoya */; };
+		D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE728702B5B007C7CA9 /* Moya */; };
 		D37544DF286620EC003008D9 /* FeatureLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* FeatureLogAnnotation.swift */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
@@ -39,6 +43,8 @@
 		D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */; };
 		D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA9982833CEBF00606CD4 /* PartialSheet */; };
 		D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */; };
+		D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */; };
+		D3C462812871A84B0005C1B4 /* SearchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */; };
 		D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087B28688C0C006147BB /* SettingsPage.swift */; };
 		D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087C28688C0C006147BB /* WalkthroughPage.swift */; };
 		D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087F28688CA9006147BB /* LocationManager+Env.swift */; };
@@ -79,8 +85,11 @@
 		D306F945286F2022006293E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D31AB89228374A9C009AB9AC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
-		D31F91BD285CE8CE00B55DCE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		D31F91BD285CE8CE00B55DCE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Release.plist"; sourceTree = "<group>"; };
+		D33BFEDD287025CE007C7CA9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
+		D33BFEE228702945007C7CA9 /* PlacesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTarget.swift; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* FeatureLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLogAnnotation.swift; sourceTree = "<group>"; };
 		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +112,8 @@
 		D3BFA9902833CC6700606CD4 /* Pog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pog.entitlements; sourceTree = "<group>"; };
 		D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacePage.swift; sourceTree = "<group>"; };
 		D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceModel.swift; sourceTree = "<group>"; };
+		D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchResponse.swift; sourceTree = "<group>"; };
+		D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfiguration.swift; sourceTree = "<group>"; };
 		D3CA087B28688C0C006147BB /* SettingsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		D3CA087C28688C0C006147BB /* WalkthroughPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPage.swift; sourceTree = "<group>"; };
 		D3CA087F28688CA9006147BB /* LocationManager+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Env.swift"; sourceTree = "<group>"; };
@@ -116,6 +127,7 @@
 		D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		D3E0AACF2840B3B200597C1A /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		D3F794BE2865ED2800B84905 /* Store+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Env.swift"; sourceTree = "<group>"; };
+		D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 6.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +137,9 @@
 			files = (
 				D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */,
 				D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */,
+				D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */,
 				D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */,
+				D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */,
 				D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,12 +174,29 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		D31F91BC285CE86400B55DCE /* Secrets */ = {
+		D33BFEDC287025B8007C7CA9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D31F91BD285CE8CE00B55DCE /* Secret.swift */,
+				D3C4627D2871A0F50005C1B4 /* Reposnses */,
+				D33BFEDD287025CE007C7CA9 /* APIClient.swift */,
+				D33BFEE228702945007C7CA9 /* PlacesTarget.swift */,
 			);
-			path = Secrets;
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D33BFEE028702905007C7CA9 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D33BFEE128702905007C7CA9 /* Moya */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		D33BFEE428702B5B007C7CA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D3A9A37C283A4C74006F3CE6 /* Store */ = {
@@ -179,10 +210,12 @@
 		D3BFA9272833796D00606CD4 = {
 			isa = PBXGroup;
 			children = (
+				D33BFEE028702905007C7CA9 /* Packages */,
 				D3BFA9322833796D00606CD4 /* Pog */,
 				D3BFA9432833796F00606CD4 /* PogTests */,
 				D3BFA94D2833796F00606CD4 /* PogUITests */,
 				D3BFA9312833796D00606CD4 /* Products */,
+				D33BFEE428702B5B007C7CA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +232,7 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
+				D33BFEDC287025B8007C7CA9 /* Networking */,
 				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */,
 				D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */,
@@ -212,7 +246,6 @@
 				D3BFA95D28337B0700606CD4 /* Pages */,
 				D3CA088328689FD4006147BB /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
-				D31F91BC285CE86400B55DCE /* Secrets */,
 				D3A9A37C283A4C74006F3CE6 /* Store */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
 			);
@@ -284,6 +317,7 @@
 			children = (
 				D306F925286EFC03006293E9 /* Generated */,
 				D3BFA96F2833965F00606CD4 /* Place.swift */,
+				D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -298,9 +332,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		D3C4627D2871A0F50005C1B4 /* Reposnses */ = {
+			isa = PBXGroup;
+			children = (
+				D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */,
+			);
+			path = Reposnses;
+			sourceTree = "<group>";
+		};
 		D3F794BD2865ED2000B84905 /* Env */ = {
 			isa = PBXGroup;
 			children = (
+				D31F91BD285CE8CE00B55DCE /* Const.swift */,
 				D3F794BE2865ED2800B84905 /* Store+Env.swift */,
 				D3CA087F28688CA9006147BB /* LocationManager+Env.swift */,
 				D3CA088128688D56006147BB /* PlaceManager+Env.swift */,
@@ -331,6 +374,8 @@
 				D3BFA9982833CEBF00606CD4 /* PartialSheet */,
 				D31F91B4285CE54600B55DCE /* FirebaseAnalytics */,
 				D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */,
+				D33BFEE528702B5B007C7CA9 /* CombineMoya */,
+				D33BFEE728702B5B007C7CA9 /* Moya */,
 			);
 			productName = Pog;
 			productReference = D3BFA9302833796D00606CD4 /* D_Pog.app */;
@@ -501,6 +546,7 @@
 				D306F936286F0A83006293E9 /* InterestingPlace+CoreDataClass.swift in Sources */,
 				D306F938286F0A83006293E9 /* LocationSettings+CoreDataClass.swift in Sources */,
 				D306F944286F188C006293E9 /* PlaceLog+CoreDataProperties.swift in Sources */,
+				D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */,
 				D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */,
 				D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */,
 				D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */,
@@ -516,14 +562,17 @@
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
 				D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
+				D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */,
 				D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */,
+				D3C462812871A84B0005C1B4 /* SearchConfiguration.swift in Sources */,
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */,
-				D31F91BE285CE8CE00B55DCE /* Secret.swift in Sources */,
+				D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */,
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
 				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,
+				D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */,
 				D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */,
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
 				D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */,
@@ -688,7 +737,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
@@ -707,7 +756,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios.debug;
 				PRODUCT_NAME = "D_$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -723,7 +772,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
@@ -741,7 +790,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -913,6 +962,14 @@
 			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
+		D33BFEE528702B5B007C7CA9 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CombineMoya;
+		};
+		D33BFEE728702B5B007C7CA9 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Moya;
+		};
 		D3BFA972283397ED00606CD4 /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
@@ -929,13 +986,14 @@
 		D3CA088328689FD4006147BB /* Pog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */,
 				D306F918286EFA21006293E9 /* Pog 5.xcdatamodel */,
 				D3CA088428689FD4006147BB /* Pog 3.xcdatamodel */,
 				D3CA088528689FD4006147BB /* Pog.xcdatamodel */,
 				D3CA088628689FD4006147BB /* Pog 2.xcdatamodel */,
 				D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */,
 			);
-			currentVersion = D306F918286EFA21006293E9 /* Pog 5.xcdatamodel */;
+			currentVersion = D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */;
 			path = Pog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

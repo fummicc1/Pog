@@ -12,16 +12,19 @@ import MapKit
 public protocol PlaceManager {
     var placesPublisher: AnyPublisher<[Place], Never> { get }
     var places: [Place] { get }
+    var error: AnyPublisher<Error, Never> { get }
 
     func searchNearby(at coordinate: CLLocationCoordinate2D)
-    func search(text: String)
+    func search(text: String, useGooglePlaces: Bool)
 }
 
 public class PlaceManagerImpl: NSObject, PlaceManager {
     private let placesSubject: CurrentValueSubject<[Place], Never> = .init([])
+    private let errorSubject: PassthroughSubject<Error, Never> = .init()
 
     private var localSearch: MKLocalSearch?
     private var searchCompleter = MKLocalSearchCompleter()
+    private let apiClient: APIClient = APIClientImpl()
 
     public override init() {
         super.init()
@@ -36,6 +39,10 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         placesSubject.value
     }
 
+    public var error: AnyPublisher<Error, Never> {
+        errorSubject.eraseToAnyPublisher()
+    }
+
     public var placesPublisher: AnyPublisher<[Place], Never> {
         placesSubject.eraseToAnyPublisher()
     }
@@ -48,13 +55,30 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         )
     }
 
-    public func search(text: String) {
-        var text = text
+    public func search(text: String, useGooglePlaces: Bool) {
         if text.isEmpty {
-            text = "カフェ"
+            return
         }
-        searchCompleter.queryFragment = text
-        placesSubject.send([])
+        if useGooglePlaces {
+            Task {
+                do {1
+                    let response: PlaceSearchResponse = try await apiClient.request(with: .search(text: text))
+                    let places = response.results.map{ result in
+                        Place(
+                            lat: result.geometry.location.lat,
+                            lng: result.geometry.location.lng,
+                            name: result.name
+                        )
+                    }
+                    self.placesSubject.send(places)
+                } catch {
+                    print(error)
+                }
+            }
+        } else {
+            searchCompleter.queryFragment = text
+            placesSubject.send([])
+        }
     }
 }
 
@@ -64,6 +88,9 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
         for result in results {
             let request = MKLocalSearch.Request(completion: result)
             Task {
+                if let localSearch = self.localSearch, localSearch.isSearching {
+                    localSearch.cancel()
+                }
                 self.localSearch = MKLocalSearch(request: request)
                 do {
                     let response = try await self.localSearch!.start()
@@ -76,10 +103,11 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                         )
                     })
                     await MainActor.run(body: {
-                        placesSubject.send(placesSubject.value + places)
+                        placesSubject.send(places)
                     })
                 } catch {
                     print(error)
+                    errorSubject.send(error)
                 }
             }
         }
