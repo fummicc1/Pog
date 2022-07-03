@@ -37,7 +37,11 @@ public class StoreImpl {
     private let searchConfigurationSubject: CurrentValueSubject<SearchConfiguration, Never> = .init(.init())
     private let que: DispatchQueue = .init(label: "dev.fummicc1.Pog.ios.store")
 
+    private static var numberOfInit: Int = 0
+
     public init(notificationCenter: NotificationCenter = .default) {
+        Self.numberOfInit += 1
+        assert(Self.numberOfInit == 1)
         que.async {
             let searchedWordsObservation = self.userDefaults.observe(\.searchedWords, options: [.initial, .new]) { _, change in
                 if let new = change.newValue {

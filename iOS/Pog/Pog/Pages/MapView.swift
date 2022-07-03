@@ -25,7 +25,7 @@ struct MapView: View {
                     interactionModes: .all,
                     showsUserLocation: true,
                     userTrackingMode: .constant(.none),
-                    annotationItems: model.searchResults,
+                    annotationItems: model.showPlaces,
                     annotationContent: { item in
                         MapAnnotation(
                             coordinate: CLLocationCoordinate2D(
@@ -33,7 +33,7 @@ struct MapView: View {
                                 longitude: item.lng
                             )
                         ) {
-                            Image(systemSymbol: model.checkPlaceIsInterseted(item) ? .mappin : .checkmark)
+                            Image(systemSymbol: model.checkPlaceIsInterseted(item) ? .checkmark : .mappin)
                                 .frame(width: 32, height: 32)
                                 .background(Color(uiColor: .systemBackground))
                                 .clipShape(Circle())
@@ -71,9 +71,11 @@ struct MapView: View {
                 .padding(.horizontal, 16)
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("通知を登録")
         }
         .searchable(
             text: $model.searchText,
+            prompt: Text("通知をする場所を検索"),
             suggestions: {
                 ForEach(0..<model.searchedWords.count, id: \.self) { index in
                     let searchedWord = model.searchedWords[index]
