@@ -12,6 +12,7 @@ import MapKit
 public protocol PlaceManager {
     var placesPublisher: AnyPublisher<[Place], Never> { get }
     var places: [Place] { get }
+    var error: AnyPublisher<Error, Never> { get }
 
     func searchNearby(at coordinate: CLLocationCoordinate2D)
     func search(text: String)
@@ -19,9 +20,11 @@ public protocol PlaceManager {
 
 public class PlaceManagerImpl: NSObject, PlaceManager {
     private let placesSubject: CurrentValueSubject<[Place], Never> = .init([])
+    private let errorSubject: PassthroughSubject<Error, Never> = .init()
 
     private var localSearch: MKLocalSearch?
     private var searchCompleter = MKLocalSearchCompleter()
+    private let apiClient: APIClient = APIClientImpl()
 
     public override init() {
         super.init()
@@ -34,6 +37,10 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
 
     public var places: [Place] {
         placesSubject.value
+    }
+
+    public var error: AnyPublisher<Error, Never> {
+        errorSubject.eraseToAnyPublisher()
     }
 
     public var placesPublisher: AnyPublisher<[Place], Never> {
@@ -80,6 +87,7 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                     })
                 } catch {
                     print(error)
+                    errorSubject.send(error)
                 }
             }
         }

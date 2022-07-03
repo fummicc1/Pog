@@ -18,7 +18,7 @@
 		D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B4285CE54600B55DCE /* FirebaseAnalytics */; };
 		D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */; };
 		D31F91BA285CE71300B55DCE /* GoogleService-Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */; };
-		D31F91BE285CE8CE00B55DCE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F91BD285CE8CE00B55DCE /* Secret.swift */; };
+		D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F91BD285CE8CE00B55DCE /* Const.swift */; };
 		D31F91C1285CEA8300B55DCE /* GoogleService-Info-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */; };
 		D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEDD287025CE007C7CA9 /* APIClient.swift */; };
 		D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEE228702945007C7CA9 /* PlacesTarget.swift */; };
@@ -83,7 +83,7 @@
 		D306F945286F2022006293E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D31AB89228374A9C009AB9AC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
-		D31F91BD285CE8CE00B55DCE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		D31F91BD285CE8CE00B55DCE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Release.plist"; sourceTree = "<group>"; };
 		D33BFEDD287025CE007C7CA9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
@@ -169,14 +169,6 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		D31F91BC285CE86400B55DCE /* Secrets */ = {
-			isa = PBXGroup;
-			children = (
-				D31F91BD285CE8CE00B55DCE /* Secret.swift */,
-			);
-			path = Secrets;
-			sourceTree = "<group>";
-		};
 		D33BFEDC287025B8007C7CA9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +240,6 @@
 				D3BFA95D28337B0700606CD4 /* Pages */,
 				D3CA088328689FD4006147BB /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
-				D31F91BC285CE86400B55DCE /* Secrets */,
 				D3A9A37C283A4C74006F3CE6 /* Store */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
 			);
@@ -337,6 +328,7 @@
 		D3F794BD2865ED2000B84905 /* Env */ = {
 			isa = PBXGroup;
 			children = (
+				D31F91BD285CE8CE00B55DCE /* Const.swift */,
 				D3F794BE2865ED2800B84905 /* Store+Env.swift */,
 				D3CA087F28688CA9006147BB /* LocationManager+Env.swift */,
 				D3CA088128688D56006147BB /* PlaceManager+Env.swift */,
@@ -560,7 +552,7 @@
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */,
-				D31F91BE285CE8CE00B55DCE /* Secret.swift in Sources */,
+				D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */,
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
 				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,

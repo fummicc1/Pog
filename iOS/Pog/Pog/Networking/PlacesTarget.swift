@@ -16,15 +16,30 @@ public enum PlacesTarget {
 // TODO: API Endpoint
 extension PlacesTarget: TargetType {
     public var path: String {
-        ""
+        switch self {
+        case .search:
+            return "textsearch/json"
+        }
     }
 
     public var method: Moya.Method {
-        .get
+        switch self {
+        case .search:
+            return .get
+        }
     }
 
     public var task: Moya.Task {
-        .requestPlain
+        switch self {
+        case .search(let text):
+            return .requestParameters(
+                parameters: [
+                    "query": text,
+                    "key": Const.googlePlacesApiKey
+                ],
+                encoding: URLEncoding.queryString
+            )
+        }
     }
 
     public var headers: [String : String]? {
@@ -32,6 +47,6 @@ extension PlacesTarget: TargetType {
     }
 
     public var baseURL: URL {
-        URL(string: "https://maps.googleapis.com/maps/api/place/json")!
+        URL(string: "https://maps.googleapis.com/maps/api/place/")!
     }
 }
