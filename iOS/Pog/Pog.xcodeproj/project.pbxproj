@@ -123,6 +123,7 @@
 		D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		D3E0AACF2840B3B200597C1A /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		D3F794BE2865ED2800B84905 /* Store+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Env.swift"; sourceTree = "<group>"; };
+		D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 6.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -969,13 +970,14 @@
 		D3CA088328689FD4006147BB /* Pog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */,
 				D306F918286EFA21006293E9 /* Pog 5.xcdatamodel */,
 				D3CA088428689FD4006147BB /* Pog 3.xcdatamodel */,
 				D3CA088528689FD4006147BB /* Pog.xcdatamodel */,
 				D3CA088628689FD4006147BB /* Pog 2.xcdatamodel */,
 				D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */,
 			);
-			currentVersion = D306F918286EFA21006293E9 /* Pog 5.xcdatamodel */;
+			currentVersion = D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */;
 			path = Pog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

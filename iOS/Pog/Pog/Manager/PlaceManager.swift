@@ -71,6 +71,9 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
         for result in results {
             let request = MKLocalSearch.Request(completion: result)
             Task {
+                if let localSearch = self.localSearch, localSearch.isSearching {
+                    localSearch.cancel()
+                }
                 self.localSearch = MKLocalSearch(request: request)
                 do {
                     let response = try await self.localSearch!.start()
@@ -83,7 +86,7 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                         )
                     })
                     await MainActor.run(body: {
-                        placesSubject.send(placesSubject.value + places)
+                        placesSubject.send(places)
                     })
                 } catch {
                     print(error)

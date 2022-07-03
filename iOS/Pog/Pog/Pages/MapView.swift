@@ -78,6 +78,7 @@ struct MapView: View {
                 ForEach(0..<model.searchedWords.count, id: \.self) { index in
                     let searchedWord = model.searchedWords[index]
                     Text(searchedWord)
+                        .searchCompletion(searchedWord)
                 }
             }
         )
