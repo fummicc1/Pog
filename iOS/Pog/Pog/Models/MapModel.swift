@@ -18,17 +18,17 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @MainActor @Published var logs: [PlaceLog] = []
-    @MainActor @Published var searchText: String = ""
-    @MainActor @Published var showPartialSheet: Bool = false
-    @MainActor @Published private(set) var selectedPlace: Place?
-    @MainActor @Published private(set) var searchedWords: [String] = []
-    @MainActor @Published var showPlaces: [Place] = []
+    @Published var logs: [PlaceLog] = []
+    @Published var searchText: String = ""
+    @Published var showPartialSheet: Bool = false
+    @Published private(set) var selectedPlace: Place?
+    @Published private(set) var searchedWords: [String] = []
+    @Published var showPlaces: [Place] = []
 
-    @Published private var numberOfPlacesSearchRequestPerDay: Int = 0
-    @Published private var lastSearchedDate: Date?
-    @Published private var searchResults: [Place] = []
-    @Published private var interestingPlaces: [InterestingPlace] = []
+    private var numberOfPlacesSearchRequestPerDay: CurrentValueSubject<Int, Never> = .init(0)
+    private var lastSearchedDate: CurrentValueSubject<Date?, Never> = .init(nil)
+    private var searchResults: CurrentValueSubject<[Place], Never> = .init([])
+    private var interestingPlaces: CurrentValueSubject<[InterestingPlace], Never> = .init([])
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -74,7 +74,10 @@ class MapModel: ObservableObject {
         placeManager
             .placesPublisher
             .receive(on: DispatchQueue.main)
-            .assign(to: &$searchResults)
+            .sink { places in
+                self.searchResults.send(places)
+            }
+            .store(in: &cancellables)
 
         store.logs
             .map { logs in
@@ -87,7 +90,10 @@ class MapModel: ObservableObject {
 
         store.interestingPlaces
             .receive(on: DispatchQueue.main)
-            .assign(to: &$interestingPlaces)
+            .sink(receiveValue: { places in
+                self.interestingPlaces.send(places)
+            })
+            .store(in: &cancellables)
 
         store.searchConfiguration
             .map(\.searchedWords)
@@ -97,15 +103,21 @@ class MapModel: ObservableObject {
         store.searchConfiguration
             .map(\.numberOfSearchPerDay)
             .receive(on: DispatchQueue.main)
-            .assign(to: &$numberOfPlacesSearchRequestPerDay)
+            .sink(receiveValue: { num in
+                self.numberOfPlacesSearchRequestPerDay.send(num)
+            })
+            .store(in: &cancellables)
 
         store.searchConfiguration
             .map(\.lastSearchedDate)
             .receive(on: DispatchQueue.main)
-            .assign(to: &$lastSearchedDate)
+            .sink(receiveValue: { date in
+                self.lastSearchedDate.send(date)
+            })
+            .store(in: &cancellables)
 
-        $searchResults
-            .combineLatest($interestingPlaces)
+        searchResults
+            .combineLatest(interestingPlaces)
             .map { searchPlaces, interestingPlaces in
                 interestingPlaces.map {
                     Place(
@@ -134,31 +146,32 @@ class MapModel: ObservableObject {
         }
     }
 
+    @MainActor
     func onSubmitTextField() async {
-        placeManager.search(
-            text: await searchText,
-            useGooglePlaces: numberOfPlacesSearchRequestPerDay <= 30
+        await placeManager.search(
+            text: searchText,
+            useGooglePlaces: numberOfPlacesSearchRequestPerDay.value <= Const.numberOfPlacesApiCallPerDay
         )
-        var new = await searchedWords
-        if !new.contains(await searchText) {
-            new.append(await searchText)
+        var new = searchedWords
+        if !new.contains(searchText) {
+            new.append(searchText)
         }
         let now = Date()
         let calendar: Calendar = .current
-        if let last = lastSearchedDate, !calendar.isDate(last, inSameDayAs: now) {
+        if let last = lastSearchedDate.value, !calendar.isDate(last, inSameDayAs: now) {
             store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
             store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: 1)
         } else {
-            if lastSearchedDate == nil {
+            if lastSearchedDate.value == nil {
                 store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
             }
             store.updateSearchConfiguration(keypath: \.searchedWords, value: new)
-            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: numberOfPlacesSearchRequestPerDay + 1)
+            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: numberOfPlacesSearchRequestPerDay.value + 1)
         }
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {
-        interestingPlaces.contains(where: { interestingPlace in
+        interestingPlaces.value.contains(where: { interestingPlace in
             let diffLat = abs(interestingPlace.lat - place.lat)
             let diffLng = abs(interestingPlace.lng - place.lng)
             return diffLat < 0.0001 && diffLng < 0.0001

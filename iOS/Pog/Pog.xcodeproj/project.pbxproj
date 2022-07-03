@@ -54,6 +54,8 @@
 		D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */; };
 		D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */; };
 		D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACF2840B3B200597C1A /* Date+Ex.swift */; };
+		D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111C2871EBB300FDC330 /* Secret.swift */; };
+		D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111E2871EC0B00FDC330 /* SecretSample.swift */; };
 		D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F794BE2865ED2800B84905 /* Store+Env.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		D3E0AACF2840B3B200597C1A /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
+		D3E5111C2871EBB300FDC330 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		D3E5111E2871EC0B00FDC330 /* SecretSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSample.swift; sourceTree = "<group>"; };
 		D3F794BE2865ED2800B84905 /* Store+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Env.swift"; sourceTree = "<group>"; };
 		D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 6.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -347,6 +351,8 @@
 				D3F794BE2865ED2800B84905 /* Store+Env.swift */,
 				D3CA087F28688CA9006147BB /* LocationManager+Env.swift */,
 				D3CA088128688D56006147BB /* PlaceManager+Env.swift */,
+				D3E5111C2871EBB300FDC330 /* Secret.swift */,
+				D3E5111E2871EC0B00FDC330 /* SecretSample.swift */,
 			);
 			path = Env;
 			sourceTree = "<group>";
@@ -568,9 +574,11 @@
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */,
+				D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */,
 				D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */,
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
+				D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */,
 				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,
 				D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */,
 				D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */,
@@ -737,7 +745,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
@@ -756,7 +764,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios.debug;
 				PRODUCT_NAME = "D_$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -772,7 +780,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
@@ -790,7 +798,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
