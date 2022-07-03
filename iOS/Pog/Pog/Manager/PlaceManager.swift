@@ -61,7 +61,7 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         }
         if useGooglePlaces {
             Task {
-                do {1
+                do {
                     let response: PlaceSearchResponse = try await apiClient.request(with: .search(text: text))
                     let places = response.results.map{ result in
                         Place(
