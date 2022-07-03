@@ -5,5 +5,5 @@ enum Const {
         ProcessInfo.processInfo.environment["googlePlacesApiKey"] ?? ""
     }
     static let defaultDesiredAccuracy: Double = 100
-    static let numberOfPlacesApiCallPerDay: Int = 30
+    static let numberOfPlacesApiCallPerDay: Int = 60
 }
