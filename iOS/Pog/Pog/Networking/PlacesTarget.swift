@@ -13,7 +13,7 @@ public enum PlacesTarget {
     case search(text: String)
 }
 
-// TODO: API Endpoint
+
 extension PlacesTarget: TargetType {
     public var path: String {
         switch self {

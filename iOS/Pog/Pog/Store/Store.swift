@@ -3,28 +3,45 @@ import CoreData
 import Combine
 
 public protocol Store {
-
+    var searchedWords: AnyPublisher<[String], Never> { get }
     var logs: AnyPublisher<[PlaceLog], Never> { get }
     var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { get }
     var locationSettings: AnyPublisher<LocationSettings?, Never> { get }
     var context: NSManagedObjectContext { get }
+    var userDefaults: UserDefaults { get }
 
     func deleteWithBatch(_ request: NSBatchDeleteRequest) throws
     func fetch<Obj: NSManagedObject>(type: Obj.Type) throws -> [Obj]
 }
 
+extension Const {
+    public enum UserDefaults {
+        static let searchedWords = "searchedWords"
+    }
+}
+
 public class StoreImpl {
 
-    public static let shared: Store = StoreImpl()
-
     private let container = NSPersistentContainer(name: "Pog")
+
+    public let userDefaults: UserDefaults = UserDefaults(suiteName: "group.fummicc1.pog")!
 
     private let placeLogSubject: CurrentValueSubject<[PlaceLog], Never> = .init([])
     private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlace], Never> = .init([])
     private let locationSettingsSubject: CurrentValueSubject<LocationSettings?, Never> = .init(nil)
 
-    private init(notificationCenter: NotificationCenter = .default) {
+    private var keyObservers: [NSKeyValueObservation] = []
+
+    private let searchedWordsSubject: CurrentValueSubject<[String], Never> = .init([])
+
+    public init(notificationCenter: NotificationCenter = .default) {
         DispatchQueue.global().async {
+            let observation = self.userDefaults.observe(\.searchedWords, options: [.initial, .new]) { _, change in
+                if let new = change.newValue {
+                    self.searchedWordsSubject.send(new)
+                }
+            }
+            self.keyObservers.append(observation)
             self.container.loadPersistentStores { _, error in
                 if let error = error {
                     print(error)
@@ -129,9 +146,17 @@ public class StoreImpl {
             }
         }
     }
+
+    deinit {
+        keyObservers.forEach { $0.invalidate() }
+    }
 }
 
 extension StoreImpl: Store {
+
+    public var searchedWords: AnyPublisher<[String], Never> {
+        searchedWordsSubject.share().eraseToAnyPublisher()
+    }
 
     public var interestingPlaces: AnyPublisher<[InterestingPlace], Never> {
         interestingPlacesSubject.share().eraseToAnyPublisher()
@@ -168,5 +193,13 @@ extension StoreImpl: Store {
     public func fetch<Obj>(type: Obj.Type) throws -> [Obj] where Obj : NSManagedObject {
         let request = Obj.fetchRequest()
         return try context.fetch(request) as? [Obj] ?? []
+    }
+}
+
+
+// MARK: UserDefaults Observation
+extension UserDefaults {
+    @objc public dynamic var searchedWords: [String] {
+        return array(forKey: Const.UserDefaults.searchedWords) as? [String] ?? []
     }
 }

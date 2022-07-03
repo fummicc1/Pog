@@ -23,6 +23,7 @@ class MapModel: ObservableObject {
     @Published var searchResults: [Place] = []
     @Published var searchText: String = ""
     @Published var showPartialSheet: Bool = false
+    @Published private(set) var searchedWords: [String] = []
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -46,11 +47,13 @@ class MapModel: ObservableObject {
 
         locationManager.authorizationStatus
             .map({ $0 != CLAuthorizationStatus.authorizedAlways && $0 != CLAuthorizationStatus.authorizedWhenInUse })
+            .receive(on: DispatchQueue.main)
             .assign(to: &$needToAcceptAlwaysLocationAuthorization)
 
         locationManager
             .coordinate
             .first()
+            .receive(on: DispatchQueue.main)
             .sink { coordinate in
                 self.region.center = coordinate
             }
@@ -62,7 +65,9 @@ class MapModel: ObservableObject {
             }
             .store(in: &cancellables)
 
-        placeManager.placesPublisher
+        placeManager
+            .placesPublisher
+            .receive(on: DispatchQueue.main)
             .assign(to: &$searchResults)
 
         placeManager.search(text: searchText)
@@ -73,7 +78,12 @@ class MapModel: ObservableObject {
                     (head.date?.timeIntervalSince1970 ?? 0) > (tail.date?.timeIntervalSince1970 ?? 0)
                 }
             }
+            .receive(on: DispatchQueue.main)
             .assign(to: &$logs)
+
+        store.searchedWords
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$searchedWords)
     }
 
     func onTapMyCurrentLocationButton() {
@@ -90,6 +100,8 @@ class MapModel: ObservableObject {
 
     func onSubmitTextField() {
         placeManager.search(text: searchText)
+        let new = searchedWords + [searchText]
+        store.userDefaults.set(new, forKey: Const.UserDefaults.searchedWords)
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {

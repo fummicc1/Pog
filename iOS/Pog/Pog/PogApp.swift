@@ -29,7 +29,7 @@ struct PogApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var locationManager: LocationManager = LocationManagerImpl.shared
-    var store: Store = StoreImpl.shared
+    var store: Store = StoreEnvironemtnKey.defaultValue
     var cancellables: Set<AnyCancellable> = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
