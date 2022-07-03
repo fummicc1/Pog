@@ -18,6 +18,8 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
+    @Published private var numberOfPlacesSearchRequestPerDay: Int = 0
+    @Published private var lastSearchedDate: Date?
     @MainActor @Published var logs: [PlaceLog] = []
     @MainActor @Published private(set) var selectedPlace: Place?
     @MainActor @Published var searchResults: [Place] = []
@@ -71,11 +73,6 @@ class MapModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$searchResults)
 
-        placeManager.search(
-            text: searchText,
-            useGooglePlaces: true
-        )
-
         store.logs
             .map { logs in
                 return logs.sorted { head, tail in
@@ -85,9 +82,20 @@ class MapModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$logs)
 
-        store.searchedWords
+        store.searchConfiguration
+            .map(\.searchedWords)
             .receive(on: DispatchQueue.main)
             .assign(to: &$searchedWords)
+
+        store.searchConfiguration
+            .map(\.numberOfSearchPerDay)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$numberOfPlacesSearchRequestPerDay)
+
+        store.searchConfiguration
+            .map(\.lastSearchedDate)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$lastSearchedDate)
     }
 
     func onTapMyCurrentLocationButton() {
@@ -107,13 +115,24 @@ class MapModel: ObservableObject {
     func onSubmitTextField() async {
         placeManager.search(
             text: await searchText,
-            useGooglePlaces: true
+            useGooglePlaces: numberOfPlacesSearchRequestPerDay <= 30
         )
-        let new = await searchedWords + [ await searchText ]
-        store.userDefaults.set(
-            new,
-            forKey: Const.UserDefaults.searchedWords
-        )
+        var new = await searchedWords
+        if !new.contains(await searchText) {
+            new.append(await searchText)
+        }
+        let now = Date()
+        let calendar: Calendar = .current
+        if let last = lastSearchedDate, !calendar.isDate(last, inSameDayAs: now) {
+            store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
+            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: 1)
+        } else {
+            if lastSearchedDate == nil {
+                store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
+            }
+            store.updateSearchConfiguration(keypath: \.searchedWords, value: new)
+            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: numberOfPlacesSearchRequestPerDay + 1)
+        }
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {

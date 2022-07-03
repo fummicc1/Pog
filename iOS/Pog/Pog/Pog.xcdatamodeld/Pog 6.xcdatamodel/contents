@@ -20,13 +20,9 @@
         <attribute name="lng" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="memo" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="SearchedWord" representedClassName="SearchedWord" syncable="YES" codeGenerationType="class">
-        <attribute name="word" attributeType="String"/>
-    </entity>
     <elements>
         <element name="InterestingPlace" positionX="-45" positionY="27" width="128" height="104"/>
         <element name="LocationSettings" positionX="-54" positionY="45" width="128" height="89"/>
         <element name="PlaceLog" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="SearchedWord" positionX="-45" positionY="54" width="128" height="44"/>
     </elements>
 </model>

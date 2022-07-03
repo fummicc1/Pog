@@ -3,20 +3,22 @@ import CoreData
 import Combine
 
 public protocol Store {
-    var searchedWords: AnyPublisher<[String], Never> { get }
+    var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { get }
     var logs: AnyPublisher<[PlaceLog], Never> { get }
     var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { get }
     var locationSettings: AnyPublisher<LocationSettings?, Never> { get }
     var context: NSManagedObjectContext { get }
-    var userDefaults: UserDefaults { get }
 
     func deleteWithBatch(_ request: NSBatchDeleteRequest) throws
     func fetch<Obj: NSManagedObject>(type: Obj.Type) throws -> [Obj]
+    func updateSearchConfiguration<Value>(keypath: WritableKeyPath<SearchConfiguration, Value>, value: Value)
 }
 
 extension Const {
     public enum UserDefaults {
         static let searchedWords = "searchedWords"
+        static let numberOfSearchPerDay: String = "numberOfSearchPerDay"
+        static let lastSearchedDate: String = "lastSearchedDate"
     }
 }
 
@@ -24,24 +26,53 @@ public class StoreImpl {
 
     private let container = NSPersistentContainer(name: "Pog")
 
-    public let userDefaults: UserDefaults = UserDefaults(suiteName: "group.fummicc1.pog")!
+    private let userDefaults: UserDefaults = UserDefaults(suiteName: "group.fummicc1.pog")!
 
     private let placeLogSubject: CurrentValueSubject<[PlaceLog], Never> = .init([])
     private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlace], Never> = .init([])
     private let locationSettingsSubject: CurrentValueSubject<LocationSettings?, Never> = .init(nil)
 
-    private var keyObservers: [NSKeyValueObservation] = []
+    private var keyObservers: [String: NSKeyValueObservation] = [:]
 
-    private let searchedWordsSubject: CurrentValueSubject<[String], Never> = .init([])
+    private let searchConfigurationSubject: CurrentValueSubject<SearchConfiguration, Never> = .init(.init())
+    private let que: DispatchQueue = .init(label: "dev.fummicc1.Pog.ios.store")
 
     public init(notificationCenter: NotificationCenter = .default) {
-        DispatchQueue.global().async {
-            let observation = self.userDefaults.observe(\.searchedWords, options: [.initial, .new]) { _, change in
+        que.async {
+            let searchedWordsObservation = self.userDefaults.observe(\.searchedWords, options: [.initial, .new]) { _, change in
                 if let new = change.newValue {
-                    self.searchedWordsSubject.send(new)
+                    var config = self.searchConfigurationSubject.value
+                    config.searchedWords = new
+                    self.searchConfigurationSubject.send(config)
                 }
             }
-            self.keyObservers.append(observation)
+            self.keyObservers[Const.UserDefaults.searchedWords]?.invalidate()
+            self.keyObservers[Const.UserDefaults.searchedWords] = searchedWordsObservation
+
+            let numberOfSearchPerDayObservation = self.userDefaults.observe(\.numberOfSearchPerDay, options: [.initial, .new]) { _, change in
+                if let new = change.newValue {
+                    var config = self.searchConfigurationSubject.value
+                    config.numberOfSearchPerDay = new
+                    self.searchConfigurationSubject.send(config)
+                }
+            }
+            self.keyObservers[Const.UserDefaults.numberOfSearchPerDay]?.invalidate()
+            self.keyObservers[Const.UserDefaults.numberOfSearchPerDay] = numberOfSearchPerDayObservation
+
+            let searchedWordsObservation = self.userDefaults.observe(\.lastSearchedDate, options: [.initial, .new]) { _, change in
+                if let new = change.newValue {
+                    var config = self.searchConfigurationSubject.value
+                    if new == 0 {
+                        config.lastSearchedDate = nil
+                    } else {
+                        config.lastSearchedDate = Date.init(timeIntervalSince1970: new)
+                    }
+                    self.searchConfigurationSubject.send(config)
+                }
+            }
+            self.keyObservers[Const.UserDefaults.lastSearchedDate]?.invalidate()
+            self.keyObservers[Const.UserDefaults.lastSearchedDate] = searchedWordsObservation
+
             self.container.loadPersistentStores { _, error in
                 if let error = error {
                     print(error)
@@ -148,14 +179,14 @@ public class StoreImpl {
     }
 
     deinit {
-        keyObservers.forEach { $0.invalidate() }
+        keyObservers.values.forEach { $0.invalidate() }
     }
 }
 
 extension StoreImpl: Store {
 
-    public var searchedWords: AnyPublisher<[String], Never> {
-        searchedWordsSubject.share().eraseToAnyPublisher()
+    public var searchConfiguration: AnyPublisher<SearchConfiguration, Never> {
+        searchConfigurationSubject.share().eraseToAnyPublisher()
     }
 
     public var interestingPlaces: AnyPublisher<[InterestingPlace], Never> {
@@ -194,6 +225,25 @@ extension StoreImpl: Store {
         let request = Obj.fetchRequest()
         return try context.fetch(request) as? [Obj] ?? []
     }
+
+    public func updateSearchConfiguration<Value>(keypath: WritableKeyPath<SearchConfiguration, Value>, value: Value) {
+        var val = searchConfigurationSubject.value
+        val[keyPath: keypath] = value
+
+        // MARK: Save to UserDefaults
+        userDefaults.set(
+            val.searchedWords,
+            forKey: Const.UserDefaults.searchedWords
+        )
+        userDefaults.set(
+            val.numberOfSearchPerDay,
+            forKey: Const.UserDefaults.numberOfSearchPerDay
+        )
+        userDefaults.set(
+            val.lastSearchedDate?.timeIntervalSince1970 ?? 0,
+            forKey: Const.UserDefaults.lastSearchedDate
+        )
+    }
 }
 
 
@@ -201,5 +251,11 @@ extension StoreImpl: Store {
 extension UserDefaults {
     @objc public dynamic var searchedWords: [String] {
         return array(forKey: Const.UserDefaults.searchedWords) as? [String] ?? []
+    }
+    @objc public dynamic var numberOfSearchPerDay: Int {
+        return integer(forKey: Const.UserDefaults.numberOfSearchPerDay)
+    }
+    @objc public dynamic var lastSearchedDate: Double {
+        return double(forKey: Const.UserDefaults.lastSearchedDate)
     }
 }
