@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+public protocol LocationSettingsRepository {
+
+}
+
+public class LocationSettingsRepositoryImpl {
+
+}
+
+extension LocationSettingsRepositoryImpl: LocationSettingsRepository {
+    
+}
