@@ -54,7 +54,7 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
             longitudinalMeters: 1500
         )
     }
-
+ 
     public func search(text: String, useGooglePlaces: Bool) async {
         if text.isEmpty {
             return

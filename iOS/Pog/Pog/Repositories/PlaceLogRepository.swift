@@ -19,10 +19,15 @@ public class PlaceLogRepositoryImpl {
     private let _logs: CurrentValueSubject<[PlaceLog], Never> = .init([])
     private let _error: PassthroughSubject<Error, Never> = .init()
     private let store: Store
+    private var cancellables: Set<AnyCancellable> = []
 
     public init(store: Store) {
         self.store = store
-        // TODO: Listen Store change
+        store.logs
+            .sink {
+                self._logs.send($0)
+            }
+            .store(in: &cancellables)
     }
 }
 
