@@ -87,18 +87,18 @@ struct MapView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("通知を登録")
-        }
-        .toolbar(content: {
-            ToolbarItem {
-                Button {
+            .toolbar(content: {
+                ToolbarItem {
+                    Button {
+                        moveToHistoryPage = true
+                    } label: {
+                        Label("History", systemSymbol: .listBulletRectanglePortrait)
+                            .labelStyle(.automatic)
+                    }
 
-                } label: {
-                    Label("History", systemSymbol: .listBulletRectanglePortrait)
-                        .labelStyle(.automatic)
                 }
-
-            }
-        })
+            })
+        }
         .searchable(
             text: $model.searchText,
             prompt: Text("通知をする場所を検索"),
