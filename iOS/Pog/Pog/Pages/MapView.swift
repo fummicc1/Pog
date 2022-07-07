@@ -14,12 +14,27 @@ import MapKit
 struct MapView: View {
     
     @StateObject var model: MapModel
+    @State private var moveToHistoryPage: Bool = false
     
     @Environment(\.store) var store: Store
+    @Environment(\.placeManager) var placeManager: PlaceManager
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomLeading) {
+                if moveToHistoryPage {
+                    NavigationLink(
+                        destination: InterestingPlaceVisitingListView(
+                            model: InterestingPlaceVisitingListModel(
+                                store: store,
+                                placeManager: placeManager
+                            )
+                        ),
+                        isActive: $moveToHistoryPage
+                    ) {
+                        EmptyView()
+                    }
+                }
                 Map(
                     coordinateRegion: $model.region,
                     interactionModes: .all,
@@ -73,6 +88,17 @@ struct MapView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("通知を登録")
         }
+        .toolbar(content: {
+            ToolbarItem {
+                Button {
+
+                } label: {
+                    Label("History", systemSymbol: .listBulletRectanglePortrait)
+                        .labelStyle(.automatic)
+                }
+
+            }
+        })
         .searchable(
             text: $model.searchText,
             prompt: Text("通知をする場所を検索"),
