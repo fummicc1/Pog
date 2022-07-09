@@ -54,7 +54,7 @@ struct SettingsPage: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("精度（単位: メートル）")
-                            Text("精度よく記録するには\(Int(Const.defaultDesiredAccuracy))以下がおすすめです")
+                            Text("数字が小さいほど精度よく記録します")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
@@ -64,11 +64,11 @@ struct SettingsPage: View {
                             }
                             return "\(Int(desiredAccuracy))"
                         }, set: { desiredAccuracy in
-                            if desiredAccuracy.isEmpty {
+                            guard !desiredAccuracy.isEmpty, let desiredAccuracy = Double(desiredAccuracy) else {
                                 model.updateDesiredAccuracy(nil)
-                            } else {
-                                model.updateDesiredAccuracy(Double(desiredAccuracy)!)
+                                return
                             }
+                            model.updateDesiredAccuracy(desiredAccuracy)
                         }))
                             .keyboardType(.numberPad)
                             .focused($focus)

@@ -67,6 +67,15 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
 
     public func updateLocationManager<V>(keypath: ReferenceWritableKeyPath<CLLocationManager, V>, value: V) {
         manager[keyPath: keypath] = value
+
+        // Perform side-effects for changes
+        if keypath == \CLLocationManager.allowsBackgroundLocationUpdates {
+            if manager.allowsBackgroundLocationUpdates {
+                manager.startMonitoringSignificantLocationChanges()
+            } else {
+                manager.stopMonitoringSignificantLocationChanges()
+            }
+        }
     }
 
     public func request() {
