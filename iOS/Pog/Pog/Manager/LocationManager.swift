@@ -104,6 +104,10 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
             } else {
                 manager.stopMonitoringSignificantLocationChanges()
             }
+        } else if keypath == \CLLocationManager.desiredAccuracy, let value = value as? Double {
+            manager.desiredAccuracy = value
+        } else if keypath == \CLLocationManager.distanceFilter, let value = value as? Double {
+            manager.distanceFilter = value
         }
     }
 
