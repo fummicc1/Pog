@@ -40,6 +40,7 @@ class SearchPlaceModel: ObservableObject {
                     )
                 )
             })
+            .receive(on: DispatchQueue.main)
             .assign(to: &$alreadyInteresting)
     }
 
