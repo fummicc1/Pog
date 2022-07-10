@@ -23,7 +23,9 @@ public protocol LocationManager {
 
     func request()
     func updateLocationManager<V>(keypath: ReferenceWritableKeyPath<CLLocationManager, V>, value: V)
+    @discardableResult
     func startMonitoringRegion(id: String, at coordinate: CLLocationCoordinate2D, distance: Double) -> Bool
+    @discardableResult
     func resignMonitoringRegion(at coordinate: CLLocationCoordinate2D) -> Bool
 }
 

@@ -18,6 +18,7 @@ struct MapView: View {
     
     @Environment(\.store) var store: Store
     @Environment(\.placeManager) var placeManager: PlaceManager
+    @Environment(\.locationManager) var locationManager: LocationManager
     
     var body: some View {
         NavigationView {
@@ -134,9 +135,10 @@ struct MapView: View {
             if let place = model.selectedPlace {
                 SearchPlacePage(
                     model: SearchPlaceModel(
-                        store: store
-                    ),
-                    place: place
+                        place: place,
+                        store: store,
+                        locationManager: locationManager
+                    )
                 )
             }
         }

@@ -13,11 +13,9 @@ struct SearchPlacePage: View {
     @Environment(\.managedObjectContext) var context
     @ObservedObject var model: SearchPlaceModel
 
-    let place: Place
-
     var body: some View {
         VStack {
-            Text(place.name)
+            Text(model.place.name)
                 .font(.title3)
                 .foregroundColor(Color(uiColor: .label))
                 .bold()
@@ -26,8 +24,9 @@ struct SearchPlacePage: View {
             }
             HStack {
                 Button(model.alreadyInteresting ? "登録解除" : "登録") {
+                    // TODO: Logic should be deadled within `Model`.
                     if model.alreadyInteresting {
-                        if let placeToDelete = model.interestingPlaces.first(where: { $0.lat == place.lat && $0.lng == place.lng }) {
+                        if let placeToDelete = model.interestingPlaces.first(where: { $0.lat == model.place.lat && $0.lng == model.place.lng }) {
                             model.willDeleteInterestingPlace()
                             context.delete(placeToDelete)
                             model.storedInterestingPlace = nil
@@ -35,15 +34,14 @@ struct SearchPlacePage: View {
                         return
                     }
                     let interestingPlace = InterestingPlace(context: context)
-                    interestingPlace.name = place.name
-                    interestingPlace.lat = place.lat
-                    interestingPlace.lng = place.lng
+                    interestingPlace.name = model.place.name
+                    interestingPlace.lat = model.place.lat
+                    interestingPlace.lng = model.place.lng
                     // TODO: Decide by user own.
                     interestingPlace.distanceMeter = 300
-                    interestingPlace.icon = place.icon
+                    interestingPlace.icon = model.place.icon
                     do {
                         try context.save()
-                        model.alreadyInteresting = true
                         model.storedInterestingPlace = interestingPlace
                         Task {
                             await model.didAddInterestingPlace()
@@ -72,7 +70,7 @@ struct SearchPlacePage: View {
         }
         .onAppear {
             if let stored = model.interestingPlaces.first(where: { place in
-                place.lat == self.place.lat && place.lng == self.place.lng
+                place.lat == model.place.lat && place.lng == model.place.lng
             }) {
                 model.storedInterestingPlace = stored
                 model.alreadyInteresting = true

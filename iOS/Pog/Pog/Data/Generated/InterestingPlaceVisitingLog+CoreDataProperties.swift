@@ -2,7 +2,7 @@
 //  InterestingPlaceVisitingLog+CoreDataProperties.swift
 //  Pog
 //
-//  Created by Fumiya Tanaka on 2022/07/08.
+//  Created by Fumiya Tanaka on 2022/07/10.
 //
 //
 
@@ -16,7 +16,8 @@ extension InterestingPlaceVisitingLog {
         return NSFetchRequest<InterestingPlaceVisitingLog>(entityName: "InterestingPlaceVisitingLog")
     }
 
-    @NSManaged public var date: Date?
+    @NSManaged public var visitedAt: Date?
+    @NSManaged public var exitedAt: Date?
     @NSManaged public var place: InterestingPlace?
 
 }

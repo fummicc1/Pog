@@ -8,7 +8,8 @@
         <attribute name="name" attributeType="String"/>
     </entity>
     <entity name="InterestingPlaceVisitingLog" representedClassName="InterestingPlaceVisitingLog" syncable="YES">
-        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="exitedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="visitedAt" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterestingPlace"/>
     </entity>
     <entity name="LocationSettings" representedClassName="LocationSettings" syncable="YES">
@@ -26,8 +27,8 @@
     </entity>
     <elements>
         <element name="InterestingPlace" positionX="-45" positionY="27" width="128" height="104"/>
+        <element name="InterestingPlaceVisitingLog" positionX="-54" positionY="45" width="128" height="74"/>
         <element name="LocationSettings" positionX="-54" positionY="45" width="128" height="89"/>
         <element name="PlaceLog" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="InterestingPlaceVisitingLog" positionX="-54" positionY="45" width="128" height="59"/>
     </elements>
 </model>

@@ -15,9 +15,3 @@ struct InterestingPlaceVisitingListView: View {
         Text("Hello, World!")
     }
 }
-
-struct InterestingPlaceVisitingListView_Previews: PreviewProvider {
-    static var previews: some View {
-        fatalError()
-    }
-}
