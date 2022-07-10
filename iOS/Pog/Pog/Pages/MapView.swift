@@ -14,12 +14,28 @@ import MapKit
 struct MapView: View {
     
     @StateObject var model: MapModel
+    @State private var moveToHistoryPage: Bool = false
     
     @Environment(\.store) var store: Store
+    @Environment(\.placeManager) var placeManager: PlaceManager
+    @Environment(\.locationManager) var locationManager: LocationManager
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomLeading) {
+                if moveToHistoryPage {
+                    NavigationLink(
+                        destination: InterestingPlaceVisitingListView(
+                            model: InterestingPlaceVisitingListModel(
+                                store: store,
+                                placeManager: placeManager
+                            )
+                        ),
+                        isActive: $moveToHistoryPage
+                    ) {
+                        EmptyView()
+                    }
+                }
                 Map(
                     coordinateRegion: $model.region,
                     interactionModes: .all,
@@ -72,6 +88,17 @@ struct MapView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("通知を登録")
+            .toolbar(content: {
+                ToolbarItem {
+                    Button {
+                        moveToHistoryPage = true
+                    } label: {
+                        Label("History", systemSymbol: .listBulletRectanglePortrait)
+                            .labelStyle(.automatic)
+                    }
+
+                }
+            })
         }
         .searchable(
             text: $model.searchText,
@@ -108,9 +135,10 @@ struct MapView: View {
             if let place = model.selectedPlace {
                 SearchPlacePage(
                     model: SearchPlaceModel(
-                        store: store
-                    ),
-                    place: place
+                        place: place,
+                        store: store,
+                        locationManager: locationManager
+                    )
                 )
             }
         }

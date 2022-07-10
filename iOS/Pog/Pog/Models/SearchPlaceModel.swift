@@ -18,28 +18,51 @@ class SearchPlaceModel: ObservableObject {
     @Published var interestingPlaces: [InterestingPlace] = []
 
     let store: Store
+    let locationManager: LocationManager
 
-    init(store: Store) {
+    let place: Place
+
+    init(place: Place, store: Store, locationManager: LocationManager) {
+        self.place = place
         self.store = store
+        self.locationManager = locationManager
 
         store.interestingPlaces
             .assign(to: &$interestingPlaces)
+
+        locationManager.monitoringRegions
+            .compactMap({ $0 as? [CLCircularRegion] })
+            .map({ regions in
+                regions.map(\.center).contains(
+                    CLLocationCoordinate2D(
+                        latitude: place.lat,
+                        longitude: place.lng
+                    )
+                )
+            })
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$alreadyInteresting)
     }
 
-    func willDeleteInterestingPlace() {
+    func willDeleteInterestingPlace() {        
         guard let storedInterestingPlace = storedInterestingPlace else {
             return
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        locationManager.resignMonitoringRegion(
+            at: CLLocationCoordinate2D(
+                latitude: storedInterestingPlace.lat,
+                longitude: storedInterestingPlace.lng
+            )
+        )
         alreadyInteresting = false
     }
 
     func didAddInterestingPlace() async {
         guard let isAuthorized = try? await UNUserNotificationCenter.current().requestAuthorization(
                 options: [.alert, .badge, .sound]
-            ),
-              isAuthorized else {
+            ), isAuthorized else {
             return
         }
 
@@ -48,7 +71,7 @@ class SearchPlaceModel: ObservableObject {
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         let content = UNMutableNotificationContent()
-        content.title = "\(storedInterestingPlace.name ?? "")が近くにあります"
+        content.title = "\(storedInterestingPlace.name ?? "登録した場所")が近くにあります"
         content.body = "アプリを開いて確認しましょう"
         let trigger = UNLocationNotificationTrigger(
             region: CLCircularRegion(
@@ -68,6 +91,14 @@ class SearchPlaceModel: ObservableObject {
         )
         do {
             try await UNUserNotificationCenter.current().add(request)
+            locationManager.startMonitoringRegion(
+                id: id,
+                at: CLLocationCoordinate2D(
+                    latitude: storedInterestingPlace.lat,
+                    longitude: storedInterestingPlace.lng
+                ),
+                distance: storedInterestingPlace.distanceMeter
+            )
         } catch {
             self.error = error.localizedDescription
         }

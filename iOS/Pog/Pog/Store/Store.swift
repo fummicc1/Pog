@@ -5,6 +5,7 @@ import Combine
 public protocol Store {
     var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { get }
     var logs: AnyPublisher<[PlaceLog], Never> { get }
+    var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> { get }
     var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { get }
     var locationSettings: AnyPublisher<LocationSettings?, Never> { get }
     var context: NSManagedObjectContext { get }
@@ -28,6 +29,7 @@ public class StoreImpl {
 
     private let userDefaults: UserDefaults = UserDefaults(suiteName: "group.fummicc1.pog")!
 
+    private let interestingPlaceVisitingLogsSubject: CurrentValueSubject<[InterestingPlaceVisitingLog], Never> = .init([])
     private let placeLogSubject: CurrentValueSubject<[PlaceLog], Never> = .init([])
     private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlace], Never> = .init([])
     private let locationSettingsSubject: CurrentValueSubject<LocationSettings?, Never> = .init(nil)
@@ -94,6 +96,9 @@ public class StoreImpl {
                     assert(locationSettings.count == 1)
                     self.locationSettingsSubject.send(locationSettings.last!)
                 }
+                if let visitingLogs = try? self.container.viewContext.fetch(InterestingPlaceVisitingLog.fetchRequest()) {
+                    self.interestingPlaceVisitingLogsSubject.send(visitingLogs)
+                }
             }
 
             notificationCenter.addObserver(
@@ -105,6 +110,7 @@ public class StoreImpl {
                     var addedLogs: [PlaceLog] = []
                     var addedPlaces: [InterestingPlace] = []
                     var addedLocationSettings: LocationSettings?
+                    var addedVisitingLogs: [InterestingPlaceVisitingLog] = []
 
                     for obj in added {
                         if let log = obj as? PlaceLog {
@@ -115,6 +121,9 @@ public class StoreImpl {
                         }
                         if let locationSettings = obj as? LocationSettings {
                             addedLocationSettings = locationSettings
+                        }
+                        if let visitingLog = obj as? InterestingPlaceVisitingLog {
+                            addedVisitingLogs.append(visitingLog)
                         }
                     }
 
@@ -128,6 +137,10 @@ public class StoreImpl {
                     }()
                     _ = {
                         self.locationSettingsSubject.send(addedLocationSettings)
+                    }()
+                    _ = {
+                        let all = self.interestingPlaceVisitingLogsSubject.value + addedVisitingLogs
+                        self.interestingPlaceVisitingLogsSubject.send(all)
                     }()
                 }
                 if let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject> {
@@ -203,6 +216,10 @@ extension StoreImpl: Store {
 
     public var locationSettings: AnyPublisher<LocationSettings?, Never> {
         locationSettingsSubject.share().eraseToAnyPublisher()
+    }
+
+    public var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> {
+        interestingPlaceVisitingLogsSubject.eraseToAnyPublisher()
     }
 
     public var context: NSManagedObjectContext {

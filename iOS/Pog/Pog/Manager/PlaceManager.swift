@@ -24,6 +24,7 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
 
     private var localSearch: MKLocalSearch?
     private var searchCompleter = MKLocalSearchCompleter()
+    // TODO: Avoid direct dependency on classes.
     private let apiClient: APIClient = APIClientImpl()
 
     public override init() {
