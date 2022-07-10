@@ -15,7 +15,7 @@ struct MapViewRepresentable: UIViewRepresentable {
 
     @Binding var region: MKCoordinateRegion
     @Binding var polyline: MKPolyline?
-    @Binding var featuredLogs: [PlaceLog]
+    @Binding var pickedUpLogs: [PlaceLog]
 
     @Environment(\.store) var store: Store
 
@@ -27,8 +27,8 @@ struct MapViewRepresentable: UIViewRepresentable {
             view.addOverlay(polyline)
         }
         var annotations: [MKAnnotation] = []
-        for featuredLog in featuredLogs {
-            let annotaion = FeatureLogAnnotation(featureLog: featuredLog)
+        for featuredLog in pickedUpLogs {
+            let annotaion = PickedUpLogAnnotation(pickedUpLog: featuredLog)
             if let date = featuredLog.date {
                 annotaion.title = date.displayable
             }
@@ -47,9 +47,9 @@ struct MapViewRepresentable: UIViewRepresentable {
         }
         uiView.removeAnnotations(uiView.annotations)
         var annotations: [MKAnnotation] = []
-        for featuredLog in featuredLogs {
-            let annotaion = FeatureLogAnnotation(featureLog: featuredLog)            
-            if let date = featuredLog.date {
+        for pickedUpLog in pickedUpLogs {
+            let annotaion = PickedUpLogAnnotation(pickedUpLog: pickedUpLog)
+            if let date = pickedUpLog.date {
                 annotaion.title = date.displayable
             }
             annotations.append(annotaion)
@@ -87,7 +87,7 @@ extension MapViewRepresentable {
             if annotation is MKUserLocation {
                 return nil
             }
-            guard let annotation = annotation as? FeatureLogAnnotation else {
+            guard let annotation = annotation as? PickedUpLogAnnotation else {
                 return nil
             }
             let view: MKMarkerAnnotationView
