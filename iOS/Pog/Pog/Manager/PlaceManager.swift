@@ -15,7 +15,11 @@ public protocol PlaceManager {
     var error: AnyPublisher<Error, Never> { get }
 
     func searchNearby(at coordinate: CLLocationCoordinate2D)
-    func search(text: String, useGooglePlaces: Bool) async
+    func search(
+        text: String,
+        at coordinate: CLLocationCoordinate2D?,
+        useGooglePlaces: Bool
+    ) async
 }
 
 public class PlaceManagerImpl: NSObject, PlaceManager {
@@ -56,13 +60,18 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         )
     }
 
-    public func search(text: String, useGooglePlaces: Bool) async {
+    public func search(text: String, at coordinate: CLLocationCoordinate2D?, useGooglePlaces: Bool) async {
         if text.isEmpty {
             return
         }
         if useGooglePlaces {
             do {
-                let response: PlaceSearchResponse = try await apiClient.request(with: .search(text: text))
+                let response: PlaceSearchResponse = try await apiClient.request(
+                    with: .search(
+                        text: text,
+                        location: coordinate
+                    )
+                )
                 let places = response.results.map{ result in
                     Place(
                         lat: result.geometry.location.lat,

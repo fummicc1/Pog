@@ -10,7 +10,7 @@
     <entity name="InterestingPlaceVisitingLog" representedClassName="InterestingPlaceVisitingLog" syncable="YES">
         <attribute name="exitedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="visitedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterestingPlace"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="InterestingPlace"/>
     </entity>
     <entity name="LocationSettings" representedClassName="LocationSettings" syncable="YES">
         <attribute name="allowsBackgroundLocationUpdates" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>

@@ -150,6 +150,7 @@ class MapModel: ObservableObject {
     func onSubmitTextField() async {
         await placeManager.search(
             text: searchText,
+            at: locationManager.currentCoordinate,
             useGooglePlaces: numberOfPlacesSearchRequestPerDay.value <= Const.numberOfPlacesApiCallPerDay
         )
         var new = searchedWords
