@@ -90,11 +90,10 @@ public class StoreImpl {
                     self.interestingPlacesSubject.send(places)
                 }
                 if let locationSettings = try? self.container.viewContext.fetch(LocationSettings.fetchRequest()) {
-                    if locationSettings.isEmpty {
-                        return
+                    if !locationSettings.isEmpty {
+                        assert(locationSettings.count == 1)
+                        self.locationSettingsSubject.send(locationSettings.last!)
                     }
-                    assert(locationSettings.count == 1)
-                    self.locationSettingsSubject.send(locationSettings.last!)
                 }
                 if let visitingLogs = try? self.container.viewContext.fetch(InterestingPlaceVisitingLog.fetchRequest()) {
                     self.interestingPlaceVisitingLogsSubject.send(visitingLogs)
