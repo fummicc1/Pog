@@ -5,12 +5,12 @@
 //  Created by Fumiya Tanaka on 2022/07/02.
 //
 
+import CoreLocation
 import Foundation
 import Moya
 
-
 public enum PlacesTarget {
-    case search(text: String)
+    case search(text: String, location: CLLocationCoordinate2D?)
 }
 
 
@@ -31,12 +31,16 @@ extension PlacesTarget: TargetType {
 
     public var task: Moya.Task {
         switch self {
-        case .search(let text):
+        case .search(let text, let location):
+            var parameters: [String: Any] = [
+                "query": text,
+                "key": Const.googlePlacesApiKey
+            ]
+            if let location = location {
+                parameters["location"] = "\(location.latitude),\(location.longitude)"
+            }
             return .requestParameters(
-                parameters: [
-                    "query": text,
-                    "key": Const.googlePlacesApiKey
-                ],
+                parameters: parameters,
                 encoding: URLEncoding.queryString
             )
         }
