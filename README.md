@@ -11,7 +11,7 @@ Pog can track your location regardless of application state (foreground/backgrou
 
 | SearchPlace | VisitingLogs at InterstingPlaces | Logging | Settings |
 | ------- | ---- | ----- | ----- |
-| <img src="https://user-images.githubusercontent.com/44002126/177037600-16f3db87-7dc1-4690-8a5f-3cc2c322c684.png" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/178148868-7b44612f-df13-450c-9723-5816c594902f.jpeg" width="320"> | <img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/177037533-b28ea71c-bfa2-4a02-98d2-7fe308d45c7d.jpeg" width=320px> |
+| <img src="https://user-images.githubusercontent.com/44002126/177037600-16f3db87-7dc1-4690-8a5f-3cc2c322c684.png" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/178295835-e6de54c9-0bf9-4c10-829a-f994f6331a7a.jpeg" width="320"> | <img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/177037533-b28ea71c-bfa2-4a02-98d2-7fe308d45c7d.jpeg" width=320px> |
 
 | How-to-use 1                                                                                                                  | How-to-use 2                                                                                                                  | How-to-use 3                                                                                                                  |
 | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -22,3 +22,4 @@ Pog can track your location regardless of application state (foreground/backgrou
 To track location change while your app is killed (not running), you have to grant **Always-LocationAuthorization** from `Settings`.
 
 <img src="https://user-images.githubusercontent.com/44002126/175754437-dcb2cc4a-f468-4715-9b67-d09a52330714.PNG" width=240px>
+
