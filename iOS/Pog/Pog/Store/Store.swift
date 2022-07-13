@@ -181,14 +181,22 @@ public class StoreImpl {
                 }
                 if let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject> {
                     var updatedLocationSettings: LocationSettings?
+                    var updatedInterestingPlaceVisitingLogs: [InterestingPlaceVisitingLog] = []
                     for obj in updated {
                         if let locationSettings = obj as? LocationSettings {
                             updatedLocationSettings = locationSettings
+                        }
+                        if let visitingLog = obj as? InterestingPlaceVisitingLog {
+                            updatedInterestingPlaceVisitingLogs.append(visitingLog)
                         }
                     }
                     if let updatedLocationSettings = updatedLocationSettings {
                         self.locationSettingsSubject.send(updatedLocationSettings)
                     }
+                    let newInterestingPlaceVisitingLogs = Set(
+                        updatedInterestingPlaceVisitingLogs + self.interestingPlaceVisitingLogsSubject.value
+                    ).map { $0 }
+                    self.interestingPlaceVisitingLogsSubject.send(newInterestingPlaceVisitingLogs)
                 }
             }
         }

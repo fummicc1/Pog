@@ -26,6 +26,13 @@ class InterestingPlaceVisitingListModel: ObservableObject {
 
         store.interestingPlaceVisitingLogs
             .map { logs in
+                logs.sorted { head, tail in
+                    let tailVisitedAt = tail.visitedAt ?? Date(timeIntervalSince1970: 0)
+                    let headVisitedAt = head.visitedAt ?? Date(timeIntervalSince1970: 0)
+                    return headVisitedAt > tailVisitedAt
+                }
+            }
+            .map { logs in
                 var histories: [InterestingPlace: [InterestingPlaceVisitingLog]] = [:]
                 for log in logs {
                     guard let place = log.place else {
