@@ -76,7 +76,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 do {
                     let logs = try self.store.fetch(type: InterestingPlaceVisitingLog.self)
                     guard let log = logs.first(where: {
-                        $0.place?.lat == region.center.latitude && $0.place?.lng == region.center.longitude
+                        $0.place?.lat == region.center.latitude && $0.place?.lng == region.center.longitude && $0.exitedAt == nil
                     }) else {
                         assertionFailure()
                         return
