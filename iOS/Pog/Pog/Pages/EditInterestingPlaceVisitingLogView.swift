@@ -51,8 +51,8 @@ struct EditInterestingPlaceVisitingLogView: View {
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }
-                .background(Color(uiColor: .systemRed))
-                .foregroundColor(Color(uiColor: .systemBackground))
+                .background(Color(uiColor: .systemGroupedBackground))
+                .foregroundColor(Color(uiColor: .label))
                 .cornerRadius(8)
                 Button {
                     editingLog!.visitedAt = visitedAt
