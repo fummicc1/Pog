@@ -5,13 +5,14 @@ Pog can track your location regardless of application state (foreground/backgrou
 - [TestFlight](https://testflight.apple.com/join/l3cUMuOx)
 - [App Store](https://apps.apple.com/us/app/pog/id1624689465)
 
+
 ## Features
 
 - You can check your place-log even though you do not keep this app on foreground / background (suspended / not running state is Okay).
 
 | SearchPlace | VisitingLogs at InterstingPlaces | Logging | Settings |
 | ------- | ---- | ----- | ----- |
-| <img src="https://user-images.githubusercontent.com/44002126/177037600-16f3db87-7dc1-4690-8a5f-3cc2c322c684.png" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/178295835-e6de54c9-0bf9-4c10-829a-f994f6331a7a.jpeg" width="320"> | <img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/177037533-b28ea71c-bfa2-4a02-98d2-7fe308d45c7d.jpeg" width=320px> |
+| <img src="https://user-images.githubusercontent.com/44002126/177037600-16f3db87-7dc1-4690-8a5f-3cc2c322c684.png" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/178765093-6affe182-19a4-43e9-b390-0cc6a7cf211e.png" width="320"> | <img src="https://user-images.githubusercontent.com/44002126/175821035-a6619613-a7fa-4b11-b600-3e29edf007be.PNG" width=320px> | <img src="https://user-images.githubusercontent.com/44002126/177037533-b28ea71c-bfa2-4a02-98d2-7fe308d45c7d.jpeg" width=320px> |
 
 | How-to-use 1                                                                                                                  | How-to-use 2                                                                                                                  | How-to-use 3                                                                                                                  |
 | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
