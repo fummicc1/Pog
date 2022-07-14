@@ -10,7 +10,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import dev.fummicc1.pog.android.ui.theme.PogTheme
+import dev.fummicc1.pog.android.ui.views.SearchPlaceScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    RootScreen()
                 }
             }
         }
@@ -30,14 +34,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    PogTheme {
-        Greeting("Android")
+fun RootScreen() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "searchPlace") {
+        composable("searchPlace") {
+            SearchPlaceScreen()
+        }
     }
 }
