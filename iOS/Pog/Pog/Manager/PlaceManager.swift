@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import MapKit
 
+/// @mockable
 public protocol PlaceManager {
     var placesPublisher: AnyPublisher<[Place], Never> { get }
     var places: [Place] { get }

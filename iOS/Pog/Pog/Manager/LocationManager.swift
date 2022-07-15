@@ -9,6 +9,7 @@ import Combine
 import Foundation
 import CoreLocation
 
+/// @mockable
 public protocol LocationManager {
     var isAuthorizedForPreciseLocation: AnyPublisher<Bool, Never> { get }
     var allowsBackgroundLocationUpdates: Bool { get }
