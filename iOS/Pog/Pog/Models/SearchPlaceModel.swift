@@ -71,8 +71,8 @@ class SearchPlaceModel: ObservableObject {
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         let content = UNMutableNotificationContent()
-        content.title = "\(storedInterestingPlace.name ?? "登録した場所")が近くにあります"
-        content.body = "アプリを開いて確認しましょう"
+        content.title = "\(storedInterestingPlace.name ?? NSLocalizedString("RegisteredPlace", comment: ""))" + NSLocalizedString("IsNear", comment: "")
+        content.body = NSLocalizedString("ConfirmWithApp", comment: "")
         let trigger = UNLocationNotificationTrigger(
             region: CLCircularRegion(
                 center: CLLocationCoordinate2D(

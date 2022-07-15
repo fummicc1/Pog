@@ -15,8 +15,8 @@ import UserNotifications
 class SettingsModel: ObservableObject {
     @MainActor @Published private(set) var desiredAccuracy: Double?
     @MainActor @Published private(set) var allowsBackgroundLocationUpdates: Bool = true
-    @MainActor @Published private(set) var isAquiringAccuracyLocation: String = "曖昧な位置情報"
-    @MainActor @Published private(set) var locationAuthorizationStatus: String = "次回、または共有時に確認"
+    @MainActor @Published private(set) var isAquiringAccuracyLocation: String = NSLocalizedString("FuzzyLocation", comment: "")
+    @MainActor @Published private(set) var locationAuthorizationStatus: String = NSLocalizedString("ConfirmNextTime", comment: "")
 
     private let store: Store
     private let locationManager: LocationManager
@@ -48,15 +48,15 @@ class SettingsModel: ObservableObject {
             .map { status in
                 switch status {
                 case .notDetermined:
-                    return "次回、または共有時に確認"
+                    return NSLocalizedString("ConfirmNextTime", comment: "")
                 case .authorizedAlways:
-                    return "常に"
+                    return NSLocalizedString("Always", comment: "")
                 case .authorizedWhenInUse:
-                    return "このAppの使用中のみ許可"
+                    return NSLocalizedString("WhenInUse", comment: "")
                 case .denied:
-                    return "許可しない"
+                    return NSLocalizedString("NotAuthorized", comment: "")
                 default:
-                    return "不明"
+                    return NSLocalizedString("Unknown", comment: "")
                 }
             }
             .assign(to: &$locationAuthorizationStatus)
@@ -64,9 +64,9 @@ class SettingsModel: ObservableObject {
         locationManager.isAuthorizedForPreciseLocation
             .map { isAccurate in
                 if isAccurate {
-                    return "正確な位置情報"
+                    return NSLocalizedString("PreciseLocation", comment: "")
                 } else {
-                    return "曖昧な位置情報"
+                    return NSLocalizedString("FuzzyLocation", comment: "")
                 }
             }
             .assign(to: &$isAquiringAccuracyLocation)

@@ -114,7 +114,7 @@ class MapModel: ObservableObject {
                         lat: $0.lat,
                         lng: $0.lng,
                         icon: $0.icon,
-                        name: $0.name ?? "地名を取得できませんでした"
+                        name: $0.name ?? NSLocalizedString("FailedToFetchPlaceName", comment: "")
                     )
                 } + searchPlaces
             }

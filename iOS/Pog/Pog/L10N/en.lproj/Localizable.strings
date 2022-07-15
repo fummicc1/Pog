@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Pog
+
+  Created by Fumiya Tanaka on 2022/07/15.
+  
+*/
+
+
+"FailedToFetchPlaceName" = "Failed to fetch place's name.";
+"RegisteredPlace" = "登録した場所";
+"IsNear" = "が近くにあります";
+"ConfirmWithApp" = "アプリを開いて確認しましょう";
+
+"ConfirmNextTime" = "次回、または共有時に確認";
+"Always" = "常に";
+"WhileInUse" = "このAppの使用中のみ許可";
+"NotAuthorized" = "許可しない";
+
+"PreciseLocation" = "正確な位置情報";
+"FuzzyLocation" = "曖昧な位置情報";
+
+"Unknown" = "不明";
+
+

@@ -60,6 +60,7 @@
 		D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087F28688CA9006147BB /* LocationManager+Env.swift */; };
 		D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA088128688D56006147BB /* PlaceManager+Env.swift */; };
 		D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3CA088328689FD4006147BB /* Pog.xcdatamodeld */; };
+		D3D3AF3D2881B2ED002C0C2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3D3AF3F2881B2ED002C0C2B /* Localizable.strings */; };
 		D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */; };
 		D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */; };
 		D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */; };
@@ -145,6 +146,8 @@
 		D3CA088528689FD4006147BB /* Pog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pog.xcdatamodel; sourceTree = "<group>"; };
 		D3CA088628689FD4006147BB /* Pog 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 2.xcdatamodel"; sourceTree = "<group>"; };
 		D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 4.xcdatamodel"; sourceTree = "<group>"; };
+		D3D3AF3E2881B2ED002C0C2B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3D3AF402881B2F1002C0C2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogModel.swift; sourceTree = "<group>"; };
 		D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
+				D3D3AF3A2881B2CB002C0C2B /* L10N */,
 				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */,
 				D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */,
@@ -426,6 +430,14 @@
 				D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */,
 			);
 			path = Reposnses;
+			sourceTree = "<group>";
+		};
+		D3D3AF3A2881B2CB002C0C2B /* L10N */ = {
+			isa = PBXGroup;
+			children = (
+				D3D3AF3F2881B2ED002C0C2B /* Localizable.strings */,
+			);
+			path = L10N;
 			sourceTree = "<group>";
 		};
 		D3E0B1D1287F06160094AB49 /* Extensions */ = {
@@ -575,6 +587,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D3AF3D2881B2ED002C0C2B /* Localizable.strings in Resources */,
 				D3BFA93B2833796F00606CD4 /* Preview Assets.xcassets in Resources */,
 				D31F91BA285CE71300B55DCE /* GoogleService-Info-Debug.plist in Resources */,
 				D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */,
@@ -745,6 +758,18 @@
 			targetProxy = D3BFA94B2833796F00606CD4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3D3AF3F2881B2ED002C0C2B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D3AF3E2881B2ED002C0C2B /* ja */,
+				D3D3AF402881B2F1002C0C2B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D3BFA9522833796F00606CD4 /* Debug */ = {
