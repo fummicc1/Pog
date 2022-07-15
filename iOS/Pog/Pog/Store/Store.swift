@@ -2,6 +2,7 @@ import Foundation
 import CoreData
 import Combine
 
+/// @mockable
 public protocol Store {
     var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { get }
     var logs: AnyPublisher<[PlaceLog], Never> { get }

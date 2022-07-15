@@ -12,6 +12,66 @@ import MapKit
 import Moya
 
 
+public class StoreMock: Store {
+    public init() { }
+    public init(context: NSManagedObjectContext) {
+        self._context = context
+    }
+
+
+    public var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { return self.searchConfigurationSubject.eraseToAnyPublisher() }
+    public private(set) var searchConfigurationSubject = PassthroughSubject<SearchConfiguration, Never>()
+
+    public var logs: AnyPublisher<[PlaceLog], Never> { return self.logsSubject.eraseToAnyPublisher() }
+    public private(set) var logsSubject = PassthroughSubject<[PlaceLog], Never>()
+
+    public var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> { return self.interestingPlaceVisitingLogsSubject.eraseToAnyPublisher() }
+    public private(set) var interestingPlaceVisitingLogsSubject = PassthroughSubject<[InterestingPlaceVisitingLog], Never>()
+
+    public var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { return self.interestingPlacesSubject.eraseToAnyPublisher() }
+    public private(set) var interestingPlacesSubject = PassthroughSubject<[InterestingPlace], Never>()
+
+    public var locationSettings: AnyPublisher<LocationSettings?, Never> { return self.locationSettingsSubject.eraseToAnyPublisher() }
+    public private(set) var locationSettingsSubject = PassthroughSubject<LocationSettings?, Never>()
+
+    public private(set) var contextSetCallCount = 0
+    private var _context: NSManagedObjectContext!  { didSet { contextSetCallCount += 1 } }
+    public var context: NSManagedObjectContext {
+        get { return _context }
+        set { _context = newValue }
+    }
+
+    public private(set) var deleteWithBatchCallCount = 0
+    public var deleteWithBatchHandler: ((NSBatchDeleteRequest) throws -> ())?
+    public func deleteWithBatch(_ request: NSBatchDeleteRequest) throws  {
+        deleteWithBatchCallCount += 1
+        if let deleteWithBatchHandler = deleteWithBatchHandler {
+            try deleteWithBatchHandler(request)
+        }
+        
+    }
+
+    public private(set) var fetchCallCount = 0
+    public var fetchHandler: ((Any) throws -> (Any))?
+    public func fetch<Obj: NSManagedObject>(type: Obj.Type) throws -> [Obj] {
+        fetchCallCount += 1
+        if let fetchHandler = fetchHandler {
+            return try fetchHandler(type) as! [Obj]
+        }
+        return [Obj]()
+    }
+
+    public private(set) var updateSearchConfigurationCallCount = 0
+    public var updateSearchConfigurationHandler: ((Any, Any) -> ())?
+    public func updateSearchConfiguration<Value>(keypath: WritableKeyPath<SearchConfiguration, Value>, value: Value)  {
+        updateSearchConfigurationCallCount += 1
+        if let updateSearchConfigurationHandler = updateSearchConfigurationHandler {
+            updateSearchConfigurationHandler(keypath, value)
+        }
+        
+    }
+}
+
 public class PlaceManagerMock: PlaceManager {
     public init() { }
     public init(places: [Place] = [Place]()) {
