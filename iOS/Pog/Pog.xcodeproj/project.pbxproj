@@ -18,6 +18,8 @@
 		D312A1472877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */; };
 		D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */; };
 		D312A14B287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */; };
+		D31956F628818B6900BEF86D /* MapModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31956F528818B6900BEF86D /* MapModelTests.swift */; };
+		D31956FD2881903300BEF86D /* GeneratedMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31956FC2881903300BEF86D /* GeneratedMock.swift */; };
 		D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AB89228374A9C009AB9AC /* PlaceManager.swift */; };
 		D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B4285CE54600B55DCE /* FirebaseAnalytics */; };
 		D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */; };
@@ -96,6 +98,8 @@
 		D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlaceVisitingLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingPlaceVisitingListView.swift; sourceTree = "<group>"; };
 		D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingPlaceVisitingListModel.swift; sourceTree = "<group>"; };
+		D31956F528818B6900BEF86D /* MapModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelTests.swift; sourceTree = "<group>"; };
+		D31956FC2881903300BEF86D /* GeneratedMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMock.swift; sourceTree = "<group>"; };
 		D31AB89228374A9C009AB9AC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
 		D31F91BD285CE8CE00B55DCE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -194,6 +198,37 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		D31956F428818B4500BEF86D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D31956F528818B6900BEF86D /* MapModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D31956F728818B6E00BEF86D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D31956FA2881903300BEF86D /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D31956FB2881903300BEF86D /* Generated */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		D31956FB2881903300BEF86D /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				D31956FC2881903300BEF86D /* GeneratedMock.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		D33BFEDC287025B8007C7CA9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,12 +265,12 @@
 		D3BFA9272833796D00606CD4 = {
 			isa = PBXGroup;
 			children = (
+				D33BFEE428702B5B007C7CA9 /* Frameworks */,
 				D33BFEE028702905007C7CA9 /* Packages */,
 				D3BFA9322833796D00606CD4 /* Pog */,
 				D3BFA9432833796F00606CD4 /* PogTests */,
 				D3BFA94D2833796F00606CD4 /* PogUITests */,
 				D3BFA9312833796D00606CD4 /* Products */,
-				D33BFEE428702B5B007C7CA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,13 +297,14 @@
 				D3F794BD2865ED2000B84905 /* Env */,
 				D3E0B1D1287F06160094AB49 /* Extensions */,
 				D3BFA96328337C4D00606CD4 /* Manager */,
+				D31956FA2881903300BEF86D /* Mock */,
 				D3BFA96028337BC100606CD4 /* Models */,
 				D33BFEDC287025B8007C7CA9 /* Networking */,
-				D3BFA95D28337B0700606CD4 /* Pages */,
 				D3CA088328689FD4006147BB /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
 				D3A9A37C283A4C74006F3CE6 /* Store */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
+				D3BFA95D28337B0700606CD4 /* Views */,
 			);
 			path = Pog;
 			sourceTree = "<group>";
@@ -284,6 +320,8 @@
 		D3BFA9432833796F00606CD4 /* PogTests */ = {
 			isa = PBXGroup;
 			children = (
+				D31956F728818B6E00BEF86D /* Views */,
+				D31956F428818B4500BEF86D /* Models */,
 				D3BFA9442833796F00606CD4 /* PogTests.swift */,
 			);
 			path = PogTests;
@@ -298,7 +336,7 @@
 			path = PogUITests;
 			sourceTree = "<group>";
 		};
-		D3BFA95D28337B0700606CD4 /* Pages */ = {
+		D3BFA95D28337B0700606CD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */,
@@ -311,7 +349,7 @@
 				D3CA087B28688C0C006147BB /* SettingsPage.swift */,
 				D3CA087C28688C0C006147BB /* WalkthroughPage.swift */,
 			);
-			path = Pages;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D3BFA96028337BC100606CD4 /* Models */ = {
@@ -392,6 +430,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3BFA9542833796F00606CD4 /* Build configuration list for PBXNativeTarget "Pog" */;
 			buildPhases = (
+				D31956F828818F9100BEF86D /* Update mock classes */,
 				D3BFA92C2833796D00606CD4 /* Sources */,
 				D3BFA92D2833796D00606CD4 /* Frameworks */,
 				D3BFA92E2833796D00606CD4 /* Resources */,
@@ -530,6 +569,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		D31956F828818F9100BEF86D /* Update mock classes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update mock classes";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${SRCROOT}\"/generate_mock.sh -s \"${SRCROOT}\" -d \"${SRCROOT}/Pog/Mock/Generated/GeneratedMock.swift\"\n";
+		};
 		D31F91B8285CE54D00B55DCE /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -588,6 +645,7 @@
 				D306F943286F188C006293E9 /* LocationSettings+CoreDataProperties.swift in Sources */,
 				D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */,
 				D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */,
+				D31956FD2881903300BEF86D /* GeneratedMock.swift in Sources */,
 				D3E0B1D0287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift in Sources */,
 				D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */,
 				D306F933286EFC04006293E9 /* PlaceLog+CoreDataClass.swift in Sources */,
@@ -627,6 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31956F628818B6900BEF86D /* MapModelTests.swift in Sources */,
 				D3BFA9452833796F00606CD4 /* PogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
