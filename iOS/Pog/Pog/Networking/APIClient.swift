@@ -20,12 +20,20 @@ public enum APIClientError: Error {
 }
 
 public class APIClientImpl {
-    private let placesProvider = MoyaProvider<PlacesTarget>()
+    private let placesProvider: MoyaProvider<PlacesTarget>
     private let jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
+
+    init(placesProvider: MoyaProvider<PlacesTarget> = MoyaProvider<PlacesTarget>()) {
+        self.placesProvider = placesProvider
+    }
+
+    static func stub() -> APIClient {
+        APIClientImpl.init(placesProvider: MoyaProvider<PlacesTarget>(stubClosure: MoyaProvider.immediatelyStub))
+    }
 }
 
 extension APIClientImpl: APIClient {

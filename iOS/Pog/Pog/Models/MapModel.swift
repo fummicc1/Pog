@@ -18,7 +18,6 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @Published var logs: [PlaceLog] = []
     @Published var searchText: String = ""
     @Published var showPartialSheet: Bool = false
     @Published private(set) var selectedPlace: Place?
@@ -78,15 +77,6 @@ class MapModel: ObservableObject {
                 self.searchResults.send(places)
             }
             .store(in: &cancellables)
-
-        store.logs
-            .map { logs in
-                return logs.sorted { head, tail in
-                    (head.date?.timeIntervalSince1970 ?? 0) > (tail.date?.timeIntervalSince1970 ?? 0)
-                }
-            }
-            .receive(on: DispatchQueue.main)
-            .assign(to: &$logs)
 
         store.interestingPlaces
             .receive(on: DispatchQueue.main)

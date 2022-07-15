@@ -19,8 +19,6 @@ struct PogApp: App {
         WindowGroup {
             RootView()
             .attachPartialSheetToRoot()
-            .environment(\.placeManager, PlaceManagerImpl())
-            .environment(\.locationManager, appDelegate.locationManager)
             .environment(\.managedObjectContext, appDelegate.store.context)
         }
     }
@@ -35,7 +33,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        #if DEBUG
+        Analytics.setAnalyticsCollectionEnabled(false)
+        #else
         Analytics.setAnalyticsCollectionEnabled(true)
+        #endif
         // MARK: Observe location updates
         locationManager.coordinate
             .sink { coordinate in
