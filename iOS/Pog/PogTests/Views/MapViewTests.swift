@@ -1,14 +1,13 @@
 //
-//  PogTests.swift
+//  MapViewTests.swift
 //  PogTests
 //
-//  Created by Fumiya Tanaka on 2022/05/17.
+//  Created by Fumiya Tanaka on 2022/07/15.
 //
 
 import XCTest
-@testable import Pog
 
-class PogTests: XCTestCase {
+final class MapViewTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

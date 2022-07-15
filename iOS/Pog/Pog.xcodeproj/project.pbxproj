@@ -18,8 +18,14 @@
 		D312A1472877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */; };
 		D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */; };
 		D312A14B287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */; };
-		D31956F628818B6900BEF86D /* MapModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31956F528818B6900BEF86D /* MapModelTests.swift */; };
+		D31956F628818B6900BEF86D /* MapModelTests+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31956F528818B6900BEF86D /* MapModelTests+Search.swift */; };
 		D31956FD2881903300BEF86D /* GeneratedMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31956FC2881903300BEF86D /* GeneratedMock.swift */; };
+		D3195701288191F000BEF86D /* MapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3195700288191F000BEF86D /* MapViewTests.swift */; };
+		D31957072881959000BEF86D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31957062881959000BEF86D /* FirebaseAnalytics */; };
+		D31957092881959E00BEF86D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31957082881959E00BEF86D /* FirebaseCrashlytics */; };
+		D319570C288197A700BEF86D /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319570B288197A700BEF86D /* Stubs.swift */; };
+		D31957112881A97300BEF86D /* MapModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31957102881A97300BEF86D /* MapModelTests.swift */; };
+		D31957132881A9D600BEF86D /* MapModelTests+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31957122881A9D600BEF86D /* MapModelTests+Location.swift */; };
 		D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AB89228374A9C009AB9AC /* PlaceManager.swift */; };
 		D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B4285CE54600B55DCE /* FirebaseAnalytics */; };
 		D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */; };
@@ -36,9 +42,7 @@
 		D3BFA9362833796D00606CD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9352833796D00606CD4 /* RootView.swift */; };
 		D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BFA9372833796F00606CD4 /* Assets.xcassets */; };
 		D3BFA93B2833796F00606CD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BFA93A2833796F00606CD4 /* Preview Assets.xcassets */; };
-		D3BFA9452833796F00606CD4 /* PogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9442833796F00606CD4 /* PogTests.swift */; };
 		D3BFA94F2833796F00606CD4 /* PogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA94E2833796F00606CD4 /* PogUITests.swift */; };
-		D3BFA9512833796F00606CD4 /* PogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9502833796F00606CD4 /* PogUITestsLaunchTests.swift */; };
 		D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA95E28337BBB00606CD4 /* MapView.swift */; };
 		D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96128337BC900606CD4 /* MapModel.swift */; };
 		D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA96428337C5700606CD4 /* LocationManager.swift */; };
@@ -98,8 +102,12 @@
 		D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlaceVisitingLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingPlaceVisitingListView.swift; sourceTree = "<group>"; };
 		D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingPlaceVisitingListModel.swift; sourceTree = "<group>"; };
-		D31956F528818B6900BEF86D /* MapModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelTests.swift; sourceTree = "<group>"; };
+		D31956F528818B6900BEF86D /* MapModelTests+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapModelTests+Search.swift"; sourceTree = "<group>"; };
 		D31956FC2881903300BEF86D /* GeneratedMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMock.swift; sourceTree = "<group>"; };
+		D3195700288191F000BEF86D /* MapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTests.swift; sourceTree = "<group>"; };
+		D319570B288197A700BEF86D /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		D31957102881A97300BEF86D /* MapModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelTests.swift; sourceTree = "<group>"; };
+		D31957122881A9D600BEF86D /* MapModelTests+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapModelTests+Location.swift"; sourceTree = "<group>"; };
 		D31AB89228374A9C009AB9AC /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Debug.plist"; sourceTree = "<group>"; };
 		D31F91BD285CE8CE00B55DCE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -115,10 +123,8 @@
 		D3BFA9372833796F00606CD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3BFA93A2833796F00606CD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3BFA9402833796F00606CD4 /* PogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3BFA9442833796F00606CD4 /* PogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogTests.swift; sourceTree = "<group>"; };
 		D3BFA94A2833796F00606CD4 /* PogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BFA94E2833796F00606CD4 /* PogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogUITests.swift; sourceTree = "<group>"; };
-		D3BFA9502833796F00606CD4 /* PogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D3BFA95E28337BBB00606CD4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D3BFA96128337BC900606CD4 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		D3BFA96428337C5700606CD4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -170,6 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31957072881959000BEF86D /* FirebaseAnalytics in Frameworks */,
+				D31957092881959E00BEF86D /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +209,7 @@
 		D31956F428818B4500BEF86D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D31956F528818B6900BEF86D /* MapModelTests.swift */,
+				D319570F2881A92300BEF86D /* MapModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 		D31956F728818B6E00BEF86D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3195700288191F000BEF86D /* MapViewTests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +236,24 @@
 				D31956FC2881903300BEF86D /* GeneratedMock.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		D319570A2881979800BEF86D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D319570B288197A700BEF86D /* Stubs.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D319570F2881A92300BEF86D /* MapModel */ = {
+			isa = PBXGroup;
+			children = (
+				D31956F528818B6900BEF86D /* MapModelTests+Search.swift */,
+				D31957102881A97300BEF86D /* MapModelTests.swift */,
+				D31957122881A9D600BEF86D /* MapModelTests+Location.swift */,
+			);
+			path = MapModel;
 			sourceTree = "<group>";
 		};
 		D33BFEDC287025B8007C7CA9 /* Networking */ = {
@@ -320,9 +347,9 @@
 		D3BFA9432833796F00606CD4 /* PogTests */ = {
 			isa = PBXGroup;
 			children = (
+				D319570A2881979800BEF86D /* Utils */,
 				D31956F728818B6E00BEF86D /* Views */,
 				D31956F428818B4500BEF86D /* Models */,
-				D3BFA9442833796F00606CD4 /* PogTests.swift */,
 			);
 			path = PogTests;
 			sourceTree = "<group>";
@@ -331,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				D3BFA94E2833796F00606CD4 /* PogUITests.swift */,
-				D3BFA9502833796F00606CD4 /* PogUITestsLaunchTests.swift */,
 			);
 			path = PogUITests;
 			sourceTree = "<group>";
@@ -468,6 +494,10 @@
 				D3BFA9422833796F00606CD4 /* PBXTargetDependency */,
 			);
 			name = PogTests;
+			packageProductDependencies = (
+				D31957062881959000BEF86D /* FirebaseAnalytics */,
+				D31957082881959E00BEF86D /* FirebaseCrashlytics */,
+			);
 			productName = PogTests;
 			productReference = D3BFA9402833796F00606CD4 /* PogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -685,8 +715,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D31956F628818B6900BEF86D /* MapModelTests.swift in Sources */,
-				D3BFA9452833796F00606CD4 /* PogTests.swift in Sources */,
+				D31957112881A97300BEF86D /* MapModelTests.swift in Sources */,
+				D319570C288197A700BEF86D /* Stubs.swift in Sources */,
+				D3195701288191F000BEF86D /* MapViewTests.swift in Sources */,
+				D31957132881A9D600BEF86D /* MapModelTests+Location.swift in Sources */,
+				D31956F628818B6900BEF86D /* MapModelTests+Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +728,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BFA94F2833796F00606CD4 /* PogUITests.swift in Sources */,
-				D3BFA9512833796F00606CD4 /* PogUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,19 +936,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pog.app/Pog";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D_Pog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/D_Pog";
 			};
 			name = Debug;
 		};
@@ -924,19 +957,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pog.app/Pog";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D_Pog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/D_Pog";
 			};
 			name = Release;
 		};
@@ -944,11 +978,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PogUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -962,11 +997,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.PogUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1053,6 +1089,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D31957062881959000BEF86D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D31957082881959E00BEF86D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		D31F91B4285CE54600B55DCE /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
