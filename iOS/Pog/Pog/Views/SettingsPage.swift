@@ -23,23 +23,23 @@ struct SettingsPage: View {
     var body: some View {
         NavigationView {
             Form {
-                Section("データ関連") {
+                Section("AboutData") {
                     Button {
                         showTotallyDeleteLogsAlert = true
                     } label: {
-                        Text("全てのログを消去する")
+                        Text("TotallyDeleteAllLogs")
                     }
                     Button {
                         showTotallyDeleteNotificationAlert = true
                     } label: {
-                        Text("全ての通知を消去する")
+                        Text("TotallyDeleteAllNotifications")
                     }
                 }
-                Section("位置情報関連") {
+                Section("AboutLocation") {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("バックグラウンド更新")
-                            Text("OFFにするとアプリが終了すると位置情報は記録されません")
+                            Text("UpdateOnBackground")
+                            Text("MessageAboutUpdateOnBackground")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
@@ -53,12 +53,12 @@ struct SettingsPage: View {
                     }
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("精度（単位: メートル）")
-                            Text("数字が小さいほど精度よく記録します")
+                            Text("Accuracy (unit: meter)")
+                            Text("Less the number is, more accurate recorded location is.")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
-                        TextField("デフォルト: \(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
+                        TextField(NSLocalizedString("Default", comment: "") + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
                             guard let desiredAccuracy = model.desiredAccuracy else {
                                 return ""
                             }
@@ -79,7 +79,7 @@ struct SettingsPage: View {
                                             focus = false
                                             model.commitDesiredAccuracyChange()
                                         } label: {
-                                            Text("閉じる")
+                                            Text("Close")
                                         }
                                     }
                                 }
@@ -96,14 +96,14 @@ struct SettingsPage: View {
                     }.buttonStyle(.plain)
                     HStack {
                         Group {
-                            Text("位置情報の許可状態")
+                            Text("LocationAuthorizeStatus")
                             Spacer()
                             Text(model.locationAuthorizationStatus)
                         }.foregroundColor(.secondary)
                     }
                     HStack {
                         Group {
-                            Text("正確な位置情報")
+                            Text("AccurateLocation")
                             Spacer()
                             Text(model.isAquiringAccuracyLocation)
                         }.foregroundColor(.secondary)
@@ -113,24 +113,24 @@ struct SettingsPage: View {
                             URL(string: UIApplication.openSettingsURLString)!
                         )
                     } label: {
-                        Text("設定アプリで確認する")
+                        Text("ConfirmWithSettings")
                     }
                 }
-                Section("アプリについて") {
+                Section("AboutPog") {
                     Button {
                         shouldOnboarding = true
                     } label: {
-                        Text("Pogについて（機能説明）")
+                        Text("AboutPogFeatures")
                     }
                 }
-                Section("フィードバック") {
+                Section("Feedback") {
                     Button {
                         guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
                             return
                         }
                         SKStoreReviewController.requestReview(in: scene)
                     } label: {
-                        Text("Pogをレビューする")
+                        Text("ReviewPog")
                     }
                 }
             }
@@ -139,21 +139,21 @@ struct SettingsPage: View {
         .onAppear {
             model.onAppear()
         }
-        .alert("完全にログを消去しますか？", isPresented: $showTotallyDeleteLogsAlert) {
+        .alert("DoesDeleteAllLogsTotally", isPresented: $showTotallyDeleteLogsAlert) {
             Button(role: .destructive) {
                 model.totallyDeleteLogs()
             } label: {
-                Text("消去")
+                Text("Delete")
             }
             Button(role: .cancel, action: { }) {
-                Text("キャンセル")
+                Text("Cancel")
             }
         }
-        .alert("完全に通知設定を消去しますか？", isPresented: $showTotallyDeleteNotificationAlert) {
+        .alert("DoesDeleteAllNotificationTotally", isPresented: $showTotallyDeleteNotificationAlert) {
             Button(role: .destructive) {
                 model.totallyDeleteInterestingPlaces()
             } label: {
-                Text("消去")
+                Text("Delete")
             }
 
         }

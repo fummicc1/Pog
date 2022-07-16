@@ -1,9 +1,71 @@
-/* 
-  Localizable.strings
-  Pog
+"FailedToFetchPlaceName" = "場所が見つかりませんでした";
+"FailedToFetchRegisteredPlaceName" = "登録された場所が見つかりませんでした";
+"RegisteredPlace" = "登録済みの場所";
+"IsNear" = "が近くにあります";
+"ConfirmWithApp" = "アプリを開いて確認しましょう";
 
-  Created by Fumiya Tanaka on 2022/07/15.
-  
-*/
+"ConfirmNextTime" = "次回、または共有時に確認";
+"Always" = "常に";
+"WhileInUse" = "このAppの使用中のみ許可";
+"NotAuthorized" = "許可しない";
 
-"FailedToFetchPlaceName" = "地名を取得できませんでした";
+"PreciseLocation" = "正確な位置情報";
+"FuzzyLocation" = "曖昧な位置情報";
+
+"Unknown" = "不明";
+
+"VisitingTime" = "訪問時刻";
+"DepartureTime" = "出発時刻";
+"ArrivalTime" = "到着時刻";
+"Cancel" = "キャンセル";
+"Save" = "保存";
+
+"VisitingHistory (Ten)" = "• 訪問履歴（10件）";
+"VisitingHistory" = "• 訪問履歴";
+"NoVisitingHistoryYet" = "まだ訪問履歴はありません";
+"Visit" = "訪問する";
+"ToUseConfortably" = "Pogを快適に使用するために。";
+
+"OpenSettings" = "設定へ";
+"LocationAuthorizeRecommendation" = "Pogには位置情報のログを残す機能があります。\nこれらの機能を使用するために位置情報の許可をお願いします。";
+
+"RegisterNotification" = "通知を登録";
+"SearchPlacesToRegister" = "通知をする場所を検索";
+"DisplayMode" = "表示モード";
+
+"Map" = "マップ";
+"SelectDate" = "日付選択";
+"Log" = "ログ";
+"Environment" = "環境設定";
+"DistanceToTriggerNotification" = "通知が発動するための距離";
+"EnableNotification" = "登録";
+"DisableNotification" = "登録解除";
+
+"ErrorOccured" = "エラーが発生しました";
+
+"AboutData" = "データ関連";
+"TotallyDeleteAllLogs" = "全てのログを消去する";
+"TotallyDeleteAllNotifications" = "全ての通知を消去する";
+
+"AboutLocation" = "位置情報関連";
+"UpdateOnBackground" = "バックグランド更新";
+
+"MessageAboutUpdateOnBackground" = "OFFにするとアプリが動いていない場合は位置情報が記録されません";
+"Accuracy (unit: meter)" = "精度（単位: メートル）";
+"Less the number is, more accurate recorded location is." = "数字が小さいほど精度よく記録します";
+
+"Default" = "デフォルト";
+"Close" = "閉じる";
+
+"LocationAuthorizeStatus" = "位置情報の許可状態";
+"AccurateLocation" = "正確な位置情報";
+
+"ConfirmWithSettings" = "設定アプリで確認する";
+
+"About Pog" = "このアプリについて";
+"AboutPogFeatures" = "Pogについて（機能説明）";
+"Feedback" = "フィードバック";
+"ReviewPog" = "Pogをレビューする";
+"DoesDeleteAllLogsTotally" = "完全にログを消去しますか？";
+"Delete" = "消去";
+"DoesDeleteAllNotificationTotally" = "完全に通知設定を消去しますか？";

@@ -1,25 +1,58 @@
-/* 
-  Localizable.strings
-  Pog
+"FailedToFetchPlaceName" = "failed to fetch place's name.";
+"FailedToFetchRegisteredPlaceName" = "登録された場所が見つかりませんでした";
 
-  Created by Fumiya Tanaka on 2022/07/15.
-  
-*/
+"RegisteredPlace" = "registered Place";
+"IsNear" = "is near";
+"ConfirmWithApp" = "confirm with app";
 
+"ConfirmNextTime" = "confirm next time";
+"Always" = "always";
+"WhileInUse" = "authorize while app is in use";
+"NotAuthorized" = "deny";
 
-"FailedToFetchPlaceName" = "Failed to fetch place's name.";
-"RegisteredPlace" = "登録した場所";
-"IsNear" = "が近くにあります";
-"ConfirmWithApp" = "アプリを開いて確認しましょう";
+"PreciseLocation" = "precise location";
+"FuzzyLocation" = "fuzzy location";
 
-"ConfirmNextTime" = "次回、または共有時に確認";
-"Always" = "常に";
-"WhileInUse" = "このAppの使用中のみ許可";
-"NotAuthorized" = "許可しない";
+"Unknown" = "Unknown";
 
-"PreciseLocation" = "正確な位置情報";
-"FuzzyLocation" = "曖昧な位置情報";
+"VisitingTime" = "訪問時刻";
+"DepartureTime" = "出発時刻";
+"ArrivalTime" = "到着時刻";
+"Cancel" = "キャンセル";
+"Save" = "保存";
 
-"Unknown" = "不明";
+"VisitingHistory (Ten)" = "• 訪問履歴（10件）";
+"VisitingHistory" = "• 訪問履歴";
+"NoVisitingHistoryYet" = "まだ訪問履歴はありません";
+"Visit" = "訪問する";
+"ToUseConfortably" = "Pogを快適に使用するために。";
 
+"OpenSettings" = "設定へ";
+"LocationAuthorizeRecommendation" = "Pogには位置情報のログを残す機能があります。\nこれらの機能を使用するために位置情報の許可をお願いします。";
 
+"RegisterNotification" = "通知を登録";
+"SearchPlacesToRegister" = "通知をする場所を検索";
+"DisplayMode" = "表示モード";
+
+"Map" = "マップ";
+"SelectDate" = "日付選択";
+"Log" = "ログ";
+"Environment" = "環境設定";
+"DistanceToTriggerNotification" = "通知が発動するための距離";
+"EnableNotification" = "登録";
+"DisableNotification" = "登録解除";
+
+"ErrorOccured" = "エラーが発生しました";
+
+"AboutData" = "データ関連";
+"TotallyDeleteAllLogs" = "全てのログを消去する";
+"TotallyDeleteAllNotifications" = "全ての通知を消去する";
+
+"AboutLocation" = "位置情報関連";
+"UpdateOnBackground" = "バックグランド更新";
+
+"MessageAboutUpdateOnBackground" = "OFFにするとアプリが動いていない場合は位置情報が記録されません";
+"Accuracy (unit: meter)" = "精度（単位: メートル）";
+"Less the number is, more accurate recorded location is." = "数字が小さいほど精度よく記録します";
+
+"Default" = "デフォルト";

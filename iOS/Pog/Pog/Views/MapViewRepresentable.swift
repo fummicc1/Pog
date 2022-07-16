@@ -103,54 +103,7 @@ extension MapViewRepresentable {
                 )
                 view.glyphTintColor = UIColor.tintColor
                 view.markerTintColor = UIColor.systemBackground
-            }
-//            var config = UIButton.Configuration.plain()
-//            config.title = "メモを書く"
-//            let button = UIButton(configuration: config)
-//            button.addAction(UIAction(handler: { _ in
-//                let alert = UIAlertController(
-//                    title: "メモの入力",
-//                    message: "当時いた場所付近にメモを入力できます",
-//                    preferredStyle: .alert
-//                )
-//                var memoTextField: UITextField?
-//                alert.addTextField { textField in
-//                    textField.delegate = self
-//                    textField.placeholder = "ここに入力"
-//                    memoTextField = textField
-//                }
-//                alert.addAction(UIAlertAction(
-//                    title: "閉じる",
-//                    style: .default,
-//                    handler: { _ in
-//                        let log = annotation.featureLog
-//                        log.memo = memoTextField?.text
-//                        do {
-//                            try self.store.context.save()
-//                        } catch {
-//                            print(error)
-//                            Crashlytics.crashlytics().log("\(error)")
-//                        }
-//                    }
-//                ))
-//                guard let windowScene = UIApplication.shared.connectedScenes
-//                    .filter({ $0.activationState == .foregroundActive })
-//                    .compactMap({ $0 as? UIWindowScene })
-//                    .first, let window = windowScene.keyWindow else {
-//                    return
-//                }
-//                window.rootViewController?.present(alert, animated: true)
-//            }), for: .touchUpInside)
-//            view.canShowCallout = true
-//            view.detailCalloutAccessoryView = button
-//
-//            if let memo = annotation.featureLog.memo {
-//                let label = UILabel()
-//                label.text = memo
-//                label.font = .preferredFont(forTextStyle: .title3)
-//                label.sizeToFit()
-//                view.leftCalloutAccessoryView = label
-//            }
+            }           
             return view
         }
 
