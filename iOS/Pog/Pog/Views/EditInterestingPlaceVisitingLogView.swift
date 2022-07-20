@@ -30,7 +30,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                     .bold()
                     .foregroundColor(.secondary)
                 Spacer()
-                DatePicker("VisitingTime", selection: $visitedAt)
+                DatePicker("", selection: $visitedAt)
             }
             HStack {
                 Text("DepartureTime")
@@ -39,7 +39,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                     .foregroundColor(.secondary)
                 Spacer()
                 if let exitedAt = Binding($exitedAt) {
-                    DatePicker("DepartureTime", selection: exitedAt)
+                    DatePicker("", selection: exitedAt)
                 }
             }
             Spacer().frame(height: 40)

@@ -20,7 +20,7 @@ struct SearchPlacePage: View {
                 .foregroundColor(Color(uiColor: .label))
                 .bold()
             if let storedInterestingPlace = model.storedInterestingPlace {
-                Text(NSLocalizedString("DistanceToTriggerNotification", comment: "") + String(Int(storedInterestingPlace.distanceMeter)) + "m")
+                Text(NSLocalizedString("DistanceToTriggerNotification", comment: "") + " " + String(Int(storedInterestingPlace.distanceMeter)) + "m")
             }
             HStack {
                 Button(model.alreadyInteresting ? "DisableNotification" : "EnableNotification") {
