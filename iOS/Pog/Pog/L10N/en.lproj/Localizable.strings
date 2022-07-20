@@ -15,77 +15,77 @@
 
 "Unknown" = "Unknown";
 
-"VisitingTime" = "訪問時刻";
-"DepartureTime" = "出発時刻";
-"ArrivalTime" = "到着時刻";
-"Cancel" = "キャンセル";
-"Save" = "保存";
+"VisitingTime" = "Visited At";
+"DepartureTime" = "Departed At";
+"ArrivalTime" = "Arrived At";
+"Cancel" = "Cancel";
+"Save" = "Save";
 
-"VisitingHistory (Ten)" = "• 訪問履歴（10件）";
-"VisitingHistory" = "• 訪問履歴";
-"NoVisitingHistoryYet" = "まだ訪問履歴はありません";
-"Visit" = "訪問する";
-"ToUseConfortably" = "Pogを快適に使用するために。";
+"VisitingHistory (Ten)" = "• Visiting History（Latest ten）";
+"VisitingHistory" = "• Visiting History";
+"NoVisitingHistoryYet" = "There is no visiting yet.";
+"Visit" = "Visit";
+"ToUseConfortably" = "To Use Pog confortably";
 
-"OpenSettings" = "設定へ";
-"LocationAuthorizeRecommendation" = "Pogには位置情報のログを残す機能があります。\nこれらの機能を使用するために位置情報の許可をお願いします。";
+"OpenSettings" = "Open Settings";
+"LocationAuthorizeRecommendation" = "Pog has a feature to keep a log of location. Please allow location request to use these features.";
 
-"RegisterNotification" = "通知を登録";
-"SearchPlacesToRegister" = "通知をする場所を検索";
-"DisplayMode" = "表示モード";
+"RegisterNotification" = "Register Notification";
+"SearchPlacesToRegister" = "Find a Place to Notify";
+"DisplayMode" = "Display Mode";
 
-"Map" = "マップ";
-"SelectDate" = "日付選択";
-"Log" = "ログ";
-"Environment" = "環境設定";
-"DistanceToTriggerNotification" = "通知が発動するための距離";
-"EnableNotification" = "登録";
-"DisableNotification" = "登録解除";
+"Map" = "Map";
+"SelectDate" = "Select Date";
+"Log" = "Log";
+"Environment" = "Environment Settings";
+"DistanceToTriggerNotification" = "Distance for Notification to be Triggered";
+"EnableNotification" = "Enable Notification";
+"DisableNotification" = "Disable Notification";
 
-"ErrorOccured" = "エラーが発生しました";
+"ErrorOccured" = "Error Occured";
 
-"AboutData" = "データ関連";
-"TotallyDeleteAllLogs" = "全てのログを消去する";
-"TotallyDeleteAllNotifications" = "全ての通知を消去する";
+"AboutData" = "About User's Data";
+"TotallyDeleteAllLogs" = "Totally Delete All Logs";
+"TotallyDeleteAllNotifications" = "Totally Delete All Notifications for Places";
 
-"AboutLocation" = "位置情報関連";
-"UpdateOnBackground" = "バックグランド更新";
+"AboutLocation" = "About User's Location";
+"UpdateOnBackground" = "Allow Location Update on Background";
 
-"MessageAboutUpdateOnBackground" = "OFFにするとアプリが動いていない場合は位置情報が記録されません";
-"Accuracy (unit: meter)" = "精度（単位: メートル）";
-"Less the number is, more accurate recorded location is." = "数字が小さいほど精度よく記録します";
+"MessageAboutUpdateOnBackground" = "If you turn it off, location information will not be recorded if the app is not running.";
+"Accuracy (unit: meter)" = "Accuracy（unit: meter）";
+"Less the number is, more accurate recorded location is." = "The smaller the number, the more accurate the recording.";
 
-"Default" = "デフォルト";
-"Close" = "閉じる";
+"Default" = "Default";
+"Close" = "Close";
 
-"LocationAuthorizeStatus" = "位置情報の許可状態";
-"AccurateLocation" = "正確な位置情報";
+"LocationAuthorizeStatus" = "Location Authorized Status";
+"AccurateLocation" = "Precise Location";
 
-"ConfirmWithSettings" = "設定アプリで確認する";
+"ConfirmWithSettings" = "Confirm with Settings app";
 
-"About Pog" = "このアプリについて";
-"AboutPogFeatures" = "Pogについて（機能説明）";
-"Feedback" = "フィードバック";
-"ReviewPog" = "Pogをレビューする";
-"DoesDeleteAllLogsTotally" = "完全にログを消去しますか？";
-"Delete" = "消去";
-"DoesDeleteAllNotificationTotally" = "完全に通知設定を消去しますか？";
-"WhatIsPog" = "Pogとは";
-"AboutNotificationFeature" = "通知機能について";
-"AboutLocationTrackingFeature" = "位置情報ログ機能について";
-"WhatIsPog_1/3" = "Pogとは（1/3）";
-"WhatIsPog_1/3_Headline" = "Pogはユーザーの位置情報を常に記録してくれるアプリです。また、登録した場所に現在訪れているということも通知できます。";
-"WhatIsPog_1/3_Message" = "ログ機能を使用する場合は設定アプリから位置情報を「常に許可」にしておく必要があります。位置情報はクラウドに保存しておらず、ローカル端末にのみ保存しています。";
+"About Pog" = "About Pog";
+"AboutPogFeatures" = "About Pog（Feature）";
+"Feedback" = "Feedback";
+"ReviewPog" = "Review Pog";
+"DoesDeleteAllLogsTotally" = "Do you want to clear the log completely?";
+"Delete" = "Delete";
+"DoesDeleteAllNotificationTotally" = "Do you want to completely clear the notification?";
+"WhatIsPog" = "What is Pog?";
+"AboutNotificationFeature" = "About Notification feature";
+"AboutLocationTrackingFeature" = "About Location tracking feature";
+"WhatIsPog_1/3" = "What is Pog（1/3）";
+"WhatIsPog_1/3_Headline" = "Pog is an application that constantly records the user's location. You will also be notified that you are currently visiting the registered location.";
+"WhatIsPog_1/3_Message" = "When using the location tracking feature, it is necessary to set the location request authorization to \"Always allow\" from the Settings app. Location data is not stored in the cloud, only on the local device.";
 
-"WhatIsPog_2/3" = "通知機能について（2/3）";
-"WhatIsPog_2/3_Message" = "「マップ」画面から登録した場所が現在地から300メートル以内にいる場合、アプリから通知が届くことが出来ます。";
-
-
-"WhatIsPog_3/3" = "位置情報ログ機能について（3/3）";
-"WhatIsPog_3/3_Message" = "ユーザーの位置情報を常に記録してくれる機能について紹介します。iOSの設定からPogの位置情報を「常に許可」にすることによってログ追跡が行われます。また、時間が一定時間経過したり、距離の移動が起きた際のログはピンとしても表示されます。";
+"WhatIsPog_2/3" = "Notification feature（2/3）";
+"WhatIsPog_2/3_Message" = "If the location registered from the \"Map\" screen is within 300 meters from your current location, you can receive a notification from the app.";
 
 
-"AuthorizeAlwaysLocationRequest" = "位置情報の取得を常に許可する";
-"LocationRequestIsAlwaysAuthorized" = "位置情報の取得が常に許可されています";
+"WhatIsPog_3/3" = "Location Tracking feature（3/3）";
+"WhatIsPog_3/3_Message" = "Introducing a feature that constantly records the user's location. Location tracking is completely activated by setting Pog's location to \"Always Allow\" from iOS settings. In addition, the log when a certain time elapses or a distance movement occurs is also displayed as a map-pin.";
 
-"DONE" = "完了";
+
+"AuthorizeAlwaysLocationRequest" = "Always allow location request";
+"LocationRequestIsAlwaysAuthorized" = "Location request is always allowed";
+
+"DONE" = "DONE";
