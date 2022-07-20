@@ -32,7 +32,7 @@ struct RootView: View {
                 )
                 .tabItem {
                     Image(systemSymbol: .map)
-                    Text("マップ")
+                    Text("Map")
                 }
                 PlaceLogPage(
                     model: PlaceLogModel(
@@ -42,7 +42,7 @@ struct RootView: View {
                 )
                 .tabItem {
                     Image(systemSymbol: .listBulletCircle)
-                    Text("ログ")
+                    Text("Log")
                 }
                 SettingsPage(
                     model: SettingsModel(
@@ -52,7 +52,7 @@ struct RootView: View {
                 )
                 .tabItem {
                     Image(systemSymbol: .gear)
-                    Text("環境設定")
+                    Text("Environment")
                 }
             }
         }

@@ -21,11 +21,11 @@ struct WalkthroughPage: View {
     var body: some View {
         VStack {
             Picker("", selection: $selectedIndex) {
-                Text("Pogとは")
+                Text("WhatIsPog")
                     .tag(0)
-                Text("通知機能について")
+                Text("AboutNotificationFeature")
                     .tag(1)
-                Text("位置情報ログ機能について")
+                Text("AboutLocationTrackingFeature")
                     .tag(2)
             }.pickerStyle(.segmented)
                 .padding()
@@ -50,13 +50,13 @@ struct WalkthroughPage: View {
 
     var page1: some View {
         VStack {
-            Text("Pogとは（1/3）")
+            Text("WhatIsPog_1/3")
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("Pogはユーザーの位置情報を常に記録してくれるアプリです。また、登録した場所に現在訪れているということも通知できます。")
-            Text("ログ機能を使用する場合は設定アプリから位置情報を「常に許可」にしておく必要があります。位置情報はクラウドに保存しておらず、ローカル端末にのみ保存しています。")
+            Text("WhatIsPog_1/3_Headline")
+            Text("WhatIsPog_1/3_Message")
             VStack {
                 Image("page1")
                     .resizable()
@@ -68,11 +68,11 @@ struct WalkthroughPage: View {
                             URL(string: UIApplication.openSettingsURLString)!
                         )
                     } label: {
-                        Text("位置情報の取得を常に許可する")
+                        Text("AuthorizeAlwaysLocationRequest")
                             .bold()
                     }
                 } else {
-                    Label("位置情報の取得が常に許可されています", systemSymbol: .checkmark)
+                    Label("LocationRequestIsAlwaysAuthorized", systemSymbol: .checkmark)
                 }
             }
             .padding(.bottom, 12)
@@ -82,12 +82,12 @@ struct WalkthroughPage: View {
 
     var page2: some View {
         VStack {
-            Text("通知機能について（2/3）")
+            Text("WhatIsPog_2/3")
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("「マップ」画面から登録した場所が現在地から300メートル以内にいる場合、アプリから通知が届くことが出来ます。")
+            Text("WhatIsPog_2/3_Message")
             Image("page2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -97,12 +97,12 @@ struct WalkthroughPage: View {
 
     var page3: some View {
         VStack {
-            Text("位置情報ログ機能について（3/3）")
+            Text("WhatIsPog_3/3")
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("ユーザーの位置情報を常に記録してくれる機能について紹介します。iOSの設定からPogの位置情報を「常に許可」にすることによってログ追跡が行われます。また、時間が一定時間経過したり、距離の移動が起きた際のログはピンとしても表示されます。")
+            Text("WhatIsPog_3/3_Message")
             Image("page3")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -112,7 +112,7 @@ struct WalkthroughPage: View {
             } label: {
                 HStack {
                     Spacer()
-                    Text("完了")
+                    Text("DONE")
                         .font(.title3)
                         .bold()
                         .padding(.horizontal, 10)

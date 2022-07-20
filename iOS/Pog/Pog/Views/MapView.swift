@@ -68,14 +68,14 @@ struct MapView: View {
                         }
                     }
                 )
-                .alert("Pogを快適に使用するために。",
+                .alert("ToUseConfortably",
                        isPresented: $model.needToAcceptAlwaysLocationAuthorization,
                        actions: {
-                    Button("設定へ") {
+                    Button("OpenSettings") {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
                 }) {
-                    Text("Pogには位置情報のログを残す機能があります。\nこれらの機能を使用するために位置情報の許可をお願いします。")
+                    Text("LocationAuthorizeRecommendation")
                 }
                 LocationButton(.currentLocation) {
                     model.onTapMyCurrentLocationButton()
@@ -87,7 +87,7 @@ struct MapView: View {
                 .padding(.horizontal, 16)
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("通知を登録")
+            .navigationTitle("RegisterNotification")
             .toolbar(content: {
                 ToolbarItem {
                     Button {
@@ -102,7 +102,7 @@ struct MapView: View {
         }
         .searchable(
             text: $model.searchText,
-            prompt: Text("通知をする場所を検索"),
+            prompt: Text("SearchPlacesToRegister"),
             suggestions: {
                 ForEach(0..<model.searchedWords.count, id: \.self) { index in
                     let searchedWord = model.searchedWords[index]

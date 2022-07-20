@@ -20,10 +20,10 @@ struct SearchPlacePage: View {
                 .foregroundColor(Color(uiColor: .label))
                 .bold()
             if let storedInterestingPlace = model.storedInterestingPlace {
-                Text("現在地との距離が\(Int(storedInterestingPlace.distanceMeter))メートル以内に入ると通知がなります")
+                Text(NSLocalizedString("DistanceToTriggerNotification", comment: "") + " " + String(Int(storedInterestingPlace.distanceMeter)) + "m")
             }
             HStack {
-                Button(model.alreadyInteresting ? "登録解除" : "登録") {
+                Button(model.alreadyInteresting ? "DisableNotification" : "EnableNotification") {
                     // TODO: Logic should be deadled within `Model`.
                     if model.alreadyInteresting {
                         if let placeToDelete = model.interestingPlaces.first(where: { $0.lat == model.place.lat && $0.lng == model.place.lng }) {
@@ -57,7 +57,7 @@ struct SearchPlacePage: View {
             }
         }
         .padding()
-        .alert("エラーが発生しました", isPresented: Binding(get: {
+        .alert("ErrorOccured", isPresented: Binding(get: {
             model.error != nil
         }, set: { v in
             if !v {

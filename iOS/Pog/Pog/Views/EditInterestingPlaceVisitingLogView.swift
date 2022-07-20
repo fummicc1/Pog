@@ -25,21 +25,21 @@ struct EditInterestingPlaceVisitingLogView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("訪問時刻")
+                Text("VisitingTime")
                     .font(.callout)
                     .bold()
                     .foregroundColor(.secondary)
                 Spacer()
-                DatePicker("訪問時刻", selection: $visitedAt)
+                DatePicker("", selection: $visitedAt)
             }
             HStack {
-                Text("出発時刻")
+                Text("DepartureTime")
                     .font(.callout)
                     .bold()
                     .foregroundColor(.secondary)
                 Spacer()
                 if let exitedAt = Binding($exitedAt) {
-                    DatePicker("出発時刻", selection: exitedAt)
+                    DatePicker("", selection: exitedAt)
                 }
             }
             Spacer().frame(height: 40)
@@ -47,7 +47,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                 Button {
                     editingLog = nil
                 } label: {
-                    Text("キャンセル")
+                    Text("Cancel")
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }
@@ -66,7 +66,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                         assertionFailure("\(error)")
                     }
                 } label: {
-                    Text("保存")
+                    Text("Save")
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }

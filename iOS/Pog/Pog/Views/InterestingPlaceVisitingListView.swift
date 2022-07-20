@@ -16,7 +16,7 @@ struct InterestingPlaceVisitingListView: View {
 
     var body: some View {
         if model.places.isEmpty {
-            Text("登録された場所が見つかりませんでした")
+            Text("FailedToFetchRegisteredPlaceName")
         }
         ScrollView {
             LazyVStack {
@@ -58,10 +58,10 @@ struct InterestingPlaceVisitingListView: View {
                             let logs = model.histories[place]
                             if let logs = logs, !logs.isEmpty {
                                 if logs.count > 10 {
-                                    Text("• 訪問履歴（10件）")
+                                    Text("VisitingHistory (Ten)")
                                         .bold()
                                 } else {
-                                    Text("• 訪問履歴")
+                                    Text("VisitingHistory")
                                         .bold()
                                 }
                                 VStack {
@@ -71,20 +71,20 @@ struct InterestingPlaceVisitingListView: View {
                                         } label: {
                                             VStack(alignment: .leading) {
                                                 HStack {
-                                                    Text("訪問時刻")
+                                                    Text("VisitingTime")
                                                         .font(.callout)
                                                         .bold()
                                                         .foregroundColor(.secondary)
                                                     Spacer()
-                                                    Text(log.visitedAt?.displayable ?? "不明")
+                                                    Text(log.visitedAt?.displayable ?? "Unknown")
                                                 }
                                                 HStack {
-                                                    Text("出発時刻")
+                                                    Text("DepartureTime")
                                                         .font(.callout)
                                                         .bold()
                                                         .foregroundColor(.secondary)
                                                     Spacer()
-                                                    Text(log.exitedAt?.displayable ?? "不明")
+                                                    Text(log.exitedAt?.displayable ?? "Unknown")
                                                 }
                                                 Divider()
                                             }
@@ -94,7 +94,7 @@ struct InterestingPlaceVisitingListView: View {
                                 }
                                 .padding()
                             } else {
-                                Text("まだ訪問履歴はありません")
+                                Text("NoVisitingHistoryYet")
                                     .font(.body)
                                     .bold()
                                     .foregroundColor(.secondary)
@@ -105,7 +105,7 @@ struct InterestingPlaceVisitingListView: View {
                                     stub.place = place
                                     try! store.context.save()
                                 } label: {
-                                    Text("訪問する")
+                                    Text("Visit")
                                 }
                                 .buttonStyle(.borderedProminent)
                                 #endif
@@ -119,7 +119,7 @@ struct InterestingPlaceVisitingListView: View {
                 }
             }
         }
-        .navigationTitle("登録済みの場所")
+        .navigationTitle("RegisteredPlace")
         .partialSheet(isPresented: $moveToEditLogPage.isNotNil(), content: {
             if moveToEditLogPage != nil {
                 EditInterestingPlaceVisitingLogView(log: $moveToEditLogPage)

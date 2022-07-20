@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 public enum PlacesTarget {
-    case search(text: String, location: CLLocationCoordinate2D?)
+    case search(text: String, location: CLLocationCoordinate2D?, lang: Language?)
 }
 
 
@@ -31,13 +31,16 @@ extension PlacesTarget: TargetType {
 
     public var task: Moya.Task {
         switch self {
-        case .search(let text, let location):
+        case .search(let text, let location, let language):
             var parameters: [String: Any] = [
                 "query": text,
                 "key": Const.googlePlacesApiKey
             ]
             if let location = location {
                 parameters["location"] = "\(location.latitude),\(location.longitude)"
+            }
+            if let language = language {
+                parameters["language"] = language.rawValue
             }
             return .requestParameters(
                 parameters: parameters,
