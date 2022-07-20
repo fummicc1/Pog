@@ -67,10 +67,12 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         }
         if useGooglePlaces {
             do {
+                let lang = Language.fromLocale()
                 let response: PlaceSearchResponse = try await apiClient.request(
                     with: .search(
                         text: text,
-                        location: coordinate
+                        location: coordinate,
+                        lang: lang
                     )
                 )
                 let places = response.results.map{ result in
