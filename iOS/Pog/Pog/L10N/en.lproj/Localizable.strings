@@ -37,7 +37,7 @@
 "Map" = "Map";
 "SelectDate" = "Select Date";
 "Log" = "Log";
-"Environment" = "Environment Settings";
+"Environment" = "Environment";
 "DistanceToTriggerNotification" = "Distance for Notification to be Triggered";
 "EnableNotification" = "Enable Notification";
 "DisableNotification" = "Disable Notification";
@@ -49,17 +49,17 @@
 "TotallyDeleteAllNotifications" = "Totally Delete All Notifications for Places";
 
 "AboutLocation" = "About User's Location";
-"UpdateOnBackground" = "Allow Location Update on Background";
+"UpdateOnBackground" = "Location Update on Background";
 
 "MessageAboutUpdateOnBackground" = "If you turn it off, location information will not be recorded if the app is not running.";
-"Accuracy (unit: meter)" = "Accuracy（unit: meter）";
+"Accuracy_unit_meter" = "Accuracy（meter）";
 "Less the number is, more accurate recorded location is." = "The smaller the number, the more accurate the recording.";
 
 "Default" = "Default";
 "Close" = "Close";
 
 "LocationAuthorizeStatus" = "Location Authorized Status";
-"AccurateLocation" = "Precise Location";
+"LocationPrivacy" = "Location Privacy";
 
 "ConfirmWithSettings" = "Confirm with Settings app";
 

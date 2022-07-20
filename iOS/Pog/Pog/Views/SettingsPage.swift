@@ -36,64 +36,62 @@ struct SettingsPage: View {
                     }
                 }
                 Section("AboutLocation") {
-                    HStack {
-                        VStack(alignment: .leading) {
+                    VStack(alignment: .leading) {
+                        HStack {
                             Text("UpdateOnBackground")
-                            Text("MessageAboutUpdateOnBackground")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                            Toggle(isOn: Binding(get: {
+                                model.allowsBackgroundLocationUpdates
+                            }, set: { isAccept in
+                                model.updateBackgroundLocationUpdates(isAccepted: isAccept)
+                            })) {
+                            }.toggleStyle(.switch)
+                                .frame(width: 48)
                         }
-                        Spacer()
-                        Toggle(isOn: Binding(get: {
-                            model.allowsBackgroundLocationUpdates
-                        }, set: { isAccept in
-                            model.updateBackgroundLocationUpdates(isAccepted: isAccept)
-                        })) {
-                        }.toggleStyle(.switch)
+                        Text("MessageAboutUpdateOnBackground")
+                            .foregroundColor(.secondary)
                     }
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Accuracy (unit: meter)")
-                            Text("Less the number is, more accurate recorded location is.")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
-                        TextField(NSLocalizedString("Default", comment: "") + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
-                            guard let desiredAccuracy = model.desiredAccuracy else {
-                                return ""
-                            }
-                            return "\(Int(desiredAccuracy))"
-                        }, set: { desiredAccuracy in
-                            guard !desiredAccuracy.isEmpty, let desiredAccuracy = Double(desiredAccuracy) else {
-                                model.updateDesiredAccuracy(nil)
-                                return
-                            }
-                            model.updateDesiredAccuracy(desiredAccuracy)
-                        }))
-                            .keyboardType(.numberPad)
-                            .focused($focus)
-                            .toolbar {
-                                ToolbarItem(placement: .keyboard) {
-                                    VStack {
-                                        Button {
-                                            focus = false
-                                            model.commitDesiredAccuracyChange()
-                                        } label: {
-                                            Text("Close")
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Accuracy_unit_meter")
+                            TextField(NSLocalizedString("Default", comment: "") + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
+                                guard let desiredAccuracy = model.desiredAccuracy else {
+                                    return ""
+                                }
+                                return "\(Int(desiredAccuracy))"
+                            }, set: { desiredAccuracy in
+                                guard !desiredAccuracy.isEmpty, let desiredAccuracy = Double(desiredAccuracy) else {
+                                    model.updateDesiredAccuracy(nil)
+                                    return
+                                }
+                                model.updateDesiredAccuracy(desiredAccuracy)
+                            }))
+                                .keyboardType(.numberPad)
+                                .focused($focus)
+                                .toolbar {
+                                    ToolbarItem(placement: .keyboard) {
+                                        VStack {
+                                            Button {
+                                                focus = false
+                                                model.commitDesiredAccuracyChange()
+                                            } label: {
+                                                Text("Close")
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            .multilineTextAlignment(.trailing)
-                        if focus {
-                            Button {
-                                model.updateDesiredAccuracy(nil)
-                            } label: {
-                                Image(systemSymbol: .multiplyCircleFill)
-                            }
+                                .multilineTextAlignment(.trailing)
+                            if focus {
+                                Button {
+                                    model.updateDesiredAccuracy(nil)
+                                } label: {
+                                    Image(systemSymbol: .multiplyCircleFill)
+                                }
 
-                        }
-                    }.buttonStyle(.plain)
+                            }
+                        }.buttonStyle(.plain)
+                        Text("Less the number is, more accurate recorded location is.")
+                            .foregroundColor(.secondary)
+                    }
                     HStack {
                         Group {
                             Text("LocationAuthorizeStatus")
@@ -103,7 +101,7 @@ struct SettingsPage: View {
                     }
                     HStack {
                         Group {
-                            Text("AccurateLocation")
+                            Text("LocationPrivacy")
                             Spacer()
                             Text(model.isAquiringAccuracyLocation)
                         }.foregroundColor(.secondary)

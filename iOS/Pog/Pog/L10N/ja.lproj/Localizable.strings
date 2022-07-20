@@ -51,14 +51,14 @@
 "UpdateOnBackground" = "バックグランド更新";
 
 "MessageAboutUpdateOnBackground" = "OFFにするとアプリが動いていない場合は位置情報が記録されません";
-"Accuracy (unit: meter)" = "精度（単位: メートル）";
+"Accuracy_unit_meter" = "精度（メートル）";
 "Less the number is, more accurate recorded location is." = "数字が小さいほど精度よく記録します";
 
 "Default" = "デフォルト";
 "Close" = "閉じる";
 
 "LocationAuthorizeStatus" = "位置情報の許可状態";
-"AccurateLocation" = "正確な位置情報";
+"LocationPrivacy" = "位置情報の正確さ";
 
 "ConfirmWithSettings" = "設定アプリで確認する";
 
