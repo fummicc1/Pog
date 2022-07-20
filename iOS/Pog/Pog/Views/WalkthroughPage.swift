@@ -21,11 +21,11 @@ struct WalkthroughPage: View {
     var body: some View {
         VStack {
             Picker("", selection: $selectedIndex) {
-                Text("Pogとは")
+                Text("WhatIsPog")
                     .tag(0)
-                Text("通知機能について")
+                Text("AboutNotificationFeature")
                     .tag(1)
-                Text("位置情報ログ機能について")
+                Text("AboutLocationTrackingFeature")
                     .tag(2)
             }.pickerStyle(.segmented)
                 .padding()
@@ -50,13 +50,13 @@ struct WalkthroughPage: View {
 
     var page1: some View {
         VStack {
-            Text("Pogとは（1/3）")
+            Text("WhatIsPog_1/3")
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("Pogはユーザーの位置情報を常に記録してくれるアプリです。また、登録した場所に現在訪れているということも通知できます。")
-            Text("ログ機能を使用する場合は設定アプリから位置情報を「常に許可」にしておく必要があります。位置情報はクラウドに保存しておらず、ローカル端末にのみ保存しています。")
+            Text("WhatIsPog_1/3")
+            Text("")
             VStack {
                 Image("page1")
                     .resizable()
