@@ -79,7 +79,7 @@ struct InterestingPlaceVisitingListView: View {
                                                     Text(log.visitedAt?.displayable ?? "Unknown")
                                                 }
                                                 HStack {
-                                                    Text("VisitingTime")
+                                                    Text("DepartureTime")
                                                         .font(.callout)
                                                         .bold()
                                                         .foregroundColor(.secondary)
