@@ -160,3 +160,6 @@ Secret
 # Firebase
 */**/GoogleService-Info.plist
 */**/GoogleService-Info-Release.plist
+
+# env
+.envrc
