@@ -37,6 +37,7 @@
 		D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEE228702945007C7CA9 /* PlacesTarget.swift */; };
 		D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE528702B5B007C7CA9 /* CombineMoya */; };
 		D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE728702B5B007C7CA9 /* Moya */; };
+		D34157042895AE6D000B99C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D34157032895AE6D000B99C1 /* Settings.bundle */; };
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
@@ -118,6 +119,7 @@
 		D33BFEDD287025CE007C7CA9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
 		D33BFEE228702945007C7CA9 /* PlacesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTarget.swift; sourceTree = "<group>"; };
+		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
 		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,7 +321,7 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
-				D3D3AF3A2881B2CB002C0C2B /* L10N */,
+				D34157032895AE6D000B99C1 /* Settings.bundle */,
 				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
 				D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */,
 				D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */,
@@ -329,6 +331,7 @@
 				D3BFA96E2833965900606CD4 /* Data */,
 				D3F794BD2865ED2000B84905 /* Env */,
 				D3E0B1D1287F06160094AB49 /* Extensions */,
+				D3D3AF3A2881B2CB002C0C2B /* L10N */,
 				D3BFA96328337C4D00606CD4 /* Manager */,
 				D31956FA2881903300BEF86D /* Mock */,
 				D3BFA96028337BC100606CD4 /* Models */,
@@ -474,6 +477,7 @@
 				D31956F828818F9100BEF86D /* Update mock classes */,
 				D3BFA92C2833796D00606CD4 /* Sources */,
 				D3BFA92D2833796D00606CD4 /* Frameworks */,
+				D34157022895ADDE000B99C1 /* License Generation */,
 				D3BFA92E2833796D00606CD4 /* Resources */,
 				D31F91BF285CEA0900B55DCE /* Replace GoogleService-Info.plist */,
 				D31F91B8285CE54D00B55DCE /* Crashlytics */,
@@ -594,6 +598,7 @@
 				D3BFA93B2833796F00606CD4 /* Preview Assets.xcassets in Resources */,
 				D31F91BA285CE71300B55DCE /* GoogleService-Info-Debug.plist in Resources */,
 				D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */,
+				D34157042895AE6D000B99C1 /* Settings.bundle in Resources */,
 				D31F91C1285CEA8300B55DCE /* GoogleService-Info-Release.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +677,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}//GoogleService-Info-Release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/GoogleService-Info-Debug.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
+		};
+		D34157022895ADDE000B99C1 /* License Generation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "License Generation";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ -f \"$SRCROOT/.envrc\" ]; then\n  source \"$SRCROOT/.envrc\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\nxcrun --sdk macosx mint run LicensePlist --output-path Pog/Settings.bundle\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
