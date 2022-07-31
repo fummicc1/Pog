@@ -38,8 +38,11 @@
 		D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE528702B5B007C7CA9 /* CombineMoya */; };
 		D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE728702B5B007C7CA9 /* Moya */; };
 		D34157042895AE6D000B99C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D34157032895AE6D000B99C1 /* Settings.bundle */; };
+		D3559D1428969056007641CA /* SearchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D1328969056007641CA /* SearchConfiguration.swift */; };
+		D3559D162896915D007641CA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D152896915D007641CA /* Model.swift */; };
+		D3559D182896936E007641CA /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D172896936E007641CA /* UserDefaultsKey.swift */; };
+		D3559D1A28969DDE007641CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D1928969DDE007641CA /* Store.swift */; };
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
-		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
 		D3BFA9362833796D00606CD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9352833796D00606CD4 /* RootView.swift */; };
 		D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BFA9372833796F00606CD4 /* Assets.xcassets */; };
@@ -56,7 +59,6 @@
 		D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D3BFA9982833CEBF00606CD4 /* PartialSheet */; };
 		D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */; };
 		D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */; };
-		D3C462812871A84B0005C1B4 /* SearchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */; };
 		D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087B28688C0C006147BB /* SettingsPage.swift */; };
 		D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087C28688C0C006147BB /* WalkthroughPage.swift */; };
 		D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA087F28688CA9006147BB /* LocationManager+Env.swift */; };
@@ -72,6 +74,9 @@
 		D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111C2871EBB300FDC330 /* Secret.swift */; };
 		D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111E2871EC0B00FDC330 /* SecretSample.swift */; };
 		D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F794BE2865ED2800B84905 /* Store+Env.swift */; };
+		D3FB458E28968D670026F3E1 /* PlaceLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB458D28968D670026F3E1 /* PlaceLogRepository.swift */; };
+		D3FB459B289690040026F3E1 /* UserLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB459A289690040026F3E1 /* UserLog.swift */; };
+		D3FB459D2896901B0026F3E1 /* PlaceLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB459C2896901B0026F3E1 /* PlaceLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,8 +125,11 @@
 		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
 		D33BFEE228702945007C7CA9 /* PlacesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTarget.swift; sourceTree = "<group>"; };
 		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		D3559D1328969056007641CA /* SearchConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchConfiguration.swift; sourceTree = "<group>"; };
+		D3559D152896915D007641CA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D3559D172896936E007641CA /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		D3559D1928969DDE007641CA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
-		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BFA9332833796D00606CD4 /* PogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogApp.swift; sourceTree = "<group>"; };
 		D3BFA9352833796D00606CD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -133,7 +141,7 @@
 		D3BFA95E28337BBB00606CD4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D3BFA96128337BC900606CD4 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		D3BFA96428337C5700606CD4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		D3BFA9662833852B00606CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D3BFA9662833852B00606CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BFA96F2833965F00606CD4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogPage.swift; sourceTree = "<group>"; };
 		D3BFA9892833C48F00606CD4 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
@@ -141,7 +149,6 @@
 		D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacePage.swift; sourceTree = "<group>"; };
 		D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceModel.swift; sourceTree = "<group>"; };
 		D3C4627E2871A1020005C1B4 /* PlaceSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchResponse.swift; sourceTree = "<group>"; };
-		D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfiguration.swift; sourceTree = "<group>"; };
 		D3CA087B28688C0C006147BB /* SettingsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		D3CA087C28688C0C006147BB /* WalkthroughPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPage.swift; sourceTree = "<group>"; };
 		D3CA087F28688CA9006147BB /* LocationManager+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Env.swift"; sourceTree = "<group>"; };
@@ -162,6 +169,9 @@
 		D3E5111C2871EBB300FDC330 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		D3E5111E2871EC0B00FDC330 /* SecretSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSample.swift; sourceTree = "<group>"; };
 		D3F794BE2865ED2800B84905 /* Store+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Env.swift"; sourceTree = "<group>"; };
+		D3FB458D28968D670026F3E1 /* PlaceLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogRepository.swift; sourceTree = "<group>"; };
+		D3FB459A289690040026F3E1 /* UserLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLog.swift; sourceTree = "<group>"; };
+		D3FB459C2896901B0026F3E1 /* PlaceLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLog.swift; sourceTree = "<group>"; };
 		D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 6.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,7 +301,8 @@
 		D3A9A37C283A4C74006F3CE6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				D3A9A37A283A4C6F006F3CE6 /* Store.swift */,
+				D3559D172896936E007641CA /* UserDefaultsKey.swift */,
+				D3559D1928969DDE007641CA /* Store.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -321,26 +332,17 @@
 		D3BFA9322833796D00606CD4 /* Pog */ = {
 			isa = PBXGroup;
 			children = (
-				D34157032895AE6D000B99C1 /* Settings.bundle */,
 				D3BFA9902833CC6700606CD4 /* Pog.entitlements */,
-				D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */,
-				D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */,
-				D3BFA9662833852B00606CD4 /* Info.plist */,
 				D3BFA9332833796D00606CD4 /* PogApp.swift */,
-				D3BFA9372833796F00606CD4 /* Assets.xcassets */,
-				D3BFA96E2833965900606CD4 /* Data */,
+				D3FB459228968E5E0026F3E1 /* Domain */,
 				D3F794BD2865ED2000B84905 /* Env */,
-				D3E0B1D1287F06160094AB49 /* Extensions */,
-				D3D3AF3A2881B2CB002C0C2B /* L10N */,
-				D3BFA96328337C4D00606CD4 /* Manager */,
+				D3FB458F28968DC10026F3E1 /* Infra */,
 				D31956FA2881903300BEF86D /* Mock */,
-				D3BFA96028337BC100606CD4 /* Models */,
-				D33BFEDC287025B8007C7CA9 /* Networking */,
 				D3CA088328689FD4006147BB /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
-				D3A9A37C283A4C74006F3CE6 /* Store */,
+				D3FB459128968E0A0026F3E1 /* Resources */,
+				D3FB459028968DE90026F3E1 /* UI */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
-				D3BFA95D28337B0700606CD4 /* Views */,
 			);
 			path = Pog;
 			sourceTree = "<group>";
@@ -371,32 +373,29 @@
 			path = PogUITests;
 			sourceTree = "<group>";
 		};
-		D3BFA95D28337B0700606CD4 /* Views */ = {
+		D3BFA95D28337B0700606CD4 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */,
-				D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */,
-				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
-				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
-				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
 				D3BFA9352833796D00606CD4 /* RootView.swift */,
-				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
-				D3CA087B28688C0C006147BB /* SettingsPage.swift */,
-				D3CA087C28688C0C006147BB /* WalkthroughPage.swift */,
+				D3FB459528968EF90026F3E1 /* InterestingPlace */,
+				D3FB459628968F040026F3E1 /* Log */,
+				D3FB459328968ECE0026F3E1 /* Map */,
+				D3FB459728968F0F0026F3E1 /* Settings */,
+				D3FB459828968F210026F3E1 /* Walkthrough */,
 			);
-			path = Views;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		D3BFA96028337BC100606CD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D3BFA96128337BC900606CD4 /* MapModel.swift */,
-				D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */,
-				D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */,
-				D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */,
-				D306F945286F2022006293E9 /* SettingsModel.swift */,
-				D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */,
 				D32D588328884D2F00522CA3 /* Language.swift */,
+				D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */,
+				D3BFA96F2833965F00606CD4 /* Place.swift */,
+				D3FB459C2896901B0026F3E1 /* PlaceLog.swift */,
+				D3559D1328969056007641CA /* SearchConfiguration.swift */,
+				D3FB459A289690040026F3E1 /* UserLog.swift */,
+				D3559D152896915D007641CA /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,8 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				D306F925286EFC03006293E9 /* Generated */,
-				D3BFA96F2833965F00606CD4 /* Place.swift */,
-				D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -423,6 +420,7 @@
 		D3BFA9882833C47B00606CD4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */,
 				D3BFA9892833C48F00606CD4 /* Color+Ex.swift */,
 				D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D.swift */,
 				D3E0AACF2840B3B200597C1A /* Date+Ex.swift */,
@@ -446,14 +444,6 @@
 			path = L10N;
 			sourceTree = "<group>";
 		};
-		D3E0B1D1287F06160094AB49 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		D3F794BD2865ED2000B84905 /* Env */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +455,111 @@
 				D3E5111E2871EC0B00FDC330 /* SecretSample.swift */,
 			);
 			path = Env;
+			sourceTree = "<group>";
+		};
+		D3FB458C28968D3E0026F3E1 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D3FB458D28968D670026F3E1 /* PlaceLogRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D3FB458F28968DC10026F3E1 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				D3A9A37C283A4C74006F3CE6 /* Store */,
+				D33BFEDC287025B8007C7CA9 /* Networking */,
+				D3BFA96328337C4D00606CD4 /* Manager */,
+				D3BFA96E2833965900606CD4 /* Data */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		D3FB459028968DE90026F3E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D3FB459428968EDE0026F3E1 /* Components */,
+				D3BFA95D28337B0700606CD4 /* Pages */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D3FB459128968E0A0026F3E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3D3AF3A2881B2CB002C0C2B /* L10N */,
+				D31F91B9285CE71300B55DCE /* GoogleService-Info-Debug.plist */,
+				D31F91C0285CEA8300B55DCE /* GoogleService-Info-Release.plist */,
+				D3BFA9662833852B00606CD4 /* Info.plist */,
+				D3BFA9372833796F00606CD4 /* Assets.xcassets */,
+				D34157032895AE6D000B99C1 /* Settings.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D3FB459228968E5E0026F3E1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFA96028337BC100606CD4 /* Models */,
+				D3FB458C28968D3E0026F3E1 /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D3FB459328968ECE0026F3E1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
+				D3BFA99A2833D92800606CD4 /* SearchPlaceModel.swift */,
+				D3BFA96128337BC900606CD4 /* MapModel.swift */,
+				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		D3FB459428968EDE0026F3E1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D3FB459528968EF90026F3E1 /* InterestingPlace */ = {
+			isa = PBXGroup;
+			children = (
+				D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */,
+				D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */,
+				D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */,
+			);
+			path = InterestingPlace;
+			sourceTree = "<group>";
+		};
+		D3FB459628968F040026F3E1 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */,
+				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		D3FB459728968F0F0026F3E1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D306F945286F2022006293E9 /* SettingsModel.swift */,
+				D3CA087B28688C0C006147BB /* SettingsPage.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D3FB459828968F210026F3E1 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				D3CA087C28688C0C006147BB /* WalkthroughPage.swift */,
+			);
+			path = Walkthrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,7 +771,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}//GoogleService-Info-Release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/GoogleService-Info-Debug.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resources/GoogleService-Info-Release.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nelse\n    cp \"${PROJECT_DIR}/${PROJECT_NAME}/Resources/GoogleService-Info-Debug.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\nfi\n";
 		};
 		D34157022895ADDE000B99C1 /* License Generation */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -694,7 +789,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ -f \"$SRCROOT/.envrc\" ]; then\n  source \"$SRCROOT/.envrc\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\nxcrun --sdk macosx mint run LicensePlist --output-path Pog/Settings.bundle\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ -f \"$SRCROOT/.envrc\" ]; then\n  source \"$SRCROOT/.envrc\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\nxcrun --sdk macosx mint run LicensePlist --output-path Pog/Resources/Settings.bundle\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -703,8 +798,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FB459D2896901B0026F3E1 /* PlaceLog.swift in Sources */,
+				D3FB458E28968D670026F3E1 /* PlaceLogRepository.swift in Sources */,
+				D3559D1428969056007641CA /* SearchConfiguration.swift in Sources */,
 				D306F936286F0A83006293E9 /* InterestingPlace+CoreDataClass.swift in Sources */,
 				D306F938286F0A83006293E9 /* LocationSettings+CoreDataClass.swift in Sources */,
+				D3559D1A28969DDE007641CA /* Store.swift in Sources */,
 				D306F944286F188C006293E9 /* PlaceLog+CoreDataProperties.swift in Sources */,
 				D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */,
 				D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */,
@@ -714,6 +813,7 @@
 				D306F943286F188C006293E9 /* LocationSettings+CoreDataProperties.swift in Sources */,
 				D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */,
 				D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */,
+				D3559D162896915D007641CA /* Model.swift in Sources */,
 				D31956FD2881903300BEF86D /* GeneratedMock.swift in Sources */,
 				D3E0B1D0287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift in Sources */,
 				D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */,
@@ -727,12 +827,12 @@
 				D32D588428884D2F00522CA3 /* Language.swift in Sources */,
 				D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */,
 				D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */,
-				D3C462812871A84B0005C1B4 /* SearchConfiguration.swift in Sources */,
+				D3FB459B289690040026F3E1 /* UserLog.swift in Sources */,
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
-				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */,
 				D312A1472877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */,
 				D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */,
+				D3559D182896936E007641CA /* UserDefaultsKey.swift in Sources */,
 				D312A1462877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataClass.swift in Sources */,
 				D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */,
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
@@ -928,7 +1028,7 @@
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pog/Info.plist;
+				INFOPLIST_FILE = Pog/Resources/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -962,7 +1062,7 @@
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pog/Info.plist;
+				INFOPLIST_FILE = Pog/Resources/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Pogにはユーザーの位置情報をトラッキングし、ログとしてその日の行動を確認できる機能があります。これらの機能を利用するには位置情報の許可をお願いします。また、位置情報に関してはこちら側で解析やクラウド上での保存は行いません。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

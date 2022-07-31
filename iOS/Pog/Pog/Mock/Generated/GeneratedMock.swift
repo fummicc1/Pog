@@ -19,9 +19,6 @@ public class StoreMock: Store {
     }
 
 
-    public var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { return self.searchConfigurationSubject.eraseToAnyPublisher() }
-    public private(set) var searchConfigurationSubject = PassthroughSubject<SearchConfiguration, Never>()
-
     public var logs: AnyPublisher<[PlaceLog], Never> { return self.logsSubject.eraseToAnyPublisher() }
     public private(set) var logsSubject = PassthroughSubject<[PlaceLog], Never>()
 
@@ -61,12 +58,22 @@ public class StoreMock: Store {
         return [Obj]()
     }
 
-    public private(set) var updateSearchConfigurationCallCount = 0
-    public var updateSearchConfigurationHandler: ((Any, Any) -> ())?
-    public func updateSearchConfiguration<Value>(keypath: WritableKeyPath<SearchConfiguration, Value>, value: Value)  {
-        updateSearchConfigurationCallCount += 1
-        if let updateSearchConfigurationHandler = updateSearchConfigurationHandler {
-            updateSearchConfigurationHandler(keypath, value)
+    public private(set) var observeUserDefaultsCallCount = 0
+    public var observeUserDefaultsHandler: ((Any, Any) -> (NSKeyValueObservation))?
+    public func observeUserDefaults<Value>(keypath: KeyPath<UserDefaults, Value>, onChange: @escaping (Value) -> Void) -> NSKeyValueObservation {
+        observeUserDefaultsCallCount += 1
+        if let observeUserDefaultsHandler = observeUserDefaultsHandler {
+            return observeUserDefaultsHandler(keypath, onChange)
+        }
+        fatalError("observeUserDefaultsHandler returns can't have a default value thus its handler must be set")
+    }
+
+    public private(set) var updateUserDefaultsCallCount = 0
+    public var updateUserDefaultsHandler: ((UserDefaultsKey, Any) -> ())?
+    public func updateUserDefaults<Value>(key: UserDefaultsKey, value: Value)  {
+        updateUserDefaultsCallCount += 1
+        if let updateUserDefaultsHandler = updateUserDefaultsHandler {
+            updateUserDefaultsHandler(key, value)
         }
         
     }
