@@ -15,8 +15,8 @@ import UserNotifications
 class SettingsModel: ObservableObject {
     @MainActor @Published private(set) var desiredAccuracy: Double?
     @MainActor @Published private(set) var allowsBackgroundLocationUpdates: Bool = true
-    @MainActor @Published private(set) var isAquiringAccuracyLocation: String = NSLocalizedString("FuzzyLocation", comment: "")
-    @MainActor @Published private(set) var locationAuthorizationStatus: String = NSLocalizedString("ConfirmNextTime", comment: "")
+    @MainActor @Published private(set) var isAquiringAccuracyLocation: String = L10n.SettingsModel.Location.fuzzyLocation
+    @MainActor @Published private(set) var locationAuthorizationStatus: String = L10n.SettingsModel.Authorization.confirmNextTime
 
     private let store: Store
     private let locationManager: LocationManager
@@ -48,15 +48,15 @@ class SettingsModel: ObservableObject {
             .map { status in
                 switch status {
                 case .notDetermined:
-                    return NSLocalizedString("ConfirmNextTime", comment: "")
+                    return L10n.SettingsModel.Authorization.confirmNextTime
                 case .authorizedAlways:
-                    return NSLocalizedString("Always", comment: "")
+                    return L10n.SettingsModel.Authorization.always
                 case .authorizedWhenInUse:
-                    return NSLocalizedString("WhenInUse", comment: "")
+                    return L10n.SettingsModel.Authorization.whileInUse
                 case .denied:
-                    return NSLocalizedString("NotAuthorized", comment: "")
+                    return L10n.SettingsModel.Authorization.notAuthorized
                 default:
-                    return NSLocalizedString("Unknown", comment: "")
+                    return L10n.Common.unknown
                 }
             }
             .assign(to: &$locationAuthorizationStatus)
@@ -64,9 +64,9 @@ class SettingsModel: ObservableObject {
         locationManager.isAuthorizedForPreciseLocation
             .map { isAccurate in
                 if isAccurate {
-                    return NSLocalizedString("PreciseLocation", comment: "")
+                    return L10n.SettingsModel.Location.preciseLocation
                 } else {
-                    return NSLocalizedString("FuzzyLocation", comment: "")
+                    return L10n.SettingsModel.Location.fuzzyLocation
                 }
             }
             .assign(to: &$isAquiringAccuracyLocation)

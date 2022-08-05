@@ -16,7 +16,7 @@ struct InterestingPlaceVisitingListView: View {
 
     var body: some View {
         if model.places.isEmpty {
-            Text("FailedToFetchRegisteredPlaceName")
+            Text(L10n.InterestingPlaceVisitingListView.InterestingPlace.emptyList)
         }
         ScrollView {
             LazyVStack {
@@ -58,10 +58,10 @@ struct InterestingPlaceVisitingListView: View {
                             let logs = model.histories[place]
                             if let logs = logs, !logs.isEmpty {
                                 if logs.count > 10 {
-                                    Text("VisitingHistory (Ten)")
+                                    Text(L10n.InterestingPlaceVisitingListView.Place.visitingHistoryTen)
                                         .bold()
                                 } else {
-                                    Text("VisitingHistory")
+                                    Text(L10n.InterestingPlaceVisitingListView.Place.visitingHistory)
                                         .bold()
                                 }
                                 VStack {
@@ -71,20 +71,20 @@ struct InterestingPlaceVisitingListView: View {
                                         } label: {
                                             VStack(alignment: .leading) {
                                                 HStack {
-                                                    Text("VisitingTime")
+                                                    Text(L10n.Common.visitingTime)
                                                         .font(.callout)
                                                         .bold()
                                                         .foregroundColor(.secondary)
                                                     Spacer()
-                                                    Text(log.visitedAt?.displayable ?? "Unknown")
+                                                    Text(log.visitedAt?.displayable ?? L10n.Common.unknown)
                                                 }
                                                 HStack {
-                                                    Text("DepartureTime")
+                                                    Text(L10n.Common.departureTime)
                                                         .font(.callout)
                                                         .bold()
                                                         .foregroundColor(.secondary)
                                                     Spacer()
-                                                    Text(log.exitedAt?.displayable ?? "Unknown")
+                                                    Text(log.exitedAt?.displayable ?? L10n.Common.unknown)
                                                 }
                                                 Divider()
                                             }
@@ -94,7 +94,7 @@ struct InterestingPlaceVisitingListView: View {
                                 }
                                 .padding()
                             } else {
-                                Text("NoVisitingHistoryYet")
+                                Text(L10n.InterestingPlaceVisitingListView.Place.noVisitingHistoryYet)
                                     .font(.body)
                                     .bold()
                                     .foregroundColor(.secondary)
@@ -105,7 +105,7 @@ struct InterestingPlaceVisitingListView: View {
                                     stub.place = place
                                     try! store.context.save()
                                 } label: {
-                                    Text("Visit")
+                                    Text(L10n.Common.visit)
                                 }
                                 .buttonStyle(.borderedProminent)
                                 #endif
@@ -119,7 +119,7 @@ struct InterestingPlaceVisitingListView: View {
                 }
             }
         }
-        .navigationTitle("RegisteredPlace")
+        .navigationTitle(L10n.InterestingPlaceVisitingListView.InterestingPlace.emptyList)
         .partialSheet(isPresented: $moveToEditLogPage.isNotNil(), content: {
             if moveToEditLogPage != nil {
                 EditInterestingPlaceVisitingLogView(log: $moveToEditLogPage)

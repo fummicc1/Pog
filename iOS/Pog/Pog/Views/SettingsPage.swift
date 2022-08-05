@@ -23,22 +23,22 @@ struct SettingsPage: View {
     var body: some View {
         NavigationView {
             Form {
-                Section("AboutData") {
+                Section(L10n.SettingsPage.Data.about) {
                     Button {
                         showTotallyDeleteLogsAlert = true
                     } label: {
-                        Text("TotallyDeleteAllLogs")
+                        Text(L10n.SettingsPage.Data.totallyDeleteAllLogs)
                     }
                     Button {
                         showTotallyDeleteNotificationAlert = true
                     } label: {
-                        Text("TotallyDeleteAllNotifications")
+                        Text(L10n.SettingsPage.Data.totallyDeleteAllNotifications)
                     }
                 }
-                Section("AboutLocation") {
+                Section(L10n.SettingsPage.Location.about) {
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("UpdateOnBackground")
+                            Text(L10n.SettingsPage.Location.updateOnBackground)
                             Toggle(isOn: Binding(get: {
                                 model.allowsBackgroundLocationUpdates
                             }, set: { isAccept in
@@ -47,13 +47,13 @@ struct SettingsPage: View {
                             }.toggleStyle(.switch)
                                 .frame(width: 48)
                         }
-                        Text("MessageAboutUpdateOnBackground")
+                        Text(L10n.SettingsPage.Location.messageAboutUpdateOnBackground)
                             .foregroundColor(.secondary)
                     }
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Accuracy_unit_meter")
-                            TextField(NSLocalizedString("Default", comment: "") + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
+                            Text(L10n.SettingsPage.Location.accuracyUnitMeter)
+                            TextField(L10n.Common.default + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
                                 guard let desiredAccuracy = model.desiredAccuracy else {
                                     return ""
                                 }
@@ -74,7 +74,7 @@ struct SettingsPage: View {
                                                 focus = false
                                                 model.commitDesiredAccuracyChange()
                                             } label: {
-                                                Text("Close")
+                                                Text(L10n.Common.close)
                                             }
                                         }
                                     }
@@ -89,19 +89,19 @@ struct SettingsPage: View {
 
                             }
                         }.buttonStyle(.plain)
-                        Text("Less the number is, more accurate recorded location is.")
+                        Text(L10n.SettingsPage.Location.lessTheNumberIsMoreAccurateRecordedLocationIs)
                             .foregroundColor(.secondary)
                     }
                     HStack {
                         Group {
-                            Text("LocationAuthorizeStatus")
+                            Text(L10n.SettingsPage.Location.authorizeStatus)
                             Spacer()
                             Text(model.locationAuthorizationStatus)
                         }.foregroundColor(.secondary)
                     }
                     HStack {
                         Group {
-                            Text("LocationPrivacy")
+                            Text(L10n.SettingsPage.Location.privacy)
                             Spacer()
                             Text(model.isAquiringAccuracyLocation)
                         }.foregroundColor(.secondary)
@@ -111,24 +111,24 @@ struct SettingsPage: View {
                             URL(string: UIApplication.openSettingsURLString)!
                         )
                     } label: {
-                        Text("ConfirmWithSettings")
+                        Text(L10n.Common.confirmWithSettings)
                     }
                 }
-                Section("AboutPog") {
+                Section(L10n.SettingsPage.Pog.about) {
                     Button {
                         shouldOnboarding = true
                     } label: {
-                        Text("AboutPogFeatures")
+                        Text(L10n.SettingsPage.Pog.aboutFeatures)
                     }
                 }
-                Section("Feedback") {
+                Section(L10n.SettingsPage.Pog.feedback) {
                     Button {
                         guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
                             return
                         }
                         SKStoreReviewController.requestReview(in: scene)
                     } label: {
-                        Text("ReviewPog")
+                        Text(L10n.SettingsPage.Pog.review)
                     }
                 }
             }
@@ -137,21 +137,21 @@ struct SettingsPage: View {
         .onAppear {
             model.onAppear()
         }
-        .alert("DoesDeleteAllLogsTotally", isPresented: $showTotallyDeleteLogsAlert) {
+        .alert(L10n.SettingsPage.Alert.doesDeleteAllLogsTotally, isPresented: $showTotallyDeleteLogsAlert) {
             Button(role: .destructive) {
                 model.totallyDeleteLogs()
             } label: {
-                Text("Delete")
+                Text(L10n.SettingsPage.Alert.delete)
             }
             Button(role: .cancel, action: { }) {
-                Text("Cancel")
+                Text(L10n.Common.cancel)
             }
         }
-        .alert("DoesDeleteAllNotificationTotally", isPresented: $showTotallyDeleteNotificationAlert) {
+        .alert(L10n.SettingsPage.Alert.doesDeleteAllNotificationTotally, isPresented: $showTotallyDeleteNotificationAlert) {
             Button(role: .destructive) {
                 model.totallyDeleteInterestingPlaces()
             } label: {
-                Text("Delete")
+                Text(L10n.SettingsPage.Alert.delete)
             }
 
         }

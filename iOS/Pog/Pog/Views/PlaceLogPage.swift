@@ -17,15 +17,15 @@ struct PlaceLogPage: View {
 
     var body: some View {
         VStack {
-            Picker("DisplayMode", selection: $isMapMode) {
+            Picker(L10n.Common.displayMode, selection: $isMapMode) {
                 if let selectedDate = model.selectedDate {
                     Text(selectedDate, style: .date)
                         .tag(true)
                 } else {
-                    Text("Map")
+                    Text(L10n.Common.map)
                         .tag(true)
                 }
-                Text("SelectDate")
+                Text(L10n.Common.selectDate)
                     .tag(false)
             }.pickerStyle(.segmented)
                 .padding()
