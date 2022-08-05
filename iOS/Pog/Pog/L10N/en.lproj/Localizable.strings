@@ -1,5 +1,5 @@
 "FailedToFetchPlaceName" = "failed to fetch place's name.";
-"FailedToFetchRegisteredPlaceName" = "登録された場所が見つかりませんでした";
+"FailedToFetchRegisteredPlaceName" = "failed to find registered place's name.";
 
 "RegisteredPlace" = "registered Place";
 "IsNear" = "is near";

@@ -4,3 +4,6 @@
 [submodule "iOS/BuildTools/mockolo"]
 	path = iOS/BuildTools/mockolo
 	url = https://github.com/uber/mockolo
+[submodule "iOS/BuildTools/swiftgen"]
+	path = iOS/BuildTools/swiftgen
+	url = https://github.com/SwiftGen/SwiftGen

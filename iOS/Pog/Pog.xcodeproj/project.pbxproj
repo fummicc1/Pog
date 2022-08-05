@@ -40,6 +40,8 @@
 		D34157042895AE6D000B99C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D34157032895AE6D000B99C1 /* Settings.bundle */; };
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
+		D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */; };
+		D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
 		D3BFA9362833796D00606CD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9352833796D00606CD4 /* RootView.swift */; };
 		D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BFA9372833796F00606CD4 /* Assets.xcassets */; };
@@ -122,6 +124,8 @@
 		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
 		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BFA9332833796D00606CD4 /* PogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogApp.swift; sourceTree = "<group>"; };
 		D3BFA9352833796D00606CD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -296,6 +300,23 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		D3B7C0D9289D33C400EA4138 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7C0DA289D33C400EA4138 /* Generated */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D3B7C0DA289D33C400EA4138 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */,
+				D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		D3BFA9272833796D00606CD4 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +359,7 @@
 				D33BFEDC287025B8007C7CA9 /* Networking */,
 				D3CA088328689FD4006147BB /* Pog.xcdatamodeld */,
 				D3BFA9392833796F00606CD4 /* Preview Content */,
+				D3B7C0D9289D33C400EA4138 /* Resources */,
 				D3A9A37C283A4C74006F3CE6 /* Store */,
 				D3BFA9882833C47B00606CD4 /* Utils */,
 				D3BFA95D28337B0700606CD4 /* Views */,
@@ -476,6 +498,7 @@
 			buildPhases = (
 				D31956F828818F9100BEF86D /* Update mock classes */,
 				D3BFA92C2833796D00606CD4 /* Sources */,
+				D3B7C0DD289D34DB00EA4138 /* Run SwiftGen */,
 				D3BFA92D2833796D00606CD4 /* Frameworks */,
 				D34157022895ADDE000B99C1 /* License Generation */,
 				D3BFA92E2833796D00606CD4 /* Resources */,
@@ -696,6 +719,24 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ -f \"$SRCROOT/.envrc\" ]; then\n  source \"$SRCROOT/.envrc\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\nxcrun --sdk macosx mint run LicensePlist --output-path Pog/Settings.bundle\nfi\n";
 		};
+		D3B7C0DD289D34DB00EA4138 /* Run SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n${SRCROOT}/swiftgen\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -714,6 +755,7 @@
 				D306F943286F188C006293E9 /* LocationSettings+CoreDataProperties.swift in Sources */,
 				D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */,
 				D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */,
+				D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */,
 				D31956FD2881903300BEF86D /* GeneratedMock.swift in Sources */,
 				D3E0B1D0287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift in Sources */,
 				D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */,
@@ -741,6 +783,7 @@
 				D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */,
 				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,
 				D3E0B1D3287F06230094AB49 /* Binding+Extensions.swift in Sources */,
+				D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */,
 				D3C4627F2871A1020005C1B4 /* PlaceSearchResponse.swift in Sources */,
 				D3BFA98A2833C48F00606CD4 /* Color+Ex.swift in Sources */,
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
