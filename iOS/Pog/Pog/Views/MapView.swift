@@ -68,14 +68,14 @@ struct MapView: View {
                         }
                     }
                 )
-                .alert("ToUseConfortably",
+                .alert(L10n.MapView.Location.toUseConfortably,
                        isPresented: $model.needToAcceptAlwaysLocationAuthorization,
                        actions: {
-                    Button("OpenSettings") {
+                    Button(L10n.Common.openSettings) {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
                 }) {
-                    Text("LocationAuthorizeRecommendation")
+                    Text(L10n.MapView.Location.authorizeRecommendation)
                 }
                 LocationButton(.currentLocation) {
                     model.onTapMyCurrentLocationButton()
@@ -87,7 +87,7 @@ struct MapView: View {
                 .padding(.horizontal, 16)
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("RegisterNotification")
+            .navigationTitle(L10n.MapView.Place.registerNotification)
             .toolbar(content: {
                 ToolbarItem {
                     Button {
@@ -102,7 +102,7 @@ struct MapView: View {
         }
         .searchable(
             text: $model.searchText,
-            prompt: Text("SearchPlacesToRegister"),
+            prompt: Text(L10n.MapView.Place.searchPlacesToRegister),
             suggestions: {
                 ForEach(0..<model.searchedWords.count, id: \.self) { index in
                     let searchedWord = model.searchedWords[index]

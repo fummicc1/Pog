@@ -20,10 +20,10 @@ struct SearchPlacePage: View {
                 .foregroundColor(Color(uiColor: .label))
                 .bold()
             if let storedInterestingPlace = model.storedInterestingPlace {
-                Text(NSLocalizedString("DistanceToTriggerNotification", comment: "") + " " + String(Int(storedInterestingPlace.distanceMeter)) + "m")
+                Text(L10n.SearchPlacePage.Notification.distanceToTrigger + " " + String(Int(storedInterestingPlace.distanceMeter)) + "m")
             }
             HStack {
-                Button(model.alreadyInteresting ? "DisableNotification" : "EnableNotification") {
+                Button(model.alreadyInteresting ? L10n.SearchPlacePage.Notification.disable : L10n.SearchPlacePage.Notification.enable) {
                     // TODO: Logic should be deadled within `Model`.
                     if model.alreadyInteresting {
                         if let placeToDelete = model.interestingPlaces.first(where: { $0.lat == model.place.lat && $0.lng == model.place.lng }) {
@@ -57,7 +57,7 @@ struct SearchPlacePage: View {
             }
         }
         .padding()
-        .alert("ErrorOccured", isPresented: Binding(get: {
+        .alert(L10n.Common.errorOccured, isPresented: Binding(get: {
             model.error != nil
         }, set: { v in
             if !v {

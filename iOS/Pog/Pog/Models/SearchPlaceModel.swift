@@ -71,8 +71,8 @@ class SearchPlaceModel: ObservableObject {
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         let content = UNMutableNotificationContent()
-        content.title = "\(storedInterestingPlace.name ?? NSLocalizedString("RegisteredPlace", comment: ""))" + NSLocalizedString("IsNear", comment: "")
-        content.body = NSLocalizedString("ConfirmWithApp", comment: "")
+        content.title = "\(storedInterestingPlace.name ?? L10n.SearchPlaceModel.Notification.InterestingPlace.defaultName)" + L10n.SearchPlaceModel.Notification.InterestingPlace.existNearBy
+        content.body = L10n.SearchPlaceModel.Notification.confirmWithApp
         let trigger = UNLocationNotificationTrigger(
             region: CLCircularRegion(
                 center: CLLocationCoordinate2D(

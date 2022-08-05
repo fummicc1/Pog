@@ -25,7 +25,7 @@ struct EditInterestingPlaceVisitingLogView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("VisitingTime")
+                Text(L10n.Common.visitingTime)
                     .font(.callout)
                     .bold()
                     .foregroundColor(.secondary)
@@ -33,7 +33,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                 DatePicker("", selection: $visitedAt)
             }
             HStack {
-                Text("DepartureTime")
+                Text(L10n.Common.departureTime)
                     .font(.callout)
                     .bold()
                     .foregroundColor(.secondary)
@@ -47,7 +47,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                 Button {
                     editingLog = nil
                 } label: {
-                    Text("Cancel")
+                    Text(L10n.Common.cancel)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }
@@ -66,7 +66,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                         assertionFailure("\(error)")
                     }
                 } label: {
-                    Text("Save")
+                    Text(L10n.Common.save)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }
