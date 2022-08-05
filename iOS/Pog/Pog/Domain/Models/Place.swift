@@ -8,10 +8,13 @@
 import Foundation
 import CoreLocation
 
+
 public struct Place: Identifiable, Hashable {
     public let lat: CLLocationDegrees
     public let lng: CLLocationDegrees
     public var icon: String?
+    public var isInteresting: Bool
+    public var logs: [VisitingLog]
 
     public let name: String
 

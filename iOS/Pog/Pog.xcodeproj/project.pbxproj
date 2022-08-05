@@ -7,15 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D306F933286EFC04006293E9 /* PlaceLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F92B286EFC03006293E9 /* PlaceLog+CoreDataClass.swift */; };
 		D306F936286F0A83006293E9 /* InterestingPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F92A286EFC03006293E9 /* InterestingPlace+CoreDataClass.swift */; };
 		D306F938286F0A83006293E9 /* LocationSettings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F926286EFC03006293E9 /* LocationSettings+CoreDataClass.swift */; };
-		D306F942286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F93F286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift */; };
-		D306F943286F188C006293E9 /* LocationSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F940286F188C006293E9 /* LocationSettings+CoreDataProperties.swift */; };
-		D306F944286F188C006293E9 /* PlaceLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F941286F188C006293E9 /* PlaceLog+CoreDataProperties.swift */; };
 		D306F946286F2022006293E9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F945286F2022006293E9 /* SettingsModel.swift */; };
 		D312A1462877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1442877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataClass.swift */; };
-		D312A1472877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */; };
 		D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */; };
 		D312A14B287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */; };
 		D31956F628818B6900BEF86D /* MapModelTests+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31956F528818B6900BEF86D /* MapModelTests+Search.swift */; };
@@ -39,10 +34,14 @@
 		D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE728702B5B007C7CA9 /* Moya */; };
 		D34157042895AE6D000B99C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D34157032895AE6D000B99C1 /* Settings.bundle */; };
 		D3559D1428969056007641CA /* SearchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D1328969056007641CA /* SearchConfiguration.swift */; };
-		D3559D162896915D007641CA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D152896915D007641CA /* Model.swift */; };
 		D3559D182896936E007641CA /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D172896936E007641CA /* UserDefaultsKey.swift */; };
 		D3559D1A28969DDE007641CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3559D1928969DDE007641CA /* Store.swift */; };
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
+		D3B7C0D0289D032100EA4138 /* InterestingPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0CB289D032100EA4138 /* InterestingPlace+CoreDataProperties.swift */; };
+		D3B7C0D1289D032100EA4138 /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0CC289D032100EA4138 /* InterestingPlaceVisitingLog+CoreDataProperties.swift */; };
+		D3B7C0D2289D032100EA4138 /* LocationSettings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0CD289D032100EA4138 /* LocationSettings+CoreDataProperties.swift */; };
+		D3B7C0D3289D032100EA4138 /* UserLocationLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0CE289D032100EA4138 /* UserLocationLog+CoreDataClass.swift */; };
+		D3B7C0D4289D032100EA4138 /* UserLocationLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0CF289D032100EA4138 /* UserLocationLog+CoreDataProperties.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
 		D3BFA9362833796D00606CD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9352833796D00606CD4 /* RootView.swift */; };
 		D3BFA9382833796F00606CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BFA9372833796F00606CD4 /* Assets.xcassets */; };
@@ -74,9 +73,9 @@
 		D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111C2871EBB300FDC330 /* Secret.swift */; };
 		D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111E2871EC0B00FDC330 /* SecretSample.swift */; };
 		D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F794BE2865ED2800B84905 /* Store+Env.swift */; };
-		D3FB458E28968D670026F3E1 /* PlaceLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB458D28968D670026F3E1 /* PlaceLogRepository.swift */; };
+		D3FB458E28968D670026F3E1 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB458D28968D670026F3E1 /* PlaceRepository.swift */; };
 		D3FB459B289690040026F3E1 /* UserLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB459A289690040026F3E1 /* UserLog.swift */; };
-		D3FB459D2896901B0026F3E1 /* PlaceLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB459C2896901B0026F3E1 /* PlaceLog.swift */; };
+		D3FB459D2896901B0026F3E1 /* PlaceVisitingLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FB459C2896901B0026F3E1 /* PlaceVisitingLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,14 +99,9 @@
 		D306F918286EFA21006293E9 /* Pog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 5.xcdatamodel"; sourceTree = "<group>"; };
 		D306F926286EFC03006293E9 /* LocationSettings+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationSettings+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D306F92A286EFC03006293E9 /* InterestingPlace+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D306F92B286EFC03006293E9 /* PlaceLog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D306F93F286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D306F940286F188C006293E9 /* LocationSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D306F941286F188C006293E9 /* PlaceLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D306F945286F2022006293E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D312A143287738BD00CEFBCC /* Pog 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 7.xcdatamodel"; sourceTree = "<group>"; };
 		D312A1442877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlaceVisitingLog+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlaceVisitingLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingPlaceVisitingListView.swift; sourceTree = "<group>"; };
 		D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingPlaceVisitingListModel.swift; sourceTree = "<group>"; };
 		D31956F528818B6900BEF86D /* MapModelTests+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapModelTests+Search.swift"; sourceTree = "<group>"; };
@@ -126,10 +120,15 @@
 		D33BFEE228702945007C7CA9 /* PlacesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTarget.swift; sourceTree = "<group>"; };
 		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D3559D1328969056007641CA /* SearchConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchConfiguration.swift; sourceTree = "<group>"; };
-		D3559D152896915D007641CA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D3559D172896936E007641CA /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		D3559D1928969DDE007641CA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
+		D3B7C0CA289CFF2B00EA4138 /* Pog 9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 9.xcdatamodel"; sourceTree = "<group>"; };
+		D3B7C0CB289D032100EA4138 /* InterestingPlace+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlace+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3B7C0CC289D032100EA4138 /* InterestingPlaceVisitingLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlaceVisitingLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3B7C0CD289D032100EA4138 /* LocationSettings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationSettings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3B7C0CE289D032100EA4138 /* UserLocationLog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocationLog+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3B7C0CF289D032100EA4138 /* UserLocationLog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserLocationLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BFA9332833796D00606CD4 /* PogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PogApp.swift; sourceTree = "<group>"; };
 		D3BFA9352833796D00606CD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -169,9 +168,9 @@
 		D3E5111C2871EBB300FDC330 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		D3E5111E2871EC0B00FDC330 /* SecretSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSample.swift; sourceTree = "<group>"; };
 		D3F794BE2865ED2800B84905 /* Store+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Env.swift"; sourceTree = "<group>"; };
-		D3FB458D28968D670026F3E1 /* PlaceLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogRepository.swift; sourceTree = "<group>"; };
+		D3FB458D28968D670026F3E1 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
 		D3FB459A289690040026F3E1 /* UserLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLog.swift; sourceTree = "<group>"; };
-		D3FB459C2896901B0026F3E1 /* PlaceLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLog.swift; sourceTree = "<group>"; };
+		D3FB459C2896901B0026F3E1 /* PlaceVisitingLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceVisitingLog.swift; sourceTree = "<group>"; };
 		D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 6.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,13 +211,13 @@
 			isa = PBXGroup;
 			children = (
 				D306F92A286EFC03006293E9 /* InterestingPlace+CoreDataClass.swift */,
-				D306F93F286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift */,
+				D3B7C0CB289D032100EA4138 /* InterestingPlace+CoreDataProperties.swift */,
 				D312A1442877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataClass.swift */,
-				D312A1452877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift */,
+				D3B7C0CC289D032100EA4138 /* InterestingPlaceVisitingLog+CoreDataProperties.swift */,
 				D306F926286EFC03006293E9 /* LocationSettings+CoreDataClass.swift */,
-				D306F940286F188C006293E9 /* LocationSettings+CoreDataProperties.swift */,
-				D306F92B286EFC03006293E9 /* PlaceLog+CoreDataClass.swift */,
-				D306F941286F188C006293E9 /* PlaceLog+CoreDataProperties.swift */,
+				D3B7C0CD289D032100EA4138 /* LocationSettings+CoreDataProperties.swift */,
+				D3B7C0CE289D032100EA4138 /* UserLocationLog+CoreDataClass.swift */,
+				D3B7C0CF289D032100EA4138 /* UserLocationLog+CoreDataProperties.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -390,12 +389,10 @@
 			isa = PBXGroup;
 			children = (
 				D32D588328884D2F00522CA3 /* Language.swift */,
-				D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */,
 				D3BFA96F2833965F00606CD4 /* Place.swift */,
-				D3FB459C2896901B0026F3E1 /* PlaceLog.swift */,
+				D3FB459C2896901B0026F3E1 /* PlaceVisitingLog.swift */,
 				D3559D1328969056007641CA /* SearchConfiguration.swift */,
 				D3FB459A289690040026F3E1 /* UserLog.swift */,
-				D3559D152896915D007641CA /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -460,7 +457,7 @@
 		D3FB458C28968D3E0026F3E1 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D3FB458D28968D670026F3E1 /* PlaceLogRepository.swift */,
+				D3FB458D28968D670026F3E1 /* PlaceRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -521,6 +518,7 @@
 		D3FB459428968EDE0026F3E1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */,
 				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
 			);
 			path = Components;
@@ -798,26 +796,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3FB459D2896901B0026F3E1 /* PlaceLog.swift in Sources */,
-				D3FB458E28968D670026F3E1 /* PlaceLogRepository.swift in Sources */,
+				D3FB459D2896901B0026F3E1 /* PlaceVisitingLog.swift in Sources */,
+				D3B7C0D0289D032100EA4138 /* InterestingPlace+CoreDataProperties.swift in Sources */,
+				D3FB458E28968D670026F3E1 /* PlaceRepository.swift in Sources */,
 				D3559D1428969056007641CA /* SearchConfiguration.swift in Sources */,
 				D306F936286F0A83006293E9 /* InterestingPlace+CoreDataClass.swift in Sources */,
 				D306F938286F0A83006293E9 /* LocationSettings+CoreDataClass.swift in Sources */,
 				D3559D1A28969DDE007641CA /* Store.swift in Sources */,
-				D306F944286F188C006293E9 /* PlaceLog+CoreDataProperties.swift in Sources */,
 				D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */,
 				D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */,
+				D3B7C0D4289D032100EA4138 /* UserLocationLog+CoreDataProperties.swift in Sources */,
+				D3B7C0D3289D032100EA4138 /* UserLocationLog+CoreDataClass.swift in Sources */,
 				D3CA087E28688C0C006147BB /* WalkthroughPage.swift in Sources */,
 				D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */,
 				D3BFA96228337BC900606CD4 /* MapModel.swift in Sources */,
-				D306F943286F188C006293E9 /* LocationSettings+CoreDataProperties.swift in Sources */,
+				D3B7C0D2289D032100EA4138 /* LocationSettings+CoreDataProperties.swift in Sources */,
 				D3BFA9852833B95600606CD4 /* PlaceLogPage.swift in Sources */,
 				D31AB89328374A9C009AB9AC /* PlaceManager.swift in Sources */,
-				D3559D162896915D007641CA /* Model.swift in Sources */,
 				D31956FD2881903300BEF86D /* GeneratedMock.swift in Sources */,
 				D3E0B1D0287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift in Sources */,
 				D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */,
-				D306F933286EFC04006293E9 /* PlaceLog+CoreDataClass.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */,
 				D306F946286F2022006293E9 /* SettingsModel.swift in Sources */,
@@ -830,11 +828,11 @@
 				D3FB459B289690040026F3E1 /* UserLog.swift in Sources */,
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D.swift in Sources */,
-				D312A1472877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */,
 				D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */,
 				D3559D182896936E007641CA /* UserDefaultsKey.swift in Sources */,
 				D312A1462877392400CEFBCC /* InterestingPlaceVisitingLog+CoreDataClass.swift in Sources */,
 				D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */,
+				D3B7C0D1289D032100EA4138 /* InterestingPlaceVisitingLog+CoreDataProperties.swift in Sources */,
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
@@ -846,7 +844,6 @@
 				D3BFA9702833965F00606CD4 /* Place.swift in Sources */,
 				D3BFA9922833CD2300606CD4 /* SearchPlacePage.swift in Sources */,
 				D312A14B287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift in Sources */,
-				D306F942286F188C006293E9 /* InterestingPlace+CoreDataProperties.swift in Sources */,
 				D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1285,6 +1282,7 @@
 		D3CA088328689FD4006147BB /* Pog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D3B7C0CA289CFF2B00EA4138 /* Pog 9.xcdatamodel */,
 				D3E0B1D4287F09F60094AB49 /* Pog 8.xcdatamodel */,
 				D312A143287738BD00CEFBCC /* Pog 7.xcdatamodel */,
 				D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */,
@@ -1294,7 +1292,7 @@
 				D3CA088628689FD4006147BB /* Pog 2.xcdatamodel */,
 				D3CA088728689FD4006147BB /* Pog 4.xcdatamodel */,
 			);
-			currentVersion = D3E0B1D4287F09F60094AB49 /* Pog 8.xcdatamodel */;
+			currentVersion = D3B7C0CA289CFF2B00EA4138 /* Pog 9.xcdatamodel */;
 			path = Pog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -2,7 +2,7 @@
 //  InterestingPlace+CoreDataProperties.swift
 //  Pog
 //
-//  Created by Fumiya Tanaka on 2022/07/03.
+//  Created by Fumiya Tanaka on 2022/08/05.
 //
 //
 
@@ -17,10 +17,10 @@ extension InterestingPlace {
     }
 
     @NSManaged public var distanceMeter: Double
+    @NSManaged public var icon: String?
     @NSManaged public var lat: Double
     @NSManaged public var lng: Double
     @NSManaged public var name: String?
-    @NSManaged public var icon: String?
 
 }
 

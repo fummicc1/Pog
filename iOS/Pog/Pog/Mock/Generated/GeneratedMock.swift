@@ -19,8 +19,8 @@ public class StoreMock: Store {
     }
 
 
-    public var logs: AnyPublisher<[PlaceLog], Never> { return self.logsSubject.eraseToAnyPublisher() }
-    public private(set) var logsSubject = PassthroughSubject<[PlaceLog], Never>()
+    public var logs: AnyPublisher<[UserLocationLog], Never> { return self.logsSubject.eraseToAnyPublisher() }
+    public private(set) var logsSubject = PassthroughSubject<[UserLocationLog], Never>()
 
     public var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> { return self.interestingPlaceVisitingLogsSubject.eraseToAnyPublisher() }
     public private(set) var interestingPlaceVisitingLogsSubject = PassthroughSubject<[InterestingPlaceVisitingLog], Never>()
