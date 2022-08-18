@@ -3,6 +3,7 @@
 "InterestingPlaceVisitingListView.Place.VisitingHistory" = "• Visiting History";
 "InterestingPlaceVisitingListView.Place.NoVisitingHistoryYet" = "There is no visiting yet.";
 "InterestingPlaceVisitingListView.InterestingPlace.EmptyList" = "failed to find registered place's name.";
+"InterestingPlaceVisitingListView.InterestingPlace.Places" = "Registered Places";
 
 
 

@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 class PickedUpLogAnnotation: MKPointAnnotation {
-    init(pickedUpLog: PlaceLog) {
+    init(pickedUpLog: PlaceLogData) {
         self.pickedUpLog = pickedUpLog
         super.init()
         self.coordinate = CLLocationCoordinate2D(
@@ -18,7 +18,7 @@ class PickedUpLogAnnotation: MKPointAnnotation {
         )
     }
 
-    let pickedUpLog: PlaceLog
+    let pickedUpLog: PlaceLogData
 
 
 }

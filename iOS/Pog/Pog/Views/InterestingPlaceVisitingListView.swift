@@ -12,7 +12,7 @@ struct InterestingPlaceVisitingListView: View {
 
     @ObservedObject var model: InterestingPlaceVisitingListModel
     @Environment(\.store) var store: Store
-    @State private var moveToEditLogPage: InterestingPlaceVisitingLog?
+    @State private var moveToEditLogPage: InterestingPlaceVisitingLogData?
 
     var body: some View {
         if model.places.isEmpty {
@@ -100,7 +100,7 @@ struct InterestingPlaceVisitingListView: View {
                                     .foregroundColor(.secondary)
                                 #if DEBUG
                                 Button {
-                                    let stub = InterestingPlaceVisitingLog(context: store.context)
+                                    let stub = InterestingPlaceVisitingLogData(context: store.context)
                                     stub.visitedAt = Date()
                                     stub.place = place
                                     try! store.context.save()
@@ -119,10 +119,10 @@ struct InterestingPlaceVisitingListView: View {
                 }
             }
         }
-        .navigationTitle(L10n.InterestingPlaceVisitingListView.InterestingPlace.emptyList)
+        .navigationTitle(L10n.InterestingPlaceVisitingListView.InterestingPlace.places)
         .partialSheet(isPresented: $moveToEditLogPage.isNotNil(), content: {
             if moveToEditLogPage != nil {
-                EditInterestingPlaceVisitingLogView(log: $moveToEditLogPage)
+                EditInterestingPlaceVisitingLogDataView(log: $moveToEditLogPage)
             } else {
                 EmptyView()
             }

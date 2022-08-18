@@ -41,7 +41,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         // MARK: Observe location updates
         locationManager.coordinate
             .sink { coordinate in
-                let log = PlaceLog(context: self.store.context)
+                let log = PlaceLogData(context: self.store.context)
                 log.lat = coordinate.latitude
                 log.lng = coordinate.longitude
                 log.date = Date()
@@ -56,8 +56,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         locationManager.onEnterRegion
             .sink { region in
                 do {
-                    let places = try self.store.fetch(type: InterestingPlace.self)
-                    let visitingLog = InterestingPlaceVisitingLog(
+                    let places = try self.store.fetch(type: InterestingPlaceData.self)
+                    let visitingLog = InterestingPlaceVisitingLogData(
                         context: self.store.context
                     )
                     visitingLog.visitedAt = Date()
@@ -76,7 +76,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         locationManager.onExitRegion
             .sink { region in
                 do {
-                    let logs = try self.store.fetch(type: InterestingPlaceVisitingLog.self)
+                    let logs = try self.store.fetch(type: InterestingPlaceVisitingLogData.self)
                     guard let log = logs.first(where: {
                         $0.place?.lat == region.center.latitude && $0.place?.lng == region.center.longitude && $0.exitedAt == nil
                     }) else {

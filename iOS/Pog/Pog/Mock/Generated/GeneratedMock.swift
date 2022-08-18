@@ -22,17 +22,17 @@ public class StoreMock: Store {
     public var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { return self.searchConfigurationSubject.eraseToAnyPublisher() }
     public private(set) var searchConfigurationSubject = PassthroughSubject<SearchConfiguration, Never>()
 
-    public var logs: AnyPublisher<[PlaceLog], Never> { return self.logsSubject.eraseToAnyPublisher() }
-    public private(set) var logsSubject = PassthroughSubject<[PlaceLog], Never>()
+    public var logs: AnyPublisher<[PlaceLogData], Never> { return self.logsSubject.eraseToAnyPublisher() }
+    public private(set) var logsSubject = PassthroughSubject<[PlaceLogData], Never>()
 
-    public var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> { return self.interestingPlaceVisitingLogsSubject.eraseToAnyPublisher() }
-    public private(set) var interestingPlaceVisitingLogsSubject = PassthroughSubject<[InterestingPlaceVisitingLog], Never>()
+    public var interestingPlaceVisitingLogDatas: AnyPublisher<[InterestingPlaceVisitingLogData], Never> { return self.interestingPlaceVisitingLogDatasSubject.eraseToAnyPublisher() }
+    public private(set) var interestingPlaceVisitingLogDatasSubject = PassthroughSubject<[InterestingPlaceVisitingLogData], Never>()
 
-    public var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { return self.interestingPlacesSubject.eraseToAnyPublisher() }
-    public private(set) var interestingPlacesSubject = PassthroughSubject<[InterestingPlace], Never>()
+    public var interestingPlaces: AnyPublisher<[InterestingPlaceData], Never> { return self.interestingPlacesSubject.eraseToAnyPublisher() }
+    public private(set) var interestingPlacesSubject = PassthroughSubject<[InterestingPlaceData], Never>()
 
-    public var locationSettings: AnyPublisher<LocationSettings?, Never> { return self.locationSettingsSubject.eraseToAnyPublisher() }
-    public private(set) var locationSettingsSubject = PassthroughSubject<LocationSettings?, Never>()
+    public var locationSettings: AnyPublisher<LocationSettingsData?, Never> { return self.locationSettingsSubject.eraseToAnyPublisher() }
+    public private(set) var locationSettingsSubject = PassthroughSubject<LocationSettingsData?, Never>()
 
     public private(set) var contextSetCallCount = 0
     private var _context: NSManagedObjectContext!  { didSet { contextSetCallCount += 1 } }

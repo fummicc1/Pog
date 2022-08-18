@@ -27,7 +27,7 @@ class MapModel: ObservableObject {
     private var numberOfPlacesSearchRequestPerDay: CurrentValueSubject<Int, Never> = .init(0)
     private var lastSearchedDate: CurrentValueSubject<Date?, Never> = .init(nil)
     private var searchResults: CurrentValueSubject<[Place], Never> = .init([])
-    private var interestingPlaces: CurrentValueSubject<[InterestingPlace], Never> = .init([])
+    private var interestingPlaces: CurrentValueSubject<[InterestingPlaceData], Never> = .init([])
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -108,8 +108,8 @@ class MapModel: ObservableObject {
 
         searchResults
             .combineLatest(interestingPlaces)
-            .map { searchPlaces, interestingPlaces in
-                interestingPlaces.map {
+            .map { searchPlaces, interestingPlaceDatas in
+                interestingPlaceDatas.map {
                     Place(
                         lat: $0.lat,
                         lng: $0.lng,
@@ -162,9 +162,9 @@ class MapModel: ObservableObject {
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {
-        interestingPlaces.value.contains(where: { interestingPlace in
-            let diffLat = abs(interestingPlace.lat - place.lat)
-            let diffLng = abs(interestingPlace.lng - place.lng)
+        interestingPlaces.value.contains(where: { interestingPlaceData in
+            let diffLat = abs(interestingPlaceData.lat - place.lat)
+            let diffLng = abs(interestingPlaceData.lng - place.lng)
             return diffLat < 0.0001 && diffLng < 0.0001
         })
     }

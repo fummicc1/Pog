@@ -50,6 +50,8 @@ internal enum L10n {
     internal enum InterestingPlace {
       /// failed to find registered place's name.
       internal static let emptyList = L10n.tr("Localizable", "InterestingPlaceVisitingListView.InterestingPlace.EmptyList", fallback: #"failed to find registered place's name."#)
+      /// Registered Places
+      internal static let places = L10n.tr("Localizable", "InterestingPlaceVisitingListView.InterestingPlace.Places", fallback: #"Registered Places"#)
     }
     internal enum Place {
       /// There is no visiting yet.

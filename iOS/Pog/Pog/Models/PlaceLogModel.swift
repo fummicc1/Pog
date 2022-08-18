@@ -28,14 +28,14 @@ class PlaceLogModel: ObservableObject {
     )
     @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
 
-    @Published var featuredLogs: [PlaceLog] = []
-    @Published var logs: [PlaceLog] = []
+    @Published var featuredLogs: [PlaceLogData] = []
+    @Published var logs: [PlaceLogData] = []
     @Published var dates: [Date] = []
     private var polylines: [Date: MKPolyline] = [:]
     @Published var selectedDate: Date?
     @Published var selectedPolyline: MKPolyline?
 
-    private let que = DispatchQueue(label: "dev.fummicc1.Pog.PlacelogModel.Que")
+    private let que = DispatchQueue(label: "dev.fummicc1.Pog.PlacelogDataModel.Que")
 
     init(
         locationManager: LocationManager,
@@ -73,7 +73,7 @@ class PlaceLogModel: ObservableObject {
         // TODO: diffable update
         store.logs.combineLatest($selectedDate)
             .receive(on: que)
-            .map({ (places, selectedDate) -> [PlaceLog] in
+            .map({ (places, selectedDate) -> [PlaceLogData] in
                 guard let selectedDate = selectedDate else {
                     return []
                 }
@@ -92,7 +92,7 @@ class PlaceLogModel: ObservableObject {
                     }
                     return h.timeIntervalSince1970 < t.timeIntervalSince1970
                 }
-                var fars: [PlaceLog] = []
+                var fars: [PlaceLogData] = []
                 // find log which is a large distance from previous log.
                 var k = 0
                 for (i, log) in logs.enumerated() {
