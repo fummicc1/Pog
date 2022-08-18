@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21223.12" systemVersion="22A5266r" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="InterestingPlace" representedClassName="InterestingPlace" syncable="YES">
+        <attribute name="distanceMeter" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="lat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lng" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+    </entity>
+    <entity name="InterestingPlaceVisitingLog" representedClassName="InterestingPlaceVisitingLog" syncable="YES">
+        <attribute name="exitedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="visitedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="InterestingPlace"/>
+    </entity>
+    <entity name="LocationSettings" representedClassName="LocationSettings" syncable="YES">
+        <attribute name="allowsBackgroundLocationUpdates" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="desiredAccuracy" attributeType="Double" defaultValueString="100" usesScalarValueType="YES"/>
+        <attribute name="distanceFilter" attributeType="Double" defaultValueString="30" usesScalarValueType="YES"/>
+        <attribute name="pausesLocationUpdatesAutomatically" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="PlaceLog" representedClassName="PlaceLog" syncable="YES">
+        <attribute name="color" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lng" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="memo" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="InterestingPlace" positionX="-45" positionY="27" width="128" height="104"/>
+        <element name="InterestingPlaceVisitingLog" positionX="-54" positionY="45" width="128" height="74"/>
+        <element name="LocationSettings" positionX="-54" positionY="45" width="128" height="89"/>
+        <element name="PlaceLog" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
