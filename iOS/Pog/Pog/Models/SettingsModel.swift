@@ -22,9 +22,9 @@ class SettingsModel: ObservableObject {
     private let locationManager: LocationManager
     private var cancellables: Set<AnyCancellable> = []
 
-    private var latestLocationSettings: LocationSettings? {
+    private var latestLocationSettingsData: LocationSettingsData? {
         @MainActor didSet {
-            guard let settings = latestLocationSettings else {
+            guard let settings = latestLocationSettingsData else {
                 return
             }
             self.desiredAccuracy = settings.desiredAccuracy
@@ -37,9 +37,9 @@ class SettingsModel: ObservableObject {
         self.locationManager = locationManager
         store.locationSettings
             .receive(on: DispatchQueue.main)
-            .sink { locationSettings in
+            .sink { locationSettingsData in
                 DispatchQueue.main.async {
-                    self.latestLocationSettings = locationSettings
+                    self.latestLocationSettingsData = locationSettingsData
                 }
             }
             .store(in: &cancellables)
@@ -74,8 +74,8 @@ class SettingsModel: ObservableObject {
 
     @MainActor
     func onAppear() {
-        if let settings = try? store.fetch(type: LocationSettings.self).first {
-            self.latestLocationSettings = settings
+        if let settings = try? store.fetch(type: LocationSettingsData.self).first {
+            self.latestLocationSettingsData = settings
         }
     }
 
@@ -97,7 +97,7 @@ class SettingsModel: ObservableObject {
     }
 
     func totallyDeleteLogs() {
-        let log = PlaceLog.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
+        let log = PlaceLogData.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
         let batchRequest = NSBatchDeleteRequest(fetchRequest: log)
         do {
             try store.deleteWithBatch(batchRequest)
@@ -107,7 +107,7 @@ class SettingsModel: ObservableObject {
     }
 
     func totallyDeleteInterestingPlaces() {
-        let interests = InterestingPlace.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
+        let interests = InterestingPlaceData.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
         let batch = NSBatchDeleteRequest(fetchRequest: interests)
         do {
             try store.deleteWithBatch(batch)
@@ -118,13 +118,13 @@ class SettingsModel: ObservableObject {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
-    private func updateSettings<V>(keypath: ReferenceWritableKeyPath<LocationSettings, V>, value: V) {
-        let request = LocationSettings.fetchRequest()
-        if let latestLocationSettings = try? store.context.fetch(request), !latestLocationSettings.isEmpty {
-            latestLocationSettings.last?[keyPath: keypath] = value
+    private func updateSettings<V>(keypath: ReferenceWritableKeyPath<LocationSettingsData, V>, value: V) {
+        let request = LocationSettingsData.fetchRequest()
+        if let latestLocationSettingsData = try? store.context.fetch(request), !latestLocationSettingsData.isEmpty {
+            latestLocationSettingsData.last?[keyPath: keypath] = value
         } else {
-            let latestLocationSettings = LocationSettings(context: store.context)
-            latestLocationSettings[keyPath: keypath] = value
+            let latestLocationSettingsData = LocationSettingsData(context: store.context)
+            latestLocationSettingsData[keyPath: keypath] = value
         }
         do {
             try store.context.save()

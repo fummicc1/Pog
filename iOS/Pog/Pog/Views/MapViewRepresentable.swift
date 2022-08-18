@@ -15,7 +15,7 @@ struct MapViewRepresentable: UIViewRepresentable {
 
     @Binding var region: MKCoordinateRegion
     @Binding var polyline: MKPolyline?
-    @Binding var pickedUpLogs: [PlaceLog]
+    @Binding var pickedUpLogs: [PlaceLogData]
 
     @Environment(\.store) var store: Store
 

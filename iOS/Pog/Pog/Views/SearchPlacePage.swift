@@ -33,7 +33,7 @@ struct SearchPlacePage: View {
                         }
                         return
                     }
-                    let interestingPlace = InterestingPlace(context: context)
+                    let interestingPlace = InterestingPlaceData(context: context)
                     interestingPlace.name = model.place.name
                     interestingPlace.lat = model.place.lat
                     interestingPlace.lng = model.place.lng

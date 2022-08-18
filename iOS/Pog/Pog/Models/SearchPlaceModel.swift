@@ -13,9 +13,9 @@ import UserNotifications
 class SearchPlaceModel: ObservableObject {
 
     @Published var alreadyInteresting: Bool = false
-    @Published var storedInterestingPlace: InterestingPlace?
+    @Published var storedInterestingPlace: InterestingPlaceData?
     @Published var error: String? = nil
-    @Published var interestingPlaces: [InterestingPlace] = []
+    @Published var interestingPlaces: [InterestingPlaceData] = []
 
     let store: Store
     let locationManager: LocationManager

@@ -5,10 +5,10 @@ import Combine
 /// @mockable
 public protocol Store {
     var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { get }
-    var logs: AnyPublisher<[PlaceLog], Never> { get }
-    var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> { get }
-    var interestingPlaces: AnyPublisher<[InterestingPlace], Never> { get }
-    var locationSettings: AnyPublisher<LocationSettings?, Never> { get }
+    var logs: AnyPublisher<[PlaceLogData], Never> { get }
+    var interestingPlaceVisitingLogDatas: AnyPublisher<[InterestingPlaceVisitingLogData], Never> { get }
+    var interestingPlaces: AnyPublisher<[InterestingPlaceData], Never> { get }
+    var locationSettings: AnyPublisher<LocationSettingsData?, Never> { get }
     var context: NSManagedObjectContext { get }
 
     func deleteWithBatch(_ request: NSBatchDeleteRequest) throws
@@ -30,10 +30,10 @@ public class StoreImpl {
 
     private let userDefaults: UserDefaults = UserDefaults(suiteName: "group.fummicc1.pog")!
 
-    private let interestingPlaceVisitingLogsSubject: CurrentValueSubject<[InterestingPlaceVisitingLog], Never> = .init([])
-    private let placeLogSubject: CurrentValueSubject<[PlaceLog], Never> = .init([])
-    private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlace], Never> = .init([])
-    private let locationSettingsSubject: CurrentValueSubject<LocationSettings?, Never> = .init(nil)
+    private let interestingPlaceVisitingLogDatasSubject: CurrentValueSubject<[InterestingPlaceVisitingLogData], Never> = .init([])
+    private let placeLogDataSubject: CurrentValueSubject<[PlaceLogData], Never> = .init([])
+    private let interestingPlacesSubject: CurrentValueSubject<[InterestingPlaceData], Never> = .init([])
+    private let locationSettingsDataSubject: CurrentValueSubject<LocationSettingsData?, Never> = .init(nil)
 
     private var keyObservers: [String: NSKeyValueObservation] = [:]
 
@@ -84,20 +84,20 @@ public class StoreImpl {
                 if let error = error {
                     print(error)
                 }
-                if let logs = try? self.container.viewContext.fetch(PlaceLog.fetchRequest()) {
-                    self.placeLogSubject.send(logs)
+                if let logs = try? self.container.viewContext.fetch(PlaceLogData.fetchRequest()) {
+                    self.placeLogDataSubject.send(logs)
                 }
-                if let places = try? self.container.viewContext.fetch(InterestingPlace.fetchRequest()) {
+                if let places = try? self.container.viewContext.fetch(InterestingPlaceData.fetchRequest()) {
                     self.interestingPlacesSubject.send(places)
                 }
-                if let locationSettings = try? self.container.viewContext.fetch(LocationSettings.fetchRequest()) {
-                    if !locationSettings.isEmpty {
-                        assert(locationSettings.count == 1)
-                        self.locationSettingsSubject.send(locationSettings.last!)
+                if let locationSettingsData = try? self.container.viewContext.fetch(LocationSettingsData.fetchRequest()) {
+                    if !locationSettingsData.isEmpty {
+                        assert(locationSettingsData.count == 1)
+                        self.locationSettingsDataSubject.send(locationSettingsData.last!)
                     }
                 }
-                if let visitingLogs = try? self.container.viewContext.fetch(InterestingPlaceVisitingLog.fetchRequest()) {
-                    self.interestingPlaceVisitingLogsSubject.send(visitingLogs)
+                if let visitingLogs = try? self.container.viewContext.fetch(InterestingPlaceVisitingLogData.fetchRequest()) {
+                    self.interestingPlaceVisitingLogDatasSubject.send(visitingLogs)
                 }
             }
 
@@ -107,56 +107,56 @@ public class StoreImpl {
                 queue: nil
             ) { notification in
                 if let added = notification.userInfo?[NSInsertedObjectsKey] as? Set<NSManagedObject> {
-                    var addedLogs: [PlaceLog] = []
-                    var addedPlaces: [InterestingPlace] = []
-                    var addedLocationSettings: LocationSettings?
-                    var addedVisitingLogs: [InterestingPlaceVisitingLog] = []
+                    var addedLogs: [PlaceLogData] = []
+                    var addedPlaces: [InterestingPlaceData] = []
+                    var addedLocationSettingsData: LocationSettingsData?
+                    var addedVisitingLogs: [InterestingPlaceVisitingLogData] = []
 
                     for obj in added {
-                        if let log = obj as? PlaceLog {
+                        if let log = obj as? PlaceLogData {
                             addedLogs.append(log)
                         }
-                        if let place = obj as? InterestingPlace {
+                        if let place = obj as? InterestingPlaceData {
                             addedPlaces.append(place)
                         }
-                        if let locationSettings = obj as? LocationSettings {
-                            addedLocationSettings = locationSettings
+                        if let locationSettingsData = obj as? LocationSettingsData {
+                            addedLocationSettingsData = locationSettingsData
                         }
-                        if let visitingLog = obj as? InterestingPlaceVisitingLog {
+                        if let visitingLog = obj as? InterestingPlaceVisitingLogData {
                             addedVisitingLogs.append(visitingLog)
                         }
                     }
 
                     _ = {
-                        let all = self.placeLogSubject.value + addedLogs
-                        self.placeLogSubject.send(all)
+                        let all = self.placeLogDataSubject.value + addedLogs
+                        self.placeLogDataSubject.send(all)
                     }()
                     _ = {
                         let all = self.interestingPlacesSubject.value + addedPlaces
                         self.interestingPlacesSubject.send(all)
                     }()
                     _ = {
-                        self.locationSettingsSubject.send(addedLocationSettings)
+                        self.locationSettingsDataSubject.send(addedLocationSettingsData)
                     }()
                     _ = {
-                        let all = self.interestingPlaceVisitingLogsSubject.value + addedVisitingLogs
-                        self.interestingPlaceVisitingLogsSubject.send(all)
+                        let all = self.interestingPlaceVisitingLogDatasSubject.value + addedVisitingLogs
+                        self.interestingPlaceVisitingLogDatasSubject.send(all)
                     }()
                 }
                 if let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject> {
-                    var deletedLogs: [PlaceLog] = []
-                    var deletedPlaces: [InterestingPlace] = []
-                    var isDeletedLocationSettings: Bool = false
+                    var deletedLogs: [PlaceLogData] = []
+                    var deletedPlaces: [InterestingPlaceData] = []
+                    var isDeletedLocationSettingsData: Bool = false
 
                     for obj in deleted {
-                        if let log = obj as? PlaceLog {
+                        if let log = obj as? PlaceLogData {
                             deletedLogs.append(log)
                         }
-                        if let place = obj as? InterestingPlace {
+                        if let place = obj as? InterestingPlaceData {
                             deletedPlaces.append(place)
                         }
-                        if obj is LocationSettings {
-                            isDeletedLocationSettings = true
+                        if obj is LocationSettingsData {
+                            isDeletedLocationSettingsData = true
                         }
                     }
 
@@ -168,36 +168,36 @@ public class StoreImpl {
                         self.interestingPlacesSubject.send(current)
                     }()
                     _ = {
-                        var current = self.placeLogSubject.value
-                        current.removeAll(where: { placeLog in
-                            deletedLogs.map(\.id).contains(placeLog.id)
+                        var current = self.placeLogDataSubject.value
+                        current.removeAll(where: { placeLogData in
+                            deletedLogs.map(\.id).contains(placeLogData.id)
                         })
-                        self.placeLogSubject.send(current)
+                        self.placeLogDataSubject.send(current)
                     }()
                     _ = {
-                        if isDeletedLocationSettings {
-                            self.locationSettingsSubject.send(nil)
+                        if isDeletedLocationSettingsData {
+                            self.locationSettingsDataSubject.send(nil)
                         }
                     }()
                 }
                 if let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject> {
-                    var updatedLocationSettings: LocationSettings?
-                    var updatedInterestingPlaceVisitingLogs: [InterestingPlaceVisitingLog] = []
+                    var updatedLocationSettingsData: LocationSettingsData?
+                    var updatedInterestingPlaceVisitingLogDatas: [InterestingPlaceVisitingLogData] = []
                     for obj in updated {
-                        if let locationSettings = obj as? LocationSettings {
-                            updatedLocationSettings = locationSettings
+                        if let locationSettingsData = obj as? LocationSettingsData {
+                            updatedLocationSettingsData = locationSettingsData
                         }
-                        if let visitingLog = obj as? InterestingPlaceVisitingLog {
-                            updatedInterestingPlaceVisitingLogs.append(visitingLog)
+                        if let visitingLog = obj as? InterestingPlaceVisitingLogData {
+                            updatedInterestingPlaceVisitingLogDatas.append(visitingLog)
                         }
                     }
-                    if let updatedLocationSettings = updatedLocationSettings {
-                        self.locationSettingsSubject.send(updatedLocationSettings)
+                    if let updatedLocationSettingsData = updatedLocationSettingsData {
+                        self.locationSettingsDataSubject.send(updatedLocationSettingsData)
                     }
-                    let newInterestingPlaceVisitingLogs = Set(
-                        updatedInterestingPlaceVisitingLogs + self.interestingPlaceVisitingLogsSubject.value
+                    let newInterestingPlaceVisitingLogDatas = Set(
+                        updatedInterestingPlaceVisitingLogDatas + self.interestingPlaceVisitingLogDatasSubject.value
                     ).map { $0 }
-                    self.interestingPlaceVisitingLogsSubject.send(newInterestingPlaceVisitingLogs)
+                    self.interestingPlaceVisitingLogDatasSubject.send(newInterestingPlaceVisitingLogDatas)
                 }
             }
         }
@@ -214,20 +214,20 @@ extension StoreImpl: Store {
         searchConfigurationSubject.share().eraseToAnyPublisher()
     }
 
-    public var interestingPlaces: AnyPublisher<[InterestingPlace], Never> {
+    public var interestingPlaces: AnyPublisher<[InterestingPlaceData], Never> {
         interestingPlacesSubject.share().eraseToAnyPublisher()
     }
 
-    public var logs: AnyPublisher<[PlaceLog], Never> {
-        placeLogSubject.share().eraseToAnyPublisher()
+    public var logs: AnyPublisher<[PlaceLogData], Never> {
+        placeLogDataSubject.share().eraseToAnyPublisher()
     }
 
-    public var locationSettings: AnyPublisher<LocationSettings?, Never> {
-        locationSettingsSubject.share().eraseToAnyPublisher()
+    public var locationSettings: AnyPublisher<LocationSettingsData?, Never> {
+        locationSettingsDataSubject.share().eraseToAnyPublisher()
     }
 
-    public var interestingPlaceVisitingLogs: AnyPublisher<[InterestingPlaceVisitingLog], Never> {
-        interestingPlaceVisitingLogsSubject.eraseToAnyPublisher()
+    public var interestingPlaceVisitingLogDatas: AnyPublisher<[InterestingPlaceVisitingLogData], Never> {
+        interestingPlaceVisitingLogDatasSubject.eraseToAnyPublisher()
     }
 
     public var context: NSManagedObjectContext {

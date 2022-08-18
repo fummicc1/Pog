@@ -1,5 +1,7 @@
 name: LicensePlist, nameSpecified: , owner: mono0926, version: , source: https://github.com/mono0926/LicensePlist
 
+name: mockolo, nameSpecified: , owner: uber, version: , source: https://github.com/uber/mockolo
+
 name: abseil-cpp-SwiftPM, nameSpecified: abseil, owner: firebase, version: 0.20220203.1, source: https://github.com/firebase/abseil-cpp-SwiftPM
 
 name: Alamofire, nameSpecified: Alamofire, owner: Alamofire, version: 5.6.1, source: https://github.com/Alamofire/Alamofire

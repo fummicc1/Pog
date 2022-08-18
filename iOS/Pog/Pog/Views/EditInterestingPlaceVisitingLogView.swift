@@ -1,5 +1,5 @@
 //
-//  EditInterestingPlaceVisitingLogView.swift
+//  EditInterestingPlaceVisitingLogDataView.swift
 //  Pog
 //
 //  Created by Fumiya Tanaka on 2022/07/13.
@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct EditInterestingPlaceVisitingLogView: View {
+struct EditInterestingPlaceVisitingLogDataView: View {
 
-    @Binding var editingLog: InterestingPlaceVisitingLog?
+    @Binding var editingLog: InterestingPlaceVisitingLogData?
 
     @Environment(\.store) var store: Store
 
     @State private var visitedAt: Date
     @State private var exitedAt: Date?
 
-    init(log: Binding<InterestingPlaceVisitingLog?>) {
+    init(log: Binding<InterestingPlaceVisitingLogData?>) {
         self._editingLog = log
         self._exitedAt = State(initialValue: log.wrappedValue!.exitedAt)
         self._visitedAt = State(initialValue: log.wrappedValue!.visitedAt!)

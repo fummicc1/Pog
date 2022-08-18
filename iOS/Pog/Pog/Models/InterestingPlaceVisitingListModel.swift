@@ -13,8 +13,8 @@ class InterestingPlaceVisitingListModel: ObservableObject {
     private let store: Store
     private let placeManager: PlaceManager
 
-    @Published var histories: [InterestingPlace: [InterestingPlaceVisitingLog]] = [:]
-    @Published var places: [InterestingPlace] = []
+    @Published var histories: [InterestingPlaceData: [InterestingPlaceVisitingLogData]] = [:]
+    @Published var places: [InterestingPlaceData] = []
 
     init(store: Store, placeManager: PlaceManager) {
         self.store = store
@@ -24,7 +24,7 @@ class InterestingPlaceVisitingListModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$places)
 
-        store.interestingPlaceVisitingLogs
+        store.interestingPlaceVisitingLogDatas
             .map { logs in
                 logs.sorted { head, tail in
                     let tailVisitedAt = tail.visitedAt ?? Date(timeIntervalSince1970: 0)
@@ -33,7 +33,7 @@ class InterestingPlaceVisitingListModel: ObservableObject {
                 }
             }
             .map { logs in
-                var histories: [InterestingPlace: [InterestingPlaceVisitingLog]] = [:]
+                var histories: [InterestingPlaceData: [InterestingPlaceVisitingLogData]] = [:]
                 for log in logs {
                     guard let place = log.place else {
                         continue
