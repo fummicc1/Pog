@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21277" systemVersion="22A5266r" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="InterestingPlaceData" representedClassName="InterestingPlaceData" syncable="YES">
+    <entity name="InterestingPlaceData" representedClassName="InterestingPlaceData" elementID="InterestingPlace" syncable="YES">
         <attribute name="distanceMeter" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="icon" optional="YES" attributeType="String"/>
         <attribute name="lat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="lng" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
     </entity>
-    <entity name="InterestingPlaceVisitingLogData" representedClassName="InterestingPlaceVisitingLogData" syncable="YES">
+    <entity name="InterestingPlaceVisitingLogData" representedClassName="InterestingPlaceVisitingLogData" elementID="InterestingPlaceVisitingLog" syncable="YES">
         <attribute name="exitedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="visitedAt" attributeType="Date" defaultDateTimeInterval="679414260" usesScalarValueType="NO"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="InterestingPlaceData"/>
     </entity>
-    <entity name="LocationSettingsData" representedClassName="LocationSettingsData" syncable="YES">
+    <entity name="LocationSettingsData" representedClassName="LocationSettingsData" elementID="LocationSettings" syncable="YES">
         <attribute name="allowsBackgroundLocationUpdates" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="desiredAccuracy" attributeType="Double" defaultValueString="100" usesScalarValueType="YES"/>
         <attribute name="distanceFilter" attributeType="Double" defaultValueString="30" usesScalarValueType="YES"/>
         <attribute name="pausesLocationUpdatesAutomatically" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
     </entity>
-    <entity name="PlaceLogData" representedClassName="PlaceLogData" syncable="YES">
+    <entity name="PlaceLogData" representedClassName="PlaceLogData" elementID="PlaceLog" syncable="YES">
         <attribute name="color" attributeType="String"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="lat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
