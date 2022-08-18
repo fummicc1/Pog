@@ -14,6 +14,7 @@ struct SettingsPage: View {
     @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = false
     @State private var showTotallyDeleteLogsAlert: Bool = false
     @State private var showTotallyDeleteNotificationAlert: Bool = false
+    @State private var showInquiryFormPage: Bool = false
 
     @StateObject var model: SettingsModel
 
@@ -22,49 +23,56 @@ struct SettingsPage: View {
 
     var body: some View {
         NavigationView {
-            Form {
-                Section(L10n.SettingsPage.Data.about) {
-                    Button {
-                        showTotallyDeleteLogsAlert = true
-                    } label: {
-                        Text(L10n.SettingsPage.Data.totallyDeleteAllLogs)
-                    }
-                    Button {
-                        showTotallyDeleteNotificationAlert = true
-                    } label: {
-                        Text(L10n.SettingsPage.Data.totallyDeleteAllNotifications)
-                    }
+            VStack {
+                NavigationLink(
+                    destination: InquiryFormPage(model: InquiryFormModel()),
+                    isActive: $showInquiryFormPage
+                ) {
+                    EmptyView()
                 }
-                Section(L10n.SettingsPage.Location.about) {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(L10n.SettingsPage.Location.updateOnBackground)
-                            Toggle(isOn: Binding(get: {
-                                model.allowsBackgroundLocationUpdates
-                            }, set: { isAccept in
-                                model.updateBackgroundLocationUpdates(isAccepted: isAccept)
-                            })) {
-                            }.toggleStyle(.switch)
-                                .frame(width: 48)
+                Form {
+                    Section(L10n.SettingsPage.Data.about) {
+                        Button {
+                            showTotallyDeleteLogsAlert = true
+                        } label: {
+                            Text(L10n.SettingsPage.Data.totallyDeleteAllLogs)
                         }
-                        Text(L10n.SettingsPage.Location.messageAboutUpdateOnBackground)
-                            .foregroundColor(.secondary)
+                        Button {
+                            showTotallyDeleteNotificationAlert = true
+                        } label: {
+                            Text(L10n.SettingsPage.Data.totallyDeleteAllNotifications)
+                        }
                     }
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(L10n.SettingsPage.Location.accuracyUnitMeter)
-                            TextField(L10n.Common.default + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
-                                guard let desiredAccuracy = model.desiredAccuracy else {
-                                    return ""
-                                }
-                                return "\(Int(desiredAccuracy))"
-                            }, set: { desiredAccuracy in
-                                guard !desiredAccuracy.isEmpty, let desiredAccuracy = Double(desiredAccuracy) else {
-                                    model.updateDesiredAccuracy(nil)
-                                    return
-                                }
-                                model.updateDesiredAccuracy(desiredAccuracy)
-                            }))
+                    Section(L10n.SettingsPage.Location.about) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(L10n.SettingsPage.Location.updateOnBackground)
+                                Toggle(isOn: Binding(get: {
+                                    model.allowsBackgroundLocationUpdates
+                                }, set: { isAccept in
+                                    model.updateBackgroundLocationUpdates(isAccepted: isAccept)
+                                })) {
+                                }.toggleStyle(.switch)
+                                    .frame(width: 48)
+                            }
+                            Text(L10n.SettingsPage.Location.messageAboutUpdateOnBackground)
+                                .foregroundColor(.secondary)
+                        }
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(L10n.SettingsPage.Location.accuracyUnitMeter)
+                                TextField(L10n.Common.default + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
+                                    guard let desiredAccuracy = model.desiredAccuracy else {
+                                        return ""
+                                    }
+                                    return "\(Int(desiredAccuracy))"
+                                }, set: { desiredAccuracy in
+                                    guard !desiredAccuracy.isEmpty, let desiredAccuracy = Double(desiredAccuracy) else {
+                                        model.updateDesiredAccuracy(nil)
+                                        return
+                                    }
+                                    model.updateDesiredAccuracy(desiredAccuracy)
+                                }))
                                 .keyboardType(.numberPad)
                                 .focused($focus)
                                 .toolbar {
@@ -80,59 +88,66 @@ struct SettingsPage: View {
                                     }
                                 }
                                 .multilineTextAlignment(.trailing)
-                            if focus {
-                                Button {
-                                    model.updateDesiredAccuracy(nil)
-                                } label: {
-                                    Image(systemSymbol: .multiplyCircleFill)
-                                }
+                                if focus {
+                                    Button {
+                                        model.updateDesiredAccuracy(nil)
+                                    } label: {
+                                        Image(systemSymbol: .multiplyCircleFill)
+                                    }
 
-                            }
-                        }.buttonStyle(.plain)
-                        Text(L10n.SettingsPage.Location.lessTheNumberIsMoreAccurateRecordedLocationIs)
-                            .foregroundColor(.secondary)
-                    }
-                    HStack {
-                        Group {
-                            Text(L10n.SettingsPage.Location.authorizeStatus)
-                            Spacer()
-                            Text(model.locationAuthorizationStatus)
-                        }.foregroundColor(.secondary)
-                    }
-                    HStack {
-                        Group {
-                            Text(L10n.SettingsPage.Location.privacy)
-                            Spacer()
-                            Text(model.isAquiringAccuracyLocation)
-                        }.foregroundColor(.secondary)
-                    }
-                    Button {
-                        UIApplication.shared.open(
-                            URL(string: UIApplication.openSettingsURLString)!
-                        )
-                    } label: {
-                        Text(L10n.Common.confirmWithSettings)
-                    }
-                }
-                Section(L10n.SettingsPage.Pog.about) {
-                    Button {
-                        shouldOnboarding = true
-                    } label: {
-                        Text(L10n.SettingsPage.Pog.aboutFeatures)
-                    }
-                }
-                Section(L10n.SettingsPage.Pog.feedback) {
-                    Button {
-                        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-                            return
+                                }
+                            }.buttonStyle(.plain)
+                            Text(L10n.SettingsPage.Location.lessTheNumberIsMoreAccurateRecordedLocationIs)
+                                .foregroundColor(.secondary)
                         }
-                        SKStoreReviewController.requestReview(in: scene)
-                    } label: {
-                        Text(L10n.SettingsPage.Pog.review)
+                        HStack {
+                            Group {
+                                Text(L10n.SettingsPage.Location.authorizeStatus)
+                                Spacer()
+                                Text(model.locationAuthorizationStatus)
+                            }.foregroundColor(.secondary)
+                        }
+                        HStack {
+                            Group {
+                                Text(L10n.SettingsPage.Location.privacy)
+                                Spacer()
+                                Text(model.isAquiringAccuracyLocation)
+                            }.foregroundColor(.secondary)
+                        }
+                        Button {
+                            UIApplication.shared.open(
+                                URL(string: UIApplication.openSettingsURLString)!
+                            )
+                        } label: {
+                            Text(L10n.Common.confirmWithSettings)
+                        }
+                    }
+                    Section(L10n.SettingsPage.Pog.about) {
+                        Button {
+                            shouldOnboarding = true
+                        } label: {
+                            Text(L10n.SettingsPage.Pog.aboutFeatures)
+                        }
+                    }
+                    Section(L10n.SettingsPage.Pog.feedback) {
+                        Button {
+                            guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+                                return
+                            }
+                            SKStoreReviewController.requestReview(in: scene)
+                        } label: {
+                            Text(L10n.SettingsPage.Pog.review)
+                        }
+                        Button {
+                            showInquiryFormPage = true
+                        } label: {
+                            Text(L10n.SettingsPage.Pog.inquiry)
+                        }
                     }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
         .onAppear {
             model.onAppear()

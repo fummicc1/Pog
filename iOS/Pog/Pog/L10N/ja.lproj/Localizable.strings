@@ -118,11 +118,16 @@
 "SettingsPage.Pog.AboutFeatures" = "Pogについて（機能説明）";
 "SettingsPage.Pog.Feedback" = "フィードバック";
 "SettingsPage.Pog.Review" = "Pogをレビューする";
+"SettingsPage.Pog.Inquiry" = "ご要望・お問い合わせ";
 "SettingsPage.Alert.DoesDeleteAllLogsTotally" = "完全にログを消去しますか？";
 "SettingsPage.Alert.Delete" = "消去";
 "SettingsPage.Alert.DoesDeleteAllNotificationTotally" = "完全に通知設定を消去しますか？";
 
 
+// MARK: InquiryFormPage
+"InquiryFormPage.Title" = "ご要望・お問い合わせ";
+"InquiryFormPage.Form.Message" = "送信内容をお書きください";
+"InquiryFormPage.Form.Complete" = "送信が完了しました。ご協力ありがとうございました";
 
 
 // MARK: WalkthroughPage
@@ -162,3 +167,10 @@
 "Common.Close" = "閉じる";
 "Common.ConfirmWithSettings" = "設定アプリで確認する";
 "Common.DisplayMode" = "表示モード";
+"Common.EmailAddress" = "メールアドレス";
+"Common.Optional" = "任意";
+"Common.Required" = "必須";
+"Common.Message" = "メッセージ";
+"Common.Send" = "送信";
+"Common.InadequateStatus" = "入力に不備があります";
+"Common.Complete" = "完了";

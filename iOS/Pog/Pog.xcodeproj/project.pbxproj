@@ -32,6 +32,10 @@
 		D3243EA828ADDE6000C7861F /* InterestingPlaceVisitingLogData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3243EA028ADDE6000C7861F /* InterestingPlaceVisitingLogData+CoreDataProperties.swift */; };
 		D3243EA928ADDE6000C7861F /* LocationSettingsData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3243EA128ADDE6000C7861F /* LocationSettingsData+CoreDataClass.swift */; };
 		D3243EAA28ADDE6000C7861F /* LocationSettingsData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3243EA228ADDE6000C7861F /* LocationSettingsData+CoreDataProperties.swift */; };
+		D329F91128ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D329F91028ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore */; };
+		D329F91328ADF02D00ADCBCD /* InquiryFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F91228ADF02D00ADCBCD /* InquiryFormData.swift */; };
+		D329F91528ADF57300ADCBCD /* InquiryFormPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F91428ADF57300ADCBCD /* InquiryFormPage.swift */; };
+		D329F91728ADF70300ADCBCD /* InquiryFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F91628ADF70300ADCBCD /* InquiryFormModel.swift */; };
 		D32D588428884D2F00522CA3 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32D588328884D2F00522CA3 /* Language.swift */; };
 		D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEDD287025CE007C7CA9 /* APIClient.swift */; };
 		D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEE228702945007C7CA9 /* PlacesTarget.swift */; };
@@ -118,6 +122,9 @@
 		D3243EA028ADDE6000C7861F /* InterestingPlaceVisitingLogData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterestingPlaceVisitingLogData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3243EA128ADDE6000C7861F /* LocationSettingsData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationSettingsData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D3243EA228ADDE6000C7861F /* LocationSettingsData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationSettingsData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D329F91228ADF02D00ADCBCD /* InquiryFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryFormData.swift; sourceTree = "<group>"; };
+		D329F91428ADF57300ADCBCD /* InquiryFormPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryFormPage.swift; sourceTree = "<group>"; };
+		D329F91628ADF70300ADCBCD /* InquiryFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryFormModel.swift; sourceTree = "<group>"; };
 		D32D588328884D2F00522CA3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D33BFEDD287025CE007C7CA9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
@@ -180,6 +187,7 @@
 				D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */,
 				D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */,
 				D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */,
+				D329F91128ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore in Frameworks */,
 				D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +274,14 @@
 				D31957122881A9D600BEF86D /* MapModelTests+Location.swift */,
 			);
 			path = MapModel;
+			sourceTree = "<group>";
+		};
+		D329F90E28ADEF4300ADCBCD /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				D329F91228ADF02D00ADCBCD /* InquiryFormData.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 		D33BFEDC287025B8007C7CA9 /* Networking */ = {
@@ -397,11 +413,12 @@
 		D3BFA95D28337B0700606CD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */,
 				D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */,
+				D329F91428ADF57300ADCBCD /* InquiryFormPage.swift */,
 				D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */,
 				D3BFA95E28337BBB00606CD4 /* MapView.swift */,
 				D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */,
+				D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */,
 				D3BFA9842833B95600606CD4 /* PlaceLogPage.swift */,
 				D3BFA9352833796D00606CD4 /* RootView.swift */,
 				D3BFA9912833CD2300606CD4 /* SearchPlacePage.swift */,
@@ -420,6 +437,7 @@
 				D306F945286F2022006293E9 /* SettingsModel.swift */,
 				D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */,
 				D32D588328884D2F00522CA3 /* Language.swift */,
+				D329F91628ADF70300ADCBCD /* InquiryFormModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -436,6 +454,7 @@
 		D3BFA96E2833965900606CD4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D329F90E28ADEF4300ADCBCD /* Firestore */,
 				D306F925286EFC03006293E9 /* Generated */,
 				D3BFA96F2833965F00606CD4 /* Place.swift */,
 				D3C462802871A84B0005C1B4 /* SearchConfiguration.swift */,
@@ -518,6 +537,7 @@
 				D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */,
 				D33BFEE528702B5B007C7CA9 /* CombineMoya */,
 				D33BFEE728702B5B007C7CA9 /* Moya */,
+				D329F91028ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore */,
 			);
 			productName = Pog;
 			productReference = D3BFA9302833796D00606CD4 /* D_Pog.app */;
@@ -601,6 +621,7 @@
 				D3BFA9972833CEBF00606CD4 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 				D3E0AAC628408B8500597C1A /* XCRemoteSwiftPackageReference "swiftui-mapview" */,
 				D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D329F90F28ADEFC100ADCBCD /* XCRemoteSwiftPackageReference "EasyFirebaseSwift" */,
 			);
 			productRefGroup = D3BFA9312833796D00606CD4 /* Products */;
 			projectDirPath = "";
@@ -704,7 +725,7 @@
 		};
 		D34157022895ADDE000B99C1 /* License Generation */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -760,9 +781,12 @@
 				D3243EA628ADDE6000C7861F /* InterestingPlaceData+CoreDataProperties.swift in Sources */,
 				D3BFA9362833796D00606CD4 /* RootView.swift in Sources */,
 				D3243EA428ADDE6000C7861F /* PlaceLogData+CoreDataProperties.swift in Sources */,
+				D329F91328ADF02D00ADCBCD /* InquiryFormData.swift in Sources */,
 				D3CA087D28688C0C006147BB /* SettingsPage.swift in Sources */,
 				D306F946286F2022006293E9 /* SettingsModel.swift in Sources */,
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
+				D329F91728ADF70300ADCBCD /* InquiryFormModel.swift in Sources */,
+				D329F91528ADF57300ADCBCD /* InquiryFormPage.swift in Sources */,
 				D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */,
 				D3243EAA28ADDE6000C7861F /* LocationSettingsData+CoreDataProperties.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
@@ -1158,6 +1182,14 @@
 				minimumVersion = 9.1.0;
 			};
 		};
+		D329F90F28ADEFC100ADCBCD /* XCRemoteSwiftPackageReference "EasyFirebaseSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fummicc1/EasyFirebaseSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
@@ -1204,6 +1236,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		D329F91028ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D329F90F28ADEFC100ADCBCD /* XCRemoteSwiftPackageReference "EasyFirebaseSwift" */;
+			productName = EasyFirebaseSwiftFirestore;
 		};
 		D33BFEE528702B5B007C7CA9 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

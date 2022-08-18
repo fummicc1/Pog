@@ -15,6 +15,8 @@ internal enum L10n {
     internal static let cancel = L10n.tr("Localizable", "Common.Cancel", fallback: #"Cancel"#)
     /// Close
     internal static let close = L10n.tr("Localizable", "Common.Close", fallback: #"Close"#)
+    /// Complete
+    internal static let complete = L10n.tr("Localizable", "Common.Complete", fallback: #"Complete"#)
     /// Confirm with Settings app
     internal static let confirmWithSettings = L10n.tr("Localizable", "Common.ConfirmWithSettings", fallback: #"Confirm with Settings app"#)
     /// Default
@@ -25,26 +27,48 @@ internal enum L10n {
     internal static let displayMode = L10n.tr("Localizable", "Common.DisplayMode", fallback: #"Display Mode"#)
     /// DONE
     internal static let done = L10n.tr("Localizable", "Common.DONE", fallback: #"DONE"#)
+    /// Email Adress
+    internal static let emailAddress = L10n.tr("Localizable", "Common.EmailAddress", fallback: #"Email Adress"#)
     /// Environment
     internal static let environment = L10n.tr("Localizable", "Common.Environment", fallback: #"Environment"#)
     /// Error Occured
     internal static let errorOccured = L10n.tr("Localizable", "Common.ErrorOccured", fallback: #"Error Occured"#)
+    /// Need to fill out required form
+    internal static let inadequateStatus = L10n.tr("Localizable", "Common.InadequateStatus", fallback: #"Need to fill out required form"#)
     /// Log
     internal static let log = L10n.tr("Localizable", "Common.Log", fallback: #"Log"#)
     /// Map
     internal static let map = L10n.tr("Localizable", "Common.Map", fallback: #"Map"#)
+    /// Message
+    internal static let message = L10n.tr("Localizable", "Common.Message", fallback: #"Message"#)
     /// Open Settings
     internal static let openSettings = L10n.tr("Localizable", "Common.OpenSettings", fallback: #"Open Settings"#)
+    /// Optional
+    internal static let `optional` = L10n.tr("Localizable", "Common.Optional", fallback: #"Optional"#)
+    /// Required
+    internal static let `required` = L10n.tr("Localizable", "Common.Required", fallback: #"Required"#)
     /// Save
     internal static let save = L10n.tr("Localizable", "Common.Save", fallback: #"Save"#)
     /// Select Date
     internal static let selectDate = L10n.tr("Localizable", "Common.SelectDate", fallback: #"Select Date"#)
+    /// Send
+    internal static let send = L10n.tr("Localizable", "Common.Send", fallback: #"Send"#)
     /// Unknown
     internal static let unknown = L10n.tr("Localizable", "Common.Unknown", fallback: #"Unknown"#)
     /// Visit
     internal static let visit = L10n.tr("Localizable", "Common.Visit", fallback: #"Visit"#)
     /// Visited At
     internal static let visitingTime = L10n.tr("Localizable", "Common.VisitingTime", fallback: #"Visited At"#)
+  }
+  internal enum InquiryFormPage {
+    /// Feature Request / Inquiry
+    internal static let title = L10n.tr("Localizable", "InquiryFormPage.Title", fallback: #"Feature Request / Inquiry"#)
+    internal enum Form {
+      /// Complete sending message. Thank you!
+      internal static let complete = L10n.tr("Localizable", "InquiryFormPage.Form.Complete", fallback: #"Complete sending message. Thank you!"#)
+      /// Please write down the message
+      internal static let message = L10n.tr("Localizable", "InquiryFormPage.Form.Message", fallback: #"Please write down the message"#)
+    }
   }
   internal enum InterestingPlaceVisitingListView {
     internal enum InterestingPlace {
@@ -158,6 +182,8 @@ internal enum L10n {
       internal static let aboutFeatures = L10n.tr("Localizable", "SettingsPage.Pog.AboutFeatures", fallback: #"About Pog（Feature）"#)
       /// Feedback
       internal static let feedback = L10n.tr("Localizable", "SettingsPage.Pog.Feedback", fallback: #"Feedback"#)
+      /// Feature Request / Inquiry
+      internal static let inquiry = L10n.tr("Localizable", "SettingsPage.Pog.Inquiry", fallback: #"Feature Request / Inquiry"#)
       /// Review Pog
       internal static let review = L10n.tr("Localizable", "SettingsPage.Pog.Review", fallback: #"Review Pog"#)
     }

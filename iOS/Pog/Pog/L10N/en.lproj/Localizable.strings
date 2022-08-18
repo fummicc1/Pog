@@ -64,11 +64,17 @@
 "SettingsPage.Pog.AboutFeatures" = "About Pog（Feature）";
 "SettingsPage.Pog.Feedback" = "Feedback";
 "SettingsPage.Pog.Review" = "Review Pog";
+"SettingsPage.Pog.Inquiry" = "Feature Request / Inquiry";
 "SettingsPage.Alert.DoesDeleteAllLogsTotally" = "Do you want to clear the log completely?";
 "SettingsPage.Alert.Delete" = "Delete";
 "SettingsPage.Alert.DoesDeleteAllNotificationTotally" = "Do you want to completely clear the notification?";
 
 
+// MARK: InquiryFormPage
+"InquiryFormPage.Title" = "Feature Request / Inquiry";
+"InquiryFormPage.Form.Message" = "Please write down the message";
+"InquiryFormPage.Form.Message" = "Please write down the message";
+"InquiryFormPage.Form.Complete" = "Complete sending message. Thank you!";
 
 
 // MARK: WalkthroughPage
@@ -109,3 +115,10 @@
 "Common.Close" = "Close";
 "Common.ConfirmWithSettings" = "Confirm with Settings app";
 "Common.DisplayMode" = "Display Mode";
+"Common.EmailAddress" = "Email Adress";
+"Common.Optional" = "Optional";
+"Common.Required" = "Required";
+"Common.Message" = "Message";
+"Common.InadequateStatus" = "Need to fill out required form";
+"Common.Send" = "Send";
+"Common.Complete" = "Complete";

@@ -12,6 +12,8 @@ name: CwlCatchException, nameSpecified: CwlCatchException, owner: mattgallagher,
 
 name: CwlPreconditionTesting, nameSpecified: CwlPreconditionTesting, owner: mattgallagher, version: 2.1.0, source: https://github.com/mattgallagher/CwlPreconditionTesting
 
+name: EasyFirebaseSwift, nameSpecified: EasyFirebaseSwift, owner: fummicc1, version: , source: https://github.com/fummicc1/EasyFirebaseSwift
+
 name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 9.1.0, source: https://github.com/firebase/firebase-ios-sdk
 
 name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 9.1.0, source: https://github.com/google/GoogleAppMeasurement
