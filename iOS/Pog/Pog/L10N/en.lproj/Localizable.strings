@@ -31,7 +31,8 @@
 "SearchPlaceModel.Notification.ConfirmWithApp" = "confirm with app";
 
 
-
+// MARK: PlaceLogPage
+"PlaceLogPage.Place.Empty" = "Empty Location Log";
 
 
 

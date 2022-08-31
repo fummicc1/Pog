@@ -102,6 +102,12 @@ internal enum L10n {
       internal static let searchPlacesToRegister = L10n.tr("Localizable", "MapView.Place.SearchPlacesToRegister", fallback: #"Find a Place to Notify"#)
     }
   }
+  internal enum PlaceLogPage {
+    internal enum Place {
+      /// Empty Location Log
+      internal static let empty = L10n.tr("Localizable", "PlaceLogPage.Place.Empty", fallback: #"Empty Location Log"#)
+    }
+  }
   internal enum SearchPlaceModel {
     internal enum Notification {
       /// confirm with app

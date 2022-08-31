@@ -40,9 +40,9 @@
 		D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEDD287025CE007C7CA9 /* APIClient.swift */; };
 		D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEE228702945007C7CA9 /* PlacesTarget.swift */; };
 		D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE528702B5B007C7CA9 /* CombineMoya */; };
-		D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE728702B5B007C7CA9 /* Moya */; };
 		D34157042895AE6D000B99C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D34157032895AE6D000B99C1 /* Settings.bundle */; };
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
+		D39BB84428BEEAA700AA83CA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D39BB84328BEEAA700AA83CA /* Moya */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
 		D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */; };
 		D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */; };
@@ -127,7 +127,6 @@
 		D329F91628ADF70300ADCBCD /* InquiryFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryFormModel.swift; sourceTree = "<group>"; };
 		D32D588328884D2F00522CA3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D33BFEDD287025CE007C7CA9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
 		D33BFEE228702945007C7CA9 /* PlacesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTarget.swift; sourceTree = "<group>"; };
 		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
@@ -184,10 +183,10 @@
 			files = (
 				D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */,
 				D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */,
-				D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */,
 				D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */,
 				D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */,
 				D329F91128ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore in Frameworks */,
+				D39BB84428BEEAA700AA83CA /* Moya in Frameworks */,
 				D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,14 +293,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		D33BFEE028702905007C7CA9 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				D33BFEE128702905007C7CA9 /* Moya */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		D33BFEE428702B5B007C7CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				D33BFEE428702B5B007C7CA9 /* Frameworks */,
-				D33BFEE028702905007C7CA9 /* Packages */,
 				D3BFA9322833796D00606CD4 /* Pog */,
 				D3BFA9432833796F00606CD4 /* PogTests */,
 				D3BFA94D2833796F00606CD4 /* PogUITests */,
@@ -536,8 +526,8 @@
 				D31F91B4285CE54600B55DCE /* FirebaseAnalytics */,
 				D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */,
 				D33BFEE528702B5B007C7CA9 /* CombineMoya */,
-				D33BFEE728702B5B007C7CA9 /* Moya */,
 				D329F91028ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore */,
+				D39BB84328BEEAA700AA83CA /* Moya */,
 			);
 			productName = Pog;
 			productReference = D3BFA9302833796D00606CD4 /* D_Pog.app */;
@@ -622,6 +612,7 @@
 				D3E0AAC628408B8500597C1A /* XCRemoteSwiftPackageReference "swiftui-mapview" */,
 				D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				D329F90F28ADEFC100ADCBCD /* XCRemoteSwiftPackageReference "EasyFirebaseSwift" */,
+				D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = D3BFA9312833796D00606CD4 /* Products */;
 			projectDirPath = "";
@@ -1190,6 +1181,14 @@
 				kind = branch;
 			};
 		};
+		D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
@@ -1246,8 +1245,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = CombineMoya;
 		};
-		D33BFEE728702B5B007C7CA9 /* Moya */ = {
+		D39BB84328BEEAA700AA83CA /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
 		D3BFA972283397ED00606CD4 /* SFSafeSymbols */ = {

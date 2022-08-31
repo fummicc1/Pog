@@ -9,9 +9,9 @@ extension Date: Identifiable {
 private let formatter = DateFormatter()
 
 extension Date {
-    public var displayable: String {
+    public func displayable(withTime: Bool) -> String {
         formatter.dateStyle = .short
-        formatter.timeStyle = .medium
+        formatter.timeStyle = withTime ? .medium : .none
         return formatter.string(from: self)
     }
 }

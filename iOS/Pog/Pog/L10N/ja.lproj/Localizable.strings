@@ -85,8 +85,8 @@
 "SearchPlaceModel.Notification.ConfirmWithApp" = "アプリを開いて確認しましょう";
 
 
-
-
+// MARK: PlaceLogPage
+"PlaceLogPage.Place.Empty" = "まだ位置の履歴がありません";
 
 
 // MARK: SettingsPage
