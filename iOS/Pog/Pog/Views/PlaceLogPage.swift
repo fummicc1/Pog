@@ -36,13 +36,15 @@ struct PlaceLogPage: View {
                     ScrollView {
                         if model.dates.isEmpty {
                             HStack {
+                                Spacer()
                                 Text(L10n.PlaceLogPage.Place.empty)
+                                    .font(.title)
+                                    .foregroundColor(Asset.secondaryTextColor.swiftUIColor)
+                                    .bold()
                                 Spacer()
                             }
                             .padding()
-                            .background(Asset.secondaryBackgroundColor.swiftUIColor)
-                            .cornerRadius(12)
-                            .contentShape(RoundedRectangle(cornerRadius: 12))
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 showSelectDatePicker = false
                             }
