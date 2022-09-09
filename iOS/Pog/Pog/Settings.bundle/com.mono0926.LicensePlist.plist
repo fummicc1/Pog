@@ -36,22 +36,6 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/CwlCatchException</string>
-			<key>Title</key>
-			<string>CwlCatchException</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/CwlPreconditionTesting</string>
-			<key>Title</key>
-			<string>CwlPreconditionTesting</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
 			<string>com.mono0926.LicensePlist/EasyFirebaseSwift</string>
 			<key>Title</key>
 			<string>EasyFirebaseSwift</string>
@@ -102,7 +86,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/gtm-session-fetcher</string>
 			<key>Title</key>
-			<string>GTMSessionFetcher</string>
+			<string>gtm-session-fetcher</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -124,14 +108,6 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/Logger</string>
-			<key>Title</key>
-			<string>Logger</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
 			<string>com.mono0926.LicensePlist/mockolo</string>
 			<key>Title</key>
 			<string>mockolo</string>
@@ -140,33 +116,17 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/Moya</string>
+			<key>Title</key>
+			<string>Moya</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/nanopb</string>
 			<key>Title</key>
 			<string>nanopb</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/Nimble</string>
-			<key>Title</key>
-			<string>Nimble</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/OHHTTPStubs</string>
-			<key>Title</key>
-			<string>OHHTTPStubs</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/PackageConfig</string>
-			<key>Title</key>
-			<string>PackageConfig</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -188,25 +148,9 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/Quick</string>
-			<key>Title</key>
-			<string>Quick</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
 			<string>com.mono0926.LicensePlist/ReactiveSwift</string>
 			<key>Title</key>
 			<string>ReactiveSwift</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/Rocket</string>
-			<key>Title</key>
-			<string>Rocket</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -236,25 +180,9 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/SwiftShell</string>
-			<key>Title</key>
-			<string>SwiftShell</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
 			<string>com.mono0926.LicensePlist/swiftui-mapview</string>
 			<key>Title</key>
 			<string>SwiftUIMapView</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
-			<string>com.mono0926.LicensePlist/Yams</string>
-			<key>Title</key>
-			<string>Yams</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

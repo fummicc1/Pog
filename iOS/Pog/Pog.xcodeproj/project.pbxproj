@@ -40,9 +40,10 @@
 		D33BFEDE287025CE007C7CA9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEDD287025CE007C7CA9 /* APIClient.swift */; };
 		D33BFEE328702945007C7CA9 /* PlacesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BFEE228702945007C7CA9 /* PlacesTarget.swift */; };
 		D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE528702B5B007C7CA9 /* CombineMoya */; };
-		D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D33BFEE728702B5B007C7CA9 /* Moya */; };
 		D34157042895AE6D000B99C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D34157032895AE6D000B99C1 /* Settings.bundle */; };
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
+		D394E35A28CB6837001833E1 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394E35928CB6836001833E1 /* Date+Ex.swift */; };
+		D39BB84428BEEAA700AA83CA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D39BB84328BEEAA700AA83CA /* Moya */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
 		D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */; };
 		D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */; };
@@ -72,7 +73,6 @@
 		D3E0AACA28408CC300597C1A /* PlaceLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */; };
 		D3E0AACC2840957800597C1A /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */; };
 		D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D+Ex.swift */; };
-		D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0AACF2840B3B200597C1A /* Date+Ex.swift */; };
 		D3E0B1D0287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */; };
 		D3E0B1D3287F06230094AB49 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */; };
 		D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111C2871EBB300FDC330 /* Secret.swift */; };
@@ -127,10 +127,10 @@
 		D329F91628ADF70300ADCBCD /* InquiryFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryFormModel.swift; sourceTree = "<group>"; };
 		D32D588328884D2F00522CA3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D33BFEDD287025CE007C7CA9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		D33BFEE128702905007C7CA9 /* Moya */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Moya; path = ../Packages/Moya; sourceTree = "<group>"; };
 		D33BFEE228702945007C7CA9 /* PlacesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTarget.swift; sourceTree = "<group>"; };
 		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
+		D394E35928CB6836001833E1 /* Date+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 		D3E0AAC928408CC300597C1A /* PlaceLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLogModel.swift; sourceTree = "<group>"; };
 		D3E0AACB2840957800597C1A /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Ex.swift"; sourceTree = "<group>"; };
-		D3E0AACF2840B3B200597C1A /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInterestingPlaceVisitingLogView.swift; sourceTree = "<group>"; };
 		D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		D3E0B1D4287F09F60094AB49 /* Pog 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 8.xcdatamodel"; sourceTree = "<group>"; };
@@ -184,10 +183,10 @@
 			files = (
 				D3BFA9992833CEBF00606CD4 /* PartialSheet in Frameworks */,
 				D31F91B7285CE54600B55DCE /* FirebaseCrashlytics in Frameworks */,
-				D33BFEE828702B5B007C7CA9 /* Moya in Frameworks */,
 				D3BFA973283397ED00606CD4 /* SFSafeSymbols in Frameworks */,
 				D33BFEE628702B5B007C7CA9 /* CombineMoya in Frameworks */,
 				D329F91128ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore in Frameworks */,
+				D39BB84428BEEAA700AA83CA /* Moya in Frameworks */,
 				D31F91B5285CE54600B55DCE /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,14 +293,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		D33BFEE028702905007C7CA9 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				D33BFEE128702905007C7CA9 /* Moya */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		D33BFEE428702B5B007C7CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				D33BFEE428702B5B007C7CA9 /* Frameworks */,
-				D33BFEE028702905007C7CA9 /* Packages */,
 				D3BFA9322833796D00606CD4 /* Pog */,
 				D3BFA9432833796F00606CD4 /* PogTests */,
 				D3BFA94D2833796F00606CD4 /* PogUITests */,
@@ -467,7 +457,6 @@
 			children = (
 				D3BFA9892833C48F00606CD4 /* Color+Ex.swift */,
 				D3E0AACD2840AB7D00597C1A /* CLLocationCoordinate2D+Ex.swift */,
-				D3E0AACF2840B3B200597C1A /* Date+Ex.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -491,6 +480,7 @@
 		D3E0B1D1287F06160094AB49 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D394E35928CB6836001833E1 /* Date+Ex.swift */,
 				D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */,
 			);
 			path = Extensions;
@@ -536,8 +526,8 @@
 				D31F91B4285CE54600B55DCE /* FirebaseAnalytics */,
 				D31F91B6285CE54600B55DCE /* FirebaseCrashlytics */,
 				D33BFEE528702B5B007C7CA9 /* CombineMoya */,
-				D33BFEE728702B5B007C7CA9 /* Moya */,
 				D329F91028ADEFC100ADCBCD /* EasyFirebaseSwiftFirestore */,
+				D39BB84328BEEAA700AA83CA /* Moya */,
 			);
 			productName = Pog;
 			productReference = D3BFA9302833796D00606CD4 /* D_Pog.app */;
@@ -622,6 +612,7 @@
 				D3E0AAC628408B8500597C1A /* XCRemoteSwiftPackageReference "swiftui-mapview" */,
 				D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				D329F90F28ADEFC100ADCBCD /* XCRemoteSwiftPackageReference "EasyFirebaseSwift" */,
+				D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = D3BFA9312833796D00606CD4 /* Products */;
 			projectDirPath = "";
@@ -787,7 +778,6 @@
 				D3BFA96528337C5700606CD4 /* LocationManager.swift in Sources */,
 				D329F91728ADF70300ADCBCD /* InquiryFormModel.swift in Sources */,
 				D329F91528ADF57300ADCBCD /* InquiryFormPage.swift in Sources */,
-				D3E0AAD02840B3B200597C1A /* Date+Ex.swift in Sources */,
 				D3243EAA28ADDE6000C7861F /* LocationSettingsData+CoreDataProperties.swift in Sources */,
 				D3BFA95F28337BBB00606CD4 /* MapView.swift in Sources */,
 				D3243EA728ADDE6000C7861F /* InterestingPlaceVisitingLogData+CoreDataClass.swift in Sources */,
@@ -802,6 +792,7 @@
 				D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */,
 				D3243EA328ADDE6000C7861F /* PlaceLogData+CoreDataClass.swift in Sources */,
 				D31F91BE285CE8CE00B55DCE /* Const.swift in Sources */,
+				D394E35A28CB6837001833E1 /* Date+Ex.swift in Sources */,
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
@@ -1190,6 +1181,14 @@
 				kind = branch;
 			};
 		};
+		D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D3BFA971283397ED00606CD4 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
@@ -1246,8 +1245,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = CombineMoya;
 		};
-		D33BFEE728702B5B007C7CA9 /* Moya */ = {
+		D39BB84328BEEAA700AA83CA /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
 		};
 		D3BFA972283397ED00606CD4 /* SFSafeSymbols */ = {

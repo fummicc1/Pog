@@ -29,10 +29,8 @@ class PlaceLogModel: ObservableObject {
     @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
 
     @Published var featuredLogs: [PlaceLogData] = []
-    @Published var logs: [PlaceLogData] = []
     @Published var dates: [Date] = []
-    private var polylines: [Date: MKPolyline] = [:]
-    @Published var selectedDate: Date?
+    @Published var selectedDate: Date = Date()
     @Published var selectedPolyline: MKPolyline?
 
     private let que = DispatchQueue(label: "dev.fummicc1.Pog.PlacelogDataModel.Que")
@@ -68,22 +66,31 @@ class PlaceLogModel: ObservableObject {
 
     func onApepar() {
         let calendar = Calendar.current
-        store.logs
-            .assign(to: &$logs)
         // TODO: diffable update
-        store.logs.combineLatest($selectedDate)
+        let logData = store.logs.combineLatest($selectedDate)
             .receive(on: que)
-            .map({ (places, selectedDate) -> [PlaceLogData] in
-                guard let selectedDate = selectedDate else {
-                    return []
-                }
-                return places.filter({ place in
+            .map({ (places, selectedDate) -> ([Date], [PlaceLogData]) in
+                var dates: Set<Date> = []
+                var logs: [PlaceLogData] = []
+                for place in places {
                     guard let date = place.date else {
-                        return false
+                        continue
                     }
-                    return calendar.isDate(selectedDate, inSameDayAs: date)
-                })
+                    dates.insert(date.dropTime())
+                    if calendar.isDate(selectedDate, inSameDayAs: date) {
+                        logs.append(place)
+                    }
+                }
+                let sortedDates = Array(dates)
+                    .sorted(using: KeyPathComparator(\.self, order: .reverse))
+                return (sortedDates, logs)
             })
+            .handleEvents(receiveOutput: { (dates, _) in
+                DispatchQueue.main.async {
+                    self.dates = dates
+                }
+            })
+            .map(\.1)
             .map { l in
                 // sort by `Date`
                 let logs = l.sorted { head, tail in
@@ -93,6 +100,9 @@ class PlaceLogModel: ObservableObject {
                     return h.timeIntervalSince1970 < t.timeIntervalSince1970
                 }
                 var fars: [PlaceLogData] = []
+                let coordinates: [CLLocationCoordinate2D] = l.map { log in
+                    CLLocationCoordinate2D(latitude: log.lat, longitude: log.lng)
+                }
                 // find log which is a large distance from previous log.
                 var k = 0
                 for (i, log) in logs.enumerated() {
@@ -122,50 +132,21 @@ class PlaceLogModel: ObservableObject {
                         k = i
                     }
                 }
-                return fars
+                let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+                return (fars, polyline)
             }
+            .share()
             .receive(on: DispatchQueue.main)
+
+        logData.map(\.0)
             .assign(to: &$featuredLogs)
 
-        store.logs
-            .receive(on: que)
-            .map({ logs -> [Date: MKPolyline] in
-                var ret: [Date: [CLLocationCoordinate2D]] = [:]
-                for log in logs {
-                    let coordinate = CLLocationCoordinate2D(
-                        latitude: log.lat,
-                        longitude: log.lng
-                    )
-                    guard let date = log.date else {
-                        continue
-                    }
-                    if let key = ret.keys.first(where: { calendar.isDate($0, inSameDayAs: date) }) {
-                        ret[key]?.append(coordinate)
-                    } else {
-                        ret[date] = [coordinate]
-                    }
-                }
-                DispatchQueue.main.async {
-                    self.dates = ret.keys.sorted().reversed()
-                }
-                return ret
-                    .mapValues { coordinates in
-                        MKPolyline(coordinates: coordinates, count: coordinates.count)
-                    }
-            })
-            .receive(on: DispatchQueue.main)
-            .sink { values in
-                self.polylines = values
-            }
-            .store(in: &cancellables)
-
-        $featuredLogs.sink { logs in
-            print(logs)
-        }.store(in: &cancellables)
+        logData.map(\.1)
+            .map { $0 as MKPolyline? }
+            .assign(to: &$selectedPolyline)
     }
 
     func onSelect(date: Date) {
         selectedDate = date
-        selectedPolyline = polylines[date]
     }
 }

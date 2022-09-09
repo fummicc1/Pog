@@ -30,7 +30,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         for featuredLog in pickedUpLogs {
             let annotaion = PickedUpLogAnnotation(pickedUpLog: featuredLog)
             if let date = featuredLog.date {
-                annotaion.title = date.displayable
+                annotaion.title = date.displayable(withTime: true)
             }
             annotations.append(annotaion)
         }
@@ -50,7 +50,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         for pickedUpLog in pickedUpLogs {
             let annotaion = PickedUpLogAnnotation(pickedUpLog: pickedUpLog)
             if let date = pickedUpLog.date {
-                annotaion.title = date.displayable
+                annotaion.title = date.displayable(withTime: true)
             }
             annotations.append(annotaion)
         }

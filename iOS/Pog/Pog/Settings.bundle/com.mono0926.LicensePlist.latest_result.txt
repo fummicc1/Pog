@@ -4,13 +4,9 @@ name: mockolo, nameSpecified: , owner: uber, version: , source: https://github.c
 
 name: abseil-cpp-SwiftPM, nameSpecified: abseil, owner: firebase, version: 0.20220203.1, source: https://github.com/firebase/abseil-cpp-SwiftPM
 
-name: Alamofire, nameSpecified: Alamofire, owner: Alamofire, version: 5.6.1, source: https://github.com/Alamofire/Alamofire
+name: Alamofire, nameSpecified: Alamofire, owner: Alamofire, version: 5.6.2, source: https://github.com/Alamofire/Alamofire
 
 name: boringssl-SwiftPM, nameSpecified: BoringSSL-GRPC, owner: firebase, version: 0.9.0, source: https://github.com/firebase/boringssl-SwiftPM
-
-name: CwlCatchException, nameSpecified: CwlCatchException, owner: mattgallagher, version: 2.1.1, source: https://github.com/mattgallagher/CwlCatchException
-
-name: CwlPreconditionTesting, nameSpecified: CwlPreconditionTesting, owner: mattgallagher, version: 2.1.0, source: https://github.com/mattgallagher/CwlPreconditionTesting
 
 name: EasyFirebaseSwift, nameSpecified: EasyFirebaseSwift, owner: fummicc1, version: , source: https://github.com/fummicc1/EasyFirebaseSwift
 
@@ -24,29 +20,19 @@ name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7
 
 name: grpc-ios, nameSpecified: gRPC, owner: grpc, version: 1.44.2-grpc, source: https://github.com/grpc/grpc-ios
 
-name: gtm-session-fetcher, nameSpecified: GTMSessionFetcher, owner: google, version: 2.0.0, source: https://github.com/google/gtm-session-fetcher
+name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 2.0.0, source: https://github.com/google/gtm-session-fetcher
 
 name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
 
-name: Logger, nameSpecified: Logger, owner: shibapm, version: 0.2.3, source: https://github.com/shibapm/Logger
+name: Moya, nameSpecified: Moya, owner: Moya, version: , source: https://github.com/Moya/Moya
 
 name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source: https://github.com/firebase/nanopb
-
-name: Nimble, nameSpecified: Nimble, owner: Quick, version: 9.2.1, source: https://github.com/Quick/Nimble
-
-name: OHHTTPStubs, nameSpecified: OHHTTPStubs, owner: AliSoftware, version: 9.1.0, source: https://github.com/AliSoftware/OHHTTPStubs
-
-name: PackageConfig, nameSpecified: PackageConfig, owner: shibapm, version: 1.1.3, source: https://github.com/shibapm/PackageConfig
 
 name: PartialSheet, nameSpecified: PartialSheet, owner: AndreaMiotto, version: 3.1.0, source: https://github.com/AndreaMiotto/PartialSheet
 
 name: promises, nameSpecified: Promises, owner: google, version: 2.1.0, source: https://github.com/google/promises
 
-name: Quick, nameSpecified: Quick, owner: Quick, version: 4.0.0, source: https://github.com/Quick/Quick
-
 name: ReactiveSwift, nameSpecified: ReactiveSwift, owner: ReactiveCocoa, version: 6.7.0, source: https://github.com/ReactiveCocoa/ReactiveSwift
-
-name: Rocket, nameSpecified: Rocket, owner: shibapm, version: 1.2.1, source: https://github.com/shibapm/Rocket
 
 name: RxSwift, nameSpecified: RxSwift, owner: ReactiveX, version: 6.5.0, source: https://github.com/ReactiveX/RxSwift
 
@@ -54,12 +40,8 @@ name: SFSafeSymbols, nameSpecified: SFSafeSymbols, owner: SFSafeSymbols, version
 
 name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.19.0, source: https://github.com/apple/swift-protobuf
 
-name: SwiftShell, nameSpecified: SwiftShell, owner: kareman, version: 5.1.0-beta.1, source: https://github.com/kareman/SwiftShell
-
 name: swiftui-mapview, nameSpecified: SwiftUIMapView, owner: sgade, version: 1.2.1, source: https://github.com/sgade/swiftui-mapview
-
-name: Yams, nameSpecified: Yams, owner: jpsim, version: 4.0.6, source: https://github.com/jpsim/Yams
 
 add-version-numbers: false
 
-LicensePlist Version: 3.22.4
+LicensePlist Version: 3.22.5

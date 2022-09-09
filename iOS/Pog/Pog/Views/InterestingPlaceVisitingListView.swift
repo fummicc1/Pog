@@ -76,7 +76,7 @@ struct InterestingPlaceVisitingListView: View {
                                                         .bold()
                                                         .foregroundColor(.secondary)
                                                     Spacer()
-                                                    Text(log.visitedAt?.displayable ?? L10n.Common.unknown)
+                                                    Text(log.visitedAt?.displayable(withTime: true) ?? L10n.Common.unknown)
                                                 }
                                                 HStack {
                                                     Text(L10n.Common.departureTime)
@@ -84,7 +84,7 @@ struct InterestingPlaceVisitingListView: View {
                                                         .bold()
                                                         .foregroundColor(.secondary)
                                                     Spacer()
-                                                    Text(log.exitedAt?.displayable ?? L10n.Common.unknown)
+                                                    Text(log.exitedAt?.displayable(withTime: true) ?? L10n.Common.unknown)
                                                 }
                                                 Divider()
                                             }

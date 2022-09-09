@@ -13,47 +13,69 @@ struct PlaceLogPage: View {
 
     @StateObject var model: PlaceLogModel
 
-    @State private var isMapMode: Bool = true
+    @State private var showSelectDatePicker: Bool = false
 
     var body: some View {
-        VStack {
-            Picker(L10n.Common.displayMode, selection: $isMapMode) {
-                if let selectedDate = model.selectedDate {
-                    Text(selectedDate, style: .date)
-                        .tag(true)
-                } else {
-                    Text(L10n.Common.map)
-                        .tag(true)
+        NavigationView {
+            GeometryReader { proxy in
+                VStack {
+                    MapViewRepresentable(
+                        region: $model.region,
+                        polyline: Binding(projectedValue: $model.selectedPolyline),
+                        pickedUpLogs: $model.featuredLogs
+                    )
                 }
-                Text(L10n.Common.selectDate)
-                    .tag(false)
-            }.pickerStyle(.segmented)
-                .padding()
-            if isMapMode {
-                MapViewRepresentable(
-                    region: $model.region,
-                    polyline: Binding(projectedValue: $model.selectedPolyline),
-                    pickedUpLogs: $model.featuredLogs
-                )
-            } else {
-                GeometryReader { proxy in
-                    List {
-                        ForEach(model.dates) { date in
+                .toolbar {
+                    Button {
+                        showSelectDatePicker = true
+                    } label: {
+                        Text(L10n.Common.selectDate)
+                    }
+                }
+                .partialSheet(isPresented: $showSelectDatePicker) {
+                    ScrollView {
+                        if model.dates.isEmpty {
                             HStack {
-                                if date == model.selectedDate {
-                                    Image(systemSymbol: .checkmark)
-                                }
-                                Text(date, style: .date)
+                                Spacer()
+                                Text(L10n.PlaceLogPage.Place.empty)
+                                    .font(.title)
+                                    .foregroundColor(Asset.secondaryTextColor.swiftUIColor)
+                                    .bold()
                                 Spacer()
                             }
+                            .padding()
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                model.onSelect(date: date)
+                                showSelectDatePicker = false
+                            }
+                        } else {
+                            LazyVGrid(columns: [GridItem()], spacing: 8) {
+                                ForEach(model.dates) { date in
+                                    HStack {
+                                        if date == model.selectedDate {
+                                            Image(systemSymbol: .checkmark)
+                                        }
+                                        Text(date, style: .date)
+                                        Spacer()
+                                    }
+                                    .padding()
+                                    .background(Asset.secondaryBackgroundColor.swiftUIColor)
+                                    .cornerRadius(12)
+                                    .contentShape(RoundedRectangle(cornerRadius: 12))
+                                    .onTapGesture {
+                                        model.onSelect(date: date)
+                                        showSelectDatePicker = false
+                                    }
+                                }
                             }
                         }
                     }
+                    .padding()
+                    .frame(maxHeight: proxy.size.height * 0.4)
                 }
             }
+            .navigationTitle(model.selectedDate.displayable(withTime: false))
+            .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
         }
         .onAppear {
             model.onApepar()
