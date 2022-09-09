@@ -74,7 +74,7 @@ struct PlaceLogPage: View {
                     .frame(maxHeight: proxy.size.height * 0.4)
                 }
             }
-            .navigationTitle(model.selectedDate?.displayable(withTime: false) ?? L10n.Common.log)
+            .navigationTitle(model.selectedDate.displayable(withTime: false))
             .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
         }
         .onAppear {

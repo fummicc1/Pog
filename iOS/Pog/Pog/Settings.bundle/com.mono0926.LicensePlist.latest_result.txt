@@ -44,4 +44,4 @@ name: swiftui-mapview, nameSpecified: SwiftUIMapView, owner: sgade, version: 1.2
 
 add-version-numbers: false
 
-LicensePlist Version: 3.22.4
+LicensePlist Version: 3.22.5
