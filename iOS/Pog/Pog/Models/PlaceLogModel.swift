@@ -81,7 +81,9 @@ class PlaceLogModel: ObservableObject {
                         logs.append(place)
                     }
                 }
-                return (Array(dates).sorted(), logs)
+                let sortedDates = Array(dates)
+                    .sorted(using: KeyPathComparator(\.self, order: .reverse))
+                return (sortedDates, logs)
             })
             .handleEvents(receiveOutput: { (dates, _) in
                 DispatchQueue.main.async {
@@ -134,6 +136,7 @@ class PlaceLogModel: ObservableObject {
                 return (fars, polyline)
             }
             .share()
+            .receive(on: DispatchQueue.main)
 
         logData.map(\.0)
             .assign(to: &$featuredLogs)
