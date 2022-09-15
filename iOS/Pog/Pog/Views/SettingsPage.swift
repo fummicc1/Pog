@@ -55,9 +55,15 @@ struct SettingsPage: View {
                                 }.toggleStyle(.switch)
                                     .frame(width: 48)
                             }
-                            Text(L10n.SettingsPage.Location.messageAboutUpdateOnBackground)
-                                .foregroundColor(.secondary)
+                            if case SettingsModel.Selection.locationUpdateOnBackground = model.selection {
+                                Text(L10n.SettingsPage.Location.messageAboutUpdateOnBackground)
+                                    .foregroundColor(.secondary)
+                            }
                         }
+                        .onTapGesture {
+                            model.update(selection: .locationUpdateOnBackground)
+                        }
+
                         VStack(alignment: .leading) {
                             HStack {
                                 Text(L10n.SettingsPage.Location.accuracyUnitMeter)
@@ -94,12 +100,17 @@ struct SettingsPage: View {
                                     } label: {
                                         Image(systemSymbol: .multiplyCircleFill)
                                     }
-
                                 }
                             }.buttonStyle(.plain)
-                            Text(L10n.SettingsPage.Location.lessTheNumberIsMoreAccurateRecordedLocationIs)
-                                .foregroundColor(.secondary)
+                            if case SettingsModel.Selection.accuracy = model.selection {
+                                Text(L10n.SettingsPage.Location.lessTheNumberIsMoreAccurateRecordedLocationIs)
+                                    .foregroundColor(.secondary)
+                            }
                         }
+                        .onTapGesture {
+                            model.update(selection: .accuracy)
+                        }
+
                         HStack {
                             Group {
                                 Text(L10n.SettingsPage.Location.authorizeStatus)
