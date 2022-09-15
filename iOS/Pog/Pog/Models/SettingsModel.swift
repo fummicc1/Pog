@@ -12,11 +12,28 @@ import CoreData
 import CoreLocation
 import UserNotifications
 
+
 class SettingsModel: ObservableObject {
-    @MainActor @Published private(set) var desiredAccuracy: Double?
-    @MainActor @Published private(set) var allowsBackgroundLocationUpdates: Bool = true
-    @MainActor @Published private(set) var isAquiringAccuracyLocation: String = L10n.SettingsModel.Location.fuzzyLocation
-    @MainActor @Published private(set) var locationAuthorizationStatus: String = L10n.SettingsModel.Authorization.confirmNextTime
+    @MainActor
+    @Published
+    private(set) var desiredAccuracy: Double?
+
+    @MainActor
+    @Published
+    private(set) var allowsBackgroundLocationUpdates: Bool = true
+
+    @MainActor
+    @Published
+    private(set) var isAquiringAccuracyLocation: String = L10n.SettingsModel.Location.fuzzyLocation
+
+    @MainActor
+    @Published
+    private(set) var locationAuthorizationStatus: String = L10n.SettingsModel.Authorization.confirmNextTime
+
+    @MainActor
+    @Published
+    private(set) var selection: Selection = .none
+
 
     private let store: Store
     private let locationManager: LocationManager
@@ -118,6 +135,15 @@ class SettingsModel: ObservableObject {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
+    @MainActor
+    func update(selection: Selection) {
+        if selection == self.selection {
+            self.selection = .none
+        } else {
+            self.selection = selection
+        }
+    }
+
     private func updateSettings<V>(keypath: ReferenceWritableKeyPath<LocationSettingsData, V>, value: V) {
         let request = LocationSettingsData.fetchRequest()
         if let latestLocationSettingsData = try? store.context.fetch(request), !latestLocationSettingsData.isEmpty {
@@ -131,5 +157,13 @@ class SettingsModel: ObservableObject {
         } catch {
             print(error)
         }
+    }
+}
+
+extension SettingsModel {
+    enum Selection {
+        case none
+        case locationUpdateOnBackground
+        case accuracy
     }
 }

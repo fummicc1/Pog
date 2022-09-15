@@ -39,7 +39,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         Analytics.setAnalyticsCollectionEnabled(true)
         #endif
         // MARK: Observe location updates
-        locationManager.coordinate
+        locationManager.coordinate.combineLatest(store.locationSettings)
+            .filter({ $0.1?.allowsBackgroundLocationUpdates == true })
+            .map(\.0)
             .sink { coordinate in
                 let log = PlaceLogData(context: self.store.context)
                 log.lat = coordinate.latitude
