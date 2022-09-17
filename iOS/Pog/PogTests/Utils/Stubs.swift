@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 @testable import D_Pog
 
 enum Stubs {
@@ -20,7 +21,7 @@ enum Stubs {
 
     static func createDate(from index: Int) -> Date {
         // 2022-07-15 21:47:26
-        let ref = Date(timeIntervalSince1970: 1657889246)
+        let ref = Date(timeIntervalSince1970: 1_657_889_246)
         return ref.addingTimeInterval(TimeInterval(-1 * 60 * 60 * index))
     }
 
@@ -58,7 +59,11 @@ enum Stubs {
 
     static var places: [Place] {
         var places = (0..<10).map { index in
-            Place(lat: createLat(from: index), lng: createLng(from: index), name: "\(index)")
+            Place(
+                lat: createLat(from: index),
+                lng: createLng(from: index),
+                name: "\(index)"
+            )
         }
         return places
     }

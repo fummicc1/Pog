@@ -6,14 +6,17 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension InterestingPlaceVisitingLogData {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<InterestingPlaceVisitingLogData> {
-        return NSFetchRequest<InterestingPlaceVisitingLogData>(entityName: "InterestingPlaceVisitingLogData")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<
+        InterestingPlaceVisitingLogData
+    > {
+        return NSFetchRequest<InterestingPlaceVisitingLogData>(
+            entityName: "InterestingPlaceVisitingLogData"
+        )
     }
 
     @NSManaged public var exitedAt: Date?
@@ -22,6 +25,6 @@ extension InterestingPlaceVisitingLogData {
 
 }
 
-extension InterestingPlaceVisitingLogData : Identifiable {
+extension InterestingPlaceVisitingLogData: Identifiable {
 
 }

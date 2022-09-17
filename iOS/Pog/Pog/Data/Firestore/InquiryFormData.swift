@@ -5,11 +5,10 @@
 //  Created by Fumiya Tanaka on 2022/08/18.
 //
 
-import Foundation
+import EasyFirebaseSwiftFirestore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-import EasyFirebaseSwiftFirestore
-
+import Foundation
 
 class InquiryFormData: FirestoreModel {
 

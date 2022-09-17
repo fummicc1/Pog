@@ -13,7 +13,6 @@ public enum PlacesTarget {
     case search(text: String, location: CLLocationCoordinate2D?, lang: Language?)
 }
 
-
 extension PlacesTarget: TargetType {
     public var path: String {
         switch self {
@@ -34,10 +33,11 @@ extension PlacesTarget: TargetType {
         case .search(let text, let location, let language):
             var parameters: [String: Any] = [
                 "query": text,
-                "key": Const.googlePlacesApiKey
+                "key": Const.googlePlacesApiKey,
             ]
             if let location = location {
-                parameters["location"] = "\(location.latitude),\(location.longitude)"
+                parameters["location"] =
+                    "\(location.latitude),\(location.longitude)"
             }
             if let language = language {
                 parameters["language"] = language.rawValue
@@ -49,7 +49,7 @@ extension PlacesTarget: TargetType {
         }
     }
 
-    public var headers: [String : String]? {
+    public var headers: [String: String]? {
         nil
     }
 

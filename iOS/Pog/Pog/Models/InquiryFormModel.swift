@@ -5,10 +5,9 @@
 //  Created by Fumiya Tanaka on 2022/08/18.
 //
 
-import Foundation
 import Combine
 import EasyFirebaseSwiftFirestore
-
+import Foundation
 
 class InquiryFormModel: ObservableObject {
 
@@ -32,7 +31,8 @@ class InquiryFormModel: ObservableObject {
         let data: InquiryFormData
         if email.isEmpty {
             data = InquiryFormData(message: message)
-        } else {
+        }
+        else {
             data = InquiryFormData(email: email, message: message)
         }
         data.write(for: .create)

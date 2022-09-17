@@ -6,9 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension InterestingPlaceData {
 
@@ -24,6 +23,6 @@ extension InterestingPlaceData {
 
 }
 
-extension InterestingPlaceData : Identifiable {
+extension InterestingPlaceData: Identifiable {
 
 }

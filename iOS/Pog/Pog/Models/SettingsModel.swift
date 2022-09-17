@@ -5,13 +5,12 @@
 //  Created by Fumiya Tanaka on 2022/07/01.
 //
 
-import Foundation
 import Combine
-import SwiftUI
 import CoreData
 import CoreLocation
+import Foundation
+import SwiftUI
 import UserNotifications
-
 
 class SettingsModel: ObservableObject {
     @MainActor
@@ -24,16 +23,17 @@ class SettingsModel: ObservableObject {
 
     @MainActor
     @Published
-    private(set) var isAquiringAccuracyLocation: String = L10n.SettingsModel.Location.fuzzyLocation
+    private(set) var isAquiringAccuracyLocation: String = L10n.SettingsModel.Location
+        .fuzzyLocation
 
     @MainActor
     @Published
-    private(set) var locationAuthorizationStatus: String = L10n.SettingsModel.Authorization.confirmNextTime
+    private(set) var locationAuthorizationStatus: String = L10n.SettingsModel.Authorization
+        .confirmNextTime
 
     @MainActor
     @Published
     private(set) var selection: Selection = .none
-
 
     private let store: Store
     private let locationManager: LocationManager
@@ -45,7 +45,8 @@ class SettingsModel: ObservableObject {
                 return
             }
             self.desiredAccuracy = settings.desiredAccuracy
-            self.allowsBackgroundLocationUpdates = settings.allowsBackgroundLocationUpdates
+            self.allowsBackgroundLocationUpdates =
+                settings.allowsBackgroundLocationUpdates
         }
     }
 
@@ -56,7 +57,8 @@ class SettingsModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { locationSettingsData in
                 DispatchQueue.main.async {
-                    self.latestLocationSettingsData = locationSettingsData
+                    self.latestLocationSettingsData =
+                        locationSettingsData
                 }
             }
             .store(in: &cancellables)
@@ -65,13 +67,15 @@ class SettingsModel: ObservableObject {
             .map { status in
                 switch status {
                 case .notDetermined:
-                    return L10n.SettingsModel.Authorization.confirmNextTime
+                    return L10n.SettingsModel.Authorization
+                        .confirmNextTime
                 case .authorizedAlways:
                     return L10n.SettingsModel.Authorization.always
                 case .authorizedWhenInUse:
                     return L10n.SettingsModel.Authorization.whileInUse
                 case .denied:
-                    return L10n.SettingsModel.Authorization.notAuthorized
+                    return L10n.SettingsModel.Authorization
+                        .notAuthorized
                 default:
                     return L10n.Common.unknown
                 }
@@ -82,7 +86,8 @@ class SettingsModel: ObservableObject {
             .map { isAccurate in
                 if isAccurate {
                     return L10n.SettingsModel.Location.preciseLocation
-                } else {
+                }
+                else {
                     return L10n.SettingsModel.Location.fuzzyLocation
                 }
             }
@@ -118,18 +123,24 @@ class SettingsModel: ObservableObject {
         let batchRequest = NSBatchDeleteRequest(fetchRequest: log)
         do {
             try store.deleteWithBatch(batchRequest)
-        } catch {
+        }
+        catch {
             print(error)
         }
     }
 
     func totallyDeleteInterestingPlaces() {
-        let interests = InterestingPlaceData.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
+        let interests =
+            InterestingPlaceData.fetchRequest() as NSFetchRequest<
+                NSFetchRequestResult
+            >
         let batch = NSBatchDeleteRequest(fetchRequest: interests)
         do {
             try store.deleteWithBatch(batch)
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        } catch {
+            UNUserNotificationCenter.current()
+                .removeAllPendingNotificationRequests()
+        }
+        catch {
             print(error)
         }
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
@@ -139,22 +150,32 @@ class SettingsModel: ObservableObject {
     func update(selection: Selection) {
         if selection == self.selection {
             self.selection = .none
-        } else {
+        }
+        else {
             self.selection = selection
         }
     }
 
-    private func updateSettings<V>(keypath: ReferenceWritableKeyPath<LocationSettingsData, V>, value: V) {
+    private func updateSettings<V>(
+        keypath: ReferenceWritableKeyPath<LocationSettingsData, V>,
+        value: V
+    ) {
         let request = LocationSettingsData.fetchRequest()
-        if let latestLocationSettingsData = try? store.context.fetch(request), !latestLocationSettingsData.isEmpty {
+        if let latestLocationSettingsData = try? store.context.fetch(request),
+            !latestLocationSettingsData.isEmpty
+        {
             latestLocationSettingsData.last?[keyPath: keypath] = value
-        } else {
-            let latestLocationSettingsData = LocationSettingsData(context: store.context)
+        }
+        else {
+            let latestLocationSettingsData = LocationSettingsData(
+                context: store.context
+            )
             latestLocationSettingsData[keyPath: keypath] = value
         }
         do {
             try store.context.save()
-        } catch {
+        }
+        catch {
             print(error)
         }
     }

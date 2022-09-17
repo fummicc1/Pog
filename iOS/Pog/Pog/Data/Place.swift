@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 public struct Place: Identifiable, Hashable {
     public let lat: CLLocationDegrees

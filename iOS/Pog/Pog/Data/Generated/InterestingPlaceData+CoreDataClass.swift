@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(InterestingPlaceData)
 public class InterestingPlaceData: NSManagedObject {

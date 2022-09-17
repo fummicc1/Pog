@@ -5,10 +5,10 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import MapKit
 import Combine
-import Foundation
 import CoreLocation
+import Foundation
+import MapKit
 import SwiftUI
 
 class MapModel: ObservableObject {
@@ -27,7 +27,8 @@ class MapModel: ObservableObject {
     private var numberOfPlacesSearchRequestPerDay: CurrentValueSubject<Int, Never> = .init(0)
     private var lastSearchedDate: CurrentValueSubject<Date?, Never> = .init(nil)
     private var searchResults: CurrentValueSubject<[Place], Never> = .init([])
-    private var interestingPlaces: CurrentValueSubject<[InterestingPlaceData], Never> = .init([])
+    private var interestingPlaces: CurrentValueSubject<[InterestingPlaceData], Never> = .init(
+        [])
 
     @Published var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
@@ -51,7 +52,10 @@ class MapModel: ObservableObject {
         locationManager.request()
 
         locationManager.authorizationStatus
-            .map({ $0 != CLAuthorizationStatus.authorizedAlways && $0 != CLAuthorizationStatus.authorizedWhenInUse })
+            .map({
+                $0 != CLAuthorizationStatus.authorizedAlways
+                    && $0 != CLAuthorizationStatus.authorizedWhenInUse
+            })
             .receive(on: DispatchQueue.main)
             .assign(to: &$needToAcceptAlwaysLocationAuthorization)
 
@@ -114,7 +118,9 @@ class MapModel: ObservableObject {
                         lat: $0.lat,
                         lng: $0.lng,
                         icon: $0.icon,
-                        name: $0.name ?? L10n.MapView.Place.failedToFetch
+                        name: $0.name
+                            ?? L10n.MapView.Place
+                            .failedToFetch
                     )
                 } + searchPlaces
             }
@@ -141,7 +147,8 @@ class MapModel: ObservableObject {
         await placeManager.search(
             text: searchText,
             at: locationManager.currentCoordinate,
-            useGooglePlaces: numberOfPlacesSearchRequestPerDay.value <= Const.numberOfPlacesApiCallPerDay
+            useGooglePlaces: numberOfPlacesSearchRequestPerDay.value
+                <= Const.numberOfPlacesApiCallPerDay
         )
         var new = searchedWords
         if !new.contains(searchText) {
@@ -150,14 +157,27 @@ class MapModel: ObservableObject {
         let now = Date()
         let calendar: Calendar = .current
         if let last = lastSearchedDate.value, !calendar.isDate(last, inSameDayAs: now) {
-            store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
-            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: 1)
-        } else {
+            store.updateSearchConfiguration(
+                keypath: \.lastSearchedDate,
+                value: Date()
+            )
+            store.updateSearchConfiguration(
+                keypath: \.numberOfSearchPerDay,
+                value: 1
+            )
+        }
+        else {
             if lastSearchedDate.value == nil {
-                store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
+                store.updateSearchConfiguration(
+                    keypath: \.lastSearchedDate,
+                    value: Date()
+                )
             }
             store.updateSearchConfiguration(keypath: \.searchedWords, value: new)
-            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: numberOfPlacesSearchRequestPerDay.value + 1)
+            store.updateSearchConfiguration(
+                keypath: \.numberOfSearchPerDay,
+                value: numberOfPlacesSearchRequestPerDay.value + 1
+            )
         }
     }
 

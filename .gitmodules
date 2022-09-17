@@ -4,3 +4,6 @@
 [submodule "iOS/BuildTools/swiftgen"]
 	path = iOS/BuildTools/swiftgen
 	url = https://github.com/SwiftGen/SwiftGen
+[submodule "iOS/BuildTools/swift-format"]
+	path = iOS/BuildTools/swift-format
+	url = https://github.com/apple/swift-format

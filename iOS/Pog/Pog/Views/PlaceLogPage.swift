@@ -5,9 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import SwiftUI
 import MapKit
-
+import SwiftUI
 
 struct PlaceLogPage: View {
 
@@ -21,7 +20,10 @@ struct PlaceLogPage: View {
                 VStack {
                     MapViewRepresentable(
                         region: $model.region,
-                        polyline: Binding(projectedValue: $model.selectedPolyline),
+                        polyline: Binding(
+                            projectedValue: $model
+                                .selectedPolyline
+                        ),
                         pickedUpLogs: $model.featuredLogs
                     )
                 }
@@ -37,34 +39,76 @@ struct PlaceLogPage: View {
                         if model.dates.isEmpty {
                             HStack {
                                 Spacer()
-                                Text(L10n.PlaceLogPage.Place.empty)
-                                    .font(.title)
-                                    .foregroundColor(Asset.secondaryTextColor.swiftUIColor)
-                                    .bold()
+                                Text(
+                                    L10n
+                                        .PlaceLogPage
+                                        .Place
+                                        .empty
+                                )
+                                .font(.title)
+                                .foregroundColor(
+                                    Asset
+                                        .secondaryTextColor
+                                        .swiftUIColor
+                                )
+                                .bold()
                                 Spacer()
                             }
                             .padding()
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                showSelectDatePicker = false
+                                showSelectDatePicker =
+                                    false
                             }
-                        } else {
-                            LazyVGrid(columns: [GridItem()], spacing: 8) {
+                        }
+                        else {
+                            LazyVGrid(
+                                columns: [
+                                    GridItem()
+                                ],
+                                spacing: 8
+                            ) {
                                 ForEach(model.dates) { date in
                                     HStack {
-                                        if date == model.selectedDate {
-                                            Image(systemSymbol: .checkmark)
+                                        if date
+                                            == model
+                                            .selectedDate
+                                        {
+                                            Image(
+                                                systemSymbol:
+                                                    .checkmark
+                                            )
                                         }
-                                        Text(date, style: .date)
+                                        Text(
+                                            date,
+                                            style:
+                                                .date
+                                        )
                                         Spacer()
                                     }
                                     .padding()
-                                    .background(Asset.secondaryBackgroundColor.swiftUIColor)
-                                    .cornerRadius(12)
-                                    .contentShape(RoundedRectangle(cornerRadius: 12))
+                                    .background(
+                                        Asset
+                                            .secondaryBackgroundColor
+                                            .swiftUIColor
+                                    )
+                                    .cornerRadius(
+                                        12
+                                    )
+                                    .contentShape(
+                                        RoundedRectangle(
+                                            cornerRadius:
+                                                12
+                                        )
+                                    )
                                     .onTapGesture {
-                                        model.onSelect(date: date)
-                                        showSelectDatePicker = false
+                                        model
+                                            .onSelect(
+                                                date:
+                                                    date
+                                            )
+                                        showSelectDatePicker =
+                                            false
                                     }
                                 }
                             }
@@ -75,7 +119,9 @@ struct PlaceLogPage: View {
                 }
             }
             .navigationTitle(model.selectedDate.displayable(withTime: false))
-            .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+            .navigationBarTitleDisplayMode(
+                NavigationBarItem.TitleDisplayMode.inline
+            )
         }
         .onAppear {
             model.onApepar()
