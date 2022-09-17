@@ -53,6 +53,7 @@ class PlaceLogModel: ObservableObject {
 
     private let que = DispatchQueue(label: "dev.fummicc1.Pog.PlacelogDataModel.Que")
 
+    @MainActor
     init(
         locationManager: LocationManager,
         store: Store
@@ -78,6 +79,7 @@ class PlaceLogModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    @MainActor
     func onTapMyCurrentLocationButton() {
         guard let coordinate = locationManager.currentCoordinate else {
             return
@@ -187,6 +189,7 @@ class PlaceLogModel: ObservableObject {
             .assign(to: &$selectedPolyline)
     }
 
+    @MainActor
     func onSelect(date: Date) {
         selectedDate = date
     }
