@@ -5,10 +5,10 @@
 //  Created by Fumiya Tanaka on 2022/05/27.
 //
 
+import FirebaseCrashlytics
 import Foundation
 import MapKit
 import SwiftUI
-import FirebaseCrashlytics
 
 struct MapViewRepresentable: UIViewRepresentable {
     typealias UIViewType = MKMapView
@@ -38,7 +38,6 @@ struct MapViewRepresentable: UIViewRepresentable {
         view.delegate = context.coordinator
         return view
     }
-
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
         if let polyline = polyline {
@@ -73,7 +72,9 @@ extension MapViewRepresentable {
             super.init()
         }
 
-        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay)
+            -> MKOverlayRenderer
+        {
             guard let polyline = overlay as? MKPolyline else {
                 return MKPolylineRenderer()
             }
@@ -83,7 +84,9 @@ extension MapViewRepresentable {
             return renderer
         }
 
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation)
+            -> MKAnnotationView?
+        {
             if annotation is MKUserLocation {
                 return nil
             }
@@ -91,19 +94,24 @@ extension MapViewRepresentable {
                 return nil
             }
             let view: MKMarkerAnnotationView
-            if let _view = mapView.dequeueReusableAnnotationView(withIdentifier: "annotation") as? MKMarkerAnnotationView {
+            if let _view = mapView.dequeueReusableAnnotationView(
+                withIdentifier: "annotation"
+            )
+                as? MKMarkerAnnotationView
+            {
                 view = _view
                 view.annotation = annotation
                 view.glyphTintColor = UIColor.tintColor
                 view.markerTintColor = UIColor.systemBackground
-            } else {
+            }
+            else {
                 view = MKMarkerAnnotationView(
                     annotation: annotation,
                     reuseIdentifier: "annotation"
                 )
                 view.glyphTintColor = UIColor.tintColor
                 view.markerTintColor = UIColor.systemBackground
-            }           
+            }
             return view
         }
 

@@ -6,9 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension PlaceLogData {
 
@@ -24,6 +23,6 @@ extension PlaceLogData {
 
 }
 
-extension PlaceLogData : Identifiable {
+extension PlaceLogData: Identifiable {
 
 }

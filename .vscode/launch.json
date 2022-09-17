@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug swift-format (iOS/BuildTools/swift-format)",
+      "program": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format/.build/debug/swift-format",
+      "args": [],
+      "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format",
+      "preLaunchTask": "swift: Build Debug swift-format (iOS/BuildTools/swift-format)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Release swift-format (iOS/BuildTools/swift-format)",
+      "program": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format/.build/release/swift-format",
+      "args": [],
+      "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format",
+      "preLaunchTask": "swift: Build Release swift-format (iOS/BuildTools/swift-format)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug generate-pipeline (iOS/BuildTools/swift-format)",
+      "program": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format/.build/debug/generate-pipeline",
+      "args": [],
+      "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format",
+      "preLaunchTask": "swift: Build Debug generate-pipeline (iOS/BuildTools/swift-format)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Release generate-pipeline (iOS/BuildTools/swift-format)",
+      "program": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format/.build/release/generate-pipeline",
+      "args": [],
+      "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format",
+      "preLaunchTask": "swift: Build Release generate-pipeline (iOS/BuildTools/swift-format)"
+    }
+  ]
+}

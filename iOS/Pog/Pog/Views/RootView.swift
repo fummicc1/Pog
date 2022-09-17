@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct RootView: View {
 
@@ -21,7 +21,8 @@ struct RootView: View {
             WalkthroughPage(
                 shouldOnboarding: _shouldOnboarding.projectedValue
             )
-        } else {
+        }
+        else {
             TabView {
                 MapView(
                     model: MapModel(

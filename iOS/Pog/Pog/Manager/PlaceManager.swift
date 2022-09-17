@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/05/20.
 //
 
-import Foundation
 import Combine
+import Foundation
 import MapKit
 
 /// @mockable
@@ -40,7 +40,6 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         searchCompleter.queryFragment = ""
     }
 
-
     public var places: [Place] {
         placesSubject.value
     }
@@ -61,21 +60,28 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
         )
     }
 
-    public func search(text: String, at coordinate: CLLocationCoordinate2D?, useGooglePlaces: Bool) async {
+    public func search(
+        text: String,
+        at coordinate: CLLocationCoordinate2D?,
+        useGooglePlaces: Bool
+    )
+        async
+    {
         if text.isEmpty {
             return
         }
         if useGooglePlaces {
             do {
                 let lang = Language.fromLocale()
-                let response: PlaceSearchResponse = try await apiClient.request(
-                    with: .search(
-                        text: text,
-                        location: coordinate,
-                        lang: lang
+                let response: PlaceSearchResponse =
+                    try await apiClient.request(
+                        with: .search(
+                            text: text,
+                            location: coordinate,
+                            lang: lang
+                        )
                     )
-                )
-                let places = response.results.map{ result in
+                let places = response.results.map { result in
                     Place(
                         lat: result.geometry.location.lat,
                         lng: result.geometry.location.lng,
@@ -84,10 +90,12 @@ public class PlaceManagerImpl: NSObject, PlaceManager {
                     )
                 }
                 self.placesSubject.send(places)
-            } catch {
+            }
+            catch {
                 print(error)
             }
-        } else {
+        }
+        else {
             if searchCompleter.isSearching {
                 searchCompleter.cancel()
             }
@@ -105,7 +113,9 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                 self.localSearch = MKLocalSearch(request: request)
                 do {
                     let response = try await self.localSearch!.start()
-                    let places: [Place] = response.mapItems.map(\.placemark).map({ placemark in
+                    let places: [Place] = response.mapItems.map(
+                        \.placemark
+                    ).map({ placemark in
                         let coordinate = placemark.coordinate
                         return Place(
                             lat: coordinate.latitude,
@@ -117,7 +127,8 @@ extension PlaceManagerImpl: MKLocalSearchCompleterDelegate {
                     await MainActor.run(body: {
                         placesSubject.send(places)
                     })
-                } catch {
+                }
+                catch {
                     print(error)
                     errorSubject.send(error)
                 }

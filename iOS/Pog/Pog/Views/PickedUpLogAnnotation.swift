@@ -20,5 +20,4 @@ class PickedUpLogAnnotation: MKPointAnnotation {
 
     let pickedUpLog: PlaceLogData
 
-
 }

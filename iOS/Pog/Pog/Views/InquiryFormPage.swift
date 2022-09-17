@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct InquiryFormPage: View {
 
     @StateObject var model: InquiryFormModel
@@ -18,25 +17,34 @@ struct InquiryFormPage: View {
         VStack {
             Form {
                 Section(L10n.Common.emailAddress) {
-                    TextField("\(L10n.Common.emailAddress)(\(L10n.Common.optional))", text: $model.email)
-                        .keyboardType(.emailAddress)
-                        .textContentType(.emailAddress)
+                    TextField(
+                        "\(L10n.Common.emailAddress)(\(L10n.Common.optional))",
+                        text: $model.email
+                    )
+                    .keyboardType(.emailAddress)
+                    .textContentType(.emailAddress)
                 }
 
                 Section(L10n.InquiryFormPage.Form.message) {
-                    Text("※ \(L10n.Common.message) (\(L10n.Common.required))")
+                    Text(
+                        "※ \(L10n.Common.message) (\(L10n.Common.required))"
+                    )
                     TextEditor(text: $model.message)
                 }
             }
         }
-        .alert(L10n.InquiryFormPage.Form.complete, isPresented: $model.completeSendingMessage, actions: {
-            Button {
-                dismiss()
-            } label: {
-                Text(L10n.Common.close)
-            }
+        .alert(
+            L10n.InquiryFormPage.Form.complete,
+            isPresented: $model.completeSendingMessage,
+            actions: {
+                Button {
+                    dismiss()
+                } label: {
+                    Text(L10n.Common.close)
+                }
 
-        })
+            }
+        )
         .toolbar {
             Button {
                 model.save()

@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/07/08.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct InterestingPlaceVisitingListView: View {
 
@@ -33,17 +33,27 @@ struct InterestingPlaceVisitingListView: View {
                     )
                     VStack(alignment: .leading) {
                         Map(
-                            coordinateRegion: .constant(region),
+                            coordinateRegion: .constant(
+                                region
+                            ),
                             interactionModes: [],
-                            userTrackingMode: .constant(.none),
+                            userTrackingMode: .constant(
+                                .none
+                            ),
                             annotationItems: [place]
                         ) { place in
                             MapMarker(
-                                coordinate: CLLocationCoordinate2D(
-                                    latitude: place.lat,
-                                    longitude: place.lng
-                                ),
-                                tint: Color.accentColor
+                                coordinate:
+                                    CLLocationCoordinate2D(
+                                        latitude:
+                                            place
+                                            .lat,
+                                        longitude:
+                                            place
+                                            .lng
+                                    ),
+                                tint: Color
+                                    .accentColor
                             )
                         }
                         .frame(height: 180)
@@ -51,63 +61,157 @@ struct InterestingPlaceVisitingListView: View {
                         VStack(alignment: .leading) {
                             if let name = place.name {
                                 Text(name)
-                                    .font(.title3)
+                                    .font(
+                                        .title3
+                                    )
                                     .bold()
-                                Spacer().frame(height: 12)
+                                Spacer().frame(
+                                    height: 12
+                                )
                             }
-                            let logs = model.histories[place]
-                            if let logs = logs, !logs.isEmpty {
+                            let logs = model.histories[
+                                place
+                            ]
+                            if let logs = logs,
+                                !logs.isEmpty
+                            {
                                 if logs.count > 10 {
-                                    Text(L10n.InterestingPlaceVisitingListView.Place.visitingHistoryTen)
-                                        .bold()
-                                } else {
-                                    Text(L10n.InterestingPlaceVisitingListView.Place.visitingHistory)
-                                        .bold()
+                                    Text(
+                                        L10n
+                                            .InterestingPlaceVisitingListView
+                                            .Place
+                                            .visitingHistoryTen
+                                    )
+                                    .bold()
+                                }
+                                else {
+                                    Text(
+                                        L10n
+                                            .InterestingPlaceVisitingListView
+                                            .Place
+                                            .visitingHistory
+                                    )
+                                    .bold()
                                 }
                                 VStack {
-                                    ForEach(logs.prefix(10)) { log in
+                                    ForEach(
+                                        logs
+                                            .prefix(
+                                                10
+                                            )
+                                    ) { log in
                                         Button {
-                                            moveToEditLogPage = log
+                                            moveToEditLogPage =
+                                                log
                                         } label: {
-                                            VStack(alignment: .leading) {
+                                            VStack(
+                                                alignment:
+                                                    .leading
+                                            ) {
                                                 HStack {
-                                                    Text(L10n.Common.visitingTime)
-                                                        .font(.callout)
-                                                        .bold()
-                                                        .foregroundColor(.secondary)
+                                                    Text(
+                                                        L10n
+                                                            .Common
+                                                            .visitingTime
+                                                    )
+                                                    .font(
+                                                        .callout
+                                                    )
+                                                    .bold()
+                                                    .foregroundColor(
+                                                        .secondary
+                                                    )
                                                     Spacer()
-                                                    Text(log.visitedAt?.displayable(withTime: true) ?? L10n.Common.unknown)
+                                                    Text(
+                                                        log
+                                                            .visitedAt?
+                                                            .displayable(
+                                                                withTime:
+                                                                    true
+                                                            )
+                                                            ?? L10n
+                                                            .Common
+                                                            .unknown
+                                                    )
                                                 }
                                                 HStack {
-                                                    Text(L10n.Common.departureTime)
-                                                        .font(.callout)
-                                                        .bold()
-                                                        .foregroundColor(.secondary)
+                                                    Text(
+                                                        L10n
+                                                            .Common
+                                                            .departureTime
+                                                    )
+                                                    .font(
+                                                        .callout
+                                                    )
+                                                    .bold()
+                                                    .foregroundColor(
+                                                        .secondary
+                                                    )
                                                     Spacer()
-                                                    Text(log.exitedAt?.displayable(withTime: true) ?? L10n.Common.unknown)
+                                                    Text(
+                                                        log
+                                                            .exitedAt?
+                                                            .displayable(
+                                                                withTime:
+                                                                    true
+                                                            )
+                                                            ?? L10n
+                                                            .Common
+                                                            .unknown
+                                                    )
                                                 }
                                                 Divider()
                                             }
                                         }
-                                        .foregroundColor(Color(uiColor: .label))
+                                        .foregroundColor(
+                                            Color(
+                                                uiColor:
+                                                    .label
+                                            )
+                                        )
                                     }
                                 }
                                 .padding()
-                            } else {
-                                Text(L10n.InterestingPlaceVisitingListView.Place.noVisitingHistoryYet)
-                                    .font(.body)
-                                    .bold()
-                                    .foregroundColor(.secondary)
+                            }
+                            else {
+                                Text(
+                                    L10n
+                                        .InterestingPlaceVisitingListView
+                                        .Place
+                                        .noVisitingHistoryYet
+                                )
+                                .font(.body)
+                                .bold()
+                                .foregroundColor(
+                                    .secondary
+                                )
                                 #if DEBUG
-                                Button {
-                                    let stub = InterestingPlaceVisitingLogData(context: store.context)
-                                    stub.visitedAt = Date()
-                                    stub.place = place
-                                    try! store.context.save()
-                                } label: {
-                                    Text(L10n.Common.visit)
-                                }
-                                .buttonStyle(.borderedProminent)
+                                    Button {
+                                        let stub =
+                                            InterestingPlaceVisitingLogData(
+                                                context:
+                                                    store
+                                                    .context
+                                            )
+                                        stub
+                                            .visitedAt =
+                                            Date()
+                                        stub
+                                            .place =
+                                            place
+                                        try! store
+                                            .context
+                                            .save()
+                                    } label: {
+                                        Text(
+                                            L10n
+                                                .Common
+                                                .visit
+                                        )
+                                    }
+                                    .buttonStyle(
+                                        .borderedProminent
+                                    )
                                 #endif
                             }
                         }
@@ -115,18 +219,29 @@ struct InterestingPlaceVisitingListView: View {
                     }
                     .background(Color(uiColor: .systemBackground))
                     .cornerRadius(8)
-                    Spacer().frame(height: 12).background(Color(uiColor: .secondarySystemBackground))
+                    Spacer().frame(height: 12).background(
+                        Color(
+                            uiColor:
+                                .secondarySystemBackground
+                        )
+                    )
                 }
             }
         }
         .navigationTitle(L10n.InterestingPlaceVisitingListView.InterestingPlace.places)
-        .partialSheet(isPresented: $moveToEditLogPage.isNotNil(), content: {
-            if moveToEditLogPage != nil {
-                EditInterestingPlaceVisitingLogDataView(log: $moveToEditLogPage)
-            } else {
-                EmptyView()
+        .partialSheet(
+            isPresented: $moveToEditLogPage.isNotNil(),
+            content: {
+                if moveToEditLogPage != nil {
+                    EditInterestingPlaceVisitingLogDataView(
+                        log: $moveToEditLogPage
+                    )
+                }
+                else {
+                    EmptyView()
+                }
             }
-        })
+        )
         .padding(4)
         .background(Color(uiColor: .secondarySystemBackground))
     }

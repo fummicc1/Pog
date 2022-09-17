@@ -62,7 +62,8 @@ struct EditInterestingPlaceVisitingLogDataView: View {
                     do {
                         try store.context.save()
                         editingLog = nil
-                    } catch {
+                    }
+                    catch {
                         assertionFailure("\(error)")
                     }
                 } label: {

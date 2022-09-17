@@ -5,13 +5,13 @@
 //  Created by Fumiya Tanaka on 2022/07/15.
 //
 
-import XCTest
-import CoreLocation
 import Combine
+import CoreLocation
+import XCTest
+
 // If `Missing required Module` error occures, this link will help me.
 // https://stackoverflow.com/questions/58125428/missing-required-module-xyz-on-unit-tests-when-using-swift-package-manager
 @testable import D_Pog
-
 
 extension MapModelTests {
     func test_user_can_search() async {
@@ -23,11 +23,19 @@ extension MapModelTests {
         let searchPlaces = Stubs.places
 
         store.updateSearchConfigurationHandler = { keypath, value in
-            if let keypath = keypath as? WritableKeyPath<SearchConfiguration, [String]> {
+            if let keypath = keypath as? WritableKeyPath<
+                SearchConfiguration, [String]
+            > {
                 searchConfiguration[keyPath: keypath] = value as! [String]
-            } else if let keypath = keypath as? WritableKeyPath<SearchConfiguration, Int> {
+            }
+            else if let keypath = keypath as? WritableKeyPath<
+                SearchConfiguration, Int
+            > {
                 searchConfiguration[keyPath: keypath] = value as! Int
-            } else if let keypath = keypath as? WritableKeyPath<SearchConfiguration, Date?> {
+            }
+            else if let keypath = keypath as? WritableKeyPath<
+                SearchConfiguration, Date?
+            > {
                 searchConfiguration[keyPath: keypath] = value as! Date?
             }
         }
@@ -53,7 +61,10 @@ extension MapModelTests {
         XCTAssertEqual(searchConfiguration.searchedWords, ["Test"])
         XCTAssertEqual(searchConfiguration.numberOfSearchPerDay, 1)
         // Within 1 seconds
-        XCTAssertLessThan(searchConfiguration.lastSearchedDate!.timeIntervalSince(Date()), 1)
+        XCTAssertLessThan(
+            searchConfiguration.lastSearchedDate!.timeIntervalSince(Date()),
+            1
+        )
 
         XCTAssertEqual(model.showPlaces, searchPlaces)
     }

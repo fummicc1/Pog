@@ -32,44 +32,107 @@ public class APIClientImpl {
     }
 
     static func stub() -> APIClient {
-        APIClientImpl.init(placesProvider: MoyaProvider<PlacesTarget>(stubClosure: MoyaProvider.immediatelyStub))
+        APIClientImpl.init(
+            placesProvider: MoyaProvider<PlacesTarget>(
+                stubClosure: MoyaProvider.immediatelyStub
+            )
+        )
     }
 }
 
 extension APIClientImpl: APIClient {
     public func request(with target: PlacesTarget) async throws {
-        let _: Void = try await withCheckedThrowingContinuation({ [weak self] continuation in
-            self?.placesProvider.request(target, completion: { result in
-                switch result {
-                case .failure(let error):
-                    continuation.resume(throwing: APIClientError.underlying(error))
-                case .success:
-                    continuation.resume(returning: ())
+        let _: Void = try await withCheckedThrowingContinuation({
+            [weak self] continuation in
+            self?.placesProvider.request(
+                target,
+                completion: { result in
+                    switch result {
+                    case .failure(let error):
+                        continuation.resume(
+                            throwing:
+                                APIClientError
+                                .underlying(error)
+                        )
+                    case .success:
+                        continuation.resume(returning: ())
+                    }
                 }
-            })
+            )
         })
     }
 
-    public func request<Response>(with target: PlacesTarget) async throws -> Response where Response : Decodable, Response : Encodable {
-        let response: Response = try await withCheckedThrowingContinuation({ [weak self] continuation in
-            self?.placesProvider.request(target, completion: { result in
-                switch result {
-                case .failure(let error):
-                    continuation.resume(throwing: APIClientError.underlying(error))
-                case .success(let response):
-                    do {
-                        if let codableResponse = try self?.jsonDecoder.decode(Response.self, from: response.data) {
-                            continuation.resume(returning: codableResponse)
-                        } else if let json = try JSONSerialization.jsonObject(with: response.data) as? [String: String] {
-                            continuation.resume(throwing: APIClientError.faildToDecodeCodable(json: json))
-                        } else {
-                            continuation.resume(throwing: APIClientError.invalidResponse(data: response.data))
+    public func request<Response>(with target: PlacesTarget) async throws -> Response
+    where Response: Decodable, Response: Encodable {
+        let response: Response = try await withCheckedThrowingContinuation({
+            [weak self] continuation in
+            self?.placesProvider.request(
+                target,
+                completion: { result in
+                    switch result {
+                    case .failure(let error):
+                        continuation.resume(
+                            throwing:
+                                APIClientError
+                                .underlying(error)
+                        )
+                    case .success(let response):
+                        do {
+                            if let codableResponse = try self?.jsonDecoder
+                                .decode(
+                                    Response
+                                        .self,
+                                    from:
+                                        response
+                                        .data
+                                )
+                            {
+                                continuation.resume(
+                                    returning:
+                                        codableResponse
+                                )
+                            }
+                            else if let json = try JSONSerialization
+                                .jsonObject(
+                                    with:
+                                        response
+                                        .data
+                                )
+                                as? [String: String]
+                            {
+                                continuation.resume(
+                                    throwing:
+                                        APIClientError
+                                        .faildToDecodeCodable(
+                                            json:
+                                                json
+                                        )
+                                )
+                            }
+                            else {
+                                continuation.resume(
+                                    throwing:
+                                        APIClientError
+                                        .invalidResponse(
+                                            data:
+                                                response
+                                                .data
+                                        )
+                                )
+                            }
                         }
-                    } catch {
-                        continuation.resume(throwing: APIClientError.underlying(error))
+                        catch {
+                            continuation.resume(
+                                throwing:
+                                    APIClientError
+                                    .underlying(
+                                        error
+                                    )
+                            )
+                        }
                     }
                 }
-            })
+            )
         })
         return response
     }

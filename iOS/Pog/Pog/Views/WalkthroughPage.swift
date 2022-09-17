@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/06/26.
 //
 
-import SwiftUI
 import CoreLocation
+import SwiftUI
 
 struct WalkthroughPage: View {
 
@@ -65,14 +65,26 @@ struct WalkthroughPage: View {
                 if locationAuthorizeStatus != .authorizedAlways {
                     Button {
                         UIApplication.shared.open(
-                            URL(string: UIApplication.openSettingsURLString)!
+                            URL(
+                                string:
+                                    UIApplication
+                                    .openSettingsURLString
+                            )!
                         )
                     } label: {
-                        Text(L10n.WalkthroughPage.First.authorizeAlwaysLocationRequest)
-                            .bold()
+                        Text(
+                            L10n.WalkthroughPage.First
+                                .authorizeAlwaysLocationRequest
+                        )
+                        .bold()
                     }
-                } else {
-                    Label(L10n.WalkthroughPage.First.locationRequestIsAlwaysAuthorized, systemSymbol: .checkmark)
+                }
+                else {
+                    Label(
+                        L10n.WalkthroughPage.First
+                            .locationRequestIsAlwaysAuthorized,
+                        systemSymbol: .checkmark
+                    )
                 }
             }
             .padding(.bottom, 12)

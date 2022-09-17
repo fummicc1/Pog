@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(LocationSettingsData)
 public class LocationSettingsData: NSManagedObject {

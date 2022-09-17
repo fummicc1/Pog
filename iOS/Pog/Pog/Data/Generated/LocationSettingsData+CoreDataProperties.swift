@@ -6,9 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension LocationSettingsData {
 
@@ -23,6 +22,6 @@ extension LocationSettingsData {
 
 }
 
-extension LocationSettingsData : Identifiable {
+extension LocationSettingsData: Identifiable {
 
 }

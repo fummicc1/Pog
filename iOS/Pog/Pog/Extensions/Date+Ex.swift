@@ -3,7 +3,9 @@ import SwiftUI
 
 extension Date {
     func dropTime(locale: Locale? = nil) -> Date {
-        let locale = locale ?? NSLocale(localeIdentifier: Locale.preferredLanguages[0]) as Locale
+        let locale =
+            locale ?? NSLocale(localeIdentifier: Locale.preferredLanguages[0])
+            as Locale
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = locale
         var components = calendar.dateComponents([.year, .month, .day], from: self)
