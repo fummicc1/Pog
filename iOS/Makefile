@@ -21,7 +21,7 @@ bootstrap:
 
 .PHONY: bootstrap-ci
 bootstrap-ci:
-	cd $CURRENT_DIRECTORY; make bootstrap
+	cd ${CURRENT_DIRECTORY}; make bootstrap
 
 build-swift-format: BuildTools
 	swift build -c release --package-path ./BuildTools/swift-format --product swift-format
