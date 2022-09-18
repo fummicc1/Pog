@@ -123,3 +123,4 @@
 "Common.InadequateStatus" = "Need to fill out required form";
 "Common.Send" = "Send";
 "Common.Complete" = "Complete";
+"Common.Delete" = "Delete";

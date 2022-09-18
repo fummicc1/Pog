@@ -29,6 +29,7 @@ internal enum Asset {
   internal static let errorColor = ColorAsset(name: "ErrorColor")
   internal static let secondaryBackgroundColor = ColorAsset(name: "SecondaryBackgroundColor")
   internal static let secondaryTextColor = ColorAsset(name: "SecondaryTextColor")
+  internal static let textColor = ColorAsset(name: "TextColor")
   internal static let icon = ImageAsset(name: "icon")
   internal static let page1 = ImageAsset(name: "page1")
   internal static let page2 = ImageAsset(name: "page2")

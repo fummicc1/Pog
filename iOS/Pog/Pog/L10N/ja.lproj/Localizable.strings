@@ -174,3 +174,4 @@
 "Common.Send" = "送信";
 "Common.InadequateStatus" = "入力に不備があります";
 "Common.Complete" = "完了";
+"Common.Delete" = "削除";

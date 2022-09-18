@@ -21,6 +21,8 @@ internal enum L10n {
     internal static let confirmWithSettings = L10n.tr("Localizable", "Common.ConfirmWithSettings", fallback: #"Confirm with Settings app"#)
     /// Default
     internal static let `default` = L10n.tr("Localizable", "Common.Default", fallback: #"Default"#)
+    /// Delete
+    internal static let delete = L10n.tr("Localizable", "Common.Delete", fallback: #"Delete"#)
     /// Departed At
     internal static let departureTime = L10n.tr("Localizable", "Common.DepartureTime", fallback: #"Departed At"#)
     /// Display Mode

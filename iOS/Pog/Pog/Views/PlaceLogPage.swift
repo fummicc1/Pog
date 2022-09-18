@@ -17,15 +17,36 @@ struct PlaceLogPage: View {
     var body: some View {
         NavigationView {
             GeometryReader { proxy in
-                VStack {
-                    MapViewRepresentable(
-                        region: $model.region,
-                        polyline: Binding(
-                            projectedValue: $model
-                                .selectedPolyline
-                        ),
-                        pickedUpLogs: $model.featuredLogs
-                    )
+                ZStack {
+                    VStack {
+                        MapViewRepresentable(
+                            region: $model.region,
+                            polyline: Binding(
+                                projectedValue: $model
+                                    .selectedPolyline
+                            ),
+                            pickedUpLogs: $model.featuredLogs
+                        )
+                    }
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button {
+                                Task {
+                                    await model.deleteLogsForSelectedDate()
+                                }
+                            } label: {
+                                Label(L10n.Common.delete, systemSymbol: .trash)
+                                    .foregroundColor(Asset.backgroundColor.swiftUIColor)
+                            }
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 12)
+                            .background(Asset.errorColor.swiftUIColor)
+                            .cornerRadius(12)
+                        }
+                    }
+                    .padding()
                 }
                 .toolbar {
                     Button {
