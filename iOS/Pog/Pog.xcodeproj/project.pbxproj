@@ -46,6 +46,7 @@
 		D394E35A28CB6837001833E1 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394E35928CB6836001833E1 /* Date+Ex.swift */; };
 		D39BB84428BEEAA700AA83CA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D39BB84328BEEAA700AA83CA /* Moya */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
+		D3AD35B528D7875C004B24D2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D3AD35B428D7875C004B24D2 /* FirebaseFirestore */; };
 		D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */; };
 		D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
@@ -197,6 +198,7 @@
 			files = (
 				D31957072881959000BEF86D /* FirebaseAnalytics in Frameworks */,
 				D31957092881959E00BEF86D /* FirebaseCrashlytics in Frameworks */,
+				D3AD35B528D7875C004B24D2 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +550,7 @@
 			packageProductDependencies = (
 				D31957062881959000BEF86D /* FirebaseAnalytics */,
 				D31957082881959E00BEF86D /* FirebaseCrashlytics */,
+				D3AD35B428D7875C004B24D2 /* FirebaseFirestore */,
 			);
 			productName = PogTests;
 			productReference = D3BFA9402833796F00606CD4 /* PogTests.xctest */;
@@ -1211,6 +1214,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		D3AD35B428D7875C004B24D2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		D3BFA972283397ED00606CD4 /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
