@@ -16,21 +16,18 @@ build-BuildTools:
 
 .PHONY: bootstrap
 bootstrap:
-	ls BuildTools/swift-format
+	git submodule update --init --recursive
 	make build-BuildTools
 	mint bootstrap --mintfile Pog/Mintfile
 
-build-swift-format: BuildTools/swift-format/Package.swift
+build-swift-format:
 	swift build -c release --package-path ./BuildTools/swift-format --product swift-format
 
-build-swiftgen: BuildTools/swiftgen/Package.swift
+build-swiftgen:
 	swift build -c release --package-path ./BuildTools/swiftgen --product swiftgen
 
-build-mockolo: BuildTools/mockolo/Package.swift
+build-mockolo:
 	swift build -c release --package-path ./BuildTools/mockolo --product mockolo
-
-BuildTools:
-	git submodule update --init --recursive
 
 .PHONY: build
 build:
