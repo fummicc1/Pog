@@ -22,9 +22,7 @@ jobs:
       - name: Install xcpretty
         run: bundle install
       - name: Setup
-        run: make bootstrap-ci
-        env:
-          CURRENT_DIRECTORY: $GITHUB_WORKSPACE
+        run: make bootstrap
       - name: Build and Test
         working-directory: iOS
         run: |

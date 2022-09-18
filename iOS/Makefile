@@ -16,12 +16,9 @@ build-BuildTools:
 
 .PHONY: bootstrap
 bootstrap:
+	ls
 	make build-BuildTools
 	mint bootstrap --mintfile Pog/Mintfile
-
-.PHONY: bootstrap-ci
-bootstrap-ci:
-	cd ${CURRENT_DIRECTORY}; make bootstrap
 
 build-swift-format: BuildTools
 	swift build -c release --package-path ./BuildTools/swift-format --product swift-format
