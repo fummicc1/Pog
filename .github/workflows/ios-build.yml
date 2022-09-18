@@ -23,7 +23,8 @@ jobs:
         run: bundle install
       - name: Setup
         run: make bootstrap
+      - name: Copy file for CI
+        working-directory: ./iOS/Pog/Pog/Env
+        run: cp SecretSample.swift Secret.swift
       - name: Build and Test
-        working-directory: iOS
-        run: |
-          set -o pipefail && make clean build test | bundle exec xcpretty
+        run: set -o pipefail && make clean build test | bundle exec xcpretty
