@@ -8,7 +8,7 @@ on:
 
 defaults:
   run:
-    working-directory: iOS
+    working-directory: ./iOS
 
 jobs:
   test:
@@ -21,6 +21,8 @@ jobs:
           xcode-version: latest-stable
       - name: Install xcpretty
         run: bundle install
+      - name: Setup
+        run: make bootstrap
       - name: Build and Test
         run: |
           set -o pipefail && make clean build test | bundle exec xcpretty

@@ -35,6 +35,24 @@
       "args": [],
       "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swift-format",
       "preLaunchTask": "swift: Build Release generate-pipeline (iOS/BuildTools/swift-format)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug swiftgen (iOS/BuildTools/swiftgen)",
+      "program": "${workspaceFolder:Pog}/iOS/BuildTools/swiftgen/.build/debug/swiftgen",
+      "args": [],
+      "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swiftgen",
+      "preLaunchTask": "swift: Build Debug swiftgen (iOS/BuildTools/swiftgen)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Release swiftgen (iOS/BuildTools/swiftgen)",
+      "program": "${workspaceFolder:Pog}/iOS/BuildTools/swiftgen/.build/release/swiftgen",
+      "args": [],
+      "cwd": "${workspaceFolder:Pog}/iOS/BuildTools/swiftgen",
+      "preLaunchTask": "swift: Build Release swiftgen (iOS/BuildTools/swiftgen)"
     }
   ]
 }
