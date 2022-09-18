@@ -23,6 +23,8 @@ jobs:
         run: bundle install
       - name: Setup
         run: make bootstrap
+        working-directory: iOS
       - name: Build and Test
+        working-directory: iOS
         run: |
           set -o pipefail && make clean build test | bundle exec xcpretty
