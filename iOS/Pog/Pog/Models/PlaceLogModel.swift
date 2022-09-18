@@ -199,7 +199,11 @@ class PlaceLogModel: ObservableObject {
         let selectedDate = await selectedDate
         let tmr = Calendar.current.tomorrow(of: selectedDate)
         let request: NSFetchRequest<any NSFetchRequestResult> = PlaceLogData.fetchRequest()
-        let predicate = NSPredicate(format: "date >= %@ AND date <= %@", selectedDate as CVarArg, tmr as CVarArg)
+        let predicate = NSPredicate(
+            format: "date >= %@ AND date <= %@",
+            selectedDate as CVarArg,
+            tmr as CVarArg
+        )
         request.predicate = predicate
         let batchRequest = NSBatchDeleteRequest(fetchRequest: request)
         do {

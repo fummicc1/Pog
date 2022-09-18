@@ -105,6 +105,18 @@ internal enum L10n {
     }
   }
   internal enum PlaceLogPage {
+    internal enum Alert {
+      internal enum DeleteConfirmance {
+        /// Do you delete logs in %@ ?
+        internal static func title(_ p1: Any) -> String {
+          return L10n.tr("Localizable", "PlaceLogPage.Alert.DeleteConfirmance.Title", String(describing: p1), fallback: #"Do you delete logs in %@ ?"#)
+        }
+      }
+    }
+    internal enum Buttons {
+      /// Delete Logs
+      internal static let deleteForSelectedDate = L10n.tr("Localizable", "PlaceLogPage.Buttons.DeleteForSelectedDate", fallback: #"Delete Logs"#)
+    }
     internal enum Place {
       /// Empty Location Log
       internal static let empty = L10n.tr("Localizable", "PlaceLogPage.Place.Empty", fallback: #"Empty Location Log"#)

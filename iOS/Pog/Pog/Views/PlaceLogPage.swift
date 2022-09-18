@@ -13,6 +13,7 @@ struct PlaceLogPage: View {
     @StateObject var model: PlaceLogModel
 
     @State private var showSelectDatePicker: Bool = false
+    @State private var showDeleteLogsConfirmanceAlert: Bool = false
 
     var body: some View {
         NavigationView {
@@ -29,24 +30,26 @@ struct PlaceLogPage: View {
                         )
                     }
                     VStack {
-                        Spacer()
+                        Spacer().frame(height: 12)
                         HStack {
-                            Spacer()
                             Button {
-                                Task {
-                                    await model.deleteLogsForSelectedDate()
-                                }
+                                showDeleteLogsConfirmanceAlert = true
                             } label: {
-                                Label(L10n.Common.delete, systemSymbol: .trash)
-                                    .foregroundColor(Asset.backgroundColor.swiftUIColor)
+                                Label(
+                                    L10n.PlaceLogPage.Buttons.deleteForSelectedDate,
+                                    systemSymbol: .trash
+                                )
+                                .foregroundColor(Asset.backgroundColor.swiftUIColor)
                             }
                             .padding(.vertical, 8)
                             .padding(.horizontal, 12)
                             .background(Asset.errorColor.swiftUIColor)
                             .cornerRadius(12)
+                            Spacer()
                         }
+                        .padding(8)
+                        Spacer()
                     }
-                    .padding()
                 }
                 .toolbar {
                     Button {
@@ -55,6 +58,19 @@ struct PlaceLogPage: View {
                         Text(L10n.Common.selectDate)
                     }
                 }
+                .alert(
+                    L10n.PlaceLogPage.Alert.DeleteConfirmance.title(
+                        model.selectedDate.displayable(withTime: false)
+                    ),
+                    isPresented: $showDeleteLogsConfirmanceAlert,
+                    actions: {
+                        Button(L10n.Common.delete, role: .destructive) {
+                            Task {
+                                await model.deleteLogsForSelectedDate()
+                            }
+                        }
+                    }
+                )
                 .partialSheet(isPresented: $showSelectDatePicker) {
                     ScrollView {
                         if model.dates.isEmpty {

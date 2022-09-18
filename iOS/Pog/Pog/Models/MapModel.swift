@@ -38,7 +38,6 @@ class MapModel: ObservableObject {
     @Published
     var showPlaces: [Place] = []
 
-
     private var numberOfPlacesSearchRequestPerDay: CurrentValueSubject<Int, Never> = .init(0)
     private var lastSearchedDate: CurrentValueSubject<Date?, Never> = .init(nil)
     private var searchResults: CurrentValueSubject<[Place], Never> = .init([])
