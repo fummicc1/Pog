@@ -16,11 +16,11 @@ build-BuildTools:
 
 .PHONY: bootstrap
 bootstrap:
-	if ! command -v brew &> /dev/null
+	if ! [ -e "$(command -v brew)" ]
 	then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
-	if ! command -v mint &> /dev/null	
+	if ! [ -e "$(command -v mint)" ]
 	then
 		brew install mint
 	fi
