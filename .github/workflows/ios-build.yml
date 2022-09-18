@@ -24,7 +24,9 @@ jobs:
       - name: Setup
         run: make bootstrap
       - name: Copy file for CI
-        working-directory: ./iOS/Pog/Pog/Env
-        run: cp SecretSample.swift Secret.swift
+        working-directory: ./iOS/Pog/Pog
+        run: |
+          cp ./Env/SecretSample.swift ./Env/Secret.swift
+          cp GoogleService-Info-Debug.plist GoogleService-Info-Release.plist
       - name: Build and Test
         run: set -o pipefail && make clean build test | bundle exec xcpretty
