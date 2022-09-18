@@ -16,7 +16,7 @@ build-BuildTools:
 
 .PHONY: bootstrap
 bootstrap:
-	ls
+	ls BuildTools/swift-format
 	make build-BuildTools
 	mint bootstrap --mintfile Pog/Mintfile
 
