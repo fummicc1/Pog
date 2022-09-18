@@ -16,14 +16,7 @@ build-BuildTools:
 
 .PHONY: bootstrap
 bootstrap:
-	if ! [ -e "$(command -v brew)" ]
-	then
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	fi
-	if ! [ -e "$(command -v mint)" ]
-	then
-		brew install mint
-	fi
+	./install_mint.sh	
 	git submodule update --init --recursive
 	make build-BuildTools
 	mint bootstrap --mintfile Pog/Mintfile
