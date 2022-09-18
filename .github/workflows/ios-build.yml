@@ -24,7 +24,7 @@ jobs:
       - name: Setup
         run: make bootstrap-ci
         env:
-          CURRENT_DIRECTORY: "$(pwd)"
+          CURRENT_DIRECTORY: $GITHUB_WORKSPACE
       - name: Build and Test
         working-directory: iOS
         run: |
