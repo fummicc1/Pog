@@ -37,13 +37,13 @@ BuildTools:
 
 .PHONY: build
 build:
-	xcodebuild -project ./Pog/Pog.xcodeproj -scheme ./Pog build -destination 'platform=iOS Simulator,name=iPhone 13'
+	xcodebuild -project ./Pog/Pog.xcodeproj -scheme Pog build -destination 'platform=iOS Simulator,name=iPhone 13'
 
 .PHONY: clean
 clean:
-	xcodebuild -project ./Pog/Pog.xcodeproj -scheme ./Pog clean -destination 'platform=iOS Simulator,name=iPhone 13'
+	xcodebuild -project ./Pog/Pog.xcodeproj -scheme Pog clean -destination 'platform=iOS Simulator,name=iPhone 13'
 
 .PHONY: test
 test:
-	xcodebuild -project ./Pog/Pog.xcodeproj -scheme ./Pog test -destination 'platform=iOS Simulator,name=iPhone 13'
+	xcodebuild -project ./Pog/Pog.xcodeproj -scheme Pog test -destination 'platform=iOS Simulator,name=iPhone 13'
 
