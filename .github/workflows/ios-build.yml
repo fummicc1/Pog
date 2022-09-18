@@ -22,8 +22,9 @@ jobs:
       - name: Install xcpretty
         run: bundle install
       - name: Setup
-        run: make bootstrap
-        working-directory: iOS
+        run: make bootstrap-ci
+        env:
+          CURRENT_DIRECTORY: "$(pwd)"
       - name: Build and Test
         working-directory: iOS
         run: |
