@@ -20,13 +20,13 @@ bootstrap:
 	make build-BuildTools
 	mint bootstrap --mintfile Pog/Mintfile
 
-build-swift-format: BuildTools
+build-swift-format: BuildTools/swift-format/Package.swift
 	swift build -c release --package-path ./BuildTools/swift-format --product swift-format
 
-build-swiftgen: BuildTools
+build-swiftgen: BuildTools/swiftgen/Package.swift
 	swift build -c release --package-path ./BuildTools/swiftgen --product swiftgen
 
-build-mockolo: BuildTools
+build-mockolo: BuildTools/mockolo/Package.swift
 	swift build -c release --package-path ./BuildTools/mockolo --product mockolo
 
 BuildTools:
