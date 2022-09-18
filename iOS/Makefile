@@ -16,6 +16,7 @@ build-BuildTools:
 
 .PHONY: bootstrap
 bootstrap:
+	ls "$(pwd)"
 	make build-BuildTools
 	mint bootstrap --mintfile Pog/Mintfile
 
