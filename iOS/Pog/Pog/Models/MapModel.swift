@@ -155,14 +155,12 @@ class MapModel: ObservableObject {
         region.center = coordinate
     }
 
+    @MainActor
     func selectPlace(_ place: Place?) {
-        Task { @MainActor in
-            selectedPlace = place
-            showPartialSheet = place != nil
-        }
+        selectedPlace = place
+        showPartialSheet = place != nil
     }
 
-    @MainActor
     func onSubmitTextField() async {
         await placeManager.search(
             text: searchText,
@@ -170,7 +168,8 @@ class MapModel: ObservableObject {
             useGooglePlaces: numberOfPlacesSearchRequestPerDay.value
                 <= Const.numberOfPlacesApiCallPerDay
         )
-        var new = searchedWords
+        var new = await searchedWords
+        let searchText = await self.searchText
         if !new.contains(searchText) {
             new.append(searchText)
         }
