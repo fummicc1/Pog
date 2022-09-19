@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D304ED8928D7125600748E41 /* Calendar+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED8828D7125600748E41 /* Calendar+Ex.swift */; };
 		D306F946286F2022006293E9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D306F945286F2022006293E9 /* SettingsModel.swift */; };
 		D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A1482877399A00CEFBCC /* InterestingPlaceVisitingListView.swift */; };
 		D312A14B287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312A14A287739BC00CEFBCC /* InterestingPlaceVisitingListModel.swift */; };
@@ -45,6 +46,7 @@
 		D394E35A28CB6837001833E1 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394E35928CB6836001833E1 /* Date+Ex.swift */; };
 		D39BB84428BEEAA700AA83CA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D39BB84328BEEAA700AA83CA /* Moya */; };
 		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
+		D3AD35B528D7875C004B24D2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D3AD35B428D7875C004B24D2 /* FirebaseFirestore */; };
 		D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */; };
 		D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */; };
 		D3BFA9342833796D00606CD4 /* PogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BFA9332833796D00606CD4 /* PogApp.swift */; };
@@ -76,7 +78,6 @@
 		D3E0B1D0287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0B1CF287EFF800094AB49 /* EditInterestingPlaceVisitingLogView.swift */; };
 		D3E0B1D3287F06230094AB49 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */; };
 		D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111C2871EBB300FDC330 /* Secret.swift */; };
-		D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5111E2871EC0B00FDC330 /* SecretSample.swift */; };
 		D3F794BF2865ED2800B84905 /* Store+Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F794BE2865ED2800B84905 /* Store+Env.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D304ED8828D7125600748E41 /* Calendar+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Ex.swift"; sourceTree = "<group>"; };
 		D306F918286EFA21006293E9 /* Pog 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 5.xcdatamodel"; sourceTree = "<group>"; };
 		D306F945286F2022006293E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D312A143287738BD00CEFBCC /* Pog 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 7.xcdatamodel"; sourceTree = "<group>"; };
@@ -171,7 +173,6 @@
 		D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		D3E0B1D4287F09F60094AB49 /* Pog 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 8.xcdatamodel"; sourceTree = "<group>"; };
 		D3E5111C2871EBB300FDC330 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		D3E5111E2871EC0B00FDC330 /* SecretSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretSample.swift; sourceTree = "<group>"; };
 		D3F794BE2865ED2800B84905 /* Store+Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Env.swift"; sourceTree = "<group>"; };
 		D3FD2EA228717C630014ECC2 /* Pog 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pog 6.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +198,7 @@
 			files = (
 				D31957072881959000BEF86D /* FirebaseAnalytics in Frameworks */,
 				D31957092881959E00BEF86D /* FirebaseCrashlytics in Frameworks */,
+				D3AD35B528D7875C004B24D2 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +484,7 @@
 			children = (
 				D394E35928CB6836001833E1 /* Date+Ex.swift */,
 				D3E0B1D2287F06230094AB49 /* Binding+Extensions.swift */,
+				D304ED8828D7125600748E41 /* Calendar+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,7 +497,6 @@
 				D3CA087F28688CA9006147BB /* LocationManager+Env.swift */,
 				D3CA088128688D56006147BB /* PlaceManager+Env.swift */,
 				D3E5111C2871EBB300FDC330 /* Secret.swift */,
-				D3E5111E2871EC0B00FDC330 /* SecretSample.swift */,
 			);
 			path = Env;
 			sourceTree = "<group>";
@@ -506,9 +508,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3BFA9542833796F00606CD4 /* Build configuration list for PBXNativeTarget "Pog" */;
 			buildPhases = (
-				D31956F828818F9100BEF86D /* Update mock classes */,
 				D3BFA92C2833796D00606CD4 /* Sources */,
-				D3B7C0DD289D34DB00EA4138 /* Run SwiftGen */,
 				D3BFA92D2833796D00606CD4 /* Frameworks */,
 				D34157022895ADDE000B99C1 /* License Generation */,
 				D3BFA92E2833796D00606CD4 /* Resources */,
@@ -550,6 +550,7 @@
 			packageProductDependencies = (
 				D31957062881959000BEF86D /* FirebaseAnalytics */,
 				D31957082881959E00BEF86D /* FirebaseCrashlytics */,
+				D3AD35B428D7875C004B24D2 /* FirebaseFirestore */,
 			);
 			productName = PogTests;
 			productReference = D3BFA9402833796F00606CD4 /* PogTests.xctest */;
@@ -656,24 +657,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D31956F828818F9100BEF86D /* Update mock classes */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Update mock classes";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${SRCROOT}\"/generate_mock.sh -s \"${SRCROOT}\" -d \"${SRCROOT}/Pog/Mock/Generated/GeneratedMock.swift\"\n";
-		};
 		D31F91B8285CE54D00B55DCE /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -730,25 +713,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ -f \"$SRCROOT/.envrc\" ]; then\n  source \"$SRCROOT/.envrc\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\nxcrun --sdk macosx mint run LicensePlist --output-path Pog/Settings.bundle\nfi\n";
-		};
-		D3B7C0DD289D34DB00EA4138 /* Run SwiftGen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftGen";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n${SRCROOT}/swiftgen\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [ $CONFIGURATION = \"Debug\" ]; then\nxcrun --sdk macosx mint run LicensePlist --output-path Pog/Settings.bundle\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -788,6 +753,7 @@
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3243EA528ADDE6000C7861F /* InterestingPlaceData+CoreDataClass.swift in Sources */,
 				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
+				D304ED8928D7125600748E41 /* Calendar+Ex.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D+Ex.swift in Sources */,
 				D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */,
 				D3243EA328ADDE6000C7861F /* PlaceLogData+CoreDataClass.swift in Sources */,
@@ -796,7 +762,6 @@
 				D3CA088228688D56006147BB /* PlaceManager+Env.swift in Sources */,
 				D312A1492877399A00CEFBCC /* InterestingPlaceVisitingListView.swift in Sources */,
 				D3BFA99B2833D92800606CD4 /* SearchPlaceModel.swift in Sources */,
-				D3E5111F2871EC0B00FDC330 /* SecretSample.swift in Sources */,
 				D3CA088828689FD4006147BB /* Pog.xcdatamodeld in Sources */,
 				D3E0B1D3287F06230094AB49 /* Binding+Extensions.swift in Sources */,
 				D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */,
@@ -981,7 +946,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
@@ -1000,7 +965,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios.debug;
 				PRODUCT_NAME = "D_$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1016,7 +981,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pog/Pog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"Pog/Preview Content\"";
 				DEVELOPMENT_TEAM = S8WBNKMKYU;
 				ENABLE_PREVIEWS = YES;
@@ -1034,7 +999,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1249,6 +1214,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D39BB84228BEEAA700AA83CA /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		D3AD35B428D7875C004B24D2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D31F91B3285CE54600B55DCE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		D3BFA972283397ED00606CD4 /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -40,8 +40,8 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.removeOverlays(uiView.overlays)
         if let polyline = polyline {
-            uiView.removeOverlay(polyline)
             uiView.addOverlay(polyline)
         }
         uiView.removeAnnotations(uiView.annotations)

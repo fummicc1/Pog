@@ -18,11 +18,25 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @Published var searchText: String = ""
-    @Published var showPartialSheet: Bool = false
-    @Published private(set) var selectedPlace: Place?
-    @Published private(set) var searchedWords: [String] = []
-    @Published var showPlaces: [Place] = []
+    @MainActor
+    @Published
+    var searchText: String = ""
+
+    @MainActor
+    @Published
+    var showPartialSheet: Bool = false
+
+    @MainActor
+    @Published
+    private(set) var selectedPlace: Place?
+
+    @MainActor
+    @Published
+    private(set) var searchedWords: [String] = []
+
+    @MainActor
+    @Published
+    var showPlaces: [Place] = []
 
     private var numberOfPlacesSearchRequestPerDay: CurrentValueSubject<Int, Never> = .init(0)
     private var lastSearchedDate: CurrentValueSubject<Date?, Never> = .init(nil)
@@ -30,7 +44,9 @@ class MapModel: ObservableObject {
     private var interestingPlaces: CurrentValueSubject<[InterestingPlaceData], Never> = .init(
         [])
 
-    @Published var region: MKCoordinateRegion = .init(
+    @MainActor
+    @Published
+    var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
         center: CLLocationCoordinate2D(
             latitude: 35.652832,
@@ -41,7 +57,10 @@ class MapModel: ObservableObject {
             longitudeDelta: 0.03
         )
     )
-    @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
+
+    @MainActor
+    @Published
+    var needToAcceptAlwaysLocationAuthorization: Bool = false
 
     @MainActor
     init(locationManager: LocationManager, placeManager: PlaceManager, store: Store) {
@@ -128,6 +147,7 @@ class MapModel: ObservableObject {
 
     }
 
+    @MainActor
     func onTapMyCurrentLocationButton() {
         guard let coordinate = locationManager.currentCoordinate else {
             return
@@ -135,14 +155,12 @@ class MapModel: ObservableObject {
         region.center = coordinate
     }
 
+    @MainActor
     func selectPlace(_ place: Place?) {
-        Task { @MainActor in
-            selectedPlace = place
-            showPartialSheet = place != nil
-        }
+        selectedPlace = place
+        showPartialSheet = place != nil
     }
 
-    @MainActor
     func onSubmitTextField() async {
         await placeManager.search(
             text: searchText,
@@ -150,7 +168,8 @@ class MapModel: ObservableObject {
             useGooglePlaces: numberOfPlacesSearchRequestPerDay.value
                 <= Const.numberOfPlacesApiCallPerDay
         )
-        var new = searchedWords
+        var new = await searchedWords
+        let searchText = await self.searchText
         if !new.contains(searchText) {
             new.append(searchText)
         }

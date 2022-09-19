@@ -33,7 +33,8 @@
 
 // MARK: PlaceLogPage
 "PlaceLogPage.Place.Empty" = "Empty Location Log";
-
+"PlaceLogPage.Buttons.DeleteForSelectedDate" = "Delete Logs";
+"PlaceLogPage.Alert.DeleteConfirmance.Title" = "Do you delete logs in %@ ?";
 
 
 // MARK: SettingsPage
@@ -123,3 +124,4 @@
 "Common.InadequateStatus" = "Need to fill out required form";
 "Common.Send" = "Send";
 "Common.Complete" = "Complete";
+"Common.Delete" = "Delete";

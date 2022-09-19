@@ -87,6 +87,8 @@
 
 // MARK: PlaceLogPage
 "PlaceLogPage.Place.Empty" = "まだ位置の履歴がありません";
+"PlaceLogPage.Buttons.DeleteForSelectedDate" = "ログを削除する";
+"PlaceLogPage.Alert.DeleteConfirmance.Title" = "%@ のログを削除しますか？";
 
 
 // MARK: SettingsPage
@@ -174,3 +176,4 @@
 "Common.Send" = "送信";
 "Common.InadequateStatus" = "入力に不備があります";
 "Common.Complete" = "完了";
+"Common.Delete" = "削除";

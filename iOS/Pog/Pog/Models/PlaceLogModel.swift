@@ -1,4 +1,5 @@
 import Combine
+import CoreData
 import CoreLocation
 import MapKit
 import SwiftUI
@@ -53,6 +54,7 @@ class PlaceLogModel: ObservableObject {
 
     private let que = DispatchQueue(label: "dev.fummicc1.Pog.PlacelogDataModel.Que")
 
+    @MainActor
     init(
         locationManager: LocationManager,
         store: Store
@@ -78,6 +80,7 @@ class PlaceLogModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    @MainActor
     func onTapMyCurrentLocationButton() {
         guard let coordinate = locationManager.currentCoordinate else {
             return
@@ -187,7 +190,27 @@ class PlaceLogModel: ObservableObject {
             .assign(to: &$selectedPolyline)
     }
 
+    @MainActor
     func onSelect(date: Date) {
         selectedDate = date
+    }
+
+    func deleteLogsForSelectedDate() async {
+        let selectedDate = await selectedDate
+        let tmr = Calendar.current.tomorrow(of: selectedDate)
+        let request: NSFetchRequest<any NSFetchRequestResult> = PlaceLogData.fetchRequest()
+        let predicate = NSPredicate(
+            format: "date >= %@ AND date <= %@",
+            selectedDate as CVarArg,
+            tmr as CVarArg
+        )
+        request.predicate = predicate
+        let batchRequest = NSBatchDeleteRequest(fetchRequest: request)
+        do {
+            try store.deleteWithBatch(batchRequest)
+        }
+        catch {
+            assertionFailure("\(error)")
+        }
     }
 }

@@ -52,7 +52,9 @@ extension MapModelTests {
         }
 
         // MARK: Model
-        model.searchText = "Test"
+        await MainActor.run(body: {
+            model.searchText = "Test"
+        })
 
         // MARK: Act
         await model.onSubmitTextField()
@@ -66,6 +68,8 @@ extension MapModelTests {
             1
         )
 
-        XCTAssertEqual(model.showPlaces, searchPlaces)
+        await MainActor.run(body: {
+            XCTAssertEqual(model.showPlaces, searchPlaces)
+        })
     }
 }
