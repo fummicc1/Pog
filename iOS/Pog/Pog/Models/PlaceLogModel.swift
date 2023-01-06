@@ -7,7 +7,7 @@ import SwiftUI
 class PlaceLogModel: ObservableObject {
 
     private let locationManager: LocationManager
-    private let store: Store
+    private let store: LocalDataStore
     private var cancellables: Set<AnyCancellable> = []
 
     @MainActor
@@ -57,7 +57,7 @@ class PlaceLogModel: ObservableObject {
     @MainActor
     init(
         locationManager: LocationManager,
-        store: Store
+        store: LocalDataStore
     ) {
         self.locationManager = locationManager
         self.store = store

@@ -12,7 +12,7 @@ import MapKit
 import Moya
 
 
-public class StoreMock: Store {
+public class StoreMock: LocalDataStore {
     public init() { }
     public init(context: NSManagedObjectContext) {
         self._context = context

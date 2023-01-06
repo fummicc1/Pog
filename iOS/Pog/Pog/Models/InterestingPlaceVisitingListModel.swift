@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 class InterestingPlaceVisitingListModel: ObservableObject {
-    private let store: Store
+    private let store: LocalDataStore
     private let placeManager: PlaceManager
 
     @Published var histories: [InterestingPlaceData: [InterestingPlaceVisitingLogData]] = [:]
     @Published var places: [InterestingPlaceData] = []
 
-    init(store: Store, placeManager: PlaceManager) {
+    init(store: LocalDataStore, placeManager: PlaceManager) {
         self.store = store
         self.placeManager = placeManager
 

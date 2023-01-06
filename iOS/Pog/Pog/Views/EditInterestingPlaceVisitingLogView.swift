@@ -11,7 +11,7 @@ struct EditInterestingPlaceVisitingLogDataView: View {
 
     @Binding var editingLog: InterestingPlaceVisitingLogData?
 
-    @Environment(\.store) var store: Store
+    @Environment(\.store) var store: LocalDataStore
 
     @State private var visitedAt: Date
     @State private var exitedAt: Date?

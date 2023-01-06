@@ -15,7 +15,7 @@ class MapModel: ObservableObject {
 
     private let locationManager: LocationManager
     private let placeManager: PlaceManager
-    private let store: Store
+    private let store: LocalDataStore
     private var cancellables: Set<AnyCancellable> = []
 
     @MainActor
@@ -63,7 +63,7 @@ class MapModel: ObservableObject {
     var needToAcceptAlwaysLocationAuthorization: Bool = false
 
     @MainActor
-    init(locationManager: LocationManager, placeManager: PlaceManager, store: Store) {
+    init(locationManager: LocationManager, placeManager: PlaceManager, store: LocalDataStore) {
         self.locationManager = locationManager
         self.placeManager = placeManager
         self.store = store

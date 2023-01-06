@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct StoreEnvironemtnKey: EnvironmentKey {
-    static var defaultValue: Store = StoreImpl()
+    static var defaultValue: LocalDataStore = LocalDataStoreImpl()
 }
 
 extension EnvironmentValues {
-    var store: Store {
+    var store: LocalDataStore {
         get {
             self[StoreEnvironemtnKey.self]
         }

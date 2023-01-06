@@ -11,7 +11,7 @@ import SwiftUI
 struct RootView: View {
 
     @Environment(\.locationManager) var locationManager: LocationManager
-    @Environment(\.store) var store: Store
+    @Environment(\.store) var store: LocalDataStore
     @Environment(\.placeManager) var placeManager: PlaceManager
 
     @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = true

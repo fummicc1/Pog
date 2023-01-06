@@ -11,7 +11,7 @@ import SwiftUI
 struct InterestingPlaceVisitingListView: View {
 
     @ObservedObject var model: InterestingPlaceVisitingListModel
-    @Environment(\.store) var store: Store
+    @Environment(\.store) var store: LocalDataStore
     @State private var moveToEditLogPage: InterestingPlaceVisitingLogData?
 
     var body: some View {

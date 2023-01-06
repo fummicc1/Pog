@@ -3,7 +3,7 @@ import CoreData
 import Foundation
 
 /// @mockable
-public protocol Store {
+public protocol LocalDataStore {
     var searchConfiguration: AnyPublisher<SearchConfiguration, Never> { get }
     var logs: AnyPublisher<[PlaceLogData], Never> { get }
     var interestingPlaceVisitingLogDatas: AnyPublisher<[InterestingPlaceVisitingLogData], Never>
@@ -30,7 +30,7 @@ extension Const {
     }
 }
 
-public class StoreImpl {
+public class LocalDataStoreImpl {
 
     private let container = NSPersistentContainer(name: "Pog")
 
@@ -312,7 +312,7 @@ public class StoreImpl {
     }
 }
 
-extension StoreImpl: Store {
+extension LocalDataStoreImpl: LocalDataStore {
 
     public var searchConfiguration: AnyPublisher<SearchConfiguration, Never> {
         searchConfigurationSubject.share().eraseToAnyPublisher()

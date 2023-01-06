@@ -35,7 +35,7 @@ class SettingsModel: ObservableObject {
     @Published
     private(set) var selection: Selection = .none
 
-    private let store: Store
+    private let store: LocalDataStore
     private let locationManager: LocationManager
     private var cancellables: Set<AnyCancellable> = []
 
@@ -50,7 +50,7 @@ class SettingsModel: ObservableObject {
         }
     }
 
-    init(store: Store, locationManager: LocationManager) {
+    init(store: LocalDataStore, locationManager: LocationManager) {
         self.store = store
         self.locationManager = locationManager
         store.locationSettings

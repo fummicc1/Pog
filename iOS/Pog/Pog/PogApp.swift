@@ -30,7 +30,7 @@ struct PogApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var locationManager: LocationManager = LocationManagerImpl.shared
-    var store: Store = StoreEnvironemtnKey.defaultValue
+    var store: LocalDataStore = StoreEnvironemtnKey.defaultValue
     var cancellables: Set<AnyCancellable> = []
 
     func application(

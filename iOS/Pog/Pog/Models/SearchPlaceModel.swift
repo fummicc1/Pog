@@ -17,12 +17,12 @@ class SearchPlaceModel: ObservableObject {
     @Published var error: String? = nil
     @Published var interestingPlaces: [InterestingPlaceData] = []
 
-    let store: Store
+    let store: LocalDataStore
     let locationManager: LocationManager
 
     let place: Place
 
-    init(place: Place, store: Store, locationManager: LocationManager) {
+    init(place: Place, store: LocalDataStore, locationManager: LocationManager) {
         self.place = place
         self.store = store
         self.locationManager = locationManager

@@ -17,7 +17,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     @Binding var polyline: MKPolyline?
     @Binding var pickedUpLogs: [PlaceLogData]
 
-    @Environment(\.store) var store: Store
+    @Environment(\.store) var store: LocalDataStore
 
     func makeUIView(context: Context) -> MKMapView {
         let view = MKMapView()
@@ -65,9 +65,9 @@ struct MapViewRepresentable: UIViewRepresentable {
 extension MapViewRepresentable {
     class Coordinator: NSObject, MKMapViewDelegate, UITextFieldDelegate {
 
-        var store: Store
+        var store: LocalDataStore
 
-        init(store: Store) {
+        init(store: LocalDataStore) {
             self.store = store
             super.init()
         }

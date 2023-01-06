@@ -16,7 +16,7 @@ struct MapView: View {
     @StateObject var model: MapModel
     @State private var moveToHistoryPage: Bool = false
 
-    @Environment(\.store) var store: Store
+    @Environment(\.store) var store: LocalDataStore
     @Environment(\.placeManager) var placeManager: PlaceManager
     @Environment(\.locationManager) var locationManager: LocationManager
 

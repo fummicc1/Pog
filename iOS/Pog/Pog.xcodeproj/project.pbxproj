@@ -45,7 +45,7 @@
 		D37544DF286620EC003008D9 /* PickedUpLogAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */; };
 		D394E35A28CB6837001833E1 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394E35928CB6836001833E1 /* Date+Ex.swift */; };
 		D39BB84428BEEAA700AA83CA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D39BB84328BEEAA700AA83CA /* Moya */; };
-		D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* Store.swift */; };
+		D3A9A37B283A4C6F006F3CE6 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9A37A283A4C6F006F3CE6 /* LocalDataStore.swift */; };
 		D3AD35B528D7875C004B24D2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D3AD35B428D7875C004B24D2 /* FirebaseFirestore */; };
 		D3B7C0DC289D33C400EA4138 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */; };
 		D3B7C0DF289D35F600EA4138 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */; };
@@ -133,7 +133,7 @@
 		D34157032895AE6D000B99C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D37544DE286620EC003008D9 /* PickedUpLogAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedUpLogAnnotation.swift; sourceTree = "<group>"; };
 		D394E35928CB6836001833E1 /* Date+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
-		D3A9A37A283A4C6F006F3CE6 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D3A9A37A283A4C6F006F3CE6 /* LocalDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
 		D3B7C0DB289D33C400EA4138 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		D3B7C0DE289D35F600EA4138 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		D3BFA9302833796D00606CD4 /* D_Pog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D_Pog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,7 +305,7 @@
 		D3A9A37C283A4C74006F3CE6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				D3A9A37A283A4C6F006F3CE6 /* Store.swift */,
+				D3A9A37A283A4C6F006F3CE6 /* LocalDataStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -752,7 +752,7 @@
 				D3C462812871A84B0005C1B4 /* SearchConfiguration.swift in Sources */,
 				D3CA088028688CA9006147BB /* LocationManager+Env.swift in Sources */,
 				D3243EA528ADDE6000C7861F /* InterestingPlaceData+CoreDataClass.swift in Sources */,
-				D3A9A37B283A4C6F006F3CE6 /* Store.swift in Sources */,
+				D3A9A37B283A4C6F006F3CE6 /* LocalDataStore.swift in Sources */,
 				D304ED8928D7125600748E41 /* Calendar+Ex.swift in Sources */,
 				D3E0AACE2840AB7D00597C1A /* CLLocationCoordinate2D+Ex.swift in Sources */,
 				D3E5111D2871EBB300FDC330 /* Secret.swift in Sources */,
@@ -965,7 +965,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.10;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios.debug;
 				PRODUCT_NAME = "D_$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -999,7 +999,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.10;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.fummicc1.Pog.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
