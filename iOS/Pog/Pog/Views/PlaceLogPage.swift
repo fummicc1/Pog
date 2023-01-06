@@ -160,8 +160,5 @@ struct PlaceLogPage: View {
                 NavigationBarItem.TitleDisplayMode.inline
             )
         }
-        .onAppear {
-            model.onApepar()
-        }
     }
 }

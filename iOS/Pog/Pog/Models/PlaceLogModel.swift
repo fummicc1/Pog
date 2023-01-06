@@ -61,6 +61,19 @@ class PlaceLogModel: ObservableObject {
     ) {
         self.locationManager = locationManager
         self.store = store
+        configure()
+    }
+
+    @MainActor
+    func onTapMyCurrentLocationButton() {
+        guard let coordinate = locationManager.currentCoordinate else {
+            return
+        }
+        region.center = coordinate
+    }
+
+    @MainActor
+    private func configure() {
 
         locationManager.request()
 
@@ -78,20 +91,16 @@ class PlaceLogModel: ObservableObject {
                 self.region.center = coordinate
             }
             .store(in: &cancellables)
-    }
 
-    @MainActor
-    func onTapMyCurrentLocationButton() {
-        guard let coordinate = locationManager.currentCoordinate else {
-            return
-        }
-        region.center = coordinate
-    }
-
-    func onApepar() {
         let calendar = Calendar.current
         // TODO: diffable update
-        let logData = store.logs.combineLatest($selectedDate)
+        let logData = store.logs
+            .debounce(for: 0.2, scheduler: que)
+            .map { $0.map { e in
+                e.roundCoordinate()
+                return e
+            } }
+            .combineLatest($selectedDate)
             .receive(on: que)
             .map({ (places, selectedDate) -> ([Date], [PlaceLogData]) in
                 var dates: Set<Date> = []
@@ -156,7 +165,7 @@ class PlaceLogModel: ObservableObject {
                     let distance = location.distance(
                         from: beforeLocation
                     )
-                    let thresholdDistance: Double = 500
+                    let thresholdDistance: Double = 50
                     if distance < thresholdDistance {
                         print(distance)
                         continue

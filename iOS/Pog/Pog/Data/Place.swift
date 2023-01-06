@@ -19,3 +19,10 @@ public struct Place: Identifiable, Hashable {
         return "\(lat)/\(lng)"
     }
 }
+
+extension PlaceLogData {
+    func roundCoordinate() {
+        self.lat = Double(Int(self.lat * 100_000)) / 100_000
+        self.lng = Double(Int(self.lng * 100_000)) / 100_000
+    }
+}

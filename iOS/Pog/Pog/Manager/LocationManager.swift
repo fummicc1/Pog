@@ -100,7 +100,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     // MARK: Methods
     public override init() {
         super.init()
-        manager.showsBackgroundLocationIndicator = true
+        manager.showsBackgroundLocationIndicator = false
         manager.allowsBackgroundLocationUpdates = true
         manager.pausesLocationUpdatesAutomatically = false
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters

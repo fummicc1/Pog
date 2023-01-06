@@ -58,7 +58,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                     try self.store.context.save()
                 }
                 catch {
-                    assertionFailure("\(error)")
+//                    assertionFailure("\(error)")
                 }
             }
             .store(in: &cancellables)
