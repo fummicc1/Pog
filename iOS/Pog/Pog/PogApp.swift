@@ -5,70 +5,93 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import SwiftUI
 import Combine
-import FirebaseCore
 import FirebaseAnalytics
+import FirebaseCore
+import SwiftUI
 
 @main
 struct PogApp: App {
-    
+
     @UIApplicationDelegateAdaptor var appDelegate: AppDelegate
-    
+
     var body: some Scene {
         WindowGroup {
             RootView()
-            .attachPartialSheetToRoot()
-            .environment(\.managedObjectContext, appDelegate.store.context)
+                .attachPartialSheetToRoot()
+                .environment(
+                    \.managedObjectContext,
+                    appDelegate.store.context
+                )
         }
     }
 }
 
-
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    
+
     var locationManager: LocationManager = LocationManagerImpl.shared
     var store: Store = StoreEnvironemtnKey.defaultValue
     var cancellables: Set<AnyCancellable> = []
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey:
+            Any]? = nil
+    ) -> Bool {
         FirebaseApp.configure()
         #if DEBUG
-        Analytics.setAnalyticsCollectionEnabled(false)
+            Analytics.setAnalyticsCollectionEnabled(false)
         #else
-        Analytics.setAnalyticsCollectionEnabled(true)
+            Analytics.setAnalyticsCollectionEnabled(true)
         #endif
         // MARK: Observe location updates
-        locationManager.coordinate
+        locationManager.coordinate.combineLatest(store.locationSettings)
+            .filter({ $0.1?.allowsBackgroundLocationUpdates == true })
+            .map(\.0)
             .sink { coordinate in
-                let log = PlaceLog(context: self.store.context)
+                let log = PlaceLogData(context: self.store.context)
                 log.lat = coordinate.latitude
                 log.lng = coordinate.longitude
                 log.date = Date()
                 log.color = "0x007AFF"
                 do {
                     try self.store.context.save()
-                } catch {
-                    assertionFailure("\(error)")
+                }
+                catch {
+//                    assertionFailure("\(error)")
                 }
             }
             .store(in: &cancellables)
         locationManager.onEnterRegion
             .sink { region in
                 do {
-                    let places = try self.store.fetch(type: InterestingPlace.self)
-                    let visitingLog = InterestingPlaceVisitingLog(
+                    let places = try self.store.fetch(
+                        type: InterestingPlaceData.self
+                    )
+                    let visitingLog = InterestingPlaceVisitingLogData(
                         context: self.store.context
                     )
                     visitingLog.visitedAt = Date()
-                    guard let place = places.first(
-                        where: { $0.lat == region.center.latitude && $0.lng == region.center.longitude }) else {
+                    guard
+                        let place = places.first(
+                            where: {
+                                $0.lat
+                                    == region
+                                    .center
+                                    .latitude
+                                    && $0.lng
+                                        == region
+                                        .center
+                                        .longitude
+                            })
+                    else {
                         assertionFailure()
                         return
                     }
                     visitingLog.place = place
                     try self.store.context.save()
-                } catch {
+                }
+                catch {
                     assertionFailure("\(error)")
                 }
             }
@@ -76,21 +99,35 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         locationManager.onExitRegion
             .sink { region in
                 do {
-                    let logs = try self.store.fetch(type: InterestingPlaceVisitingLog.self)
-                    guard let log = logs.first(where: {
-                        $0.place?.lat == region.center.latitude && $0.place?.lng == region.center.longitude && $0.exitedAt == nil
-                    }) else {
+                    let logs = try self.store.fetch(
+                        type: InterestingPlaceVisitingLogData
+                            .self
+                    )
+                    guard
+                        let log = logs.first(where: {
+                            $0.place?.lat
+                                == region.center
+                                .latitude
+                                && $0.place?.lng
+                                    == region
+                                    .center
+                                    .longitude
+                                && $0.exitedAt
+                                    == nil
+                        })
+                    else {
                         assertionFailure()
                         return
                     }
                     log.exitedAt = Date()
                     try self.store.context.save()
-                } catch {
+                }
+                catch {
                     assertionFailure("\(error)")
                 }
             }
             .store(in: &cancellables)
-        
+
         UNUserNotificationCenter.current().delegate = self
 
         store.locationSettings
@@ -100,7 +137,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 }
                 self.locationManager.updateLocationManager(
                     keypath: \.allowsBackgroundLocationUpdates,
-                    value: locationSettings.allowsBackgroundLocationUpdates
+                    value: locationSettings
+                        .allowsBackgroundLocationUpdates
                 )
                 self.locationManager.updateLocationManager(
                     keypath: \.distanceFilter,
@@ -114,8 +152,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             .store(in: &cancellables)
         return true
     }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification
+    ) async -> UNNotificationPresentationOptions {
         return [.banner]
     }
 }

@@ -5,17 +5,17 @@
 //  Created by Fumiya Tanaka on 2022/05/27.
 //
 
+import FirebaseCrashlytics
 import Foundation
 import MapKit
 import SwiftUI
-import FirebaseCrashlytics
 
 struct MapViewRepresentable: UIViewRepresentable {
     typealias UIViewType = MKMapView
 
     @Binding var region: MKCoordinateRegion
     @Binding var polyline: MKPolyline?
-    @Binding var pickedUpLogs: [PlaceLog]
+    @Binding var pickedUpLogs: [PlaceLogData]
 
     @Environment(\.store) var store: Store
 
@@ -30,7 +30,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         for featuredLog in pickedUpLogs {
             let annotaion = PickedUpLogAnnotation(pickedUpLog: featuredLog)
             if let date = featuredLog.date {
-                annotaion.title = date.displayable
+                annotaion.title = date.displayable(withTime: true)
             }
             annotations.append(annotaion)
         }
@@ -39,10 +39,9 @@ struct MapViewRepresentable: UIViewRepresentable {
         return view
     }
 
-
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.removeOverlays(uiView.overlays)
         if let polyline = polyline {
-            uiView.removeOverlay(polyline)
             uiView.addOverlay(polyline)
         }
         uiView.removeAnnotations(uiView.annotations)
@@ -50,7 +49,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         for pickedUpLog in pickedUpLogs {
             let annotaion = PickedUpLogAnnotation(pickedUpLog: pickedUpLog)
             if let date = pickedUpLog.date {
-                annotaion.title = date.displayable
+                annotaion.title = date.displayable(withTime: true)
             }
             annotations.append(annotaion)
         }
@@ -73,7 +72,9 @@ extension MapViewRepresentable {
             super.init()
         }
 
-        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay)
+            -> MKOverlayRenderer
+        {
             guard let polyline = overlay as? MKPolyline else {
                 return MKPolylineRenderer()
             }
@@ -83,7 +84,9 @@ extension MapViewRepresentable {
             return renderer
         }
 
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation)
+            -> MKAnnotationView?
+        {
             if annotation is MKUserLocation {
                 return nil
             }
@@ -91,19 +94,24 @@ extension MapViewRepresentable {
                 return nil
             }
             let view: MKMarkerAnnotationView
-            if let _view = mapView.dequeueReusableAnnotationView(withIdentifier: "annotation") as? MKMarkerAnnotationView {
+            if let _view = mapView.dequeueReusableAnnotationView(
+                withIdentifier: "annotation"
+            )
+                as? MKMarkerAnnotationView
+            {
                 view = _view
                 view.annotation = annotation
                 view.glyphTintColor = UIColor.tintColor
                 view.markerTintColor = UIColor.systemBackground
-            } else {
+            }
+            else {
                 view = MKMarkerAnnotationView(
                     annotation: annotation,
                     reuseIdentifier: "annotation"
                 )
                 view.glyphTintColor = UIColor.tintColor
                 view.markerTintColor = UIColor.systemBackground
-            }           
+            }
             return view
         }
 

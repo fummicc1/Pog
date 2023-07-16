@@ -1,5 +1,5 @@
 //
-//  EditInterestingPlaceVisitingLogView.swift
+//  EditInterestingPlaceVisitingLogDataView.swift
 //  Pog
 //
 //  Created by Fumiya Tanaka on 2022/07/13.
@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct EditInterestingPlaceVisitingLogView: View {
+struct EditInterestingPlaceVisitingLogDataView: View {
 
-    @Binding var editingLog: InterestingPlaceVisitingLog?
+    @Binding var editingLog: InterestingPlaceVisitingLogData?
 
     @Environment(\.store) var store: Store
 
     @State private var visitedAt: Date
     @State private var exitedAt: Date?
 
-    init(log: Binding<InterestingPlaceVisitingLog?>) {
+    init(log: Binding<InterestingPlaceVisitingLogData?>) {
         self._editingLog = log
         self._exitedAt = State(initialValue: log.wrappedValue!.exitedAt)
         self._visitedAt = State(initialValue: log.wrappedValue!.visitedAt!)
@@ -25,7 +25,7 @@ struct EditInterestingPlaceVisitingLogView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("VisitingTime")
+                Text(L10n.Common.visitingTime)
                     .font(.callout)
                     .bold()
                     .foregroundColor(.secondary)
@@ -33,7 +33,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                 DatePicker("", selection: $visitedAt)
             }
             HStack {
-                Text("DepartureTime")
+                Text(L10n.Common.departureTime)
                     .font(.callout)
                     .bold()
                     .foregroundColor(.secondary)
@@ -47,7 +47,7 @@ struct EditInterestingPlaceVisitingLogView: View {
                 Button {
                     editingLog = nil
                 } label: {
-                    Text("Cancel")
+                    Text(L10n.Common.cancel)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }
@@ -62,11 +62,12 @@ struct EditInterestingPlaceVisitingLogView: View {
                     do {
                         try store.context.save()
                         editingLog = nil
-                    } catch {
+                    }
+                    catch {
                         assertionFailure("\(error)")
                     }
                 } label: {
-                    Text("Save")
+                    Text(L10n.Common.save)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 8)
                 }

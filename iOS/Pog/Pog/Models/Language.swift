@@ -15,7 +15,8 @@ public enum Language: String {
         let lang = Locale.preferredLanguages[0]
         if lang.contains("ja") {
             return .ja
-        } else if lang.contains("en") {
+        }
+        else if lang.contains("en") {
             return .en
         }
         return nil

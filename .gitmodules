@@ -1,6 +1,9 @@
-[submodule "iOS/Packages/Moya"]
-	path = iOS/Packages/Moya
-	url = https://github.com/Moya/Moya
 [submodule "iOS/BuildTools/mockolo"]
 	path = iOS/BuildTools/mockolo
 	url = https://github.com/uber/mockolo
+[submodule "iOS/BuildTools/swiftgen"]
+	path = iOS/BuildTools/swiftgen
+	url = https://github.com/SwiftGen/SwiftGen
+[submodule "iOS/BuildTools/swift-format"]
+	path = iOS/BuildTools/swift-format
+	url = https://github.com/apple/swift-format

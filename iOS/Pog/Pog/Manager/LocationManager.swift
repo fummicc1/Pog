@@ -6,8 +6,8 @@
 //
 
 import Combine
-import Foundation
 import CoreLocation
+import Foundation
 
 /// @mockable
 public protocol LocationManager {
@@ -23,9 +23,17 @@ public protocol LocationManager {
     var onExitRegion: AnyPublisher<CLCircularRegion, Never> { get }
 
     func request()
-    func updateLocationManager<V>(keypath: ReferenceWritableKeyPath<CLLocationManager, V>, value: V)
+    func updateLocationManager<V>(
+        keypath: ReferenceWritableKeyPath<CLLocationManager, V>,
+        value: V
+    )
     @discardableResult
-    func startMonitoringRegion(id: String, at coordinate: CLLocationCoordinate2D, distance: Double) -> Bool
+    func startMonitoringRegion(
+        id: String,
+        at coordinate: CLLocationCoordinate2D,
+        distance: Double
+    )
+        -> Bool
     @discardableResult
     func resignMonitoringRegion(at coordinate: CLLocationCoordinate2D) -> Bool
 }
@@ -36,10 +44,17 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     private let onEnterRegionSubject: PassthroughSubject<CLRegion, Never> = .init()
     private let onExitRegionSubject: PassthroughSubject<CLRegion, Never> = .init()
     private let monitoringRegionsSubject: CurrentValueSubject<[CLRegion], Never> = .init([])
-    private let coordinateSubject: CurrentValueSubject<CLLocationCoordinate2D?, Never> = .init(nil)
+    private let coordinateSubject: CurrentValueSubject<CLLocationCoordinate2D?, Never> =
+        .init(nil)
     private let errorSubject: PassthroughSubject<Error, Never> = .init()
-    private let authorizationStatusRelay: CurrentValueSubject<CLAuthorizationStatus, Never> = .init(.notDetermined)
-    private let isAuthorizedForPreciseLocationSubject: CurrentValueSubject<Bool, Never> = .init(false)
+    private let authorizationStatusRelay: CurrentValueSubject<CLAuthorizationStatus, Never> =
+        .init(
+            .notDetermined
+        )
+    private let isAuthorizedForPreciseLocationSubject: CurrentValueSubject<Bool, Never> =
+        .init(
+            false
+        )
 
     private var prepareForRequestAlways: Bool = false
     private let manager = CLLocationManager()
@@ -85,7 +100,7 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
     // MARK: Methods
     public override init() {
         super.init()
-        manager.showsBackgroundLocationIndicator = true
+        manager.showsBackgroundLocationIndicator = false
         manager.allowsBackgroundLocationUpdates = true
         manager.pausesLocationUpdatesAutomatically = false
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -95,19 +110,29 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
         monitoringRegionsSubject.send(monitoringRegions)
     }
 
-    public func updateLocationManager<V>(keypath: ReferenceWritableKeyPath<CLLocationManager, V>, value: V) {
+    public func updateLocationManager<V>(
+        keypath: ReferenceWritableKeyPath<CLLocationManager, V>,
+        value: V
+    ) {
         manager[keyPath: keypath] = value
 
         // Perform side-effects for changes
         if keypath == \CLLocationManager.allowsBackgroundLocationUpdates {
             if manager.allowsBackgroundLocationUpdates {
                 manager.startMonitoringSignificantLocationChanges()
-            } else {
+            }
+            else {
                 manager.stopMonitoringSignificantLocationChanges()
             }
-        } else if keypath == \CLLocationManager.desiredAccuracy, let value = value as? Double {
+        }
+        else if keypath == \CLLocationManager.desiredAccuracy,
+            let value = value as? Double
+        {
             manager.desiredAccuracy = value
-        } else if keypath == \CLLocationManager.distanceFilter, let value = value as? Double {
+        }
+        else if keypath == \CLLocationManager.distanceFilter,
+            let value = value as? Double
+        {
             manager.distanceFilter = value
         }
     }
@@ -116,7 +141,11 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
         manager.requestWhenInUseAuthorization()
     }
 
-    public func startMonitoringRegion(id: String, at coordinate: CLLocationCoordinate2D, distance: Double) -> Bool {
+    public func startMonitoringRegion(
+        id: String,
+        at coordinate: CLLocationCoordinate2D,
+        distance: Double
+    ) -> Bool {
         let regions = manager.monitoredRegions.compactMap({ $0 as? CLCircularRegion })
         if regions.map(\.center).contains(coordinate) {
             return false
@@ -166,13 +195,18 @@ public class LocationManagerImpl: NSObject, CLLocationManagerDelegate, LocationM
             break
         }
 
-        if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
+        if manager.authorizationStatus == .authorizedWhenInUse
+            || manager.authorizationStatus == .authorizedAlways
+        {
             manager.startUpdatingLocation()
             manager.startMonitoringSignificantLocationChanges()
         }
     }
 
-    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]
+    ) {
         if let location = locations.last {
             coordinateSubject.send(location.coordinate)
         }

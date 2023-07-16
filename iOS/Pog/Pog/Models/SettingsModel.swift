@@ -5,30 +5,48 @@
 //  Created by Fumiya Tanaka on 2022/07/01.
 //
 
-import Foundation
 import Combine
-import SwiftUI
 import CoreData
 import CoreLocation
+import Foundation
+import SwiftUI
 import UserNotifications
 
 class SettingsModel: ObservableObject {
-    @MainActor @Published private(set) var desiredAccuracy: Double?
-    @MainActor @Published private(set) var allowsBackgroundLocationUpdates: Bool = true
-    @MainActor @Published private(set) var isAquiringAccuracyLocation: String = NSLocalizedString("FuzzyLocation", comment: "")
-    @MainActor @Published private(set) var locationAuthorizationStatus: String = NSLocalizedString("ConfirmNextTime", comment: "")
+    @MainActor
+    @Published
+    private(set) var desiredAccuracy: Double?
+
+    @MainActor
+    @Published
+    private(set) var allowsBackgroundLocationUpdates: Bool = true
+
+    @MainActor
+    @Published
+    private(set) var isAquiringAccuracyLocation: String = L10n.SettingsModel.Location
+        .fuzzyLocation
+
+    @MainActor
+    @Published
+    private(set) var locationAuthorizationStatus: String = L10n.SettingsModel.Authorization
+        .confirmNextTime
+
+    @MainActor
+    @Published
+    private(set) var selection: Selection = .none
 
     private let store: Store
     private let locationManager: LocationManager
     private var cancellables: Set<AnyCancellable> = []
 
-    private var latestLocationSettings: LocationSettings? {
+    private var latestLocationSettingsData: LocationSettingsData? {
         @MainActor didSet {
-            guard let settings = latestLocationSettings else {
+            guard let settings = latestLocationSettingsData else {
                 return
             }
             self.desiredAccuracy = settings.desiredAccuracy
-            self.allowsBackgroundLocationUpdates = settings.allowsBackgroundLocationUpdates
+            self.allowsBackgroundLocationUpdates =
+                settings.allowsBackgroundLocationUpdates
         }
     }
 
@@ -37,9 +55,10 @@ class SettingsModel: ObservableObject {
         self.locationManager = locationManager
         store.locationSettings
             .receive(on: DispatchQueue.main)
-            .sink { locationSettings in
+            .sink { locationSettingsData in
                 DispatchQueue.main.async {
-                    self.latestLocationSettings = locationSettings
+                    self.latestLocationSettingsData =
+                        locationSettingsData
                 }
             }
             .store(in: &cancellables)
@@ -48,15 +67,17 @@ class SettingsModel: ObservableObject {
             .map { status in
                 switch status {
                 case .notDetermined:
-                    return NSLocalizedString("ConfirmNextTime", comment: "")
+                    return L10n.SettingsModel.Authorization
+                        .confirmNextTime
                 case .authorizedAlways:
-                    return NSLocalizedString("Always", comment: "")
+                    return L10n.SettingsModel.Authorization.always
                 case .authorizedWhenInUse:
-                    return NSLocalizedString("WhenInUse", comment: "")
+                    return L10n.SettingsModel.Authorization.whileInUse
                 case .denied:
-                    return NSLocalizedString("NotAuthorized", comment: "")
+                    return L10n.SettingsModel.Authorization
+                        .notAuthorized
                 default:
-                    return NSLocalizedString("Unknown", comment: "")
+                    return L10n.Common.unknown
                 }
             }
             .assign(to: &$locationAuthorizationStatus)
@@ -64,9 +85,10 @@ class SettingsModel: ObservableObject {
         locationManager.isAuthorizedForPreciseLocation
             .map { isAccurate in
                 if isAccurate {
-                    return NSLocalizedString("PreciseLocation", comment: "")
-                } else {
-                    return NSLocalizedString("FuzzyLocation", comment: "")
+                    return L10n.SettingsModel.Location.preciseLocation
+                }
+                else {
+                    return L10n.SettingsModel.Location.fuzzyLocation
                 }
             }
             .assign(to: &$isAquiringAccuracyLocation)
@@ -74,8 +96,8 @@ class SettingsModel: ObservableObject {
 
     @MainActor
     func onAppear() {
-        if let settings = try? store.fetch(type: LocationSettings.self).first {
-            self.latestLocationSettings = settings
+        if let settings = try? store.fetch(type: LocationSettingsData.self).first {
+            self.latestLocationSettingsData = settings
         }
     }
 
@@ -97,39 +119,72 @@ class SettingsModel: ObservableObject {
     }
 
     func totallyDeleteLogs() {
-        let log = PlaceLog.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
+        let log = PlaceLogData.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
         let batchRequest = NSBatchDeleteRequest(fetchRequest: log)
         do {
             try store.deleteWithBatch(batchRequest)
-        } catch {
+        }
+        catch {
             print(error)
         }
     }
 
     func totallyDeleteInterestingPlaces() {
-        let interests = InterestingPlace.fetchRequest() as NSFetchRequest<NSFetchRequestResult>
+        let interests =
+            InterestingPlaceData.fetchRequest() as NSFetchRequest<
+                NSFetchRequestResult
+            >
         let batch = NSBatchDeleteRequest(fetchRequest: interests)
         do {
             try store.deleteWithBatch(batch)
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        } catch {
+            UNUserNotificationCenter.current()
+                .removeAllPendingNotificationRequests()
+        }
+        catch {
             print(error)
         }
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
-    private func updateSettings<V>(keypath: ReferenceWritableKeyPath<LocationSettings, V>, value: V) {
-        let request = LocationSettings.fetchRequest()
-        if let latestLocationSettings = try? store.context.fetch(request), !latestLocationSettings.isEmpty {
-            latestLocationSettings.last?[keyPath: keypath] = value
-        } else {
-            let latestLocationSettings = LocationSettings(context: store.context)
-            latestLocationSettings[keyPath: keypath] = value
+    @MainActor
+    func update(selection: Selection) {
+        if selection == self.selection {
+            self.selection = .none
+        }
+        else {
+            self.selection = selection
+        }
+    }
+
+    private func updateSettings<V>(
+        keypath: ReferenceWritableKeyPath<LocationSettingsData, V>,
+        value: V
+    ) {
+        let request = LocationSettingsData.fetchRequest()
+        if let latestLocationSettingsData = try? store.context.fetch(request),
+            !latestLocationSettingsData.isEmpty
+        {
+            latestLocationSettingsData.last?[keyPath: keypath] = value
+        }
+        else {
+            let latestLocationSettingsData = LocationSettingsData(
+                context: store.context
+            )
+            latestLocationSettingsData[keyPath: keypath] = value
         }
         do {
             try store.context.save()
-        } catch {
+        }
+        catch {
             print(error)
         }
+    }
+}
+
+extension SettingsModel {
+    enum Selection {
+        case none
+        case locationUpdateOnBackground
+        case accuracy
     }
 }

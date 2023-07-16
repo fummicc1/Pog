@@ -20,20 +20,52 @@ struct SearchPlacePage: View {
                 .foregroundColor(Color(uiColor: .label))
                 .bold()
             if let storedInterestingPlace = model.storedInterestingPlace {
-                Text(NSLocalizedString("DistanceToTriggerNotification", comment: "") + " " + String(Int(storedInterestingPlace.distanceMeter)) + "m")
+                Text(
+                    L10n.SearchPlacePage.Notification
+                        .distanceToTrigger + " "
+                        + String(
+                            Int(
+                                storedInterestingPlace
+                                    .distanceMeter
+                            )
+                        ) + "m"
+                )
             }
             HStack {
-                Button(model.alreadyInteresting ? "DisableNotification" : "EnableNotification") {
+                Button(
+                    model.alreadyInteresting
+                        ? L10n.SearchPlacePage.Notification
+                            .disable
+                        : L10n.SearchPlacePage.Notification
+                            .enable
+                ) {
                     // TODO: Logic should be deadled within `Model`.
                     if model.alreadyInteresting {
-                        if let placeToDelete = model.interestingPlaces.first(where: { $0.lat == model.place.lat && $0.lng == model.place.lng }) {
-                            model.willDeleteInterestingPlace()
+                        if let placeToDelete = model
+                            .interestingPlaces.first(
+                                where: {
+                                    $0.lat
+                                        == model
+                                        .place
+                                        .lat
+                                        && $0
+                                            .lng
+                                            == model
+                                            .place
+                                            .lng
+                                })
+                        {
+                            model
+                                .willDeleteInterestingPlace()
                             context.delete(placeToDelete)
-                            model.storedInterestingPlace = nil
+                            model.storedInterestingPlace =
+                                nil
                         }
                         return
                     }
-                    let interestingPlace = InterestingPlace(context: context)
+                    let interestingPlace = InterestingPlaceData(
+                        context: context
+                    )
                     interestingPlace.name = model.place.name
                     interestingPlace.lat = model.place.lat
                     interestingPlace.lng = model.place.lng
@@ -42,11 +74,14 @@ struct SearchPlacePage: View {
                     interestingPlace.icon = model.place.icon
                     do {
                         try context.save()
-                        model.storedInterestingPlace = interestingPlace
+                        model.storedInterestingPlace =
+                            interestingPlace
                         Task {
-                            await model.didAddInterestingPlace()
+                            await model
+                                .didAddInterestingPlace()
                         }
-                    } catch {
+                    }
+                    catch {
                         model.error = error.localizedDescription
                     }
                 }
@@ -57,13 +92,19 @@ struct SearchPlacePage: View {
             }
         }
         .padding()
-        .alert("ErrorOccured", isPresented: Binding(get: {
-            model.error != nil
-        }, set: { v in
-            if !v {
-                model.error = nil
-            }
-        })) {
+        .alert(
+            L10n.Common.errorOccured,
+            isPresented: Binding(
+                get: {
+                    model.error != nil
+                },
+                set: { v in
+                    if !v {
+                        model.error = nil
+                    }
+                }
+            )
+        ) {
             if let error = model.error {
                 Text(error)
             }
@@ -74,7 +115,8 @@ struct SearchPlacePage: View {
             }) {
                 model.storedInterestingPlace = stored
                 model.alreadyInteresting = true
-            } else {
+            }
+            else {
                 model.alreadyInteresting = false
             }
         }

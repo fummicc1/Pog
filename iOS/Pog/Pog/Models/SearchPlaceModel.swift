@@ -5,17 +5,17 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 import SwiftUI
 import UserNotifications
 
 class SearchPlaceModel: ObservableObject {
 
     @Published var alreadyInteresting: Bool = false
-    @Published var storedInterestingPlace: InterestingPlace?
+    @Published var storedInterestingPlace: InterestingPlaceData?
     @Published var error: String? = nil
-    @Published var interestingPlaces: [InterestingPlace] = []
+    @Published var interestingPlaces: [InterestingPlaceData] = []
 
     let store: Store
     let locationManager: LocationManager
@@ -44,12 +44,13 @@ class SearchPlaceModel: ObservableObject {
             .assign(to: &$alreadyInteresting)
     }
 
-    func willDeleteInterestingPlace() {        
+    func willDeleteInterestingPlace() {
         guard let storedInterestingPlace = storedInterestingPlace else {
             return
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(
+            withIdentifiers: [id])
         locationManager.resignMonitoringRegion(
             at: CLLocationCoordinate2D(
                 latitude: storedInterestingPlace.lat,
@@ -60,9 +61,12 @@ class SearchPlaceModel: ObservableObject {
     }
 
     func didAddInterestingPlace() async {
-        guard let isAuthorized = try? await UNUserNotificationCenter.current().requestAuthorization(
-                options: [.alert, .badge, .sound]
-            ), isAuthorized else {
+        guard
+            let isAuthorized = try? await UNUserNotificationCenter.current()
+                .requestAuthorization(
+                    options: [.alert, .badge, .sound]
+                ), isAuthorized
+        else {
             return
         }
 
@@ -71,8 +75,10 @@ class SearchPlaceModel: ObservableObject {
         }
         let id = "\(storedInterestingPlace.lng)/\(storedInterestingPlace.lng)"
         let content = UNMutableNotificationContent()
-        content.title = "\(storedInterestingPlace.name ?? NSLocalizedString("RegisteredPlace", comment: ""))" + NSLocalizedString("IsNear", comment: "")
-        content.body = NSLocalizedString("ConfirmWithApp", comment: "")
+        content.title =
+            "\(storedInterestingPlace.name ?? L10n.SearchPlaceModel.Notification.InterestingPlace.defaultName)"
+            + L10n.SearchPlaceModel.Notification.InterestingPlace.existNearBy
+        content.body = L10n.SearchPlaceModel.Notification.confirmWithApp
         let trigger = UNLocationNotificationTrigger(
             region: CLCircularRegion(
                 center: CLLocationCoordinate2D(
@@ -99,7 +105,8 @@ class SearchPlaceModel: ObservableObject {
                 ),
                 distance: storedInterestingPlace.distanceMeter
             )
-        } catch {
+        }
+        catch {
             self.error = error.localizedDescription
         }
     }

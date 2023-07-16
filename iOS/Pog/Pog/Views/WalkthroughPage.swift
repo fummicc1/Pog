@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/06/26.
 //
 
-import SwiftUI
 import CoreLocation
+import SwiftUI
 
 struct WalkthroughPage: View {
 
@@ -21,11 +21,11 @@ struct WalkthroughPage: View {
     var body: some View {
         VStack {
             Picker("", selection: $selectedIndex) {
-                Text("WhatIsPog")
+                Text(L10n.WalkthroughPage.Page.pog)
                     .tag(0)
-                Text("AboutNotificationFeature")
+                Text(L10n.WalkthroughPage.Page.notification)
                     .tag(1)
-                Text("AboutLocationTrackingFeature")
+                Text(L10n.WalkthroughPage.Page.aboutLocationTrackingFeature)
                     .tag(2)
             }.pickerStyle(.segmented)
                 .padding()
@@ -50,29 +50,41 @@ struct WalkthroughPage: View {
 
     var page1: some View {
         VStack {
-            Text("WhatIsPog_1/3")
+            Text(L10n.WalkthroughPage.First.title)
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("WhatIsPog_1/3_Headline")
-            Text("WhatIsPog_1/3_Message")
+            Text(L10n.WalkthroughPage.First.headline)
+            Text(L10n.WalkthroughPage.First.message)
             VStack {
-                Image("page1")
+                Asset.page1.swiftUIImage
                     .resizable()
                     .aspectRatio(contentMode: .fit)
 
                 if locationAuthorizeStatus != .authorizedAlways {
                     Button {
                         UIApplication.shared.open(
-                            URL(string: UIApplication.openSettingsURLString)!
+                            URL(
+                                string:
+                                    UIApplication
+                                    .openSettingsURLString
+                            )!
                         )
                     } label: {
-                        Text("AuthorizeAlwaysLocationRequest")
-                            .bold()
+                        Text(
+                            L10n.WalkthroughPage.First
+                                .authorizeAlwaysLocationRequest
+                        )
+                        .bold()
                     }
-                } else {
-                    Label("LocationRequestIsAlwaysAuthorized", systemSymbol: .checkmark)
+                }
+                else {
+                    Label(
+                        L10n.WalkthroughPage.First
+                            .locationRequestIsAlwaysAuthorized,
+                        systemSymbol: .checkmark
+                    )
                 }
             }
             .padding(.bottom, 12)
@@ -82,13 +94,13 @@ struct WalkthroughPage: View {
 
     var page2: some View {
         VStack {
-            Text("WhatIsPog_2/3")
+            Text(L10n.WalkthroughPage.Second.title)
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("WhatIsPog_2/3_Message")
-            Image("page2")
+            Text(L10n.WalkthroughPage.Second.message)
+            Asset.page2.swiftUIImage
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
@@ -97,13 +109,13 @@ struct WalkthroughPage: View {
 
     var page3: some View {
         VStack {
-            Text("WhatIsPog_3/3")
+            Text(L10n.WalkthroughPage.Third.title)
                 .font(.title2)
                 .bold()
                 .underline()
                 .padding()
-            Text("WhatIsPog_3/3_Message")
-            Image("page3")
+            Text(L10n.WalkthroughPage.Second.message)
+            Asset.page3.swiftUIImage
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Spacer()
@@ -112,7 +124,7 @@ struct WalkthroughPage: View {
             } label: {
                 HStack {
                     Spacer()
-                    Text("DONE")
+                    Text(L10n.Common.done)
                         .font(.title3)
                         .bold()
                         .padding(.horizontal, 10)

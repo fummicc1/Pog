@@ -5,10 +5,10 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import MapKit
 import Combine
-import Foundation
 import CoreLocation
+import Foundation
+import MapKit
 import SwiftUI
 
 class MapModel: ObservableObject {
@@ -18,18 +18,35 @@ class MapModel: ObservableObject {
     private let store: Store
     private var cancellables: Set<AnyCancellable> = []
 
-    @Published var searchText: String = ""
-    @Published var showPartialSheet: Bool = false
-    @Published private(set) var selectedPlace: Place?
-    @Published private(set) var searchedWords: [String] = []
-    @Published var showPlaces: [Place] = []
+    @MainActor
+    @Published
+    var searchText: String = ""
+
+    @MainActor
+    @Published
+    var showPartialSheet: Bool = false
+
+    @MainActor
+    @Published
+    private(set) var selectedPlace: Place?
+
+    @MainActor
+    @Published
+    private(set) var searchedWords: [String] = []
+
+    @MainActor
+    @Published
+    var showPlaces: [Place] = []
 
     private var numberOfPlacesSearchRequestPerDay: CurrentValueSubject<Int, Never> = .init(0)
     private var lastSearchedDate: CurrentValueSubject<Date?, Never> = .init(nil)
     private var searchResults: CurrentValueSubject<[Place], Never> = .init([])
-    private var interestingPlaces: CurrentValueSubject<[InterestingPlace], Never> = .init([])
+    private var interestingPlaces: CurrentValueSubject<[InterestingPlaceData], Never> = .init(
+        [])
 
-    @Published var region: MKCoordinateRegion = .init(
+    @MainActor
+    @Published
+    var region: MKCoordinateRegion = .init(
         // Default: Tokyo Region
         center: CLLocationCoordinate2D(
             latitude: 35.652832,
@@ -40,7 +57,10 @@ class MapModel: ObservableObject {
             longitudeDelta: 0.03
         )
     )
-    @Published var needToAcceptAlwaysLocationAuthorization: Bool = false
+
+    @MainActor
+    @Published
+    var needToAcceptAlwaysLocationAuthorization: Bool = false
 
     @MainActor
     init(locationManager: LocationManager, placeManager: PlaceManager, store: Store) {
@@ -51,7 +71,10 @@ class MapModel: ObservableObject {
         locationManager.request()
 
         locationManager.authorizationStatus
-            .map({ $0 != CLAuthorizationStatus.authorizedAlways && $0 != CLAuthorizationStatus.authorizedWhenInUse })
+            .map({
+                $0 != CLAuthorizationStatus.authorizedAlways
+                    && $0 != CLAuthorizationStatus.authorizedWhenInUse
+            })
             .receive(on: DispatchQueue.main)
             .assign(to: &$needToAcceptAlwaysLocationAuthorization)
 
@@ -108,13 +131,15 @@ class MapModel: ObservableObject {
 
         searchResults
             .combineLatest(interestingPlaces)
-            .map { searchPlaces, interestingPlaces in
-                interestingPlaces.map {
+            .map { searchPlaces, interestingPlaceDatas in
+                interestingPlaceDatas.map {
                     Place(
                         lat: $0.lat,
                         lng: $0.lng,
                         icon: $0.icon,
-                        name: $0.name ?? NSLocalizedString("FailedToFetchPlaceName", comment: "")
+                        name: $0.name
+                            ?? L10n.MapView.Place
+                            .failedToFetch
                     )
                 } + searchPlaces
             }
@@ -122,6 +147,7 @@ class MapModel: ObservableObject {
 
     }
 
+    @MainActor
     func onTapMyCurrentLocationButton() {
         guard let coordinate = locationManager.currentCoordinate else {
             return
@@ -129,42 +155,55 @@ class MapModel: ObservableObject {
         region.center = coordinate
     }
 
+    @MainActor
     func selectPlace(_ place: Place?) {
-        Task { @MainActor in
-            selectedPlace = place
-            showPartialSheet = place != nil
-        }
+        selectedPlace = place
+        showPartialSheet = place != nil
     }
 
-    @MainActor
     func onSubmitTextField() async {
         await placeManager.search(
             text: searchText,
             at: locationManager.currentCoordinate,
-            useGooglePlaces: numberOfPlacesSearchRequestPerDay.value <= Const.numberOfPlacesApiCallPerDay
+            useGooglePlaces: numberOfPlacesSearchRequestPerDay.value
+                <= Const.numberOfPlacesApiCallPerDay
         )
-        var new = searchedWords
+        var new = await searchedWords
+        let searchText = await self.searchText
         if !new.contains(searchText) {
             new.append(searchText)
         }
         let now = Date()
         let calendar: Calendar = .current
         if let last = lastSearchedDate.value, !calendar.isDate(last, inSameDayAs: now) {
-            store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
-            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: 1)
-        } else {
+            store.updateSearchConfiguration(
+                keypath: \.lastSearchedDate,
+                value: Date()
+            )
+            store.updateSearchConfiguration(
+                keypath: \.numberOfSearchPerDay,
+                value: 1
+            )
+        }
+        else {
             if lastSearchedDate.value == nil {
-                store.updateSearchConfiguration(keypath: \.lastSearchedDate, value: Date())
+                store.updateSearchConfiguration(
+                    keypath: \.lastSearchedDate,
+                    value: Date()
+                )
             }
             store.updateSearchConfiguration(keypath: \.searchedWords, value: new)
-            store.updateSearchConfiguration(keypath: \.numberOfSearchPerDay, value: numberOfPlacesSearchRequestPerDay.value + 1)
+            store.updateSearchConfiguration(
+                keypath: \.numberOfSearchPerDay,
+                value: numberOfPlacesSearchRequestPerDay.value + 1
+            )
         }
     }
 
     func checkPlaceIsInterseted(_ place: Place) -> Bool {
-        interestingPlaces.value.contains(where: { interestingPlace in
-            let diffLat = abs(interestingPlace.lat - place.lat)
-            let diffLng = abs(interestingPlace.lng - place.lng)
+        interestingPlaces.value.contains(where: { interestingPlaceData in
+            let diffLat = abs(interestingPlaceData.lat - place.lat)
+            let diffLng = abs(interestingPlaceData.lng - place.lng)
             return diffLat < 0.0001 && diffLng < 0.0001
         })
     }

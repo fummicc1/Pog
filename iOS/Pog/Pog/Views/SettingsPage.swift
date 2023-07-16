@@ -5,153 +5,346 @@
 //  Created by Fumiya Tanaka on 2022/06/26.
 //
 
-import SwiftUI
 import CoreData
 import StoreKit
+import SwiftUI
 
 struct SettingsPage: View {
 
     @AppStorage("shouldOnboarding") var shouldOnboarding: Bool = false
     @State private var showTotallyDeleteLogsAlert: Bool = false
     @State private var showTotallyDeleteNotificationAlert: Bool = false
+    @State private var showInquiryFormPage: Bool = false
 
     @StateObject var model: SettingsModel
 
     @FocusState var focus: Bool
-    
 
     var body: some View {
         NavigationView {
-            Form {
-                Section("AboutData") {
-                    Button {
-                        showTotallyDeleteLogsAlert = true
-                    } label: {
-                        Text("TotallyDeleteAllLogs")
-                    }
-                    Button {
-                        showTotallyDeleteNotificationAlert = true
-                    } label: {
-                        Text("TotallyDeleteAllNotifications")
-                    }
+            VStack {
+                NavigationLink(
+                    destination: InquiryFormPage(
+                        model: InquiryFormModel()
+                    ),
+                    isActive: $showInquiryFormPage
+                ) {
+                    EmptyView()
                 }
-                Section("AboutLocation") {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text("UpdateOnBackground")
-                            Toggle(isOn: Binding(get: {
-                                model.allowsBackgroundLocationUpdates
-                            }, set: { isAccept in
-                                model.updateBackgroundLocationUpdates(isAccepted: isAccept)
-                            })) {
-                            }.toggleStyle(.switch)
-                                .frame(width: 48)
+                Form {
+                    Section(L10n.SettingsPage.Data.about) {
+                        Button {
+                            showTotallyDeleteLogsAlert =
+                                true
+                        } label: {
+                            Text(
+                                L10n.SettingsPage
+                                    .Data
+                                    .totallyDeleteAllLogs
+                            )
                         }
-                        Text("MessageAboutUpdateOnBackground")
-                            .foregroundColor(.secondary)
+                        Button {
+                            showTotallyDeleteNotificationAlert =
+                                true
+                        } label: {
+                            Text(
+                                L10n.SettingsPage
+                                    .Data
+                                    .totallyDeleteAllNotifications
+                            )
+                        }
                     }
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text("Accuracy_unit_meter")
-                            TextField(NSLocalizedString("Default", comment: "") + "\(Int(Const.defaultDesiredAccuracy))", text: Binding(get: {
-                                guard let desiredAccuracy = model.desiredAccuracy else {
-                                    return ""
-                                }
-                                return "\(Int(desiredAccuracy))"
-                            }, set: { desiredAccuracy in
-                                guard !desiredAccuracy.isEmpty, let desiredAccuracy = Double(desiredAccuracy) else {
-                                    model.updateDesiredAccuracy(nil)
-                                    return
-                                }
-                                model.updateDesiredAccuracy(desiredAccuracy)
-                            }))
-                                .keyboardType(.numberPad)
+                    Section(L10n.SettingsPage.Location.about) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(
+                                    L10n
+                                        .SettingsPage
+                                        .Location
+                                        .updateOnBackground
+                                )
+                                Toggle(
+                                    isOn:
+                                        Binding(
+                                            get: {
+                                                model
+                                                    .allowsBackgroundLocationUpdates
+                                            },
+                                            set: {
+                                                isAccept
+                                                in
+                                                model
+                                                    .updateBackgroundLocationUpdates(
+                                                        isAccepted:
+                                                            isAccept
+                                                    )
+                                            }
+                                        )
+                                ) {
+                                }.toggleStyle(
+                                    .switch
+                                )
+                                .frame(width: 48)
+                            }
+                            if case SettingsModel
+                                .Selection
+                                .locationUpdateOnBackground =
+                                model
+                                .selection
+                            {
+                                Text(
+                                    L10n
+                                        .SettingsPage
+                                        .Location
+                                        .messageAboutUpdateOnBackground
+                                )
+                                .foregroundColor(
+                                    .secondary
+                                )
+                            }
+                        }
+                        .onTapGesture {
+                            model.update(
+                                selection:
+                                    .locationUpdateOnBackground
+                            )
+                        }
+
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(
+                                    L10n
+                                        .SettingsPage
+                                        .Location
+                                        .accuracyUnitMeter
+                                )
+                                TextField(
+                                    L10n
+                                        .Common
+                                        .default
+                                        + "\(Int(Const.defaultDesiredAccuracy))",
+                                    text:
+                                        Binding(
+                                            get: {
+                                                guard
+                                                    let
+                                                        desiredAccuracy =
+                                                        model
+                                                        .desiredAccuracy
+                                                else {
+                                                    return
+                                                        ""
+                                                }
+                                                return
+                                                    "\(Int(desiredAccuracy))"
+                                            },
+                                            set: {
+                                                desiredAccuracy
+                                                in
+                                                guard
+                                                    !desiredAccuracy
+                                                        .isEmpty,
+                                                    let
+                                                        desiredAccuracy =
+                                                        Double(
+                                                            desiredAccuracy
+                                                        )
+                                                else {
+                                                    model
+                                                        .updateDesiredAccuracy(
+                                                            nil
+                                                        )
+                                                    return
+                                                }
+                                                model
+                                                    .updateDesiredAccuracy(
+                                                        desiredAccuracy
+                                                    )
+                                            }
+                                        )
+                                )
+                                .keyboardType(
+                                    .numberPad
+                                )
                                 .focused($focus)
                                 .toolbar {
-                                    ToolbarItem(placement: .keyboard) {
+                                    ToolbarItem(
+                                        placement:
+                                            .keyboard
+                                    ) {
                                         VStack {
                                             Button {
-                                                focus = false
-                                                model.commitDesiredAccuracyChange()
+                                                focus =
+                                                    false
+                                                model
+                                                    .commitDesiredAccuracyChange()
                                             } label: {
-                                                Text("Close")
+                                                Text(
+                                                    L10n
+                                                        .Common
+                                                        .close
+                                                )
                                             }
                                         }
                                     }
                                 }
-                                .multilineTextAlignment(.trailing)
-                            if focus {
-                                Button {
-                                    model.updateDesiredAccuracy(nil)
-                                } label: {
-                                    Image(systemSymbol: .multiplyCircleFill)
+                                .multilineTextAlignment(
+                                    .trailing
+                                )
+                                if focus {
+                                    Button {
+                                        model
+                                            .updateDesiredAccuracy(
+                                                nil
+                                            )
+                                    } label: {
+                                        Image(
+                                            systemSymbol:
+                                                .multiplyCircleFill
+                                        )
+                                    }
                                 }
-
+                            }.buttonStyle(.plain)
+                            if case SettingsModel
+                                .Selection
+                                .accuracy = model
+                                .selection
+                            {
+                                Text(
+                                    L10n
+                                        .SettingsPage
+                                        .Location
+                                        .lessTheNumberIsMoreAccurateRecordedLocationIs
+                                )
+                                .foregroundColor(
+                                    .secondary
+                                )
                             }
-                        }.buttonStyle(.plain)
-                        Text("Less the number is, more accurate recorded location is.")
-                            .foregroundColor(.secondary)
-                    }
-                    HStack {
-                        Group {
-                            Text("LocationAuthorizeStatus")
-                            Spacer()
-                            Text(model.locationAuthorizationStatus)
-                        }.foregroundColor(.secondary)
-                    }
-                    HStack {
-                        Group {
-                            Text("LocationPrivacy")
-                            Spacer()
-                            Text(model.isAquiringAccuracyLocation)
-                        }.foregroundColor(.secondary)
-                    }
-                    Button {
-                        UIApplication.shared.open(
-                            URL(string: UIApplication.openSettingsURLString)!
-                        )
-                    } label: {
-                        Text("ConfirmWithSettings")
-                    }
-                }
-                Section("AboutPog") {
-                    Button {
-                        shouldOnboarding = true
-                    } label: {
-                        Text("AboutPogFeatures")
-                    }
-                }
-                Section("Feedback") {
-                    Button {
-                        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-                            return
                         }
-                        SKStoreReviewController.requestReview(in: scene)
-                    } label: {
-                        Text("ReviewPog")
+                        .onTapGesture {
+                            model.update(
+                                selection: .accuracy
+                            )
+                        }
+
+                        HStack {
+                            Group {
+                                Text(
+                                    L10n
+                                        .SettingsPage
+                                        .Location
+                                        .authorizeStatus
+                                )
+                                Spacer()
+                                Text(
+                                    model
+                                        .locationAuthorizationStatus
+                                )
+                            }.foregroundColor(.secondary)
+                        }
+                        HStack {
+                            Group {
+                                Text(
+                                    L10n
+                                        .SettingsPage
+                                        .Location
+                                        .privacy
+                                )
+                                Spacer()
+                                Text(
+                                    model
+                                        .isAquiringAccuracyLocation
+                                )
+                            }.foregroundColor(.secondary)
+                        }
+                        Button {
+                            UIApplication.shared.open(
+                                URL(
+                                    string:
+                                        UIApplication
+                                        .openSettingsURLString
+                                )!
+                            )
+                        } label: {
+                            Text(
+                                L10n.Common
+                                    .confirmWithSettings
+                            )
+                        }
+                    }
+                    Section(L10n.SettingsPage.Pog.about) {
+                        Button {
+                            shouldOnboarding = true
+                        } label: {
+                            Text(
+                                L10n.SettingsPage
+                                    .Pog
+                                    .aboutFeatures
+                            )
+                        }
+                    }
+                    Section(L10n.SettingsPage.Pog.feedback) {
+                        Button {
+                            guard
+                                let scene =
+                                    UIApplication
+                                    .shared
+                                    .connectedScenes
+                                    .first
+                                    as? UIWindowScene
+                            else {
+                                return
+                            }
+                            SKStoreReviewController
+                                .requestReview(
+                                    in: scene
+                                )
+                        } label: {
+                            Text(
+                                L10n.SettingsPage
+                                    .Pog
+                                    .review
+                            )
+                        }
+                        Button {
+                            showInquiryFormPage = true
+                        } label: {
+                            Text(
+                                L10n.SettingsPage
+                                    .Pog
+                                    .inquiry
+                            )
+                        }
                     }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
         .onAppear {
             model.onAppear()
         }
-        .alert("DoesDeleteAllLogsTotally", isPresented: $showTotallyDeleteLogsAlert) {
+        .alert(
+            L10n.SettingsPage.Alert.doesDeleteAllLogsTotally,
+            isPresented: $showTotallyDeleteLogsAlert
+        ) {
             Button(role: .destructive) {
                 model.totallyDeleteLogs()
             } label: {
-                Text("Delete")
+                Text(L10n.SettingsPage.Alert.delete)
             }
-            Button(role: .cancel, action: { }) {
-                Text("Cancel")
+            Button(role: .cancel, action: {}) {
+                Text(L10n.Common.cancel)
             }
         }
-        .alert("DoesDeleteAllNotificationTotally", isPresented: $showTotallyDeleteNotificationAlert) {
+        .alert(
+            L10n.SettingsPage.Alert.doesDeleteAllNotificationTotally,
+            isPresented: $showTotallyDeleteNotificationAlert
+        ) {
             Button(role: .destructive) {
                 model.totallyDeleteInterestingPlaces()
             } label: {
-                Text("Delete")
+                Text(L10n.SettingsPage.Alert.delete)
             }
 
         }

@@ -5,8 +5,8 @@
 //  Created by Fumiya Tanaka on 2022/05/17.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct RootView: View {
 
@@ -21,7 +21,8 @@ struct RootView: View {
             WalkthroughPage(
                 shouldOnboarding: _shouldOnboarding.projectedValue
             )
-        } else {
+        }
+        else {
             TabView {
                 MapView(
                     model: MapModel(
@@ -32,7 +33,7 @@ struct RootView: View {
                 )
                 .tabItem {
                     Image(systemSymbol: .map)
-                    Text("Map")
+                    Text(L10n.Common.map)
                 }
                 PlaceLogPage(
                     model: PlaceLogModel(
@@ -42,7 +43,7 @@ struct RootView: View {
                 )
                 .tabItem {
                     Image(systemSymbol: .listBulletCircle)
-                    Text("Log")
+                    Text(L10n.Common.log)
                 }
                 SettingsPage(
                     model: SettingsModel(
@@ -52,7 +53,7 @@ struct RootView: View {
                 )
                 .tabItem {
                     Image(systemSymbol: .gear)
-                    Text("Environment")
+                    Text(L10n.Common.environment)
                 }
             }
         }
